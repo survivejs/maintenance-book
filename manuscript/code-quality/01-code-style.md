@@ -1,6 +1,6 @@
 # Code Style
 
-TODO
+TODO: Code style (EditorConfig, prettier)
 
 ## Conclusion
 

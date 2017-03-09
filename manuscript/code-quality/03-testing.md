@@ -1,6 +1,6 @@
 # Testing
 
-TODO
+TODO: Testing (code coverage)
 
 ## Conclusion
 

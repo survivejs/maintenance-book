@@ -1,6 +1,6 @@
 # Metrics
 
-TODO
+TODO: Metrics (code complexity, others)
 
 ## Conclusion
 

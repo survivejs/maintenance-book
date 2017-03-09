@@ -1,6 +1,6 @@
 # Tree Shaking
 
-TODO
+TODO: Tree shaking (with webpack/rollup)
 
 ## Conclusion
 

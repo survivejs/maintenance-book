@@ -1,6 +1,6 @@
 # Marketing
 
-TODO
+TODO: Marketing (tech, strategy)
 
 ## Conclusion
 

@@ -1,6 +1,6 @@
 # Tools
 
-TODO
+TODO: Tools (TOC generation, Styleguidist, etc.)
 
 ## Conclusion
 

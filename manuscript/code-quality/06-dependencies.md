@@ -1,6 +1,6 @@
 # Dependencies
 
-TODO
+TODO: Updating (greenkeeper.io, npm-upgrade)
 
 ## Conclusion
 

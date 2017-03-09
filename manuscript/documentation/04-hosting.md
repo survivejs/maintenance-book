@@ -1,6 +1,6 @@
 # Hosting
 
-TODO
+TODO: Hosting (GitHub pages, Netlify)
 
 ## Conclusion
 

@@ -1,6 +1,6 @@
 # Linting
 
-TODO
+TODO: Linting (JS, styles, text, lint-staged)
 
 ## Conclusion
 

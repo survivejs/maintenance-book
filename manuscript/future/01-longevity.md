@@ -1,6 +1,6 @@
 # Longevity
 
-TODO
+TODO: Longevity (as in why to consider the business aspect, burnout, collaboration)
 
 ## Conclusion
 

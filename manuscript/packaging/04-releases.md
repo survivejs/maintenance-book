@@ -1,6 +1,6 @@
 # Releases
 
-TODO
+TODO: Releases (semantic-release, commit conventions, change logs)
 
 ## Conclusion
 
