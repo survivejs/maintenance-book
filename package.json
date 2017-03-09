@@ -1,0 +1,43 @@
+{
+  "name": "survivejs-maintenance",
+  "private": true,
+  "version": "0.0.0",
+  "description": "SurviveJS - Maintenance",
+  "scripts": {
+    "publish:silent": "leanpub-cli publish-silent survivejs-maintenance",
+    "preview": "leanpub-cli preview survivejs-maintenance",
+    "job-status": "leanpub-cli job-status survivejs-maintenance",
+    "test": "npm run test:links && npm run textlint",
+    "test:links": "check-markdown-links manuscript",
+    "proselint": "proselintjs \"manuscript/**/*.md\"",
+    "textlint": "textlint manuscript/*.md && textlint manuscript/packages/*.md && textlint manuscript/**/*.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/survivejs/maintenance-book.git"
+  },
+  "keywords": [
+    "javascript",
+    "maintenance"
+  ],
+  "author": "",
+  "license": "CC BY-NC-ND",
+  "bugs": {
+    "url": "https://github.com/survivejs/maintenance-book/issues"
+  },
+  "homepage": "https://github.com/survivejs/maintenance-book",
+  "dependencies": {},
+  "devDependencies": {
+    "check-markdown-links": "^0.1.1",
+    "git-prepush-hook": "^1.0.2",
+    "leanpub-cli": "^0.2.0",
+    "proselint": "^0.1.7",
+    "textlint": "^7.3.0",
+    "textlint-rule-common-misspellings": "^1.0.1",
+    "textlint-rule-terminology": "^1.1.6",
+    "textlint-rule-write-good": "^1.6.0"
+  },
+  "pre-push": [
+    "test"
+  ]
+}
