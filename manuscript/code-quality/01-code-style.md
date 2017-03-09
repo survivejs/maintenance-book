@@ -6,6 +6,27 @@ Ideally code in a project should look like it was written by a single developer.
 
 Code style is also the most subjective thing and developers spend too much time arguing on code style when in most cases particular style doesn’t matter. What matters is code style consistency across the project.
 
+However a good code style my save you from a bug one day. Consider this code:
+
+```js
+if(mealType===BREAKFAST)
+    drinkCofee();
+    eatCroissant();
+```
+
+Can you see a bug here?
+
+Many popular JavaScript code styles require curly braces around all blocks and consistent indentation so you’d write correct code:
+
+```js
+if (mealType === BREAKFAST) {
+    drinkCofee();
+    eatCroissant();
+}
+```
+
+Consistent code style is especially important for open source projects with many casual contributions — developers won’t study your project’s code style when they contribute for the first time.
+
 Automated code style validation or code auto formatting may save you a lot of time and nerves.
 
 ### EditorConfig
@@ -29,7 +50,7 @@ indent_style = space
 indent_size = 2
 ```
 
-TODO: Plugins for editors
+JetBrains IDEs support EditorConfig by default and [there are plugins](http://editorconfig.org/#download) for other popular editors.
 
 ### Using ESLint to Maintain JavaScript Code Style
 
@@ -47,7 +68,7 @@ Choose one of he most popular ESLint presets to make your project’s code style
 
 T> See ESLint chapter to learn how to configure ESLint.
 
-T> You can enable auto fixing via git precommit hook with lint-staged.
+T> You can enable auto fixing via git `precommit` hook with lint-staged.
 
 ### Stylelint and stylefmt
 
@@ -55,7 +76,7 @@ TODO
 
 ### Prettier
 
-TODO: Code style (EditorConfig, prettier)
+TODO
 
 ## Conclusion
 
