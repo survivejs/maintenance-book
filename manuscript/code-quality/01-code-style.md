@@ -25,7 +25,7 @@ if (mealType === BREAKFAST) {
 }
 ```
 
-Consistent code style is especially important for open source projects with many casual contributions — developers won’t study your project’s code style when they contribute for the first time.
+Consistent code style is especially important for open source projects with many casual contributors — they’re not likely to study your project’s code style.
 
 Automated code style validation or code auto formatting may save you a lot of time and nerves.
 
@@ -76,7 +76,60 @@ TODO
 
 ### Prettier
 
-TODO
+[Prettier](https://github.com/prettier/prettier) is a new opinionated JavaScript formatter. It has a limited number of settings and most of the code style rules are built in. Pretiter removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
+
+Prettier is smarter than other tools. For example you can restrict line length but tools like ESLint can only yell at you it a line is too long — you’d have to reformat code yourself. Prettier can reformat a line of code according to its length:
+
+```js
+foo(wowJavaScript(), suchFunction(), muchParameters(), soLong(), shuldReformat());
+// →
+foo(
+  wowJavaScript(),
+  suchFunction(),
+  muchParameters(),
+  soLong(),
+  shuldReformat()
+);
+```
+
+However shorter statement would be printed as one line:
+
+```js
+foo(coffee, croissant, toast, eggs);
+```
+
+T> Try Prettier in [an interactive playground](https://prettier.github.io/prettier/).
+
+This approach has many benefits:
+
+* minimal configuration;
+* almost no decisions to make;
+* no arguing about particular rules if you’re working in a team;
+* no need to learn you project’s code style for contributors.
+
+Lets install Prettier:
+
+```bash
+npm install --save-dev prettier
+```
+
+Add a script to your `package.json` like this:
+
+```json
+{
+    "prettier": "prettier --print-width 120 --single-quote --trailing-comma es5 --write 'src/**/*.js'"
+}
+```
+
+And finally run:
+
+```bash
+npm run prettier
+```
+
+W> Commit your code before running this command — it will reformat all your JavaScript files.
+
+Prettier doesn’t support any config files and has few [command line keys](https://github.com/prettier/prettier#api) to modify its behavior. For example it doesn’t support tab indentation, only spaces.
 
 ## Conclusion
 
