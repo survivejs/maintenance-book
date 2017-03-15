@@ -105,7 +105,8 @@ This approach has many benefits:
 * minimal configuration;
 * almost no decisions to make;
 * no arguing about particular rules if you’re working in a team;
-* no need to learn you project’s code style for contributors.
+* no need to learn you project’s code style for contributors;
+* no need to fix style issues reported by ESLint.
 
 Let’s install Prettier:
 
@@ -130,6 +131,22 @@ npm run prettier
 W> Commit your code before running this command — it will reformat all your JavaScript files.
 
 Prettier doesn’t support any config files and has few [command line keys](https://github.com/prettier/prettier#api) to modify its behavior. For example it doesn’t support tab indentation, only spaces.
+
+It’s a good idea to disable code style rules in your ESLint config and let Prettier to deal with code style. For example, if you’re using [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb), you can replace it with [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier).
+
+And to make your contributors’s life easier you can set up Prettier to format code before each commit with lint-staged. Update your lint-staged config (`.lintstagedrc`):
+
+```json
+{
+  "*.js": [
+      "eslint --fix",
+      "prettier --print-width 120 --single-quote --trailing-comma es5 --write",
+      "git add"
+    ]
+}
+```
+
+T> See more detailed explanation of lint-staged in the *Code Quality* chapter.
 
 ## Conclusion
 
