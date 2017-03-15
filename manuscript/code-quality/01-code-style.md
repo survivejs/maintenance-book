@@ -76,7 +76,7 @@ TODO
 
 ### Prettier
 
-[Prettier](https://github.com/prettier/prettier) is a new opinionated JavaScript formatter. It has a limited number of settings and most of the code style rules are built in. Pretiter removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
+[Prettier](https://github.com/prettier/prettier) is an opinionated JavaScript formatter. It has a limited number of settings and most of the code style rules are built in. Prettier removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
 
 Prettier is smarter than other tools. For example you can restrict line length but tools like ESLint can only yell at you it a line is too long — you’d have to reformat code yourself. Prettier can reformat a line of code according to its length:
 
@@ -92,7 +92,7 @@ foo(
 );
 ```
 
-However shorter statement would be printed as one line:
+However, shorter statement would be printed as one line:
 
 ```js
 foo(coffee, croissant, toast, eggs);
@@ -107,7 +107,7 @@ This approach has many benefits:
 * no arguing about particular rules if you’re working in a team;
 * no need to learn you project’s code style for contributors.
 
-Lets install Prettier:
+Let’s install Prettier:
 
 ```bash
 npm install --save-dev prettier
