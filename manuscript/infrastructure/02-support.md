@@ -1,7 +1,0 @@
-# Support
-
-TODO
-
-## Conclusion
-
-TODO

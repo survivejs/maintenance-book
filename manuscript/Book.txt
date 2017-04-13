@@ -19,7 +19,6 @@ code-quality/03-dependencies.md
 
 06-Infrastructure.md
 infrastructure/01-issue-tracking.md
-intrastructure/02-support.md
 intrastructure/03-continuous-integration.md
 intrastructure/04-automation.md
 
