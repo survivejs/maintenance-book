@@ -19,8 +19,8 @@ code-quality/03-dependencies.md
 
 06-Infrastructure.md
 infrastructure/01-issue-tracking.md
-intrastructure/03-continuous-integration.md
-intrastructure/04-automation.md
+intrastructure/02-continuous-integration.md
+intrastructure/03-automation.md
 
 07-Documentation.md
 documentation/01-readme.md
