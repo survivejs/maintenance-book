@@ -1,12 +1,8 @@
-# Code Style
+# Linting
 
-Ideally code in a project should look like it was written by a single developer. It makes code reading simpler because you know how things are done and how they look in a project. And you know how you should write your own code.
+Ideally code in a project should look like it was written by a single developer. It makes code reading simpler because you know how things are done and how they look in a project. You can force certain code style through linting. Linting can also capture mistakes related to the usage of the language.
 
-Code style is also the most subjective thing and developers spend too much time arguing on code style when in most cases particular style doesn't matter. What matters is code style consistency across the project.
-
-Consistent code style is especially important for open source projects with many casual contributors — they’re not likely to study your project’s code style.
-
-## Good vs. Bad Style
+## Why to Lint
 
 Good code style can save you from a bug one day. Consider this code:
 
@@ -22,7 +18,7 @@ Many popular JavaScript code styles require curly braces around all blocks and c
 
 ```js
 if (mealType === BREAKFAST) {
-  drinkCofee();
+  drinkCoffee();
   eatCroissant();
 }
 ```
@@ -54,21 +50,19 @@ EditorConfig is supported by popular IDEs and editors through [specific plugins]
 
 T> It's possible to force line endings through *.gitattributes* by setting `* text=auto` and `bin/* eol=lf`. You can still have EditorConfig in place regardless of how Git has been set up.
 
-## Using ESLint to Maintain JavaScript Code Style
+## Linting JavaScript Through ESLint
 
-Even though ESLint is primarily used to capture language related issues, it can be used to enforce code style. You can make it as strict as you want. It's possible to apply ESLint autofix against most of the rules making it fast to perform style related fixes.
+ESLint is a popular linter for JavaScript. It's primarily used to capture language related issues but can be used to enforce code style as well. It's possible to apply ESLint autofix against most of the rules making it fast to perform style related fixes.
 
 JavaScript doesn't have an official coding style but the community maintains a few. Especially [Standard](http://standardjs.com/) and [Airbnb](https://github.com/airbnb/javascript) are popular. You can consume Airbnb style through [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb).
 
 AirBnb is detailed and pragmatic, Standard is a bit controversial because it doesn’t use semicolons. Both use two spaces for indentation.
 
-T> You can enable auto fixing via git `precommit` hook with *lint-staged* as discussed in the *Linting* chapter.
+T> You can enable autofixing via git `precommit` hook with *lint-staged*.
 
-## Stylelint and stylefmt
+## lint-staged
 
-[Stylelint](https://www.npmjs.com/package/stylelint) is a CSS specific linting tool. The idea is similar as for ESLint but this time the focus is on CSS.
-
-[stylefmt](https://www.npmjs.com/package/stylefmt) complements the tool by providing automatic formatting for CSS. You can see it analogous to ESLint's autofix feature.
+TODO
 
 ### Prettier
 
@@ -142,8 +136,18 @@ And to make your contributors’s life easier you can set up Prettier to format 
 }
 ```
 
+## Stylelint and stylefmt
+
+[Stylelint](https://www.npmjs.com/package/stylelint) is a CSS specific linting tool. The idea is similar as for ESLint but this time the focus is on CSS.
+
+[stylefmt](https://www.npmjs.com/package/stylefmt) complements the tool by providing automatic formatting for CSS. You can see it analogous to ESLint's autofix feature.
+
+## Textlint and Proselint
+
+TODO
+
 ## Conclusion
 
 Code style is an important part of code quality. You can enforce code style through tooling. Doing this forces contributors to code using the same standard and this also keeps the source consistent to read. Pushing code style to configuration also avoids arguments about which conventions to apply.
 
-You'll learn about linting in the next chapter. It's a more specific technique that allows you to catch defects through static analysis.
+You'll learn about testing in the next chapter.

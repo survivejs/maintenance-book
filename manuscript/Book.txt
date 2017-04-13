@@ -14,11 +14,10 @@ packaging/04-monorepos.md
 
 05-Code-Quality.md
 code-quality/01-code-style.md
-code-quality/02-linting.md
-code-quality/03-testing.md
-code-quality/04-metrics.md
-code-quality/05-services.md
-code-quality/06-dependencies.md
+code-quality/02-testing.md
+code-quality/03-metrics.md
+code-quality/04-services.md
+code-quality/05-dependencies.md
 
 06-Infrastructure.md
 infrastructure/01-issue-tracking.md
