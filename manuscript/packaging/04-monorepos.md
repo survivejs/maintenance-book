@@ -64,7 +64,7 @@ Webpack is a popular project bundler. Managing the project comes with its own ch
 
 Separating each package to a repository of its own makes them snowflakes in sense that each repository easily becomes different and it's hard to keep them in sync if infrastructure evolves somehow. To solve the problem, [webpack-defaults](https://www.npmjs.com/package/webpack-defaults) was developed.
 
-The idea was to push project configuration (GitHub templates, linting, testing setup, i.e.) to a single package that could be consumed across webpack-contrib repositories. When you install *webpack-defaults* to your project, it writes a `webpack-defaults` npm script entry you can run. After you perform *npm run webpack-defaults`, it pulls project defaults from the package and migrates the project as well it can to follow the standard.
+The idea was to push project configuration (GitHub templates, linting, testing setup, i.e.) to a single package that could be consumed across webpack-contrib repositories. When you install *webpack-defaults* to your project, it writes a `webpack-defaults` npm script entry you can run. After you perform `npm run webpack-defaults`, it pulls project defaults from the package and migrates the project as well it can to follow the standard.
 
 Sometimes this can mean replacing entire file (i.e. Travis configuration) but there are times when patching the existing configuration is enough. This allows you to retain control and it avoids customization per project based on specific needs.
 
