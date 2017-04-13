@@ -1,4 +1,4 @@
-# Where to Start
+# Where to Start Packaging
 
 npm has become wildly popular for managing JavaScript packages. It started from Node and backend world but has since grown to include frontend libraries as well. It relies on certain loose conventions that you should know. Perhaps one of the reason why so many npm packages exist is that it's difficult to find a package matching to your requirements.
 
@@ -46,4 +46,4 @@ npm provides a good way around the naming problem in the form of **scoping**. A 
 
 Before writing a package of your own, consider spending time with existing packages. You may notice a new package isn't needed after all or that you can contribute to a thriving one. Even forking an old package and revitalizing the effort can be a good option that allows you to save the pain of re-inventing the wheel.
 
-The next chapters cover packages and how to manage them in greater detail.
+You'll learn how npm packages are structured in the next chapter.
