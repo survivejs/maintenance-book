@@ -6,7 +6,7 @@ The purpose of this book is to give insight into these particular concerns. Even
 
 ## What Will You Learn
 
-The book shows you **how to organize** npm packages and manage them. You will also learn about higher level topics, such as **code quality**, **infrastructure**, **documentation**, and **future** prospects. A good project is more than just the technical implementation. For that reason you should understand what's beyond the technical side as this knowledge has impact on project longevity and success.
+The book shows you **how to organize** npm packages and manage them. You will also learn about higher level topics, such as **code quality**, **infrastructure**, **documentation**, and **future** prospects. A good project is more than the technical implementation. For that reason you should understand what's beyond the technical side as this knowledge has impact on project longevity and success.
 
 ## How Is The Book Organized
 
@@ -14,11 +14,11 @@ The book has been split into a few distinct parts each of which discusses the to
 
 The parts of the book have been designed as follows:
 
-* **Packaging** helps you to package your npm projects in a such way that they are easy to consume. You will also learn to manage your code effectively as you pick up ideas like **release management** and **monorepos**.
+* **Packaging** shows how to package your npm projects. You will also learn to manage your code effectively as you pick up ideas like **release management** and **monorepos**.
 * **Code Quality** discusses how to maintain the quality of your project on a high level. You will learn what code quality consists of and how to manage it.
 * **Infrastructure** shows how to develop support structure around the project and keep it maintainable so that other people can contribute. You will also learn about scaling the project while buying yourself time to keep on progressing.
-* **Documentation** is often overlooked but it is a vital aspect for projects that are meant to be consumed by a wider community. The part shows how to achieve this to support the growth of your project.
-* **Future** and project longevity is important as without some thought it is easy to end up with a project that is a failure by some measure. To succeed, you have to think about success first and plan accordingly.
+* **Documentation** is often overlooked but it's a vital aspect for projects that are meant to be consumed by a wider community. The part shows how to achieve this to support the growth of your project.
+* **Future** and project longevity is important as without thought it's possible to end up with a project that is a failure. To succeed, you have to think about success first and plan accordingly.
 
 There's a short conclusion chapter after the main content that recaps the main points of the book. It contains checklists that allow you to go through your projects against the book techniques.
 
