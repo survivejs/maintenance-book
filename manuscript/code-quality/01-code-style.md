@@ -1,39 +1,39 @@
-# Code style
-
-## Importance of Code Style
+# Code Style
 
 Ideally code in a project should look like it was written by a single developer. It makes code reading simpler because you know how things are done and how they look in a project. And you know how you should write your own code.
 
-Code style is also the most subjective thing and developers spend too much time arguing on code style when in most cases particular style doesn’t matter. What matters is code style consistency across the project.
-
-However a good code style my save you from a bug one day. Consider this code:
-
-```js
-if(mealType===BREAKFAST)
-    drinkCofee();
-    eatCroissant();
-```
-
-Can you see a bug here?
-
-Many popular JavaScript code styles require curly braces around all blocks and consistent indentation so you’d write correct code:
-
-```js
-if (mealType === BREAKFAST) {
-    drinkCofee();
-    eatCroissant();
-}
-```
+Code style is also the most subjective thing and developers spend too much time arguing on code style when in most cases particular style doesn't matter. What matters is code style consistency across the project.
 
 Consistent code style is especially important for open source projects with many casual contributors — they’re not likely to study your project’s code style.
 
-Automated code style validation or code auto formatting may save you a lot of time and nerves.
+## Good vs. Bad Style
 
-### EditorConfig
+Good code style can save you from a bug one day. Consider this code:
 
-[EditorConfig](http://editorconfig.org/) allows you to define indentation style and other whitespace settings for any file type, so your editor could automatically choose correct settings.
+```js
+if (mealType === BREAKFAST)
+  drinkCoffee();
+  eatCroissant();
+```
 
-Here is a typical config (`.editorconfig`) with separate rules for Markdown, JSON and YAML files:
+Can you see the issue? `eatCroissant();` gets evaluated always.
+
+Many popular JavaScript code styles require curly braces around all blocks and consistent indentation for this reason. Doing this forces you to write the correct code:
+
+```js
+if (mealType === BREAKFAST) {
+  drinkCofee();
+  eatCroissant();
+}
+```
+
+You can enforce code style through specific tools. Certain tools operate on language level while others go beyond that and allow you to operate per format. The tools can be used together for the best effect.
+
+## EditorConfig
+
+[EditorConfig](http://editorconfig.org/) allows you to define indentation style and other whitespace settings for any file type. This way your editor can automatically choose the correct settings. The biggest advantage of doing this is that it allows cross-platform issues as different platforms use varying line endings.
+
+Here is a typical config (*.editorconfig*) with separate rules for Markdown, JSON and YAML files:
 
 ```ini
 root = true
@@ -50,45 +50,41 @@ indent_style = space
 indent_size = 2
 ```
 
-JetBrains IDEs support EditorConfig by default and [there are plugins](http://editorconfig.org/#download) for other popular editors.
+EditorConfig is supported by popular IDEs and editors through [specific plugins](http://editorconfig.org/#download). Once the plugin has been installed, you won't even notice it's there.
 
-### Using ESLint to Maintain JavaScript Code Style
+T> It's possible to force line endings through *.gitattributes* by setting `* text=auto` and `bin/* eol=lf`. You can still have EditorConfig in place regardless of how Git has been set up.
 
-ESLint has many rules to check your JavaScript code styles and you can make it truly picky. Luckily many of this rules are auto fixable otherwise it would make life of your contributors harder.
+## Using ESLint to Maintain JavaScript Code Style
 
-Unfortunately JavaScript has no idiomatic code style and many projects have unique code style or no code style at all. But there are two popular code styles:
+Even though ESLint is primarily used to capture language related issues, it can be used to enforce code style. You can make it as strict as you want. It's possible to apply ESLint autofix against most of the rules making it fast to perform style related fixes.
 
-* [AirBnb](https://github.com/airbnb/javascript)
-* [Standard](http://standardjs.com/)
+JavaScript doesn't have an official coding style but the community maintains a few. Especially [Standard](http://standardjs.com/) and [Airbnb](https://github.com/airbnb/javascript) are popular. You can consume Airbnb style through [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb).
 
 AirBnb is detailed and pragmatic, Standard is a bit controversial because it doesn’t use semicolons. Both use two spaces for indentation.
 
-Choose one of he most popular ESLint presets to make your project’s code style familiar to as many contributors as possible. [AirBnb](https://github.com/airbnb/javascript) or
-[Standard](http://standardjs.com/) are good choices.
+T> You can enable auto fixing via git `precommit` hook with *lint-staged* as discussed in the *Linting* chapter.
 
-T> See ESLint chapter to learn how to configure ESLint.
+## Stylelint and stylefmt
 
-T> You can enable auto fixing via git `precommit` hook with lint-staged.
+[Stylelint](https://www.npmjs.com/package/stylelint) is a CSS specific linting tool. The idea is similar as for ESLint but this time the focus is on CSS.
 
-### Stylelint and stylefmt
-
-TODO
+[stylefmt](https://www.npmjs.com/package/stylefmt) complements the tool by providing automatic formatting for CSS. You can see it analogous to ESLint's autofix feature.
 
 ### Prettier
 
 [Prettier](https://github.com/prettier/prettier) is an opinionated JavaScript formatter. It has a limited number of settings and most of the code style rules are built in. Prettier removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
 
-Prettier is smarter than other tools. For example you can restrict line length but tools like ESLint can only yell at you it a line is too long — you’d have to reformat code yourself. Prettier can reformat a line of code according to its length:
+Prettier is smarter than other tools. For example you can restrict line length but tools like ESLint can only yell at you it a line is too long — you’d have to reformat code yourself. Prettier can reformat a line of code according to its length as below:
 
 ```js
-foo(wowJavaScript(), suchFunction(), muchParameters(), soLong(), shuldReformat());
+foo(wowJavaScript(), suchFunction(), muchParameters(), soLong(), shouldReformat());
 // →
 foo(
   wowJavaScript(),
   suchFunction(),
   muchParameters(),
   soLong(),
-  shuldReformat()
+  shouldReformat()
 );
 ```
 
@@ -146,8 +142,8 @@ And to make your contributors’s life easier you can set up Prettier to format 
 }
 ```
 
-T> See more detailed explanation of lint-staged in the *Code Quality* chapter.
-
 ## Conclusion
 
-TODO
+Code style is an important part of code quality. You can enforce code style through tooling. Doing this forces contributors to code using the same standard and this also keeps the source consistent to read. Pushing code style to configuration also avoids arguments about which conventions to apply.
+
+You'll learn about linting in the next chapter. It's a more specific technique that allows you to catch defects through static analysis.
