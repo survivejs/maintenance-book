@@ -9,9 +9,8 @@ Mainmatter.txt
 04-Packaging.md
 packaging/01-where-to-start.md
 packaging/02-anatomy.md
-packaging/03-versioning.md
-packaging/04-releases.md
-packaging/05-monorepos.md
+packaging/03-publishing.md
+packaging/04-monorepos.md
 
 05-Code-Quality.md
 code-quality/01-code-style.md

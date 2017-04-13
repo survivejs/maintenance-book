@@ -155,4 +155,4 @@ W> Even though it's possible to tell npm what to exclude from `files` through `!
 
 An npm package contains at least metadata and source. Many of the files that are relevant for development can be skipped in a distribution build to keep downloads fast. Although that's a small issue, it's still good to consider as it doesn't take much effort to filter the files.
 
-You'll learn about npm package versioning models in the next chapter.
+You'll learn how to release npm packages in the next chapter.
