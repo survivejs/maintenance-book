@@ -18,7 +18,7 @@ code-quality/02-testing.md
 code-quality/03-dependencies.md
 
 06-Infrastructure.md
-infrastructure/01-support.md
+infrastructure/01-processes.md
 intrastructure/02-continuous-integration.md
 intrastructure/03-automation.md
 
