@@ -1,7 +1,5 @@
 # Dependencies
 
-TODO: Updating (greenkeeper.io, npm-upgrade)
-
 ## Keeping Dependencies Up to Date
 
 An important part of maintaining a project is keeping their dependencies up to date. How to do this depends a lot of on the maturity of your project. Ideally, you have an excellent set of tests covering the functionality to avoid problems with updates. Consider the following approaches:
@@ -18,15 +16,16 @@ T> `npm ls`, and more specifically `npm ls <package name>`, allow you to figure 
 
 Certain services can help you to keep track of your dependencies:
 
+* [Greenkeeper](https://greenkeeper.io/)
 * [David](https://david-dm.org/)
 * [versioneye](https://www.versioneye.com/)
 * [Gemnasium](https://gemnasium.com)
 
-These services provide badges you can integrate into your project *README.md*, and they email you about important changes. They can also point out possible security issues that have been fixed.
+They provide badges you can integrate into your project *README*, and they send pull requests or email you about important changes. They can also point out possible security issues that have been fixed.
 
 ## How to Avoid Breaking Dependent Projects
 
-https://www.npmjs.com/package/dont-break
+[dont-break](https://www.npmjs.com/package/dont-break) allows you to run the unit tests of dependent projects against your current code to see if it breaks anything. Sometimes it's possible to overlook a use case that is not a part of the public API even and break a dependency. *dont-break* helps with that particular problem.
 
 ## Conclusion
 
