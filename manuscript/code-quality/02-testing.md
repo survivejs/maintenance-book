@@ -6,6 +6,8 @@ TODO
 * What's the point/value
 * What to test
 
+TODO: Run tests of popular users of your library with a new version to test that it doesn’t break them
+
 ## Unit Testing
 
 TODO

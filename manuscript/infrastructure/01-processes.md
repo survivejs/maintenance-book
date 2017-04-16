@@ -6,6 +6,8 @@ Each project has processes around it. Services like [GitHub](https://github.com/
 
 TODO
 
+TODO: Issue and PR templates
+
 ## Designing Process and Labels
 
 TODO
