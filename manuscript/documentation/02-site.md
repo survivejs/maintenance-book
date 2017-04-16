@@ -14,6 +14,11 @@ TODO: Styleguidist etc.
 
 TODO
 
+## Hosting
+
+TODO: GitHub pages, Netlify
+TODO: Build on CI
+
 ## Conclusion
 
 TODO
