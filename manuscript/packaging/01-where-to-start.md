@@ -8,7 +8,9 @@ The situation has become better thanks to development of [npms](https://npms.io/
 
 ## To Consume Packages or to Develop Them
 
-The point of a package manager like npm is to avoid unnecessary development effort. That said, sometimes re-inventing the wheel somehow is needed as everything needs to fit together. npm hosts whole ecosystems of packages that work together. The world of JavaScript is increasingly fragmented although there are packages you can use regardless of certain higher level choices. Utility libraries are valuable regardless whether you are using Angular, Ember, or React.
+The point of a package manager like npm is to avoid unnecessary development effort. That said, sometimes re-inventing the wheel somehow is needed as everything needs to fit together. npm hosts whole ecosystems of packages that work together.
+
+The world of JavaScript is increasingly fragmented although there are packages you can use regardless of certain higher level choices. Utility libraries are valuable regardless whether you are using Angular, Ember, or React.
 
 You have at least the following options when you come upon a technical problem to solve:
 
