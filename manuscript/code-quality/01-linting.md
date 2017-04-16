@@ -60,6 +60,8 @@ AirBnb is detailed and pragmatic, Standard is a bit controversial because it doe
 
 T> You can enable autofixing via git `precommit` hook with *lint-staged*.
 
+TODO: ESLint plugins
+
 ## lint-staged
 
 TODO
