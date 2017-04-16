@@ -31,8 +31,7 @@ documentation/03-api.md
 
 08-Future.md
 future/01-longevity.md
-future/02-development-models.md
-future/03-marketing.md
+future/02-marketing.md
 
 Backmatter.txt
 
