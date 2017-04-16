@@ -64,21 +64,20 @@ T> You can enable autofixing via git `precommit` hook with *lint-staged*.
 
 TODO
 
-### Prettier
+## Prettier
 
 [Prettier](https://github.com/prettier/prettier) is an opinionated JavaScript formatter. It has a limited number of settings and most of the code style rules are built in. Prettier removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
 
 Prettier is smarter than other tools. For example you can restrict line length but tools like ESLint can only yell at you it a line is too long — you’d have to reformat code yourself. Prettier can reformat a line of code according to its length as below:
 
 ```js
-foo(wowJavaScript(), suchFunction(), muchParameters(), soLong(), shouldReformat());
-// →
+foo(wowJavaScript(), suchFunction(), muchParameters(), soLong());
+// ->
 foo(
   wowJavaScript(),
   suchFunction(),
   muchParameters(),
-  soLong(),
-  shouldReformat()
+  soLong()
 );
 ```
 
@@ -92,11 +91,11 @@ T> Try Prettier in [an interactive playground](https://prettier.github.io/pretti
 
 This approach has many benefits:
 
-* minimal configuration;
-* almost no decisions to make;
-* no arguing about particular rules if you’re working in a team;
-* no need to learn you project’s code style for contributors;
-* no need to fix style issues reported by ESLint.
+* Minimal configuration;
+* Almost no decisions to make;
+* No arguing about particular rules if you’re working in a team;
+* No need to learn you project’s code style for contributors;
+* No need to fix style issues reported by ESLint.
 
 Let’s install Prettier:
 
