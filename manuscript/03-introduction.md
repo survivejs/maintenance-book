@@ -14,15 +14,15 @@ The book has been split into a few distinct parts each of which discusses the to
 
 The parts of the book have been designed as follows:
 
-* **Packaging** shows how to package your npm projects. You will also learn to manage your code effectively as you pick up ideas like **release management** and **monorepos**.
+* **Packaging** shows how to package your npm projects. You will also learn how to manage your code effectively as you pick up ideas like **release management** and **monorepos**.
 * **Code Quality** discusses how to maintain the quality of your project on a high level. You will learn what code quality consists of and how to manage it.
 * **Infrastructure** shows how to develop support structure around the project and keep it maintainable so that other people can contribute. You will also learn about scaling the project while buying yourself time to keep on progressing.
 * **Documentation** is often overlooked but it's a vital aspect for projects that are meant to be consumed by a wider community. The part shows how to achieve this to support the growth of your project.
 * **Future** and project longevity is important as without thought it's possible to end up with a project that is a failure. To succeed, you have to think about success first and plan accordingly.
 
-There's a short conclusion chapter after the main content that recaps the main points of the book. It contains checklists that allow you to go through your projects against the book techniques.
+There's a short conclusion chapter after the main content that recaps the main points of the book. They contain checklists that allow you to go through your projects against the book techniques.
 
-The appendices the end of the book cover secondary topics and sometimes dig deeper into the main ones. You can approach them in any order you want depending on your interest.
+The appendices in the end of the book cover secondary topics and sometimes dig deeper into the main ones. You can approach them in any order you want depending on your interest.
 
 ## Who Is The Book For
 
@@ -60,7 +60,7 @@ You can find more related material from the following sources:
 * Join the [mailing list](https://eepurl.com/bth1v5) for occasional updates.
 * Follow [@survivejs](https://twitter.com/survivejs) on Twitter.
 * Subscribe to the [blog RSS](https://survivejs.com/atom.xml) to get access interviews and more.
-* Subscribe to the [Youtube channel](https://www.youtube.com/channel/UCvUR-BJcbrhmRQZEEr4_bnw).
+* Subscribe to the [YouTube channel](https://www.youtube.com/channel/UCvUR-BJcbrhmRQZEEr4_bnw).
 * Check out [SurviveJS related presentation slides](https://presentations.survivejs.com/).
 
 ## Acknowledgments
