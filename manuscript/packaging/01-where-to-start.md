@@ -4,9 +4,7 @@ npm has become wildly popular for managing JavaScript packages. It started from 
 
 The situation has become better thanks to development of [npms](https://npms.io/) and similar solutions but it still exists. The problem of developing your own solution is that then you have something to maintain. Unless it's your core business or something you like to do, this can become problematic.
 
-TODO: Add npm popularity graph here
-
-TODO: Problem of finding a good package
+![Module counts in package managers based on [modulecounts.com](http://www.modulecounts.com/)](images/module-counts.png)
 
 ## To Consume Packages or to Develop Them
 
