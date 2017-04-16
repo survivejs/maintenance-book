@@ -26,7 +26,8 @@ intrastructure/03-automation.md
 07-Documentation.md
 documentation/01-readme.md
 documentation/02-site.md
-documentation/03-hosting.md
+documentation/03-api.md
+documentation/04-hosting.md
 
 08-Future.md
 future/01-longevity.md
