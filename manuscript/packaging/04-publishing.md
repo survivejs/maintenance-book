@@ -32,11 +32,11 @@ Invoking any of these updates *package.json* and creates a version commit to git
 
 To make it easier to comply with SemVer, [next-ver](https://www.npmjs.com/package/next-ver) can compute the next version you should use and update it for you. [commitizen](https://www.npmjs.com/package/commitizen) goes further and allows change log generation and automated releases.
 
-Both these tools rely on commit message annotations. On small projects, you can have `fix` or `feat` prefix at your commit titles (e.g., `fix - Allow doodad to work with zero`). You can also communicate the context using `chore(docs)` kind of style to document which part of the project was touched.
+Both these tools rely on commit message convention. On small projects, you can have `fix` or `feat` prefix at your commit titles (e.g., `fix: allow doodad to work with zero`). You can also communicate the context using `chore(docs)` kind of style to document which part of the project was touched.
 
-This metadata lets the tooling to figure out the types of the changes you made. It can help even with change log generation and allow automated releases over manual ones. Annotating your commits well is a good practice in any case as it makes it easier to debug your code later.
+This metadata lets the tooling to figure out types of the changes you made. It can help even with change log generation and allow automated releases over manual ones. Annotating your commits well is a good practice in any case as it makes it easier to debug your code later.
 
-Consider using [semantic-release](https://www.npmjs.com/package/semantic-release) if you prefer a more structured approach. It can take pain out of the release process while automating a part of it. For instance, it can detect possible breaking changes and generate change logs.
+Consider using [semantic-release](https://www.npmjs.com/package/semantic-release) if you prefer a more structured approach. It can take pain out of the release process while automating most of it. For instance, it can detect possible breaking changes and generate change logs.
 
 ## Publishing a Pre-Release Version
 
