@@ -40,6 +40,14 @@ TODO
 * Acceptance testing tools (codecept, headless browsers)
 * User perspective
 
+## Regression Testing
+
+* What's regression testing
+
+## Performance Testing
+
+* What's performance testing
+
 ## Mutation Testing
 
 TODO
