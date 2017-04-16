@@ -24,6 +24,10 @@ Certain services can help you to keep track of your dependencies:
 
 These services provide badges you can integrate into your project *README.md*, and they email you about important changes. They can also point out possible security issues that have been fixed.
 
+## How to Avoid Breaking Dependent Projects
+
+https://www.npmjs.com/package/dont-break
+
 ## Conclusion
 
 TODO
