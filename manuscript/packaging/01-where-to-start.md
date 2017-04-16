@@ -1,10 +1,10 @@
 # Where to Start Packaging
 
-npm has become wildly popular for managing JavaScript packages. It started from Node and backend world but has since grown to include frontend libraries as well. It relies on certain loose conventions that you should know. Perhaps one of the reason why so many npm packages exist is that it's difficult to find a package matching to your requirements.
+npm has become wildly popular for managing JavaScript packages. It started from the backend world but has since grown to include frontend libraries as well. Perhaps one of the reason why so many npm packages exist is that it's difficult to find a package matching to your requirements.
 
 The situation has become better thanks to development of [npms](https://npms.io/) and similar solutions but it still exists. The problem of developing your own solution is that then you have something to maintain. Unless it's your core business or something you like to do, this can become problematic.
 
-![Module counts in package managers based on [modulecounts.com](http://www.modulecounts.com/)](images/module-counts.png)
+![Module counts in package managers based on modulecounts.com](images/module-counts.png)
 
 ## To Consume Packages or to Develop Them
 
