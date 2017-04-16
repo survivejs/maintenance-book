@@ -11,7 +11,6 @@ packaging/01-where-to-start.md
 packaging/02-anatomy.md
 packaging/03-bundling.md
 packaging/04-publishing.md
-packaging/05-monorepos.md
 
 05-Code-Quality.md
 code-quality/01-linting.md
@@ -39,3 +38,4 @@ Backmatter.txt
 15-Appendices.md
 
 appendices/01-tree-shaking.md
+appendices/02-monorepos.md
