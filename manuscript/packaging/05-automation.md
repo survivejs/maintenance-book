@@ -84,4 +84,4 @@ Enter your npm and GitHub credentials, choose type of your CI server.
 
 And now if you make a new commit with a message like `fix: allow doodad to work with zero`, semantic-release will publish a new PATCH version to npm and publish release notes based on the commit message to GitHub.
 
-T> You can customize every step of this process with plugins. For example [http://blog.sapegin.me/all/semantic-release](make only PATCH releases automatically) and allow user to decide when to make MINOR and MAJOR releases and edit change logs manually.
+T> You can customize every step of this process with plugins. For example, [make only PATCH releases automatically](http://blog.sapegin.me/all/semantic-release) and allow user to decide when to make MINOR and MAJOR releases and edit change logs manually.
