@@ -17,6 +17,7 @@ You should include licensing information at the end of the README as that is a g
 ## Automating README Fields
 
 TODO: markdown-magic + pulling meta from package.json
+TODO: TOC generation
 
 ## Testing Examples
 
