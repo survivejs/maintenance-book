@@ -15,6 +15,7 @@ TODO
 * Show how to implement unit tests through `assert` -> how to evolve a testing framework of your own
 * Show how to use a unit testing framework + the value it brings
 * Developer perspective
+* Snapshots?
 
 ## Fuzz Testing
 
@@ -37,7 +38,7 @@ TODO
 TODO
 
 * What's acceptance
-* Acceptance testing tools (codecept, headless browsers)
+* Acceptance testing tools (codecept, Cypress, headless browsers)
 * User perspective
 
 ## Regression Testing
@@ -57,7 +58,7 @@ TODO
 
 ## Code Coverage
 
-[Codecov](https://codecov.io/) and [Coveralls](https://coveralls.io/) provide code coverage information and a badge to include in your README. It's a part of improving the quality of your pull requests as they should maintain the current coverage at a minimum and ideally improve it.
+[Codecov](https://codecov.io/) and [Coveralls](https://coveralls.io/) provide code coverage information and a badge to include in your README. They also collect coverage for every pull request and post a comment explaining how a pull request would affect project coverage as you should maintain the current coverage at a minimum and ideally improve it.
 
 T> [shields.io](http://shields.io/) lists a large number of available badges. [NodeICO](https://nodei.co/) provides badges that aggregate package related information.
 
