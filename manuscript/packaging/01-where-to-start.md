@@ -22,25 +22,25 @@ You have at least the following options when you come upon a technical problem t
 
 It can be worthwhile to spend time researching the available options. If nothing else, this helps you to understand the solution space better. You will learn how people have tried to solve the problem. Doing this gives insight on how to solve it properly. In the ideal case you will find a package that solves your problem.
 
-Only having a solid technical solution isn't enough. It's good to consider the overall quality of a package. You should understand how well the project is doing. Sometimes popular projects are overwhelmed by their user base and have poor support as a result. You can also find lesser known projects that work well but are missing community for a reason or another.
+Only having a solid technical solution isn't enough. It's good to consider the overall quality of a package. You should understand how well the project is doing. Sometimes popular projects are overwhelmed by their user base and have poor support as a result. You can also find lesser known projects that work well but are missing community.
 
-Sometimes projects become abandoned. This is when you may have to fork an existing package and make it yours.
+Sometimes projects become abandoned. This is when you may have to fork an existing package and make it yours or become a new maintainer if you could reach the current project maintainer.
 
 ## Forking an Existing Package
 
 Assuming you manage to find a package that solves your problem or most of it but doesn't have active development, you may consider forking the project. You should respect the rights of the original authors and retain their licensing blocks while retaining attribution.
 
-Depending on what you are doing, original licensing can become problematic. This applies particularly to so called copyleft licenses which include GPL and AGPL (a stricter variant) which put restrictions on the usage.
+Depending on what you are doing, original licensing can become problematic. This applies particularly to so called copyleft (or viral) licenses which include GPL and AGPL (a stricter variant) which put restrictions on the usage.
 
 Sometimes the original author or authors are willing to transfer the project to you if you ask. If you are serious about maintaining, doing this can be a good option for forking. You can offer to maintain or fund the project so that it goes forward.
 
-Forking is more expensive than contributing towards a thriving project but it's a worthwhile option. Sometimes you cannot not find a package that fits your problem and this is when you have to develop your own.
+Forking is more expensive than contributing towards a thriving project but it's a worthwhile option. Sometimes you cannot find a package that fits your problem and this is when you have to develop your own.
 
 ## Developing Your Own Package
 
 Developing your own package is the extreme option that is the most expensive if the solution you require is complex. Hidden costs appear as you tend to discover more requirements while developing. You may also attract community attention if you develop in public and this in turn may lead to more requirements to appear.
 
-One of early stage problems is figuring out a good name for a package. npm root namespace has become crowded and it can be difficult to find a free name. In addition, you may have to worry about existing trademarks to avoid problems later on. By skipping this you may have to rename your package later as happened for Jade which had to rename as Pug.
+One of early stage problems is figuring out a good name for a package. npm root namespace has become crowded and it can be difficult to find a free name. In addition, you may have to worry about existing trademarks to avoid problems later on. By skipping this you may have to rename your package later as happened for [Jade which had to rename as Pug](https://github.com/pugjs/pug/issues/2184).
 
 npm provides a good way around the naming problem in the form of **scoping**. A scope is defined as `@scope/name` and allows you to group a series of packages behind a custom name space. In addition, scoping allows you to manage people that have access to these packages easily. Scopes are freely available for open source projects.
 

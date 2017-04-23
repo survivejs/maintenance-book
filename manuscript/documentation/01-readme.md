@@ -8,7 +8,7 @@ A good README can "sell" the project to a potential user. A badly written one ca
 
 README should describe briefly what the package is about before delving into the details. A high level overview of the functionality and why the package was developed is enough. By doing this well, you save time as it will either attract people that have the same problem or make them understand the package isn't something they need.
 
-Examples convey how to use the package. Ideally you are able to run them as tests. Besides making sure the examples work, this is also a rough way of **acceptance testing**. It's valid to design a package this way. Write and design the README first as this forces you to think about the API carefully from the user point of view. It forces you to come up with a design you can document with minimal effort.
+Examples convey how to use the package. Ideally you are able to run them as tests. Besides making sure the examples work, this is also a rough way of **acceptance testing**. It's a good idea to start designing a package from writing the README as this forces you to think about the API carefully from the user point of view, it forces you to come up with a design you can document with minimal effort.
 
 If the package is small, you can include its entire API documentation in the README. For bigger packages it can make sense to push the information below separate documents and host the information on the package site. Too big README can also mean you have to split up your package somehow. This is where the **monorepo** approach may come in handy.
 
