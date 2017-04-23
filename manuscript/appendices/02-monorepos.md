@@ -4,7 +4,7 @@ npm packages can be managed in multiple ways. Perhaps the most common way is to 
 
 ## Monorepos - What Are They
 
-A monorepo allows you to maintain multiple related packages within a single repository. Bigger projects, such as Babel or Jest, use this method for organizing their work. They use [Lerna](https://lernajs.io/), a tool designed to help maintaining monorepos. The tooling can figure out what packages to update based on changes and help with the versioning problem.
+A monorepo allows you to maintain multiple related packages within a single repository. Bigger projects, such as Babel or Jest, use this method for organizing their work. They use [Lerna](https://lernajs.io/), a tool designed to help maintaining monorepos. It can figure out what packages to update based on changes and help with the versioning problem.
 
 Lerna itself is quite opinionated and can be replaced with a package like [mondorepo](https://www.npmjs.com/package/mondorepo), [oao](https://www.npmjs.com/package/oao), or custom scripts as [Cycle.js](https://github.com/cyclejs/cyclejs) has done.
 
@@ -14,45 +14,22 @@ To give you an idea of a monorepo, consider the following structure from Reactab
 
 ```bash
 .
-├── CHANGELOG.md
-├── CNAME
-├── CONTRIBUTING.md
-├── CONTRIBUTORS.md
-├── LICENSE.md
-├── README.md
-├── coverage
-│   ├── ...
-│   └── lcov.info
-├── docs
-│   ├── ...
-│   ├── index.jsx
-│   ├── ...
-│   └── table
-├── favicon.ico
-├── gh-pages
-│   ├── ...
-│   ├── index.html
-│   └── js
-├── images
-│   ├── ...
-│   └── survivejs.png
-├── lerna.json
-├── lib
-│   ├── post_install.js
-│   └── test_setup.js
-├── node_modules
-│   ├── ...
-│   └── yargs-parser
-├── package.json
+├── docs/
+├── lib/
+├── node_modules/
 ├── packages
 │   ├── reactabular-dnd
 │   ├── reactabular-resizable
 │   ├── reactabular-sticky
 │   ├── reactabular-table
 │   └── reactabular-virtualized
-├── style.css
-├── templates
-│   └── index.ejs
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── CONTRIBUTORS.md
+├── LICENSE.md
+├── README.md
+├── lerna.json
+├── package.json
 └── webpack.config.babel.js
 ```
 
@@ -60,13 +37,13 @@ In practice there are more files and you can find more packages within the organ
 
 ## Managing Separate Repositories
 
-Webpack is a popular project bundler. Managing the project comes with its own challenges. The project does **not** use a monorepo model. Instead, it has opted for organization based approach. It has two main organizations. One of for the core and one for [webpack-contrib](https://github.com/webpack-contrib). Latter organization contains packages that complement the core.
+Webpack is a popular project bundler. Managing the project comes with its own challenges. The project does **not** use a monorepo model. Instead, it has opted for organization based approach. It has two main organizations: one for the core and one for packages that complement the core — [webpack-contrib](https://github.com/webpack-contrib).
 
 Separating each package to a repository of its own makes them snowflakes in sense that each repository easily becomes different and it's hard to keep them in sync if infrastructure evolves somehow. To solve the problem, [webpack-defaults](https://www.npmjs.com/package/webpack-defaults) was developed.
 
-The idea was to push project configuration (GitHub templates, linting, testing setup, i.e.) to a single package that could be consumed across webpack-contrib repositories. When you install *webpack-defaults* to your project, it writes a `webpack-defaults` npm script entry you can run. After you perform `npm run webpack-defaults`, it pulls project defaults from the package and migrates the project as well it can to follow the standard.
+The idea was to push project configuration (GitHub templates, linting, testing setup, etc.) to a single package that could be consumed across webpack-contrib repositories. When you install *webpack-defaults* to your project, it writes an npm script that pulls project defaults from the package and migrates the project as well it can to follow the standard.
 
-Sometimes this can mean replacing entire file (i.e. Travis configuration) but there are times when patching the existing configuration is enough. This allows you to retain control and it avoids customization per project based on specific needs.
+Sometimes this can mean replacing entire file (i.e. Travis CI configuration) but there are times when patching the existing configuration is enough (i.e. `.gitignore`). This allows you to retain control and it avoids customization per project based on specific needs.
 
 The biggest win of pushing shared configuration to a package like this is that it allows webpack to push project standards to a single place where they can be maintained. The changes can be consumed by running a single command at each project. This still requires inspection by programmers but it beats the alternative where it's not possible to cascade changes across projects.
 
