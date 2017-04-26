@@ -22,9 +22,9 @@ You have at least the following options when you come upon a technical problem t
 
 It can be worthwhile to spend time researching the available options. If nothing else, this helps you to understand the solution space better. You will learn how people have tried to solve the problem. Doing this gives insight on how to solve it properly. In the ideal case you will find a package that solves your problem.
 
-Only having a solid technical solution isn't enough. It's good to consider the overall quality of a package. You should understand how well the project is doing. Sometimes popular projects are overwhelmed by their user base and have poor support as a result. You can also find lesser known projects that work well but are missing community.
+Only having a solid technical solution isn't enough. It's good to consider the overall quality of a package. You should understand how well the project is doing. Sometimes popular projects are overwhelmed by their user base and have poor support as a result. You can also find lesser known projects that work well but are missing a community.
 
-Sometimes projects become abandoned. This is when you may have to fork an existing package and make it yours or become a new maintainer if you could reach the current project maintainer.
+If a project that fits your needs becomes abandoned, you may have to fork it and make it yours or agree on a transition with the original maintainer. Often people are willing to pass on their projects so it’s worth asking.
 
 ## Forking an Existing Package
 
@@ -32,9 +32,11 @@ Assuming you manage to find a package that solves your problem or most of it but
 
 Depending on what you are doing, original licensing can become problematic. This applies particularly to so called copyleft (or viral) licenses which include GPL and AGPL (a stricter variant) which put restrictions on the usage.
 
-Sometimes the original author or authors are willing to transfer the project to you if you ask. If you are serious about maintaining, doing this can be a good option for forking. You can offer to maintain or fund the project so that it goes forward.
+Often the original author is willing to transfer the project to you if you ask. If you are serious about maintaining, doing this can be a good alternative to forking. You can offer to maintain or fund the project so that it goes forward.
 
 Forking is more expensive than contributing towards a thriving project but it's a worthwhile option. Sometimes you cannot find a package that fits your problem and this is when you have to develop your own.
+
+T> Learn different licensing options: [The Legal Side of Open Source](https://opensource.guide/legal/) and [Open-Source Licensing For Dummies](http://www.binpress.com/blog/2013/06/21/open-source-licensing-for-dummies/).
 
 ## Developing Your Own Package
 
