@@ -60,7 +60,13 @@ AirBnb is detailed and pragmatic, Standard is a bit controversial because it doe
 
 T> You can enable autofixing via git `precommit` hook with *lint-staged*.
 
-TODO: ESLint plugins
+TODO: ESLint plugins (React, import...)
+
+## Linting TypeScript Through TSLint
+
+TODO
+
+T> [TypeScript support](https://github.com/eslint/typescript-eslint-parser) for ESLint is experimental and has issues.
 
 ## lint-staged
 
