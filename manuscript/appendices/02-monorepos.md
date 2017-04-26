@@ -4,7 +4,7 @@ npm packages can be managed in multiple ways. Perhaps the most common way is to 
 
 ## Monorepos - What Are They
 
-A monorepo allows you to maintain multiple related packages within a single repository. Bigger projects, such as Babel or Jest, use this method for organizing their work. They use [Lerna](https://lernajs.io/), a tool designed to help maintaining monorepos. It can figure out what packages to update based on changes and help with the versioning problem.
+A monorepo allows you to maintain multiple related packages within a single repository. Bigger projects, such as Babel or Jest, use this method for organizing their work. They use [Lerna](https://lernajs.io/), a tool designed to help maintaining monorepos. Lerna can figure out what packages to update based on changes and help with the versioning problem.
 
 Lerna itself is quite opinionated and can be replaced with a package like [mondorepo](https://www.npmjs.com/package/mondorepo), [oao](https://www.npmjs.com/package/oao), or custom scripts as [Cycle.js](https://github.com/cyclejs/cyclejs) has done.
 
@@ -41,7 +41,7 @@ Webpack is a popular project bundler. Managing the project comes with its own ch
 
 Separating each package to a repository of its own makes them snowflakes in sense that each repository easily becomes different and it's hard to keep them in sync if infrastructure evolves somehow. To solve the problem, [webpack-defaults](https://www.npmjs.com/package/webpack-defaults) was developed.
 
-The idea was to push project configuration (GitHub templates, linting, testing setup, etc.) to a single package that could be consumed across webpack-contrib repositories. When you install *webpack-defaults* to your project, it writes an npm script that pulls project defaults from the package and migrates the project as well it can to follow the standard.
+The idea was to push project configuration (e.g. GitHub templates, linting, testing setup) to a single package that could be consumed across webpack-contrib repositories. When you install *webpack-defaults* to your project, it writes an npm script that pulls project defaults from the package and migrates the project as well it can to follow the standard.
 
 Sometimes this can mean replacing entire file (i.e. Travis CI configuration) but there are times when patching the existing configuration is enough (i.e. `.gitignore`). This allows you to retain control and it avoids customization per project based on specific needs.
 
