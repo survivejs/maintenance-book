@@ -341,13 +341,13 @@ npm run format:css
 Text linting is less common than code linting but in big projects with many contributors could improve documentation quality. You can:
 
 * Validate links.
-* Ensure consistent terminology (e.g., *JavasSript* vs. *Java<wbr>script* or *npm* vs *N<wbr>PM*).
-* Improve language (e.g., do not allow words like “ju<wbr>st”, “easi<wbr>ly” and “si<wbr>mply”).
+* Ensure consistent terminology (e.g., *JavaScript* vs. *Java<wbr>script* or *npm* vs *N<wbr>PM*).
+* Improve language (e.g., do not allow words like *ju<wbr>st*, *easi<wbr>ly* and *si<wbr>mply*).
 
 [Textlint](https://textlint.github.io/) is an extensible text linter written in JavaScript, it’s a fork of ESLint so setup is similar. And like ESLint it can fix certain rules for you. It has many plugins:
 
 * [terminology](https://www.npmjs.com/package/textlint-rule-terminology) — checks and fixes terms spelling in your tech writing.
-* [common-misspellings](https://www.npmjs.com/package/textlint-rule-common-misspellings) — fixes common English misspellings (e.g. “simi<wbr>liarity” → “similarity”).
+* [common-misspellings](https://www.npmjs.com/package/textlint-rule-common-misspellings) — fixes common English misspellings (e.g. *simi<wbr>liarity* → *similarity*).
 * [write-good](https://www.npmjs.com/package/textlint-rule-write-good) — tries to improve your English styles.
 * [no-dead-link](https://www.npmjs.com/package/textlint-rule-no-dead-link) — finds dead links, automatically fixes redirects.
 
