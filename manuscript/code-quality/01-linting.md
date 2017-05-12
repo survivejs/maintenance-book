@@ -251,14 +251,14 @@ Update your *.eslintrc* like this:
 
 ```json
 {
-	"plugins": ["prettier"],
-	"rules": {
-		"prettier/prettier": ["error", {
-			"printWidth": 100,
-			"singleQuote": true,
-			"trailingComma": "es5"
-		}]
-	}
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error", {
+      "printWidth": 100,
+      "singleQuote": true,
+      "trailingComma": "es5"
+    }]
+  }
 }
 ```
 
@@ -296,7 +296,7 @@ Create a config file, `.stylelintrc`:
 
 ```json
 {
-    "extends": "stylelint-config-standard"
+  "extends": "stylelint-config-standard"
 }
 ```
 
