@@ -23,7 +23,7 @@ if (mealType === BREAKFAST) {
 }
 ```
 
-You can enforce code style in your project or even autoformat code with linters and code formatting tools. Linting can also capture mistakes in your code before you even try run it. Code style is subjective. Automation could reduce pointless discussions and improve team productivity. It also simplifies switching between different projects and reduces time to ramp up on a new project.
+You can enforce code style in your project or even autoformat code with linters and code formatting tools. Linting can also capture mistakes in your code before you even try run it. Code style is subjective. Automation can reduce pointless discussions and improve team productivity. It also simplifies switching between different projects and reduces time to ramp up on a new project.
 
 ## Configuring IDEs and Editors with EditorConfig
 
@@ -205,7 +205,7 @@ Prettier doesn’t support any config files and has few [command line keys](http
 
 It’s a good idea to disable code style rules in your ESLint config and let Prettier to deal with code style. For example, you can use [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) instead of [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base).
 
-T> [TypeScript support](https://github.com/prettier/prettier/issues/13) for Prettier is in development.
+T> [TypeScript support](https://github.com/prettier/prettier/issues/13) for Prettier is under development.
 
 W> Commit your code before running this command — it will reformat all your JavaScript files.
 
