@@ -1,6 +1,6 @@
 # Linting and Code Formatting
 
-Developers read code more often then they write it: sometimes you spend hours to find where to make a one line fix. That’s why consistent code style is important. Ideally code in a project should look like it was written by a single developer. It makes code reading simpler because you know how things are done and how they look in a project.
+We read code more often then we write it: sometimes we spend hours looking for what caused the bug, only to fix it with a single line of code. That’s why consistent code style is important. Ideally code in a project should look like it was written by a single developer. It makes code easier to read because the same formatting patterns are used everywhere in the project.
 
 ## Why to Lint
 
@@ -12,7 +12,7 @@ if (mealType === BREAKFAST)
   eatCroissant();
 ```
 
-Can you see the issue? `eatCroissant();` gets evaluated with any `mealType` value.
+Could you spot the issue? `eatCroissant();` gets evaluated with *any* `mealType` value.
 
 Many popular JavaScript code styles require curly braces around all blocks and consistent indentation for this reason. Doing this forces you to write the correct code:
 
@@ -23,7 +23,7 @@ if (mealType === BREAKFAST) {
 }
 ```
 
-You can enforce code style in your project or even autoformat code with linters and code formatting tools. Linting can also capture mistakes in your code before you even try run it. Code style is subjective. Automation can reduce pointless discussions and improve team productivity. It also simplifies switching between different projects and reduces time to ramp up on a new project.
+You can enforce code style in your project or even autoformat code with linters and code formatting tools. Linting can also capture mistakes in your code before you even run it — thanks to IDE and editor integration. Code style is subjective. Automation can reduce pointless discussions and improve team productivity. It also simplifies switching between different projects and reduces time to ramp up on a new project.
 
 ## Configuring IDEs and Editors with EditorConfig
 
@@ -132,7 +132,7 @@ See [ESLint docs](http://eslint.org/docs/user-guide/configuring) for more inform
 
 ## Linting TypeScript with TSLint
 
-[TSLint](https://palantir.github.io/tslint/) is a linter for TypeScript. It has much smaller community than ESLint and overall experience is not as nice but otherwise it’s like ESLint.
+[TSLint](https://palantir.github.io/tslint/) is a linter for TypeScript. It has a much smaller community than ESLint and overall experience is not as nice but otherwise it’s like ESLint.
 
 T> [TypeScript support](https://github.com/eslint/typescript-eslint-parser) for ESLint is experimental and has issues.
 
@@ -172,7 +172,7 @@ npm run lint:ts
 
 [Prettier](https://github.com/prettier/prettier) is an opinionated JavaScript formatter. It has a limited number of settings and most of the code style rules are built in. Prettier removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
 
-Prettier is smarter than other tools. For example you can restrict line length but tools like ESLint can only yell at you it a line is too long — you’d have to reformat code yourself. Prettier can reformat a line of code according to its length as below:
+Prettier is smarter than other tools. For example you can restrict line length but tools like ESLint can only yell at you if a line is too long — you’d have to reformat the code yourself. If any line exceeds the limit, Prettier reformats the whole code block:
 
 ```js
 foo(wowJavaScript(), suchFunction(), muchParameters(), shouldReformat());
@@ -267,6 +267,8 @@ And finally run:
 ```bash
 npm run lint:js
 ```
+
+T> You can set up your editor to run `eslint --fix` on save and it will reformat your code every time you save a file.
 
 ## Linting CSS with Stylelint
 
