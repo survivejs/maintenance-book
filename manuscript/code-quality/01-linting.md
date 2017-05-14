@@ -348,10 +348,11 @@ Text linting is less common than code linting but in big projects with many cont
 
 [Textlint](https://textlint.github.io/) is an extensible text linter written in JavaScript, it’s a fork of ESLint so setup is similar. And like ESLint it can fix certain rules for you. It has many plugins:
 
-* [terminology](https://www.npmjs.com/package/textlint-rule-terminology) — checks and fixes terms spelling in your tech writing.
+* [eslint](https://www.npmjs.com/package/textlint-rule-eslint) — checks code examples in Markdown using ESLint (autofixing is also possible).
 * [common-misspellings](https://www.npmjs.com/package/textlint-rule-common-misspellings) — fixes common English misspellings (e.g. *simi<wbr>liarity* → *similarity*).
-* [write-good](https://www.npmjs.com/package/textlint-rule-write-good) — tries to improve your English styles.
 * [no-dead-link](https://www.npmjs.com/package/textlint-rule-no-dead-link) — finds dead links, automatically fixes redirects.
+* [terminology](https://www.npmjs.com/package/textlint-rule-terminology) — checks and fixes terms spelling in your tech writing.
+* [write-good](https://www.npmjs.com/package/textlint-rule-write-good) — tries to improve your English styles.
 
 [Proselint](http://proselint.com/) is prose linter based on advice of world’s greatest writers and editors, it checks your texts for things like redundancy, jargon, illogic, clichés, sexism, misspelling, inconsistency and misuse of symbols. It has [several dozens of rules](https://github.com/amperser/proselint/#checks) by default.
 
