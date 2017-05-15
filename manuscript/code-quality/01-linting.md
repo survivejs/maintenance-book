@@ -203,13 +203,13 @@ This approach has many benefits:
 
 Prettier doesn’t support any config files and has few [command line keys](https://github.com/prettier/prettier#api) to modify its behavior, e.g., indentation, quotes and semicolons.
 
-It’s a good idea to disable code style rules in your ESLint config and let Prettier to deal with code style. For example, you can use [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) instead of [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base).
+It’s a good idea to disable code style rules in your ESLint config and let Prettier deal with the code style. For example, you can use [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) instead of [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base).
 
 T> [TypeScript support](https://github.com/prettier/prettier/issues/13) for Prettier is under development.
 
 W> Commit your code before running this command — it will reformat all your JavaScript files.
 
-T> To make your contributors’s life easier you can set up Prettier to format code before each commit with lint-staged, see an example in *Automating Linting with lint-staged* section below.
+T> To make your contributors’ life easier you can set up Prettier to format code before each commit with lint-staged, see an example in *Automating Linting with lint-staged* section below.
 
 ### Setting up Prettier
 
@@ -239,9 +239,7 @@ npm run format:js
 
 You can also run Prettier as a [ESLint plugin](https://github.com/prettier/eslint-plugin-prettier). This way Prettier formats all files that go through ESLint and you will not need to repeat glob patterns.
 
-Assuming you already have ESLint configured as described above.
-
-Let’s install Prettier and eslint-plugin-prettier:
+Let’s install Prettier and eslint-plugin-prettier, assuming you already have ESLint configured as described above:
 
 ```bash
 npm install --save-dev prettier eslint-plugin-prettier
@@ -314,9 +312,7 @@ npm run lint:css
 
 ### Setting up stylefmt
 
-Assuming you already have stylelint configured as described in the previous section.
-
-Let’s install stylefmt:
+Let’s install stylefmt, assuming you already have stylelint configured as described in the previous section:
 
 ```bash
 npm install --save-dev stylefmt
@@ -340,10 +336,10 @@ npm run format:css
 
 ## Linting Markdown with Textlint and Proselint
 
-Text linting is less common than code linting but in big projects with many contributors could improve documentation quality. You can:
+Text linting is less common than code linting but in large projects with many contributors it could improve documentation quality. You can:
 
 * Validate links.
-* Ensure consistent terminology (e.g., *JavaScript* vs. *Java<wbr>script* or *npm* vs *N<wbr>PM*).
+* Ensure consistent terminology (e.g., *JavaScript* vs. *Java<wbr>script* or *npm* vs. *N<wbr>PM*).
 * Improve language (e.g., do not allow words like *ju<wbr>st*, *easi<wbr>ly* and *si<wbr>mply*).
 
 [Textlint](https://textlint.github.io/) is an extensible text linter written in JavaScript, it’s a fork of ESLint so setup is similar. And like ESLint it can fix certain rules for you. It has many plugins:
@@ -356,7 +352,7 @@ Text linting is less common than code linting but in big projects with many cont
 
 [Proselint](http://proselint.com/) is prose linter based on advice of world’s greatest writers and editors, it checks your texts for things like redundancy, jargon, illogic, clichés, sexism, misspelling, inconsistency and misuse of symbols. It has [several dozens of rules](https://github.com/amperser/proselint/#checks) by default.
 
-It’s written in Python but I recommend using is via a [JavaScript wrapper](https://www.npmjs.com/package/proselint) for better UI.
+It’s written in Python but we recommend using it via a [JavaScript wrapper](https://www.npmjs.com/package/proselint) for better UI.
 
 T> If you want to check Markdown syntax and consistency, try [remark-lint](https://www.npmjs.com/package/remark-lint).
 
