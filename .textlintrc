@@ -25,6 +25,8 @@
         "npm",
 
         // Simplify
+        ["In addition,", "Also,"],
+        ["is able to", "can"],
         ["some", ""],
         ["probably", ""],
         ["known as", ""],
