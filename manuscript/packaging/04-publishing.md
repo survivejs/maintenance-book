@@ -74,5 +74,3 @@ Using version ranges can feel dangerous as it doesn't take much to break an appl
 ## Conclusion
 
 When publishing npm packages, you should take care to follow SemVer carefully. Consider ComVer as it's a simpler backwards compatible alternative. Use tooling to your advantage to avoid regressions and to keep your user base happy.
-
-You'll learn how to manage monorepos in the next chapter.

@@ -42,9 +42,9 @@ T> Learn different licensing options: [The Legal Side of Open Source](https://op
 
 Developing your own package is the extreme option that is the most expensive if the solution you require is complex. Hidden costs appear as you tend to discover more requirements while developing. You may also attract community attention if you develop in public and this in turn may lead to more requirements to appear.
 
-One of early stage problems is figuring out a good name for a package. npm root namespace has become crowded and it can be difficult to find a free name. In addition, you may have to worry about existing trademarks to avoid problems later on. By skipping this you may have to rename your package later as happened for [Jade which had to rename as Pug](https://github.com/pugjs/pug/issues/2184).
+One of early stage problems is figuring out a good name for a package. npm root namespace has become crowded and it can be difficult to find a free name. Also, you may have to worry about existing trademarks to avoid problems later on. By skipping this you may have to rename your package later as happened for [Jade which had to rename as Pug](https://github.com/pugjs/pug/issues/2184).
 
-npm provides a good way around the naming problem in the form of **scoping**. A scope is defined as `@scope/name` and allows you to group a series of packages behind a custom name space. In addition, scoping allows you to manage people that have access to these packages easily. Scopes are freely available for open source projects.
+npm provides a good way around the naming problem in the form of **scoping**. A scope is defined as `@scope/name` and allows you to group a series of packages behind a custom name space. Scoping allows you to manage people that have access to these packages easily. Scopes are freely available for open source projects.
 
 ?> Some examples of currently scoped projects.
 

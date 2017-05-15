@@ -40,5 +40,4 @@ Backmatter.txt
 
 15-Appendices.md
 
-appendices/01-tree-shaking.md
-appendices/02-monorepos.md
+appendices/01-monorepos.md
