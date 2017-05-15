@@ -6,11 +6,15 @@ We read code more often then we write it: sometimes we spend hours looking for w
 
 Good code style can save you from a bug one day. Consider this code:
 
+<!-- textlint-disable -->
+
 ```js
 if (mealType === BREAKFAST)
   drinkCoffee();
   eatCroissant();
 ```
+
+<!-- textlint-enable -->
 
 Could you spot the issue? `eatCroissant();` gets evaluated with *any* `mealType` value.
 
@@ -174,9 +178,15 @@ npm run lint:ts
 
 Prettier is smarter than other tools. For example you can restrict line length but tools like ESLint can only yell at you if a line is too long — you’d have to reformat the code yourself. If any line exceeds the limit, Prettier reformats the whole code block:
 
+<!-- textlint-disable -->
+
 ```js
 foo(wowJavaScript(), suchFunction(), muchParameters(), shouldReformat());
-// ->
+```
+
+Will be printed like this:
+
+```js
 foo(
   wowJavaScript(),
   suchFunction(),
@@ -190,6 +200,8 @@ However, shorter statement would be printed as one line:
 ```js
 foo('coffee', 'croissant', 'toast', 'eggs');
 ```
+
+<!-- textlint-enable -->
 
 T> Try Prettier in [an interactive playground](https://prettier.github.io/prettier/).
 

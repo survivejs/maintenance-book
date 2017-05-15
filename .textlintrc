@@ -92,6 +92,12 @@
       "passive": false,
       "tooWordy": false,
       "weasel": false
+    },
+    "eslint": {
+      "configFile": "./.eslintrc"
     }
+  },
+  "filters": {
+    "comments": true
   }
 }
