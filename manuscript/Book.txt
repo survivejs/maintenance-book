@@ -14,8 +14,10 @@ packaging/04-publishing.md
 
 05-Code-Quality.md
 code-quality/01-linting.md
-code-quality/02-testing.md
-code-quality/03-dependencies.md
+code-quality/02-code-formatting.md
+code-quality/03-typing.md
+code-quality/04-testing.md
+code-quality/05-dependencies.md
 
 06-Infrastructure.md
 infrastructure/01-processes.md
@@ -26,6 +28,7 @@ intrastructure/03-automation.md
 documentation/01-readme.md
 documentation/02-site.md
 documentation/03-api.md
+documentation/04-linting.md
 
 08-Future.md
 future/01-longevity.md
