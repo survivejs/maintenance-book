@@ -187,15 +187,13 @@ The scenarios covered so far are enough if you consume packages through npm. Tha
 
 ![Bundling process](images/bundler.png)
 
-Bundlers transform the graph formed by your modules into specific bundles that contain the functionality. You have different degrees of control during this process depending on the bundler.
+A **bundler** is a transformation tool that takes the given source, performs given operations on it, and emits **bundles** as output. Bundles contain the manipulated source in such form that the code can be executed in the wanted environment. The process begins from **entry points** which are modules pointing to possibly other modules.
 
-For example, Rollup was designed especially ES6 modules in mind, and it works well for libraries while Browserify and webpack have a larger scope. You can use webpack and Rollup together, so you don't always have to choose one tool over other. The tools also work with Babel.
-
-The bundlers always work the same way. You point them to an entry point and give them transformation instructions. These can be provided either through configuration or code level definitions to define **split points** where to emit new bundles.
-
-Compared to **task runners**, bundlers are lower level tools. You can use task runners, such as Gulp or Grunt, together with bundlers. One common way is to skip a task runner and use npm **package.json** `scripts` for the purpose.
+Depending on the bundler, you have varying degrees of control over the process. Application-oriented bundlers like webpack allow you to define **split points** which generate dynamically loaded bundles. The feature can be used to defer loading of certain functionality and it enables powerful application development patterns such as [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) (PWA).
 
 T> [Webpack and Rollup: the same but different](https://medium.com/webpack/webpack-and-rollup-the-same-but-different-a41ad427058c) explains how webpack and Rollup differ. To summarize, webpack works better for applications while Rollup is a better choice for libraries.
+
+T> You can also use webpack and Rollup together through [rollup-loader](https://www.npmjs.com/package/rollup-loader) and leave JavaScript handling to Rollup as this enables tree shaking through Rollup and allows you to use Rollup specific plugins.
 
 ### Universal Module Definition (UMD)
 
