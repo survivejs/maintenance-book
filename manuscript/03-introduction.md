@@ -67,4 +67,4 @@ You can find more related material from the following sources:
 
 This book wouldn't have been possible without the earlier efforts. Anyone who contributed there deserves my thanks.
 
-Thanks to TODO.
+Thanks to Simon Lydell, and many others who have contributed direct feedback for this book!
