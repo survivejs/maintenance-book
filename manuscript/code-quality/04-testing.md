@@ -126,7 +126,7 @@ If you run the test, it should pass given `add` should be a commutative operatio
 * `testProperty` and `generateNumber` should be pushed elsewhere. Given there are existing implementations for both in npm, the custom code could be replaced entirely.
 * If the `add` function contained type information, it would be possible to extract that and then map the types to generators. Doing this would keep the test code slightly neater if you have multiple tests as then you would have to define the mapping between types and generators in one place while individual tests could skip the definition problem.
 
-Good property testing tools like [JSVerify](https://jsverify.github.io/), [testcheck-js](http://leebyron.com/testcheck-js/), or [eslump](https://www.npmjs.com/package/eslump) are able to shrink a failure to a specific case so you can fix it. The biggest benefit of the technique it can help to discover boundary cases to repair.
+Good property testing tools like [JSVerify](https://jsverify.github.io/) or [testcheck-js](http://leebyron.com/testcheck-js/) are able to shrink a failure to a specific case so you can fix it. The biggest benefit of the technique it can help to discover boundary cases to repair.
 
 ### Integration Testing
 
