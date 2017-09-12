@@ -1,34 +1,34 @@
 # Introduction
 
-The popularity of JavaScript and related technologies has exploded. As a result there are now numerous open source projects relying on the language. The language is widely used for web development and it sees usage beyond the web. The popularity and on-going evolution of the web platform poses a significant maintenance challenge to developers.
+The popularity of JavaScript and related technologies has exploded. As a result there are now numerous open source projects which rely on the language. JavaScript is widely used for web development and it sees further use beyond the web. The popularity and on-going evolution of the web platform poses a significant maintenance challenge to developers.
 
-The purpose of this book is to give insight into these particular concerns. Even though the focus is on open source, you will find techniques and ideas that go beyond it.
+The purpose of this book is to give insight into these particular concerns. Even though the focus is open sourced, you will find techniques and ideas that go beyond this.
 
 ## What Will You Learn
 
-The book shows you **how to organize** npm packages and manage them. You will also learn about higher level topics, such as **code quality**, **infrastructure**, **documentation**, and **future** prospects. A good project is more than the technical implementation. For that reason you should understand what's beyond the technical side as this knowledge has impact on project longevity and success.
+The book shows you **how to organize** NPM packages and manage them. You will also learn about higher level topics, such as **code quality**, **infrastructure**, **documentation**, and **future** prospects. A good project is more than the technical implementation. For that reason you should understand what's beyond the technical side as this knowledge has impact on project longevity and success.
 
 ## How Is The Book Organized
 
-The book has been split into a few distinct parts each of which discusses the topic from a different angle. You can approach them one by one in an order you prefer and pick techniques and ideas as you go.
+The book has been split into a few distinct parts, each of which discusses the topic from a different angle. You can approach them one by one in any order you prefer and pick up techniques and ideas as you go along.
 
 The parts of the book have been designed as follows:
 
-* **Packaging** shows how to package your npm projects. You will also learn how to manage your code effectively as you pick up ideas like **release management** and **monorepos**.
+* **Packaging** shows how to package your npm projects. You will also learn how to manage your code effectively as you understand ideas like **release management** and **monorepos**.
 * **Code Quality** discusses how to maintain the quality of your project on a high level. You will learn what code quality consists of and how to manage it.
-* **Infrastructure** shows how to develop support structure around the project and keep it maintainable so that other people can contribute. You will also learn about scaling the project while buying yourself time to keep on progressing.
-* **Documentation** is often overlooked but it's a vital aspect for projects that are meant to be consumed by a wider community. The part shows how to achieve this to support the growth of your project.
+* **Infrastructure** shows how to develop support structure around the project and keep it maintainable so that other people can contribute. You will also learn about scaling the project while buying yourself time to continue progressing.
+* **Documentation** is often overlooked, but it's a vital aspect for projects that are meant to be consumed by a wider community. The part shows how to achieve this to support the growth of your project.
 * **Future** and project longevity is important as without thought it's possible to end up with a project that is a failure. To succeed, you have to think about success first and plan accordingly.
 
-There's a short conclusion chapter after the main content that recaps the main points of the book. They contain checklists that allow you to go through your projects against the book techniques.
+There's a short conclusion chapter after the main content that recaps the main points of the book. This contains a checklist that allows you to go through compare your projects with the book's recommendations.
 
-The appendices in the end of the book cover secondary topics and sometimes dig deeper into the main ones. You can approach them in any order you want depending on your interest.
+The appendices in the end of the book cover secondary topics and sometimes dig more deeply into the main ones. You can approach these in any order you wish, depending on your interests.
 
 ## Who Is The Book For
 
 If you develop or maintain a web project, be it open source or not, you will have something to learn from this book. It captures aspects related to this particular niche allowing you to develop more effectively.
 
-The book won't teach you to use a specific language. Instead, it covers higher level topics and shows how they go together. The higher level knowledge has value regardless of your technology stack. The focus is on the web and open source but certain ideas transcend the book despite this focus.
+The book won't teach you to use a specific language. Instead, it covers higher level topics and shows how they fit together. This higher level knowledge has value, regardless of your technology stack. The focus is on the web and open source, but certain ideas transcend the book despite this.
 
 ## Book Versioning
 
