@@ -50,6 +50,6 @@ npm provides a good way around the naming problem in the form of **scoping**. A 
 
 ## Conclusion
 
-Before writing a package of your own, invesigate existing packages. You may find that a new package is not required after all or that you can contribute to a thriving one. Even forking an old package and revitalizing the effort can be a good option that allows you to save the pain of re-inventing the wheel.
+Before writing a package of your own, investigate existing packages. You may find that a new package is not required after all or that you can contribute to a thriving one. Even forking an old package and revitalizing the effort can be a good option that allows you to save the pain of re-inventing the wheel.
 
 You'll learn how npm packages are structured in the next chapter.
