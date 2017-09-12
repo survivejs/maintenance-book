@@ -1,6 +1,6 @@
 # Anatomy of a Package
 
-A minimal npm package should contain metadata in a *package.json* file and associated source file (usually *index.js*). In practice, packages contain more than that and you will have at least a license file and possibly the source in various formats.
+A minimal npm package should contain metadata in a *package.json* file and an associated source file (usually *index.js*). In practice, packages contain more than that and you will have at least a license file and possibly the source in various formats.
 
 Often projects contain more files than are required to execute them. To keep package downloads fast, you can exclude files related to documentation and testing as those can be reached through the package site.
 

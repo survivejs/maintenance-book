@@ -1,8 +1,8 @@
 # Publishing Packages
 
-Publishing npm packages is only a `npm publish` away. Given that the package name is still available and everything goes fine, you should have something out there! After this, you can install your package through `npm install` or `npm i`.
+Publishing npm packages is only a `npm publish` away. Assuming the package name is still available and everything goes fine, you should have something out there! After this, you can install your package through `npm install` or `npm i`.
 
-Most of the community follows a specific versioning convention which you should understand. It comes with its downsides but given the majority use and understand it, it's worth covering.
+Most of the community follows a specific versioning convention which you should understand. It comes with its downsides but given that the majority use and understand it, it's worth covering.
 
 ## Understanding SemVer
 
