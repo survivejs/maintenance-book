@@ -6,7 +6,7 @@ The purpose of this book is to give insight into these particular concerns. Even
 
 ## What Will You Learn
 
-The book shows you **how to organize** NPM packages and manage them. You will also learn about higher level topics, such as **code quality**, **infrastructure**, **documentation**, and **future** prospects. A good project is more than the technical implementation. For that reason you should understand what's beyond the technical side as this knowledge has impact on project longevity and success.
+The book shows you **how to organize** npm packages and manage them. You will also learn about higher level topics, such as **code quality**, **infrastructure**, **documentation**, and **future** prospects. A good project is more than the technical implementation. For that reason you should understand what's beyond the technical side as this knowledge has impact on project longevity and success.
 
 ## How Is The Book Organized
 
