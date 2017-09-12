@@ -25,7 +25,6 @@
         "npm",
 
         // Simplify
-        ["some", ""],
         ["probably", ""],
         ["known as", ""],
         ["really", ""],
@@ -35,7 +34,6 @@
         ["straightforward", ""],
         ["very", ""],
         ["basically", ""],
-        ["actually", ""],
         ["pretty", ""],
         ["easy", ""],
         ["useful", ""],
@@ -43,7 +41,6 @@
         ["way to", ""],
         ["In order to", "To"],
         ["in order to", "to"],
-        ["might", ""],
         ["our", ""],
         ["us", ""],
         ["I['’]ll", ""],
