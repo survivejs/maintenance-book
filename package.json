@@ -11,7 +11,8 @@
     "test:links": "check-markdown-links manuscript",
     "proselint": "proselintjs 'manuscript/**/*.md'",
     "textlint": "textlint 'manuscript/**/*.md'",
-    "textlint:fix": "textlint --fix 'manuscript/**/*.md'"
+    "textlint:fix": "textlint --fix 'manuscript/**/*.md'",
+    "prepush": "npm run test"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "eslint": "^3.19.0",
     "eslint-plugin-prettier": "^2.0.1",
     "git-prepush-hook": "^1.0.2",
+    "husky": "^0.14.3",
     "leanpub-cli": "^0.2.0",
     "prettier": "^1.3.1",
     "proselint": "^0.1.7",
