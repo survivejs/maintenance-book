@@ -27,9 +27,9 @@ EditorConfig is supported by popular IDEs and editors through [plugins](http://e
 
 T> It's possible to force line endings through *.gitattributes* by setting `* text=auto` and `bin/* eol=lf` but EditorConfig has more options.
 
-## Formatting JavaScript with Prettier
+## Formatting JavaScript and TypeScript with Prettier
 
-[Prettier](https://github.com/prettier/prettier) is an opinionated JavaScript formatter. It has a limited number of settings and most of the code style rules are built in. Prettier removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
+[Prettier](https://prettier.io/) is an opinionated JavaScript formatter. It has a limited number of settings and most of the code style rules are built in. Prettier removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
 
 Prettier is smarter than other tools. For example you can restrict line length but tools like ESLint can only yell at you if a line is too long — you’d have to reformat the code yourself. If any line exceeds the limit, Prettier reformats the whole code block:
 
@@ -58,7 +58,7 @@ foo('coffee', 'croissant', 'toast', 'eggs');
 
 <!-- textlint-enable -->
 
-T> Try Prettier in [an interactive playground](https://prettier.github.io/prettier/).
+T> Try Prettier in [an interactive playground](https://prettier.io/playground/).
 
 This approach has many benefits:
 
@@ -68,11 +68,9 @@ This approach has many benefits:
 * No need to learn you project’s code style for contributors.
 * No need to fix style issues reported by ESLint.
 
-Prettier doesn’t support any config files and has few [command line keys](https://github.com/prettier/prettier#api) to modify its behavior, e.g., indentation, quotes and semicolons.
+Prettier has few [options](https://prettier.io/docs/en/options.html) to modify its behavior, like indentation, quotes and semicolons.
 
 It’s a good idea to disable code style rules in your ESLint config and let Prettier deal with the code style. For example, you can use [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) instead of [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base).
-
-T> [TypeScript support](https://github.com/prettier/prettier/issues/13) for Prettier is under development.
 
 W> Commit your code before running this command — it will reformat all your JavaScript files.
 
@@ -91,8 +89,18 @@ Add a script to your *package.json* like this:
 ```json
 {
   "scripts": {
-    "format:js": "prettier --print-width 100 --single-quote --trailing-comma es5 --write '!(node_modules)/**/*.js'"
+    "format:js": "prettier --write"
   }
+}
+```
+
+Create a config file, *.prettierrc*:
+
+```json
+{
+  "printWidth": 100,
+  "singleQuote": true,
+  "trailingComma": "es5"
 }
 ```
 
@@ -106,7 +114,7 @@ npm run format:js
 
 You can also run Prettier as a [ESLint plugin](https://github.com/prettier/eslint-plugin-prettier). This way Prettier formats all files that go through ESLint and you will not need to repeat glob patterns.
 
-Let’s install Prettier and eslint-plugin-prettier, assuming you already have ESLint configured as described above:
+Let’s install Prettier and eslint-plugin-prettier, assuming you already have ESLint configured as described in the *Linting* chapter:
 
 ```bash
 npm install prettier eslint-plugin-prettier --save-dev
@@ -127,6 +135,8 @@ Update your *.eslintrc* like this:
 }
 ```
 
+T> You can also put your Prettier config into a *.prettierrc* file, see an example above.
+
 And finally run:
 
 ```bash
@@ -135,38 +145,44 @@ npm run lint:js
 
 T> You can set up your editor to run `eslint --fix` on save and it will reformat your code every time you save a file.
 
-## Formatting CSS with stylefmt
+## Formatting CSS with Stylelint
 
-[stylefmt](https://www.npmjs.com/package/stylefmt) automatically formats CSS according to stylelint rules, it’s like ESLint’s autofix feature.
+Stylelint can format your CSS with `--fix` switch, check the *Linting* chapter to know how to set it up.
 
-### Setting Up stylefmt
+## Formatting CSS with Prettier
 
-Let’s install stylefmt, assuming you already have stylelint configured as described in the previous section:
+Prettier can format your CSS too, see how to set it up above.
 
-```bash
-npm install stylefmt --save-dev
-```
-
-Add a script to your *package.json* like this:
+For CSS you’ll need one more script in *package.json*:
 
 ```json
 {
   "scripts": {
-    "format:css": "stylefmt --recursive '**/*.scss'"
+    "format:css": "prettier --write"
   }
 }
 ```
 
-And finally run:
+Create a config file, *.prettierrc*:
+
+```json
+{
+  "printWidth": 100
+}
+```
+
+And then run it like this:
 
 ```bash
 npm run format:css
 ```
 
+## Automating Code Formatting with lint-staged
+
+If you’re not using linter for code formatting, you may want to automatically format your code before each commit with lint-staged. See the *Linting* chapter to learn how to set up lint-staged.
+
 ## Conclusion
 
-Formatting tools complement linting well. They eliminate one source of confusion and make sure your source is formatted in a consistent manner.
+Formatting tools complement linting well. They eliminate one source of confusion and make sure your code is formatted in a consistent manner.
 
 You'll learn about typing in the next chapter.
-
-?> We should say something about lint-staged here and automating code formatting.
