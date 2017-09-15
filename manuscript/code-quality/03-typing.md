@@ -4,7 +4,7 @@ A function interface is a contract. Depending on the system, it gives you guaran
 
 ## The Value of Typing
 
-A loose typing system, such as the one included in JavaScript, doesn't get in your way. This is also the problem. Once you understand better what you want, it makes sense to provide type information. Modeling types and data structures is an important part of programming as they help to model domain understanding.
+A loose typing system, such as the one included in JavaScript, doesn't get in your way. This is also the problem. Once you better understand what you want, it makes sense to provide type information. Modeling types and data structures is an important part of programming, as they help to model domain understanding.
 
 Loose typing comes with the following problems:
 

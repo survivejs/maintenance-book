@@ -14,7 +14,7 @@ Testing can be used to verify at least the following aspects:
 * What is the quality of the tests?
 * Does the system solve user problems?
 
-You can test both quantitative and qualitative aspects. Qualitative testing is harder as it requires a comparison point but without tracking quality, such as performance, it's difficult to reach it. If you track how the system is being used and capture **analytics**, you can tell how the users experience the system.
+You can test both quantitative and qualitative aspects. Qualitative testing is harder as it requires a comparison point, but without tracking quality, such as performance, it's difficult to reach it. If you track how the system is being used and capture **analytics**, you can tell how the users experience the system.
 
 ## Develop the Right System the Right Way
 
@@ -24,7 +24,7 @@ Popular projects put a lot of effort into the façade encountered by their users
 
 ## How Much to Test?
 
-Regardless of how much you test, manual testing may still be required especially if you target multiple platforms. But it's a good goal to minimize the amount of it and even try to eliminate it.
+Regardless of how much you test, manual testing may still be required, especially if you target multiple platforms. But it's a good goal to minimize the amount of it and even try to eliminate it.
 
 No matter how much you test, problems may still slip through. For this reason, it's good to remember that you get what you measure. If you want performance, you should test against performance. If you want to avoid regressions against downstream projects, you should test against them before publishing changes.
 
@@ -58,9 +58,10 @@ assert(add(1, 1) === 2);
 module.exports = add;
 ```
 
-If you run the file through Node, it should not output anything assuming the test passed. You can try to break the test. Doing this should yield an `AssertionError`.
+If you run the file through Node, it should not output anything, assuming the test passed. You can try to break the test. Doing this should yield an `AssertionError`.
 
-In case we write tests this way, we end up with one problem. The tests will be run even during production. There are a couple of ways around the problem:
+
+But if we write tests along with functions like this, we end up with a problem: the tests will be run during production as well as during development. There are a couple of ways around this problem:
 
 * Mock `assert` during production usage. This could be done by pushing `assert` behind another module and then consuming it from there. During production, a `noop` (`() => {}`) implementation could be injected although even this wouldn't be ideal. It would be better to eliminate the code altogether.
 * The unit tests could be pushed to another file. A **test runner** would then pick up the tests and run them. This is the standard way of handling the problem.
@@ -136,6 +137,8 @@ Good property testing tools like [JSVerify](https://jsverify.github.io/) or [tes
 
 **Acceptance testing** looks at testing from the user perspective. It answers the question does the user interface configured in a certain way lead to the expected result. Tools like [CodeceptJS](http://codecept.io/) or [Intern](https://theintern.github.io/) provide a high-level syntax that allows you to model user behaviors against the browser.
 
+?> Selenium?
+
 ### Regression Testing
 
 **Regression testing** makes sure the software works still the same way as before without breaking anything.
@@ -191,7 +194,7 @@ Tools like [complexity-report](https://www.npmjs.com/package/complexity-report),
 
 Testing is a complex topic that is worth understanding. Testing isn't necessarily about developing faster but rather developing in a sustainable manner. Tests show their value especially when multiple people work on the same project. They support the development process and allow the team to move faster while avoiding breakage. And even if breakage happens, good practices improve the process to avoid the problems in the future.
 
-The biggest question is what sort of tests to write and when. It's good to remember testing is a form of risk management. Especially when prototyping, tests won't provide their maximum value as you are prepared to throw the code away. But if you are developing long term, the absence of tests is felt as new requirements appear and the implementation has to evolve to fit the new needs.
+The biggest question is what sort of tests to write and when. It's good to remember testing is a form of risk management. Especially when prototyping, tests won't provide their maximum value since at this stage you are prepared to throw the code away. But if you are developing long term, the absence of tests begins to be felt as new requirements appear and the implementation has to evolve to fit the new needs.
 
 You'll learn about dependency management in the next chapter.
 

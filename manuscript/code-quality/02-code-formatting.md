@@ -31,7 +31,7 @@ T> It's possible to force line endings through *.gitattributes* by setting `* te
 
 [Prettier](https://github.com/prettier/prettier) is an opinionated JavaScript formatter. It has a limited number of settings and most of the code style rules are built in. Prettier removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
 
-Prettier is smarter than other tools. For example you can restrict line length but tools like ESLint can only yell at you if a line is too long — you’d have to reformat the code yourself. If any line exceeds the limit, Prettier reformats the whole code block:
+Prettier is smarter than other tools. For example, you can restrict line length whereas tools like ESLint can only yell at you if a line is too long and you would have to reformat the code yourself. If any line exceeds the limit, Prettier reformats the whole code block:
 
 <!-- textlint-disable -->
 
@@ -170,3 +170,5 @@ Formatting tools complement linting well. They eliminate one source of confusion
 You'll learn about typing in the next chapter.
 
 ?> We should say something about lint-staged here and automating code formatting.
+?> Might be worth mentioning stylefmt plugins including "order".
+?> Mention that Prettier can also be installed as a VSCode extension - seems to run on save.
