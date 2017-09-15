@@ -39,7 +39,7 @@ JavaScript doesn’t have an official coding style but the community maintains a
 
 ESLint is unopinionated and doesn’t have any rules by default so you should enable them manually or use a config like [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base), that implements Airbnb style guide. To get started, use `eslint --init` and let it generate a starting point for you.
 
-All ES6 features are supported and [babel-eslint](https://www.npmjs.com/package/babel-eslint) adds support for newer ECMAScript features and Flow. ESLint is supported by JetBrains’ IDEs is available as a plugin for other popular editors.
+All ES6 features are supported and [babel-eslint](https://www.npmjs.com/package/babel-eslint) adds support for newer ECMAScript features and Flow. ESLint is supported by JetBrains’ IDEs and is available as a plugin for other popular editors.
 
 ESLint itself is modular and uses plugins to operate - for example:
 
