@@ -1,6 +1,6 @@
 # Anatomy of a Package
 
-A minimal npm package should contain metadata in a *package.json* file and associated source file (usually *index.js*). In practice, packages contain more than that and you will have at least a license file and possibly the source in various formats.
+A minimal npm package should contain metadata in a *package.json* file and an associated source file (usually *index.js*). In practice, packages contain more than that and you will have at least a license file and possibly the source in various formats.
 
 Often projects contain more files than are required to execute them. To keep package downloads fast, you can exclude files related to documentation and testing as those can be reached through the package site.
 
@@ -136,6 +136,8 @@ The example below contains an annotated a part of *package.json* from my [React 
 As you can see, *package.json* can contain a lot of information. You can attach non-npm specific metadata there that can be used by tooling. Given this can bloat *package.json*, it's preferable to keep metadata in files of their own.
 
 T> JSON doesn't support comments even though I'm using them above. There are extended notations, such as [Hjson](http://hjson.org/), that do.
+
+?> I'd like to see more information about npm scripts here. For example, the way that `start`, `stop` and `test` are shortcuts included which can be triggered without using `run` whereas others must be preceded with `run`. And the way that you can prefix any script with 'pre' or 'post' so that it's run before or after its main script. And whether there are any special implications to the `main:sub` syntax.
 
 ## What Files to Publish
 

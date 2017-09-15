@@ -1,38 +1,38 @@
 # Where to Start Packaging
 
-npm has become wildly popular for managing JavaScript packages. It started from the backend world but has since grown to include frontend libraries as well. Perhaps one of the reason why so many npm packages exist is that it's difficult to find a package matching to your requirements.
+npm has become wildly popular for managing JavaScript packages. It started in the backend world but has since grown to include frontend libraries as well. Perhaps one of the reason for the proliferation of packages is that it can be difficult to find exactly the package you need, so you end up making your own.
 
-The situation has become better thanks to development of [npms](https://npms.io/) and similar solutions but it still exists. The problem of developing your own solution is that then you have something to maintain. Unless it's your core business or something you like to do, this can become problematic.
+This situation is somewhat alleviated by the arrival of [npms](https://npms.io/) and similar solutions, but it still exists. One problem with developing your own package is that then you have something to maintain. Unless it's your core business or something you like to do, this can become a problem.
 
 ![Module counts in package managers based on modulecounts.com](images/module-counts.png)
 
 ## To Consume Packages or to Develop Them
 
-The point of a package manager like npm is to avoid unnecessary development effort. That said, sometimes re-inventing the wheel somehow is needed as everything needs to fit together. npm hosts whole ecosystems of packages that work together.
+The point of a package manager like npm is to avoid unnecessary development effort. That said, sometimes re-inventing the wheel somehow is needed for everything to fit together. npm hosts whole ecosystems of packages that work together.
 
-The world of JavaScript is increasingly fragmented although there are packages you can use regardless of certain higher level choices. Utility libraries are valuable regardless whether you are using Angular, Ember, or React.
+The world of JavaScript is increasingly fragmented, but there are packages you can use regardless of certain higher level choices. For example, utility libraries are valuable whether you are using Angular, Ember, or React.
 
-You have at least the following options when you come upon a technical problem to solve:
+You have at least the following options when you're confronted with a technical problem:
 
 1. **Use an existing package.** If it's missing functionality, develop the remainder. It can make sense to **contribute** the functionality back to the core project if it fits there. The model allows collaboration and reduces the maintenance cost as a result if the project owners can work with you. You can also fund their development efforts to help you directly.
 2. **Fork an existing package** and maintain it on your own. It's possible to find a project that solves your problem but isn't under active maintenance effort. In this case it can make sense to fork the project and maintain it under a different name while respecting the copyright of the original one. Here maintenance cost is higher as you assume ownership of development.
-3. **Develop your own package**. Developing a solution on your own is usually the most expensive option depending on the complexity of the problem.
+3. **Develop your own package**. Developing a solution on your own is usually the most expensive option, depending on the complexity of the problem.
 
 ## Using an Existing Package
 
-It can be worthwhile to spend time researching the available options. If nothing else, this helps you to understand the solution space better. You will learn how people have tried to solve the problem. Doing this gives insight on how to solve it properly. In the ideal case you will find a package that solves your problem.
+It can be worthwhile to spend time researching the available options. If nothing else, this helps you to understand the solution space better. You will learn how people have tried to solve the problem. Doing this gives you insight on how to solve it properly. In the ideal case you will find a package that actually solves your problem.
 
-Only having a solid technical solution isn't enough. It's good to consider the overall quality of a package. You should understand how well the project is doing. Sometimes popular projects are overwhelmed by their user base and have poor support as a result. You can also find lesser known projects that work well but are missing a community.
+Only having a solid technical solution isn't enough. It's good to consider the overall quality of a package. You should understand how well the project is doing. Sometimes popular projects are overwhelmed by their user base and have poor support as a result. You might also find lesser known projects that work well but are missing a community.
 
-If a project that fits your needs becomes abandoned, you may have to fork it and make it yours or agree on a transition with the original maintainer. Often people are willing to pass on their projects so it’s worth asking.
+If a project that fits your needs becomes abandoned, you may have to fork it and make it yours or agree on a transition with the original maintainer. Often people are willing to pass on their projects, so it’s worth asking.
 
 ## Forking an Existing Package
 
 Assuming you manage to find a package that solves your problem or most of it but doesn't have active development, you may consider forking the project. You should respect the rights of the original authors and retain their licensing blocks while retaining attribution.
 
-Depending on what you are doing, original licensing can become problematic. This applies particularly to so called copyleft (or viral) licenses which include GPL and AGPL (a stricter variant) which put restrictions on the usage.
+Depending on what you are doing, original licensing can become problematic. This applies particularly to so called copyleft (or viral) licenses which include GPL and AGPL (a stricter variant), which put restrictions on the usage.
 
-Often the original author is willing to transfer the project to you if you ask. If you are serious about maintaining, doing this can be a good alternative to forking. You can offer to maintain or fund the project so that it goes forward.
+Often the original author will be willing to transfer the project to you if you ask. If you're serious about maintaining, doing this can be a good alternative to forking. You can offer to maintain or fund the project so that it goes forward.
 
 Forking is more expensive than contributing towards a thriving project but it's a worthwhile option. Sometimes you cannot find a package that fits your problem and this is when you have to develop your own.
 
@@ -46,8 +46,10 @@ One of early stage problems is figuring out a good name for a package. npm root 
 
 npm provides a good way around the naming problem in the form of **scoping**. A scope is defined as `@scope/name` and allows you to group a series of packages behind a custom name space. Scoping allows you to manage people that have access to these packages easily. Scopes are freely available for open source projects.
 
+?> Some examples of currently scoped projects.
+
 ## Conclusion
 
-Before writing a package of your own, consider spending time with existing packages. You may notice a new package isn't needed after all or that you can contribute to a thriving one. Even forking an old package and revitalizing the effort can be a good option that allows you to save the pain of re-inventing the wheel.
+Before writing a package of your own, investigate existing packages. You may find that a new package is not required after all or that you can contribute to a thriving one. Even forking an old package and revitalizing the effort can be a good option that allows you to save the pain of re-inventing the wheel.
 
 You'll learn how npm packages are structured in the next chapter.
