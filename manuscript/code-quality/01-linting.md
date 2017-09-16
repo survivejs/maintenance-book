@@ -35,13 +35,13 @@ Code style is subjective and automation can reduce pointless discussions and imp
 
 [ESLint](http://eslint.org/) is a popular linter for JavaScript. It’s primarily used to capture language related issues but can be used to enforce code style and good practices. It can fix many issues automatically, especially code style. You can write your own rules to ensure code consistency across your team or organization.
 
-JavaScript doesn’t have an official coding style but the community maintains a few. Especially [Airbnb](https://github.com/airbnb/javascript) and [Standard](http://standardjs.com/) are popular: Airbnb is detailed and pragmatic, Standard is a bit controversial because it doesn’t use semicolons. [Semistandard](https://www.npmjs.com/package/semistandard) is a variant that fixes that issue. All of these options use two spaces for indentation.
+JavaScript doesn’t have an official coding style but the community maintains a few. [Airbnb](https://github.com/airbnb/javascript) and [Standard](http://standardjs.com/) are especially popular: Airbnb is detailed and pragmatic, Standard is a bit controversial because it doesn’t use semicolons. [Semistandard](https://www.npmjs.com/package/semistandard) is a variant that fixes that issue. All of these options use two spaces for indentation.
 
 ESLint is unopinionated and doesn’t have any rules by default so you should enable them manually or use a config like [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base), that implements Airbnb style guide. To get started, use `eslint --init` and let it generate a starting point for you.
 
-All ES6 features are supported and [babel-eslint](https://www.npmjs.com/package/babel-eslint) adds support for newer ECMAScript features and Flow. ESLint is supported by JetBrains’ IDEs and has plugins for other popular editors.
+All ES6 features are supported and [babel-eslint](https://www.npmjs.com/package/babel-eslint) adds support for newer ECMAScript features and Flow. ESLint is supported by JetBrains’ IDEs is available as a plugin for other popular editors.
 
-ESLint has many plugins, for example:
+ESLint itself is modular and uses plugins to operate - for example:
 
 * [eslint-plugin-compat](https://www.npmjs.com/package/eslint-plugin-compat) — checks browser compatibility using [Browserslist](https://github.com/ai/browserslist), [Can I use](http://caniuse.com/) and [@kangax’s compat](http://kangax.github.io/compat-table/es6/) table.
 * [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) — validates ES6 import/export syntax, prevents misspelling of file paths.
@@ -56,12 +56,12 @@ Let’s install ESLint with the Airbnb config:
 npm install eslint eslint-config-airbnb-base eslint-plugin-import --save-dev
 ```
 
-Update your *package.json* like this:
+Update your *package.json* as follows:
 
 ```json
 {
   "scripts": {
-    "lint:js": "eslint . --cache --fix"
+    "lint:js": "eslint . --cache --fix" // TODO: Explain these flags?
   }
 }
 ```
@@ -191,7 +191,7 @@ npm run lint:css
 
 [Lint-staged](https://github.com/okonet/lint-staged) runs linters only for changed files before each commit which makes linting mandatory and fast. It uses `pre-commit` Git hook and you can map any file extension to a shell command. You can also configure it to autofix code.
 
-W> You still need to run linters on your CI server: it’s possible to avoid `pre-commit` hook with `git commit --no-verify` of using GitHub UI.
+W> You still need to run linters on your CI server: it’s possible to avoid the `pre-commit` hook with `git commit --no-verify` in the GitHub UI.
 
 ### Setting up lint-staged
 
@@ -241,6 +241,8 @@ This configuration will:
 
 ## Conclusion
 
-Code style is an important part of code quality. You can enforce code style through tooling. Doing this forces contributors to code using the same standard and this also keeps the source consistent to read. Pushing code style to configuration also avoids arguments about which conventions to apply.
+Code style is an important aspect of code quality. You can enforce code style through tooling. Doing so forces contributors to code using the same standard and this also keeps the source consistent to read. Pushing code style to configuration also avoids arguments about which conventions to apply.
 
 You'll learn about formatting in the next chapter.
+
+?> Maybe worth making a best policy recommendation here such as all devs should run live linting within editors "on save" *and* linting should be set up on the commit git hook. Is it worth using it all within webpack config - when webpack is first run or WDS watch?
