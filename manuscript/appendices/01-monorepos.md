@@ -8,7 +8,7 @@ A monorepo allows you to maintain multiple related packages within a single repo
 
 Lerna itself is quite opinionated and can be replaced with a package like [mondorepo](https://www.npmjs.com/package/mondorepo), [oao](https://www.npmjs.com/package/oao), or custom scripts as [Cycle.js](https://github.com/cyclejs/cyclejs) has done.
 
-Regardless of the technical solution, the idea is always similar. Your packages will exist with a predefined directory and you can maintain other directories for higher level documentation, examples, and project site next to it. You can also bring package README files as a part of the site to avoid redundancy and to keep the quality of them high.
+Regardless of the technical solution, the idea is always similar. Your packages will exist with a predefined directory and you can maintain other directories at the same level for higher level documentation, examples, and a project site. You can also create package README files as a part of the site to avoid redundancy and to keep code quality high.
 
 To give you an idea of a monorepo, consider the following structure from Reactabular, a project of mine:
 
