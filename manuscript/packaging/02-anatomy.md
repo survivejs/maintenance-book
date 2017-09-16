@@ -137,7 +137,7 @@ As you can see, *package.json* can contain a lot of information. You can attach 
 
 T> JSON doesn't support comments even though I'm using them above. There are extended notations, such as [Hjson](http://hjson.org/), that do.
 
-?> I'd like to see more information about npm scripts here. For example, the way that `start`, `stop` and `test` are shortcuts included which can be triggered without using `run` whereas others must be preceded with `run`. And the way that you can prefix any script with 'pre' or 'post' so that it's run before or after its main script. And whether there are any special implications to the `main:sub` syntax.
+TODO: I'd like to see more information about npm scripts here. For example, the way that `start`, `stop` and `test` are shortcuts included which can be triggered without using `run` whereas others must be preceded with `run`. And the way that you can prefix any script with 'pre' or 'post' so that it's run before or after its main script. And whether there are any special implications to the `main:sub` syntax.
 
 ## What Files to Publish
 

@@ -31,18 +31,18 @@
   "dependencies": {},
   "devDependencies": {
     "check-markdown-links": "^0.1.1",
-    "eslint": "^3.19.0",
-    "eslint-plugin-prettier": "^2.0.1",
+    "eslint": "^4.6.1",
+    "eslint-plugin-prettier": "^2.2.0",
     "git-prepush-hook": "^1.0.2",
     "husky": "^0.14.3",
     "leanpub-cli": "^0.2.0",
-    "prettier": "^1.3.1",
+    "prettier": "^1.7.0",
     "proselint": "^0.1.7",
-    "textlint": "^8.0.1",
+    "textlint": "^8.2.1",
     "textlint-filter-rule-comments": "^1.2.2",
     "textlint-rule-common-misspellings": "^1.0.1",
     "textlint-rule-eslint": "^2.0.0",
-    "textlint-rule-terminology": "^1.1.11",
+    "textlint-rule-terminology": "^1.1.19",
     "textlint-rule-write-good": "^1.6.0"
   },
   "pre-push": [

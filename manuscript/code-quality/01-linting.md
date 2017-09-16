@@ -43,7 +43,7 @@ All ES6 features are supported and [babel-eslint](https://www.npmjs.com/package/
 
 ESLint itself is modular and uses plugins to operate - for example:
 
-* [eslint-plugin-compat](https://www.npmjs.com/package/eslint-plugin-compat) — checks browser compatibility using `browserslist` file, [caniuse](http://caniuse.com/) and [@kangax’s compat](http://kangax.github.io/compat-table/es6/) table.
+* [eslint-plugin-compat](https://www.npmjs.com/package/eslint-plugin-compat) — checks browser compatibility using [Browserslist](https://github.com/ai/browserslist), [Can I use](http://caniuse.com/) and [@kangax’s compat](http://kangax.github.io/compat-table/es6/) table.
 * [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) — validates ES6 import/export syntax, prevents misspelling of file paths.
 * [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) — best practices for React, JSX code style.
 * [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) — finds potential security issues in Node code.
@@ -168,12 +168,12 @@ Add a script to your *package.json* like this:
 ```json
 {
   "scripts": {
-    "lint:css": "stylelint '**/*.scss' --syntax scss"
+    "lint:css": "stylelint --fix '**/*.scss' --syntax scss"
   }
 }
 ```
 
-Create a config file, `.stylelintrc`:
+Create a config file, *.stylelintrc*:
 
 ```json
 {
@@ -212,7 +212,7 @@ Update your *package.json* like this:
     "*.js": [
       "eslint --fix",
       "jest --bail --findRelatedTests",
-      "prettier --print-width 100 --single-quote --trailing-comma es5 --write",
+      "prettier --write",
       "git add"
     ],
     "*.scss": [
@@ -226,14 +226,14 @@ Update your *package.json* like this:
 
 This configuration will:
 
-* Every time you commit a `.js` file:
+* Every time you commit a *.js* file:
 
   1. Run ESLint with autofixing on files you are committing.
   2. Run Jest tests related to files you are committing.
-  3. Format files you are committing with Prettier. The idea is discussed in detail in the next chapter.
+  3. Format files you are committing with Prettier. (See the *Code Formatting* chapter for more details.)
   4. Add changes caused by autofixing and reformatting to your commit.
 
-* Every time you commit an `.scss` file:
+* Every time you commit an *.scss* file:
 
   1. Format files you are committing with stylefmt.
   2. Run stylelint on files you are committing.

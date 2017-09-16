@@ -44,9 +44,9 @@ Developing your own package is the extreme option that is the most expensive if 
 
 One of early stage problems is figuring out a good name for a package. npm root namespace has become crowded and it can be difficult to find a free name. Also, you may have to worry about existing trademarks to avoid problems later on. By skipping this you may have to rename your package later as happened for [Jade which had to rename as Pug](https://github.com/pugjs/pug/issues/2184).
 
-npm provides a good way around the naming problem in the form of **scoping**. A scope is defined as `@scope/name` and allows you to group a series of packages behind a custom name space. Scoping allows you to manage people that have access to these packages easily. Scopes are freely available for open source projects.
+[Scoped packages](https://docs.npmjs.com/misc/scope) could solve the naming issue. A scoped package name looks like `@scope/name` and allows you to group a series of packages behind a name space. Scoping allows you to manage people that have access to these packages easily. Scopes are freely available for open source projects.
 
-?> Some examples of currently scoped projects.
+[DefinitelyTyped](https://www.npmjs.com/search?q=scope:types&page=1&ranking=optimal) and [webpack-blocks](https://www.npmjs.com/search?q=scope:webpack-blocks&page=1&ranking=optimal) are examples of projects using scoped packages.
 
 ## Conclusion
 
