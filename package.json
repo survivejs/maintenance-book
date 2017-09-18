@@ -33,7 +33,6 @@
     "check-markdown-links": "^0.1.1",
     "eslint": "^4.6.1",
     "eslint-plugin-prettier": "^2.2.0",
-    "git-prepush-hook": "^1.0.2",
     "husky": "^0.14.3",
     "leanpub-cli": "^0.2.0",
     "prettier": "^1.7.0",
@@ -44,8 +43,5 @@
     "textlint-rule-eslint": "^2.0.0",
     "textlint-rule-terminology": "^1.1.19",
     "textlint-rule-write-good": "^1.6.0"
-  },
-  "pre-push": [
-    "test"
-  ]
+  }
 }
