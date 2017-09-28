@@ -65,7 +65,7 @@ const add = require('./add');
 assert(add(1, 1) === 2);
 ```
 
-If you run `node ./add.test.js`, you shouldn't see any output. Try breaking the test or the code to get an assertion error. A good test runner is able to pick up the wanted tests and run them like this. [globbing](https://www.npmjs.com/package/glob) is another way.
+If you run `node ./add.test.js`, you shouldn't see any output. Try breaking the test or the code to get an assertion error. A good test runner can pick up the wanted tests and run them like this. [globbing](https://www.npmjs.com/package/glob) is another way.
 
 People have written a lot of good test runners and frameworks, so you don't have to do this work yourself. Particularly [Jest](https://www.npmjs.com/package/jest), [Mocha](https://www.npmjs.com/package/mocha), and [tape](https://www.npmjs.com/package/tape) are decent  starting points.
 
