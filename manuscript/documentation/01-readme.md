@@ -26,6 +26,3 @@ TODO
 ## Conclusion
 
 TODO
-
-?> Maybe you could detail JSDocs,
-?> Maybe talk about Github.io and the ways these sites are repos.
