@@ -186,7 +186,3 @@ If you’re not using linter for code formatting, you may want to automatically 
 Formatting tools complement linting well. They eliminate one source of confusion and make sure your code is formatted in a consistent manner.
 
 You'll learn about typing in the next chapter.
-
-?> We should say something about lint-staged here and automating code formatting.
-?> Might be worth mentioning stylefmt plugins including "order".
-?> Mention that Prettier can also be installed as a VSCode extension - seems to run on save.
