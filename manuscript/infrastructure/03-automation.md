@@ -2,6 +2,10 @@
 
 When to apply automation. pros/cons
 
+## Git Hooks
+
+TODO: Mention commit hooks that can check things like commit message syntax and run tests. This allows rebase workflow.
+
 ## Automating Releases
 
 To make it easier to comply with SemVer, [next-ver](https://www.npmjs.com/package/next-ver) can compute the next version you should use and update it for you. [commitizen](https://www.npmjs.com/package/commitizen) goes further and allows change log generation and automated releases. [semantic-release](https://www.npmjs.com/package/semantic-release) allows you to automatically make new npm releases and publish release notes to GitHub.
@@ -62,8 +66,6 @@ scope: {
 ```
 
 ?> I think it's worth pushing the present imperative tense for commit messages. Here's a good article on this topic: https://chris.beams.io/posts/git-commit/ Thus we describe what a commit will *do*, if applied.
-
-?> Mention commit hooks that can check things like commit message syntax.
 
 ## Semantic Release
 
