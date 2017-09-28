@@ -44,29 +44,7 @@ Each type of testing provides specific insight to the project. The following sec
 
 **Unit testing** asserts specific truths about code. Each unit should verify the single truth. You can get started by using Node [assert](https://nodejs.org/api/assert.html). Specialized assertion libraries have more functionality and better output but `assert` is a good starting point.
 
-The first step is to include a test within the code:
-
-**add.js**
-
-```javascript
-const assert = require('assert');
-
-const add = (a, b) => a + b;
-
-assert(add(1, 1) === 2);
-
-module.exports = add;
-```
-
-If you run the file through Node, it should not output anything, assuming the test passed. You can try to break the test. Doing this should yield an `AssertionError`.
-
-
-But if we write tests along with functions like this, we end up with a problem: the tests will be run during production as well as during development. There are a couple of ways around this problem:
-
-* Mock `assert` during production usage. This could be done by pushing `assert` behind another module and then consuming it from there. During production, a `noop` (`() => {}`) implementation could be injected although even this wouldn't be ideal. It would be better to eliminate the code altogether.
-* The unit tests could be pushed to another file. A **test runner** would then pick up the tests and run them. This is the standard way of handling the problem.
-
-To illustrate the idea, alter the code like this:
+To have something to test, define a module:
 
 **add.js**
 
@@ -76,7 +54,7 @@ const add = (a, b) => a + b;
 module.exports = add;
 ```
 
-To test the code, define a file:
+To test the code, set up a file that exercises the functionality:
 
 **add.test.js**
 
@@ -87,9 +65,9 @@ const add = require('./add');
 assert(add(1, 1) === 2);
 ```
 
-If you run `node ./add.test.js`, you should have the same situation as before. A good test runner would pick up the wanted tests and run them like this. [globbing](https://www.npmjs.com/package/glob) would be one way.
+If you run `node ./add.test.js`, you shouldn't see any output. Try breaking the test or the code to get an assertion error. A good test runner is able to pick up the wanted tests and run them like this. [globbing](https://www.npmjs.com/package/glob) is another way.
 
-Fortunately, people have written a lot of good test runners and frameworks, so you don't have to do this yourself. Particularly [Jest](https://www.npmjs.com/package/jest), [Mocha](https://www.npmjs.com/package/mocha), and [tape](https://www.npmjs.com/package/tape) are good starting points.
+People have written a lot of good test runners and frameworks, so you don't have to do this work yourself. Particularly [Jest](https://www.npmjs.com/package/jest), [Mocha](https://www.npmjs.com/package/mocha), and [tape](https://www.npmjs.com/package/tape) are decent  starting points.
 
 It's good to understand that unit tests cover functionality from the developer perspective. These small assertions can be used to define a low-level API. **Test Driven Development** allows you to shape the implementation as you figure out a proper specification for your API.
 
