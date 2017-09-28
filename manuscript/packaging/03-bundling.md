@@ -195,6 +195,11 @@ T> [Webpack and Rollup: the same but different](https://medium.com/webpack/webpa
 
 T> You can also use webpack and Rollup together through [rollup-loader](https://www.npmjs.com/package/rollup-loader) and leave JavaScript handling to Rollup as this enables tree shaking through Rollup and allows you to use Rollup specific plugins.
 
+## Scope Hoisting
+
+TODO: rollup, webpack
+TODO: what's the point
+
 ### Universal Module Definition (UMD)
 
 To make the generated bundle work in different environments, bundlers support [Universal Module Definition](https://github.com/umdjs/umd) (UMD). The UMD wrapper allows the code to be consumed from different environments including the browser (global), [Asynchronous Module Definition](http://requirejs.org/docs/whyamd.html) (AMD), and CommonJS. AMD is an older format that's still being used in legacy projects.
@@ -249,6 +254,18 @@ undefined
 The same build should also work from the browser or as a part of an AMD build.
 
 T> You can achieve a similar result with other tools as well. The specifics will differ depending on the tool, but the basic idea is always the same.
+
+## Cross-Platform Concerns
+
+I.e. how to write npm scripts that work on Windows, Linux, etc.
+
+* cpy-cli: copy files and folders
+* cross-env: environment variables
+* [mkdirp](https://github.com/substack/node-mkdirp): mkdir -p
+* npm-run-all: parallel and serial npm scripts runner
+* rimraf: rm -rf
+* [fs-extra](https://github.com/jprichardson/node-fs-extra): fs module extensions
+* https://docs.npmjs.com/misc/config#per-package-config-settings
 
 ## Conclusion
 

@@ -106,7 +106,8 @@ TODO
 
 TODO
 
-* open-bot
+* https://github.com/babel/babel-bot
+* https://github.com/open-bot/open-bot
 * What problems bots solve
 
 ## Conclusion

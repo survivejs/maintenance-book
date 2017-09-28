@@ -5,6 +5,7 @@ TODO
 * The value of CI
 * CI vs. CD (Continuous Deployment)
 * Link to the idea of automated releases + staging + betas
+* https://developers.google.com/web/updates/2017/04/headless-chrome
 
 ## Travis
 

@@ -191,6 +191,8 @@ npm run lint:css
 
 [Lint-staged](https://github.com/okonet/lint-staged) runs linters only for changed files before each commit which makes linting mandatory and fast. It uses `pre-commit` Git hook and you can map any file extension to a shell command. You can also configure it to autofix code.
 
+TODO: mention that this works with Flow, https://github.com/facebook/flow/releases/tag/v0.48.0
+
 W> You still need to run linters on your CI server: it’s possible to avoid the `pre-commit` hook with `git commit --no-verify` in the GitHub UI.
 
 ### Setting up lint-staged
@@ -245,4 +247,6 @@ Code style is an important aspect of code quality. You can enforce code style th
 
 You'll learn about formatting in the next chapter.
 
-?> Maybe worth making a best policy recommendation here such as all devs should run live linting within editors "on save" *and* linting should be set up on the commit git hook. Is it worth using it all within webpack config - when webpack is first run or WDS watch?
+TODO: Maybe worth making a best policy recommendation here such as all devs should run live linting within editors "on save" *and* linting should be set up on the commit git hook. Is it worth using it all within webpack config - when webpack is first run or WDS watch?
+TODO: http://eslint.org/docs/rules/complexity - Code complexity. This might be a chapter of its own.
+

@@ -33,6 +33,8 @@ T> It's possible to force line endings through *.gitattributes* by setting `* te
 
 Prettier is smarter than other tools. For example, you can restrict line length whereas tools like ESLint can only yell at you if a line is too long and you would have to reformat the code yourself. If any line exceeds the limit, Prettier reformats the whole code block:
 
+TODO: https://engineering.hexacta.com/why-arent-you-using-prettier-4fe0a77713e8
+
 <!-- textlint-disable -->
 
 ```js

@@ -26,6 +26,6 @@ TODO
 
 ## Conclusion
 
-TODO
+TODO: comparison - https://github.com/niieani/typescript-vs-flowtype
 
 You'll learn about testing in the next chapter.

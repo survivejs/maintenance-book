@@ -6,7 +6,7 @@ Each project has processes around it. Services like [GitHub](https://github.com/
 
 TODO
 
-TODO: Issue and PR templates
+TODO: Issue and PR templates, https://github.com/serverless/serverless/blob/master/.github/ISSUE_TEMPLATE.md
 
 ## Designing Process and Labels
 
