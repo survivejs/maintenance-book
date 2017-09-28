@@ -17,5 +17,3 @@ T> `npm ls`, and more specifically `npm ls <package name>`, allow you to figure 
 ## Conclusion
 
 TODO
-
-?> [npm-check-updates](https://github.com/tjunnone/npm-check-updates)?
