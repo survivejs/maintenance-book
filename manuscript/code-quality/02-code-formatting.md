@@ -179,9 +179,14 @@ And then run it like this:
 npm run format:css
 ```
 
+TODO: https://github.com/prettier/eslint-config-prettier
+
 ## Automating Code Formatting with lint-staged
 
 If you’re not using linter for code formatting, you may want to automatically format your code before each commit with lint-staged. See the *Linting* chapter to learn how to set up lint-staged.
+
+TODO: https://www.slideshare.net/epoberezkin/auditing-development-guidelines-in-github-repositories
+TODO: https://www.npmjs.com/package/gh-lint
 
 ## Conclusion
 

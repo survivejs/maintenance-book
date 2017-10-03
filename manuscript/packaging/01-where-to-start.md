@@ -6,6 +6,8 @@ This situation is somewhat alleviated by the arrival of [npms](https://npms.io/)
 
 ![Module counts in package managers based on modulecounts.com](images/module-counts.png)
 
+TODO: Elaborate on research. Services: http://www.npmtrends.com/, https://npm-stat.com/
+
 ## To Consume Packages or to Develop Them
 
 The point of a package manager like npm is to avoid unnecessary development effort. That said, sometimes re-inventing the wheel somehow is needed for everything to fit together. npm hosts whole ecosystems of packages that work together.

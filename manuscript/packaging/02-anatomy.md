@@ -138,6 +138,7 @@ As you can see, *package.json* can contain a lot of information. You can attach 
 T> JSON doesn't support comments even though I'm using them above. There are extended notations, such as [Hjson](http://hjson.org/), that do.
 
 TODO: I'd like to see more information about npm scripts here. For example, the way that `start`, `stop` and `test` are shortcuts included which can be triggered without using `run` whereas others must be preceded with `run`. And the way that you can prefix any script with 'pre' or 'post' so that it's run before or after its main script. And whether there are any special implications to the `main:sub` syntax.
+TODO: Add an example of a `postinstall` script.
 
 ## What Files to Publish
 
@@ -152,6 +153,8 @@ You should point package `main` to a fully compiled version that's compatible wi
 Besides the source, you can consider distributing package *README.md* and *LICENSE*. Any metadata that's required by third-party systems, like Travis, can be safely skipped. Full documentation of the package doesn't have to be included as you can point to the package homepage through its metadata instead.
 
 W> Even though it's possible to tell npm what to exclude from `files` through `!src/*.test.js` kind of definitions, [using negation patterns is not recommended](https://github.com/npm/npm/wiki/Files-and-Ignores#details). Instead, you should use *.npmignore* and include `src/*.test.js` kind of pattern there.
+
+TODO: https://medium.com/@mikeal/modern-modules-d99b6867b8f1
 
 ## Conclusion
 

@@ -241,6 +241,11 @@ This configuration will:
   2. Run stylelint on files you are committing.
   3. Add changes caused by reformatting to your commit.
 
+TODO: Mention https://medium.com/@Pinterest_Engineering/introducing-esprint-a-fast-open-source-eslint-cli-19a470cd1c7d and other ways to speed up execution, https://www.npmjs.com/package/esprint, daemons
+TODO: Make sure ESLint + prettier setup is discussed
+TODO: https://maierfelix.github.io/Iroh/
+TODO: https://www.npmjs.com/package/nsp, https://www.npmjs.com/package/eslint-plugin-security - Security linting/testing -> section
+
 ## Conclusion
 
 Code style is an important aspect of code quality. You can enforce code style through tooling. Doing so forces contributors to code using the same standard and this also keeps the source consistent to read. Pushing code style to configuration also avoids arguments about which conventions to apply.

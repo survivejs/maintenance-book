@@ -146,7 +146,8 @@ Performance testing also yields insight into different environments, and you can
 
 To make sure your npm package paths (`main`, `module`, i.e.) work, you can validate your package through [pkg-ok](https://www.npmjs.com/package/pkg-ok).
 
-?> Cover other package testing tools here.
+TODO: Cover other package testing tools here.
+TODO: https://www.npmjs.com/package/chrome-launcher
 
 ### Code Coverage
 
@@ -158,11 +159,21 @@ To measure code coverage, you have to instrument the code first. You can find [I
 
 T> There's a [Codecov extension](https://chrome.google.com/webstore/detail/codecov-extension/keefkhehidemnokodkdkejapdgfjmijf) for Chrome that allows you to see code coverage through GitHub user interface.
 
+TODO: Figure out how to measure code coverage based on actual usage of downstream.
+
 ### Code Complexity
 
 As code evolves, it tends to become more complex. Dependencies form and the code will likely end up with hot spots that are fault prone. Understanding where those spots exist allows you to put your effort where it matters. The same idea applies to performance optimization. If you know what portion of your code contributes most to performance, you know it's worth optimizing.
 
 Tools like [complexity-report](https://www.npmjs.com/package/complexity-report), [plato](https://www.npmjs.com/package/plato), and [jscomplex](https://www.npmjs.com/package/jscomplex) give this type of output.
+
+### Smoke Testing
+
+TODO: See how projects like Node do this
+
+### Code Size
+
+TODO: https://www.npmjs.com/package/bundlesize, https://www.npmjs.com/package/size-limit
 
 ### Design by Contract
 

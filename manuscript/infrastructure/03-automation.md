@@ -108,6 +108,7 @@ TODO
 
 * https://github.com/babel/babel-bot
 * https://github.com/open-bot/open-bot
+* https://github.com/probot/probot
 * What problems bots solve
 
 ## Conclusion
