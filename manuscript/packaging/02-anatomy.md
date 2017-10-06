@@ -34,9 +34,9 @@ All packages come with a *package.json* that describes metadata related to them 
 
 The examples below contains an annotated a part of *package.json* from my [React component boilerplate](https://github.com/survivejs/react-component-boilerplate).
 
-### Meta Level Fields
+### Description Fields
 
-The meta level fields describe who created the package, what it does, related keywords, and more.
+The description fields describe who created the package, what it does, related keywords, and more.
 
 **package.json**
 
@@ -77,7 +77,9 @@ The meta level fields describe who created the package, what it does, related ke
 
 ### Scripts
 
-npm can be used as a task runner through `npm run` interface. Running the command shows all available scripts. npm works so that if you install a dependency, such as webpack, it links *node_modules/.bin* commands to the environment during the script execution. The scripts are commonly used for different build tasks. npm also provides `pre` and `post` script hooks through a naming convention for additional control.
+npm can be used as a task runner through `npm run` interface. Running the command shows all available scripts. npm works so that if you install a dependency, such as webpack, it links *node_modules/.bin* commands to the environment during the script execution. The scripts are commonly used for different build tasks.
+
+npm also provides `pre` and `post` script hooks through a naming convention for additional control. In the example below the convention is used to control what happens when `npm run publish` is executed. First it will generate distribution artifacts to publish, and assuming the process went through, it will deploy the site of the package.
 
 **package.json**
 
@@ -209,7 +211,7 @@ A package may have different level dependencies. Some will be used only during d
 
 ### Links
 
-A package should link to its repository, homepage, and issue tracker.
+A package should link to its repository, homepage, and issue tracker. The fields are optional but they are good to have as it will make it easier for the users to find these through npm site.
 
 **package.json**
 
