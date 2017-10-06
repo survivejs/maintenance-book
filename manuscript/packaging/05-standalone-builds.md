@@ -1,8 +1,12 @@
 # Standalone Builds
 
-The scenarios covered in the previous chapter are enough if you consume packages through npm. That is not the case always, though, as there may be users that prefer a *standalone build*. Generating one is an optional step and you may skip this entirely given consuming packages through npm is the standard.
+The scenarios covered in the previous chapter are enough if you consume packages through npm. That is not the case always, though, as there may be users that prefer pre-built *standalone builds*. This comes with a several advantages:
 
-If you want to consume a package directly through the browser, you have to generate bundles that the browser can consume. This is where **bundlers** such as [Browserify](http://browserify.org/), [Rollup](https://rollupjs.org/), [Fusebox](http://fuse-box.org/), or [webpack](https://webpack.js.org/), come in.
+* The build can be served through a Content Delivery Network (CDN). Especially popular libraries are available this way.
+* Users that want to optimize their development experience can point to the built version. This avoids additional processing during development as their tooling doesn't have to process the original source.
+* The build can be integrated easily to online code playgrounds with minimal effort.
+
+The problem is that now you have additional configuration to maintain and you may skip step this entirely. If you want to generate a build, this is where **bundlers** such as [Browserify](http://browserify.org/), [Rollup](https://rollupjs.org/), [Fusebox](http://fuse-box.org/), or [webpack](https://webpack.js.org/), come in, as they were designed for the purpose.
 
 ## How Bundlers Work?
 
