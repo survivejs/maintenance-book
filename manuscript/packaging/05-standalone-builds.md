@@ -4,7 +4,7 @@ The scenarios covered in the previous chapter are enough if you consume packages
 
 * The build can be served through a Content Delivery Network (CDN). Especially popular libraries are available this way.
 * Users that want to optimize their development experience can point to the built version. This avoids additional processing during development as their tooling doesn't have to process the original source.
-* The build can be integrated easily to online code playgrounds with minimal effort.
+* The build can be integrated easily to online code playgrounds easily.
 
 The problem is that now you have additional configuration to maintain and you may skip step this entirely. If you want to generate a build, this is where **bundlers** such as [Browserify](http://browserify.org/), [Rollup](https://rollupjs.org/), [Fusebox](http://fuse-box.org/), or [webpack](https://webpack.js.org/), come in, as they were designed for the purpose.
 
