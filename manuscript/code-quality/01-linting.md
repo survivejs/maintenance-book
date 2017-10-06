@@ -2,7 +2,7 @@
 
 We read code more often then we write it: sometimes we spend hours looking for what caused the bug, only to fix it with a single line of code. That’s why consistent code style is important. Ideally code in a project should look like it was written by a single developer. It makes code easier to read because the same formatting patterns are used everywhere in the project.
 
-## Why to Lint?
+## Why to Lint
 
 Good code style can save you from a bug one day. Consider this code:
 
@@ -43,10 +43,10 @@ All ES6 features are supported and [babel-eslint](https://www.npmjs.com/package/
 
 ESLint itself is modular and uses plugins to operate - for example:
 
-* [eslint-plugin-compat](https://www.npmjs.com/package/eslint-plugin-compat) — Checks browser compatibility using [Browserslist](https://github.com/ai/browserslist), [Can I use](http://caniuse.com/) and [@kangax’s compat](http://kangax.github.io/compat-table/es6/) table.
-* [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) — Validates ES6 import/export syntax, prevents misspelling of file paths.
-* [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) — Best practices for React, JSX code style.
-* [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) — Finds potential security issues in Node code.
+* [eslint-plugin-compat](https://www.npmjs.com/package/eslint-plugin-compat) checks browser compatibility using [Browserslist](https://github.com/ai/browserslist), [Can I use](http://caniuse.com/) and [@kangax’s compat](http://kangax.github.io/compat-table/es6/) table.
+* [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) validates ES6 import/export syntax, prevents misspelling of file paths.
+* [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) contains best practices for React, JSX code style.
+* [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) finds potential security issues in Node code.
 
 ### Setting Up ESLint
 
@@ -122,7 +122,7 @@ T> To get most value out of linting tools during development, make sure you have
 
 ### Speeding Up ESLint Execution
 
-One of the most convenient ways to speed up ESLint execution on big projects is to run it on only files that have been changed while you are working. It's possible to achieve this by using *lint-staged*. The exact technique is covered in the *Code Formatting* chapter.
+One of the most convenient ways to speed up ESLint execution on big projects is to run it on only files that have been changed while you are working. It's possible to achieve this by using *lint-staged*. The exact technique is covered in the *Automation* chapter.
 
 Node comes with startup overhead and it takes a while for the processing to begin. [eslint_d](https://www.npmjs.com/package/eslint_d) is a daemon process designed to overcome this problem. It runs ESLint as a process in the background. [esprint](https://www.npmjs.com/package/esprint) is a similar solution. It runs ESLint across multiple threads parallel.
 
@@ -209,3 +209,5 @@ npm run lint:css
 Code style is an important aspect of code quality and you can enforce code style through tooling. Doing so forces contributors to code using the same standard and this also keeps the source consistent to read. Pushing code style to configuration also avoids arguments about which conventions to apply.
 
 You'll learn about formatting in the next chapter.
+
+T> See the *Automation* chapter to learn how to automate linting.

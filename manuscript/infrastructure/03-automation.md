@@ -6,6 +6,60 @@ When to apply automation. pros/cons
 
 TODO: Mention commit hooks that can check things like commit message syntax and run tests. This allows rebase workflow.
 
+## Automating Linting with lint-staged
+
+[lint-staged](https://github.com/okonet/lint-staged) runs linters only for changed files before each commit which makes linting mandatory and fast. It uses `pre-commit` Git hook and you can map any file extension to a shell command. You can also configure it to autofix code.
+
+T> lint-staged works with [Flow since v0.48.0](https://github.com/facebook/flow/releases/tag/v0.48.0).
+
+W> You still need to run linters on your CI server: it’s possible to avoid the `pre-commit` hook with `git commit --no-verify` in the GitHub UI.
+
+### Setting Up lint-staged
+
+Let’s install lint-staged and [husky](https://www.npmjs.com/package/husky) to manage Git hooks:
+
+```bash
+npm install lint-staged husky --save-dev
+```
+
+Update your *package.json* like this:
+
+```json
+{
+  "scripts": {
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "jest --bail --findRelatedTests",
+      "prettier --write",
+      "git add"
+    ],
+    "*.scss": [
+      "stylefmt",
+      "stylelint --syntax scss",
+      "git add"
+    ]
+  }
+}
+```
+
+This configuration will perform the following steps:
+
+* Every time you commit a *.js* file:
+
+  1. Run ESLint with autofixing on files you are committing.
+  2. Run Jest tests related to files you are committing.
+  3. Format files you are committing with Prettier. (See the *Code Formatting* chapter for more details.)
+  4. Add changes caused by autofixing and reformatting to your commit.
+
+* Every time you commit an *.scss* file:
+
+  1. Format files you are committing with stylefmt.
+  2. Run stylelint on files you are committing.
+  3. Add changes caused by reformatting to your commit.
+
 ## Automating Releases
 
 To make it easier to comply with SemVer, [next-ver](https://www.npmjs.com/package/next-ver) can compute the next version you should use and update it for you. [commitizen](https://www.npmjs.com/package/commitizen) goes further and allows change log generation and automated releases. [semantic-release](https://www.npmjs.com/package/semantic-release) allows you to automatically make new npm releases and publish release notes to GitHub.
