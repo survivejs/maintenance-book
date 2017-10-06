@@ -73,9 +73,9 @@ It's good to understand that unit tests cover functionality from the developer p
 
 ### Property Based Testing
 
-**Property based testing** asserts specific **invariants** about code. A sorting algorithm should return items sorted in a specific order for example. When invariants like this are known, it's possible to generate tests against it. Property-based testing can find issues unit testing could miss, but the invariants can be problematic to find.
+**Property based testing** asserts specific **invariants** about code. A sorting algorithm should return items sorted in a specific order for example. When invariants like this are known, it's possible to generate tests against it. Property based testing can find issues unit testing could miss, but the invariants can be problematic to find.
 
-To continue the previous example, a property-based test could be used to show that `add` is a **commutative** operation. Commutativity means that swapping the parameters should still yield the same result so that the result of `a + b` should equal `b + a`. The idea can be modeled behind an API like this:
+To continue the previous example, a property based test could be used to show that `add` is a **commutative** operation. Commutativity means that swapping the parameters should still yield the same result so that the result of `a + b` should equal `b + a`. The idea can be modeled behind an API like this:
 
 **add.property.test.js**
 
@@ -117,22 +117,21 @@ TODO: https://www.npmjs.com/package/nsp, https://www.npmjs.com/package/eslint-pl
 
 ### Acceptance Testing
 
-**Acceptance testing** looks at testing from the user perspective. It answers the question does the user interface configured in a certain way lead to the expected result. Tools like [CodeceptJS](http://codecept.io/) or [Intern](https://theintern.github.io/) provide a high-level syntax that allows you to model user behaviors against the browser.
-
-?> Selenium?
+**Acceptance testing** looks at testing from the user perspective. It answers the question does the user interface configured in a certain way lead to the expected result. Tools like [CodeceptJS](http://codecept.io/), [Intern](https://theintern.github.io/), or [Selenium](http://www.seleniumhq.org/) provide a high-level syntax that allows you to model user behaviors against the browser.
 
 ### Regression Testing
 
 **Regression testing** makes sure the software works still the same way as before without breaking anything.
- Regressions can exist on multiple levels, and regression testing complements the techniques discussed earlier.
 
- **Approval testing** is a specific technique that allows you to develop regression tests against an existing system. The idea is to store existing system state first as **snapshots** and then use this data for testing that behavior doesn't change while the implementation is being refactored.
+Regressions can exist on multiple levels, and regression testing complements the techniques discussed earlier.
+
+**Approval testing** is a specific technique that allows you to develop regression tests against an existing system. The idea is to store existing system state first as **snapshots** and then use this data for testing that behavior doesn't change while the implementation is being refactored.
 
 **Visual regression testing** allows you to capture the user interface as an image and then compare it to a prior state to see if it has changed too much. If it has, then the failing test has to be validated by a developer to make sure the result is still acceptable. Semi-automation like this is valuable especially if you have to develop against a broad range of development targets. In the past, especially web browsers have been notorious for subtle breakage.
 
 Regression testing applies on API level as well. An API that has worked in the past should work the same unless the API contract changed and a new major version was released. Even in this case it may be a good idea to provide a deprecation path for users so they can update their software to the new API. In addition to explicit instructions or deprecation messages through the API, this can be achieved using codemods.
 
-T> [dont-break](https://www.npmjs.com/package/dont-break) is a good example of a package meant for testing your project against downstream (dependent) projects.
+T> [dont-break](https://www.npmjs.com/package/dont-break) is a good example of a package meant for testing your project against downstream (dependent) projects. [Read dont-break interview with Gleb Bahmutov](https://survivejs.com/blog/dont-break-interview/) to understand the tool better.
 
 ### Performance Testing
 
@@ -150,9 +149,6 @@ Performance testing also yields insight into different environments, and you can
 
 To make sure your npm package paths (`main`, `module`, i.e.) work, you can validate your package through [pkg-ok](https://www.npmjs.com/package/pkg-ok).
 
-TODO: Cover other package testing tools here.
-TODO: https://www.npmjs.com/package/chrome-launcher
-
 ### Code Coverage
 
 **Code coverage** tells you how much of the code is covered by tests. The technique can reveal parts of the code that aren't being tested. Those parts have unspecified behavior and as a result may contain issues. Code coverage doesn't tell anything about the quality of the tests, but it can be used to discover places to test.
@@ -163,7 +159,7 @@ To measure code coverage, you have to instrument the code first. You can find [I
 
 T> There's a [Codecov extension](https://chrome.google.com/webstore/detail/codecov-extension/keefkhehidemnokodkdkejapdgfjmijf) for Chrome that allows you to see code coverage through GitHub user interface.
 
-TODO: Figure out how to measure code coverage based on actual usage of downstream.
+T> Especially big and popular projects, such as [Esprima](http://esprima.org/test/ci.html), test their work against downstream, the other projects that consume their code. Doing this allows them to uncover bugs their own test suite fails to capture.
 
 ### Code Complexity
 
@@ -176,11 +172,11 @@ TODO: https://maierfelix.github.io/Iroh/
 
 ### Smoke Testing
 
-TODO: See how projects like Node do this
+The idea of *smoke testing* is to verify that vital functionality works in production. The purpose of these tests is to give high level idea of whether the application might be working or not. They are light to write and can be a starting point if the codebase doesn't have any tests yet. You could for instance assert that the application runs correctly and then expand around that definition as you identify functionality like this.
 
 ### Code Size
 
-TODO: https://www.npmjs.com/package/bundlesize, https://www.npmjs.com/package/size-limit
+The size of the code can be important especially for frontend related packages as you want to minimize the amount of code the client has to download and parse. Tools like [bundlesize](https://www.npmjs.com/package/bundlesize) and [size-limit](https://www.npmjs.com/package/size-limit) allow you to check against size through *package.json* configuration and a command line tool.
 
 ### Design by Contract
 
