@@ -1,10 +1,17 @@
-# Bundling Packages
+# Building Packages
+
+While publishing packages, you have a few concerns to worry about:
+
+* Which browsers and Node versions to support?
+* What to do if we want to use language features that aren't supported by these targets?
+* What to do if we want to use another language than JavaScript to author our package?
+* How to support modern module bundlers and their tree shaking features?
 
 If you author your packages using a source format that works directly with Node, you can avoid additional processing. In this case it's enough to point *package.json* `main` field to the source as discussed in the previous chapter.
 
 If you support only the newest [LTS (Long-term support) version](https://github.com/nodejs/LTS), you can use [new features of the language](http://node.green/) without having to compile the code in any way.
 
-That said, if you prefer to use features that are not supported by LTS yet or want to support features like **tree shaking**, you have extra effort ahead of you. In this case you have to compile your code.
+That said, if you prefer to use features that are not supported by LTS yet or want to support features like **tree shaking**, you have extra effort ahead of you. In this case you have to compile your code in a specific way.
 
 ## Communicating Where Code Should Work
 
@@ -22,7 +29,7 @@ The same idea works for npm version and you can control it by setting `engines.n
 
 You can also document operating system in which the code should run through the `os` field. You can specify the CPU architecture through the `cpu` field. Both of these are niche cases and come into play only if you have platform specific code that is compiled for example.
 
-## Babel
+## Compiling to Support Specific Environments
 
 [Babel](https://babeljs.io/) is a popular JavaScript compiler that allows you to transform future code into a format that works in legacy environments. It can be used through Node, [a CLI client](https://www.npmjs.com/package/babel-cli), or available task runners and bundlers.
 
@@ -118,7 +125,7 @@ function exec(command) {
 
 After these two steps, you have a build that should work whether or not you consume it through npm or not.
 
-### Configuring Babel for Tree Shaking
+## Configuring Babel for Tree Shaking
 
 Certain tools, like webpack or Rollup, support **tree shaking**. It's a form of **dead code elimination** (DCE) that relies on detecting which parts of the code are being used and which are not. The process relies on **static analysis** meaning it goes through the source, detects module imports and exports exist, checks which are being used, and drops the code of those that are not.
 
@@ -185,76 +192,11 @@ Now it should build both a version of the package for Node and a version for tre
 
 T> There is [an experimental CommonJS based tree shaking solution for webpack](https://www.npmjs.com/package/webpack-common-shake).
 
-## Generating Standalone Builds
+## Using Other Languages than JavaScript
 
-The scenarios covered so far are enough if you consume packages through npm. That is not the case always, though. If you want to consume a package directly through the browser, you have to generate bundles that the browser can consume. This is where **bundlers** such as [Browserify](http://browserify.org/), [Rollup](https://rollupjs.org/), [Fusebox](http://fuse-box.org/), or [webpack](https://webpack.js.org/), come in handy.
+If you want to use some other language than JavaScript to author your packages, you cannot avoid a compilation process as above. The idea is similar and in this case you may end up with additional build artifacts, such as type definitions, that you may want to include in the distributed version of the package.
 
-### How Bundlers Work?
-
-![Bundling process](images/bundler.png)
-
-A **bundler** is a transformation tool that takes the given source, performs given operations on it, and emits **bundles** as output. Bundles contain the manipulated source in such form that the code can be executed in the wanted environment. The process begins from **entry points** which are modules pointing to possibly other modules.
-
-Depending on the bundler, you have varying degrees of control over the process. Application-oriented bundlers like webpack allow you to define **split points** which generate dynamically loaded bundles. The feature can be used to defer loading of certain functionality and it enables powerful application development patterns such as [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/).
-
-T> [Webpack and Rollup: the same but different](https://medium.com/webpack/webpack-and-rollup-the-same-but-different-a41ad427058c) explains how webpack and Rollup differ. To summarize, webpack works better for applications while Rollup is a better choice for libraries.
-
-T> You can also use webpack and Rollup together through [rollup-loader](https://www.npmjs.com/package/rollup-loader) and leave JavaScript handling to Rollup as this enables tree shaking through Rollup and allows you to use Rollup specific plugins.
-
-T> Both webpack and Rollup support *scope hoisting*. It's a performance oriented feature that pulls modules into a single scope instead of writing separate scope for each module. This reduces the overhead related to function calls.
-
-## Universal Module Definition (UMD)
-
-To make the generated bundle work in different environments, bundlers support [Universal Module Definition](https://github.com/umdjs/umd) (UMD). The UMD wrapper allows the code to be consumed from different environments including the browser (global), [Asynchronous Module Definition](http://requirejs.org/docs/whyamd.html) (AMD), and CommonJS. AMD is an older format that's still being used in legacy projects.
-
-UMD isn't as relevant anymore as it used to be in the past but it's good to be aware of the format as you come around it.
-
-### Generating a Build Using Rollup
-
-To illustrate bundling and UMD, set up an entry point for the demo as below:
-
-**index.js**
-
-```javascript
-function demo() {
-  console.log('demo');
-}
-
-export default demo;
-```
-
-Define a small **package.json** to contain the build script:
-
-**package.json**
-
-```json
-{
-  "name": "umd-demo",
-  "main": "index.js",
-  "scripts": {
-    "build": "rollup ./index.js --format umd --name Demo --output dist/demo.umd.js"
-  }
-}
-```
-
-Install Rollup to the project:
-
-```bash
-npm install rollup --save-dev
-```
-
-To prove that the setup works, execute `npm run build` and examine the generated **./dist** directory. It should contain a new file with transformed code and the UMD wrapper. You can import the file from Node REPL like this:
-
-```bash
-node
-> require('./dist/demo.umd')()
-demo
-undefined
-```
-
-The same build should also work from the browser or as a part of an AMD build.
-
-T> You can achieve a similar result with other tools as well. The specifics will differ depending on the tool, but the basic idea is always the same.
+T> The *Typing* chapter covers a few popular options including Flow and TypeScript.
 
 ## Cross-Platform Concerns
 
@@ -271,4 +213,4 @@ To make sure your npm scripts work across different platforms, you cannot rely o
 
 If you are developing only against Node and use exactly the features it supports, you can skip the bundling step. Once you want to use features not available in Node yet, you have to compile your code at least. In case you want to make it possible to consume your package through Git or want to provide standalone bundles, additional effort is required.
 
-You'll learn how to release npm packages in the next chapter.
+You'll learn how to generate standalone versions of your npm packages in the next chapter.

@@ -9,8 +9,9 @@ Mainmatter.txt
 04-Packaging.md
 packaging/01-where-to-start.md
 packaging/02-anatomy.md
-packaging/03-bundling.md
-packaging/04-publishing.md
+packaging/03-publishing.md
+packaging/04-building.md
+packaging/05-standalone-builds.md
 
 05-Code-Quality.md
 code-quality/01-linting.md

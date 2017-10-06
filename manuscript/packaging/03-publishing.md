@@ -77,3 +77,5 @@ TODO: https://yarnpkg.com/blog/2017/05/31/determinism/
 ## Conclusion
 
 When publishing npm packages, you should take care to follow SemVer carefully. Consider ComVer as it's a simpler backwards compatible alternative. Use tooling to your advantage to avoid regressions and to keep your user base happy.
+
+You'll learn how to build npm packages in the next chapter.
