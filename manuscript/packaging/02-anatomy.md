@@ -123,35 +123,7 @@ Certain scripts, such as `start` and `test`, have shortcuts in npm. Examples:
 * `npm t` maps to `npm test` or `npm run test`.
 * `npm start` maps to `npm run start`.
 
-To show the `postinstall` script, consider below:
-
-```javascript
-/* eslint-disable */
-// adapted based on rackt/history (MIT)
-// Node 4+
-const execSync = require('child_process').execSync;
-const fs = require('fs');
-
-// This could be read from package.json
-const distDirectory = 'dist-modules';
-
-fs.stat(distDirectory, (error, stat) => {
-  if (error || !stat.isDirectory()) {
-    // Create a directory to avoid getting stuck
-    // in postinstall loop
-    fs.mkdirSync(distDirectory);
-    exec('npm install --only=dev');
-    exec('npm run build');
-  }
-});
-
-function exec(command) {
-  execSync(command, {
-    // Print stdin/stdout/stderr
-    stdio: 'inherit'
-  });
-}
-```
+T> The `postinstall` script and how it works is discussed in detail in the next chapter.
 
 ### Entry Points
 
