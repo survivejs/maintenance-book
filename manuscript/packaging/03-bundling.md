@@ -1,6 +1,14 @@
 # Bundling Packages
 
-If you author your packages using a source format that works directly with Node, you can avoid additional processing. npm `engines` field allows you to control the minimum version of Node to support and it accepts a range. Consider the example adapted from [npm documentation](https://docs.npmjs.com/files/package.json#engines):
+If you author your packages using a source format that works directly with Node, you can avoid additional processing. In this case it's enough to point *package.json* `main` field to the source as discussed in the previous chapter.
+
+If you support only the newest [LTS (Long-term support) version](https://github.com/nodejs/LTS), you can use [new features of the language](http://node.green/) without having to compile the code in any way.
+
+That said, if you prefer to use features that are not supported by LTS yet or want to support features like **tree shaking**, you have extra effort ahead of you. In this case you have to compile your code.
+
+## Communicating Where Code Should Work
+
+To communicate in which Node environments your package should work, you should set *package.json* `engines` field. It accepts a range in a similar way as for dependencies. Consider the example adapted from [npm documentation](https://docs.npmjs.com/files/package.json#engines):
 
 ```json
 {
@@ -10,17 +18,19 @@ If you author your packages using a source format that works directly with Node,
 }
 ```
 
-If you support only the newest [LTS (Long-term support) version](https://github.com/nodejs/LTS), you can use [new features of the language](http://node.green/) without having to compile the code in any way.
+The same idea works for npm version and you can control it by setting `engines.npm` field like `engines.node` above.
 
-That said, if you prefer to use features that are not supported by LTS yet or want to support features like **tree shaking**, you have extra effort ahead of you as you have to compile your code.
+You can also document operating system in which the code should run through the `os` field. You can specify the CPU architecture through the `cpu` field. Both of these are niche cases and come into play only if you have platform specific code that is compiled for example.
 
 ## Babel
 
 [Babel](https://babeljs.io/) is a popular JavaScript compiler that allows you to transform future code into a format that works in legacy environments. It can be used through Node, [a CLI client](https://www.npmjs.com/package/babel-cli), or available task runners and bundlers.
 
-In addition to a method to run, you will have to configure Babel to use specific plugins or presets. [babel-preset-env](https://www.npmjs.com/package/babel-preset-env) allows you to define which environments you want to support and can use the right plugins based on the definition and generate the minimal code required. During this process, it will also shim the code appropriately so that the features work as they should.
+In addition to a method to run, you will have to configure Babel to use specific plugins or presets. [babel-preset-env](https://www.npmjs.com/package/babel-preset-env) allows you to define which environments you want to support and can use the right plugins based on the definition and generate the minimal code required.
 
-To configure it to work with Node, set it up as follows:
+During this process, it will also shim the code appropriately so that the features work as they should. It's important to note that the shimming process isn't perfect and you may still have to include [Babel polyfill](https://babeljs.io/docs/usage/polyfill/) to the end result or at least advice consumers to use it.
+
+To configure *babel-preset-env* to work with Node, set it up as follows:
 
 **.babelrc**
 
@@ -41,9 +51,9 @@ To configure it to work with Node, set it up as follows:
 
 After this change, Babel will pick up any features not supported by the specified version and transform them into a form that works.
 
-To see the configuration in action, install **babel-cli** to your project, and invoke `babel ./src --out-dir ./lib`. The command picks up the source and writes it below `./lib` directory. You should set `"main": "lib",` and also ignore `lib` at **.gitignore** to avoid including it in source control.
+To see the configuration in action, install **babel-cli** to your project, and invoke `babel ./src --out-dir ./lib`. The command picks up the source and writes it below `./lib` directory. You should set `"main": "lib",` and also ignore `lib` at **.gitignore** to avoid including it in source control by accident.
 
-To make sure the code gets generated before you publish it to npm, set up a hook as below:
+To make sure the code gets generated before you publish it to npm, set up hooks as below:
 
 **package.json**
 
@@ -51,7 +61,8 @@ To make sure the code gets generated before you publish it to npm, set up a hook
 "scripts": {
   ...
   "build": "babel ./src --out-dir ./lib",
-  "preversion": "npm test && npm run build"
+  "preversion": "npm test",
+  "prepublish": "npm run build"
 },
 ```
 
@@ -77,8 +88,6 @@ Write a script as below that will check if a build exists and then generates it 
 
 **lib/postinstall.js**
 
-<!-- textlint-disable -->
-
 ```javascript
 /* eslint-disable */
 // adapted based on rackt/history (MIT)
@@ -87,14 +96,9 @@ const execSync = require('child_process').execSync;
 const fs = require('fs');
 
 // This could be read from package.json
-const distDirectory = 'lib';
+const distDirectory = 'dist-modules';
 
 fs.stat(distDirectory, (error, stat) => {
-  // Skip building on Travis
-  if (process.env.TRAVIS) {
-    return;
-  }
-
   if (error || !stat.isDirectory()) {
     // Create a directory to avoid getting stuck
     // in postinstall loop
@@ -111,8 +115,6 @@ function exec(command) {
   });
 }
 ```
-
-<!-- textlint-enable -->
 
 After these two steps, you have a build that should work whether or not you consume it through npm or not.
 
@@ -133,13 +135,15 @@ The technique requires two steps. Set up a helper scripts first:
   ...
 leanpub-start-delete
   "build": "babel ./src --out-dir ./lib",
-  "preversion": "npm test && npm run build"
+  "preversion": "npm test",
+  "prepublish": "npm run build"
 leanpub-end-delete
 leanpub-start-insert
   "build:all": "npm run build && npm run build:tree-shaking",
   "build:tree-shaking": "BABEL_ENV=tree-shaking babel ./src --out-dir ./dist-modules",
   "build": "BABEL_ENV=build babel ./src --out-dir ./lib",
-  "preversion": "npm test && npm run build:all"
+  "preversion": "npm test",
+  "prepublish": "npm run build:all"
 leanpub-end-insert
 },
 ```
@@ -177,7 +181,9 @@ To make sure Babel's module processing gets disabled during processing, set it u
 }
 ```
 
-Now it should build both a version of the package for Node and a version for tree shaking compatible environments. To perfect the solution, you should make the **postinstall* script point at `build:all` to build both targets.
+Now it should build both a version of the package for Node and a version for tree shaking compatible environments. To perfect the solution, you should make the *postinstall* script point at `build:all` to build both targets.
+
+T> There is [an experimental CommonJS based tree shaking solution for webpack](https://www.npmjs.com/package/webpack-common-shake).
 
 ## Generating Standalone Builds
 
@@ -195,22 +201,19 @@ T> [Webpack and Rollup: the same but different](https://medium.com/webpack/webpa
 
 T> You can also use webpack and Rollup together through [rollup-loader](https://www.npmjs.com/package/rollup-loader) and leave JavaScript handling to Rollup as this enables tree shaking through Rollup and allows you to use Rollup specific plugins.
 
-## Scope Hoisting
+T> Both webpack and Rollup support *scope hoisting*. It's a performance oriented feature that pulls modules into a single scope instead of writing separate scope for each module. This reduces the overhead related to function calls.
 
-TODO: rollup, webpack
-TODO: what's the point
-
-### Universal Module Definition (UMD)
+## Universal Module Definition (UMD)
 
 To make the generated bundle work in different environments, bundlers support [Universal Module Definition](https://github.com/umdjs/umd) (UMD). The UMD wrapper allows the code to be consumed from different environments including the browser (global), [Asynchronous Module Definition](http://requirejs.org/docs/whyamd.html) (AMD), and CommonJS. AMD is an older format that's still being used in legacy projects.
+
+UMD isn't as relevant anymore as it used to be in the past but it's good to be aware of the format as you come around it.
 
 ### Generating a Build Using Rollup
 
 To illustrate bundling and UMD, set up an entry point for the demo as below:
 
 **index.js**
-
-<!-- textlint-disable -->
 
 ```javascript
 function demo() {
@@ -219,8 +222,6 @@ function demo() {
 
 export default demo;
 ```
-
-<!-- textlint-enable -->
 
 Define a small **package.json** to contain the build script:
 
@@ -257,16 +258,17 @@ T> You can achieve a similar result with other tools as well. The specifics will
 
 ## Cross-Platform Concerns
 
-I.e. how to write npm scripts that work on Windows, Linux, etc.
+To make sure your npm scripts work across different platforms, you cannot rely on environment specific tools. This can be solved by using a task runner to hide the differences. Alternately, you can use a collection of npm packages which expose small CLI interface. The list below contains several of them:
 
-* cpy-cli: copy files and folders
-* cross-env: environment variables
-* [mkdirp](https://github.com/substack/node-mkdirp): mkdir -p
-* npm-run-all: parallel and serial npm scripts runner
-* rimraf: rm -rf
-* [fs-extra](https://github.com/jprichardson/node-fs-extra): fs module extensions
-* https://docs.npmjs.com/misc/config#per-package-config-settings
+* [cpy-cli](https://www.npmjs.com/package/cpy-cli) - Copy files and folders.
+* [cross-env](https://www.npmjs.com/package/cross-env) - Set environment variables.
+* [mkdirp](https://www.npmjs.com/package/mkdirp) - *mkdirp* equals to Unix `mkdir -p <path>` which creates all directories given to it. A normal `mkdir <path>` would fail if any of the parents are missing. `-p` stands for `--parents`.
+* [npm-run-all](https://www.npmjs.com/package/npm-run-all) - Running npm scripts in series and parallel is problematic as there's no native support for that and you have to rely on OS level semantics. *npm-run-all* solves this problem by hiding it behind a small CLI interface. Example: `npm-run-all clean build:*`.
+* [rimraf](https://www.npmjs.com/package/rimraf) - *rimraf* equals to `rm -rf <path>` which in Unix terms removes the given path and its contents without any confirmation. The command is both powerful and dangerous.
+* [fs-extra](https://www.npmjs.com/package/fs-extra) - *fs-extra* extends Node `fs` module with commonly needed utilities. It works as a drop-in replacement to it.
 
 ## Conclusion
 
 If you are developing only against Node and use exactly the features it supports, you can skip the bundling step. Once you want to use features not available in Node yet, you have to compile your code at least. In case you want to make it possible to consume your package through Git or want to provide standalone bundles, additional effort is required.
+
+You'll learn how to release npm packages in the next chapter.
