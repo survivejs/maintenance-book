@@ -67,4 +67,6 @@ You can find more related material from the following sources:
 
 This book wouldn't have been possible without the earlier efforts. Anyone who contributed there deserves my thanks.
 
+Special thanks to [Gavin Orland](https://github.com/gavinorland) for editing.
+
 Thanks to Simon Lydell, Ryan Stegmann, and many others who have contributed direct feedback for this book!
