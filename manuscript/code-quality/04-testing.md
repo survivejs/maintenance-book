@@ -111,6 +111,10 @@ Good property testing tools like [JSVerify](https://jsverify.github.io/) or [tes
 
 **Integration testing** asserts that separate modules work together. You can use the same ideas as above here except this time around the scope of the system under test is larger.
 
+### Security Testing
+
+TODO: https://www.npmjs.com/package/nsp, https://www.npmjs.com/package/eslint-plugin-security - Security linting/testing
+
 ### Acceptance Testing
 
 **Acceptance testing** looks at testing from the user perspective. It answers the question does the user interface configured in a certain way lead to the expected result. Tools like [CodeceptJS](http://codecept.io/) or [Intern](https://theintern.github.io/) provide a high-level syntax that allows you to model user behaviors against the browser.
@@ -166,6 +170,9 @@ TODO: Figure out how to measure code coverage based on actual usage of downstrea
 As code evolves, it tends to become more complex. Dependencies form and the code will likely end up with hot spots that are fault prone. Understanding where those spots exist allows you to put your effort where it matters. The same idea applies to performance optimization. If you know what portion of your code contributes most to performance, you know it's worth optimizing.
 
 Tools like [complexity-report](https://www.npmjs.com/package/complexity-report), [plato](https://www.npmjs.com/package/plato), and [jscomplex](https://www.npmjs.com/package/jscomplex) give this type of output.
+
+TODO: http://eslint.org/docs/rules/complexity - Code complexity. This might be a chapter of its own.
+TODO: https://maierfelix.github.io/Iroh/
 
 ### Smoke Testing
 

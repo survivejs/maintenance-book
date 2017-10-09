@@ -37,16 +37,16 @@ Code style is subjective and automation can reduce pointless discussions and imp
 
 JavaScript doesn’t have an official coding style but the community maintains a few. [Airbnb](https://github.com/airbnb/javascript) and [Standard](http://standardjs.com/) are especially popular: Airbnb is detailed and pragmatic, Standard is a bit controversial because it doesn’t use semicolons. [Semistandard](https://www.npmjs.com/package/semistandard) is a variant that fixes that issue. All of these options use two spaces for indentation.
 
-ESLint is unopinionated and doesn’t have any rules by default so you should enable them manually or use a config like [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base), that implements Airbnb style guide. To get started, use `eslint --init` and let it generate a starting point for you.
+ESLint is unopinionated and doesn’t have any rules by default so you should enable them manually or use a configuration like [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base), that implements Airbnb style guide. To get started, use `eslint --init` and let it generate a starting point for you.
 
 All ES6 features are supported and [babel-eslint](https://www.npmjs.com/package/babel-eslint) adds support for newer ECMAScript features and Flow. ESLint is supported by JetBrains’ IDEs and is available as a plugin for other popular editors.
 
 ESLint itself is modular and uses plugins to operate - for example:
 
-* [eslint-plugin-compat](https://www.npmjs.com/package/eslint-plugin-compat) — checks browser compatibility using [Browserslist](https://github.com/ai/browserslist), [Can I use](http://caniuse.com/) and [@kangax’s compat](http://kangax.github.io/compat-table/es6/) table.
-* [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) — validates ES6 import/export syntax, prevents misspelling of file paths.
-* [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) — best practices for React, JSX code style.
-* [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) — finds potential security issues in Node code.
+* [eslint-plugin-compat](https://www.npmjs.com/package/eslint-plugin-compat) checks browser compatibility using [Browserslist](https://github.com/ai/browserslist), [Can I use](http://caniuse.com/) and [@kangax’s compat](http://kangax.github.io/compat-table/es6/) table.
+* [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) validates ES6 import/export syntax, prevents misspelling of file paths.
+* [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) contains best practices for React, JSX code style.
+* [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) finds potential security issues in Node code.
 
 ### Setting Up ESLint
 
@@ -56,12 +56,12 @@ Let’s install ESLint with the Airbnb config:
 npm install eslint eslint-config-airbnb-base eslint-plugin-import --save-dev
 ```
 
-Update your *package.json* as follows:
+Update your *package.json* as follows to run ESLint against the project. The setup will fix any errors it's able to fix thanks to the `--fix` flag:
 
 ```json
 {
   "scripts": {
-    "lint:js": "eslint . --cache --fix" // TODO: Explain these flags?
+    "lint:js": "eslint . --fix"
   }
 }
 ```
@@ -86,19 +86,24 @@ You may need to tweak your *.eslintrc* according to your project needs:
 {
   "extends": "airbnb-base",
   "parserOptions": {
-    // ECMAScript version: 3—8 (or 2015—2017), default is 5
+    // ECMAScript version: 3—8 (or 2015—2017), defaults to 5
     "ecmaVersion": 6,
-    // Treat source files as ECMAScript modules, default is "script"
+
+    // Treat source files as ECMAScript modules, defaults to "script"
     "sourceType": "module",
     "ecmaFeatures": {
       // Enable JSX
       "jsx": true,
+
       // Enable object rest/spread properties: {...a, ...b}
       "experimentalObjectRestSpread": true
     }
   },
-  // If you’re using Flow or experimental ECMAScript features not supported by ESLint
+
+  // If you’re using Flow or experimental ECMAScript features
+  // not supported by ESLint, enable babel-eslint parser
   "parser": "babel-eslint",
+
   // Predefined sets of global variables
   "env": {
     "browser": true,
@@ -109,15 +114,25 @@ You may need to tweak your *.eslintrc* according to your project needs:
 }
 ```
 
-See [ESLint docs](http://eslint.org/docs/user-guide/configuring) for more information.
+See [ESLint docs on configuring](http://eslint.org/docs/user-guide/configuring) for more information.
+
+T> To get most value out of linting tools during development, make sure you have installed related editor plugins. This way you can get feedback realtime as you develop and can spot potential issues earlier.
+
+### Speeding Up ESLint Execution
+
+One of the most convenient ways to speed up ESLint execution on big projects is to run it on only files that have been changed while you are working. It's possible to achieve this by using *lint-staged*. The exact technique is covered in the *Automation* chapter.
+
+Node comes with startup overhead and it takes a while for the processing to begin. [eslint_d](https://www.npmjs.com/package/eslint_d) is a daemon process designed to overcome this problem. It runs ESLint as a process in the background. [esprint](https://www.npmjs.com/package/esprint) is a similar solution. It runs ESLint across multiple threads parallel.
+
+T> You can find [more technical details about esprint in its introduction post](https://medium.com/@Pinterest_Engineering/introducing-esprint-a-fast-open-source-eslint-cli-19a470cd1c7d).
 
 ## Linting TypeScript with TSLint
 
 [TSLint](https://palantir.github.io/tslint/) is a linter for TypeScript. It has a much smaller community than ESLint and overall experience is not as nice but otherwise it’s like ESLint.
 
-T> [TypeScript support](https://github.com/eslint/typescript-eslint-parser) for ESLint is experimental and has issues.
+T> [TypeScript support](https://github.com/eslint/typescript-eslint-parser) for ESLint is experimental and has known issues.
 
-### Setting up TSLint
+### Setting Up TSLint
 
 Let’s install TSLint with the Airbnb config:
 
@@ -187,71 +202,10 @@ And finally run:
 npm run lint:css
 ```
 
-## Automating Linting with lint-staged
-
-[Lint-staged](https://github.com/okonet/lint-staged) runs linters only for changed files before each commit which makes linting mandatory and fast. It uses `pre-commit` Git hook and you can map any file extension to a shell command. You can also configure it to autofix code.
-
-TODO: mention that this works with Flow, https://github.com/facebook/flow/releases/tag/v0.48.0
-
-W> You still need to run linters on your CI server: it’s possible to avoid the `pre-commit` hook with `git commit --no-verify` in the GitHub UI.
-
-### Setting up lint-staged
-
-Let’s install lint-staged and [husky](https://www.npmjs.com/package/husky) to manage Git hooks:
-
-```bash
-npm install lint-staged husky --save-dev
-```
-
-Update your *package.json* like this:
-
-```json
-{
-  "scripts": {
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "jest --bail --findRelatedTests",
-      "prettier --write",
-      "git add"
-    ],
-    "*.scss": [
-      "stylefmt",
-      "stylelint --syntax scss",
-      "git add"
-    ]
-  }
-}
-```
-
-This configuration will:
-
-* Every time you commit a *.js* file:
-
-  1. Run ESLint with autofixing on files you are committing.
-  2. Run Jest tests related to files you are committing.
-  3. Format files you are committing with Prettier. (See the *Code Formatting* chapter for more details.)
-  4. Add changes caused by autofixing and reformatting to your commit.
-
-* Every time you commit an *.scss* file:
-
-  1. Format files you are committing with stylefmt.
-  2. Run stylelint on files you are committing.
-  3. Add changes caused by reformatting to your commit.
-
-TODO: Mention https://medium.com/@Pinterest_Engineering/introducing-esprint-a-fast-open-source-eslint-cli-19a470cd1c7d and other ways to speed up execution, https://www.npmjs.com/package/esprint, daemons
-TODO: Make sure ESLint + prettier setup is discussed
-TODO: https://maierfelix.github.io/Iroh/
-TODO: https://www.npmjs.com/package/nsp, https://www.npmjs.com/package/eslint-plugin-security - Security linting/testing -> section
-
 ## Conclusion
 
-Code style is an important aspect of code quality. You can enforce code style through tooling. Doing so forces contributors to code using the same standard and this also keeps the source consistent to read. Pushing code style to configuration also avoids arguments about which conventions to apply.
+Code style is an important aspect of code quality and you can enforce code style through tooling. Doing so forces contributors to code using the same standard and this also keeps the source consistent to read. Pushing code style to configuration also avoids arguments about which conventions to apply.
 
 You'll learn about formatting in the next chapter.
 
-TODO: Maybe worth making a best policy recommendation here such as all devs should run live linting within editors "on save" *and* linting should be set up on the commit git hook. Is it worth using it all within webpack config - when webpack is first run or WDS watch?
-TODO: http://eslint.org/docs/rules/complexity - Code complexity. This might be a chapter of its own.
-
+T> See the *Automation* chapter to learn how to automate linting.
