@@ -10,21 +10,21 @@ It gets more complex if you plan for the future or if the users of the package d
 
 ### What Issue Data to Capture
 
-Depending on the system, an issue contains at least the following data: title, description, labels or tags. It may also be assigned to a milestone or to specific project members, or projects in GitHub.
+Depending on the system, an issue contains at least the following data: title, description, labels or tags. The point is to capture this data so that development decisions can be made.
 
-The point is to capture this data so that development decisions can be made. An issue itself can be a feature request, a bug report, or sometimes a support request. It's up to project policies on how to deal with support in particular and in some cases support requests are pushed to specific channels while the official issue tracker of the project is limited only for development purposes.
+An issue itself can be a feature request, a bug report, or sometimes a support request. It's up to project policies on how to deal with support in particular as discussed later in this chapter.
 
 ### Capturing the Right Data
 
 Especially popular projects are constrained by the amount of maintainers they have. This means that the demand for support in different means can exceed the bandwidth of the team. Managing issue tracking well is one of the keys to dealing with this problem.
 
-Poorly formatted issues waste time. In the worst case you have to dig the information you require to debug the problem. The problem can be solved by improving the standard of issues and not accepting poor ones.
+Poorly formatted and incomplete issues waste time. In the worst case you have to dig the information you require to debug the problem. The problem can be solved by improving the standard of issues and not accepting poor ones.
 
-In GitHub this can be achieved by using an [issue template](https://github.com/serverless/serverless/blob/master/.github/ISSUE_TEMPLATE.md) that's included within a repository. When a user fills in an issue, the provided template will work as a starting point. Unfortunately, given it's in text format, it doesn't solve the problem entirely. Bots discussed in the *Automation* chapter solve this problem as they can close poor quality issues.
+In GitHub this can be achieved by using an [issue template](https://github.com/serverless/serverless/blob/master/.github/ISSUE_TEMPLATE.md) that's included within a repository. When a user fills in an issue, the provided template will work as a starting point. Unfortunately, given it's in text format, it doesn't solve the problem entirely. Bots discussed in the *Automation* chapter try to solve this problem as they can close poor quality issues as long as certain criteria is met.
 
 ## Pull Requests
 
-Instead of requesting for features or reporting bugs, sometimes the users may scratch their own itch and provide **pull requests** to a project. The point is to provide a small patch to the project that can then be merged provided it's high enough quality.
+Instead of requesting for features or reporting bugs, sometimes the users may scratch their own itch and provide **pull requests** to a project. The point is to provide a small patch to the project that can then be merged assuming it's high enough quality.
 
 Pull requests share similar problems as issues. As issues, also [pull requests have templates](https://github.com/serverless/serverless/blob/master/.github/PULL_REQUEST_TEMPLATE.md) in GitHub but the same caveat as before applies and there are a few additional problems as well.
 
@@ -36,11 +36,11 @@ An important part of development practices is designing a development process. E
 
 This is where managing issue tracking and pull requests well becomes vital. You should design a system for issues where you set them in a particular way. For example, each issue could gain a priority (0-4 for example), categorization (bug, feature request), and difficulty (0-3 for example). The labels you need depend on the type of the project and there's no one right answer on which labels to use.
 
-In GitHub pull requests may use labels as well. Most importantly it's a chance for you to apply reviews on code. That is your chance to discuss the implementation until it's in a satisfactory state. It's also a chance to grow new contributors to your project. They may even become maintainers one day and assume your position in the project.
+Most importantly it's a chance for you to apply reviews on code. That is your chance to discuss the implementation until it's in a satisfactory state. It's also a chance to grow new contributors to your project. They may even become maintainers one day and assume your position in the project.
 
 ## Designing a Support Model
 
-Once a project reaches certain scale, managing support becomes a problem. GitHub's issue tracker works up to a point. Sometimes bigger projects push questions to services like Stack Overflow. This is also where commercial support may be provided as there is no obligation to help free even if the code is freely available.
+Once a project reaches certain scale, managing support becomes a problem. GitHub's issue tracker works up to a point. Sometimes bigger projects move the problem of support level questions to services like Stack Overflow. This is also where commercial support may be provided as there is no obligation to help free even if the code is freely available.
 
 One of the best ways to deal with support is to reduce the amount of support required through design and documentation. If certain part of software requires constant support, perhaps it could be re-designed in such way that it's easier to understand. Documentation can make it easier to understand the concepts behind the implementation and provide the needed knowledge to get most out of the design.
 
