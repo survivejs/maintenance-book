@@ -32,7 +32,13 @@ T> If you want to decrease the size of your dependencies, consider using a tool 
 
 All packages come with a *package.json* that describes metadata related to them and includes information about the author, links, dependencies, and so on. The [official documentation](https://docs.npmjs.com/files/package.json) covers them in detail.
 
-The example below contains an annotated a part of *package.json* from my [React component boilerplate](https://github.com/survivejs/react-component-boilerplate):
+The examples below contains an annotated a part of *package.json* from my [React component boilerplate](https://github.com/survivejs/react-component-boilerplate).
+
+### Description Fields
+
+The description fields describe who created the package, what it does, related keywords, and more.
+
+**package.json**
 
 ```json
 {
@@ -48,33 +54,86 @@ The example below contains an annotated a part of *package.json* from my [React 
   /* Version of the package */
   "version": "0.0.0",
 
+  /* Keywords related to package. */
+  /* Fill this well to make the package findable. */
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate"
+  ],
+
+  /* Which license to use */
+  "license": "MIT"
+
+  /* Files to include to npm distribution. */
+  /* Relative patterns like "./src" fail! */
+  "files": [
+    "dist/"
+  ],
+
+  ...
+}
+```
+
+### Scripts
+
+npm can be used as a task runner through `npm run` interface. Running the command shows all available scripts. npm works so that if you install a dependency, such as webpack, it links *node_modules/.bin* commands to the environment during the script execution. The scripts are commonly used for different build tasks.
+
+Use `pre` and `post` prefixes to group your scripts. For example, *npm run publish* will try to run `pretest`, `test`, and then `posttest` scripts. In the example below, the convention is used to control what happens when `npm publish` is executed.
+
+**package.json**
+
+```json
+{
+  ...
+
   /* `npm run <name>` - `npm run` to get the available commands */
   "scripts": {
-    "start": "webpack-dev-server --env development",
+    "start": "catalog start docs",
 
+    /* Namespacing (namespace:task) is a convention used for */
+    /* grouping. npm doesn't do anything with the information. */
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
+    "test:lint": "eslint . --ignore-path .gitignore",
 
-    "lint:js": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --ignore-pattern dist --cache",
+    "gh-pages": "catalog build docs",
+    "gh-pages:deploy": "gh-pages -d docs/build",
 
-    "gh-pages": "webpack --env gh-pages",
-    "gh-pages:deploy": "gh-pages -d gh-pages",
-    "gh-pages:stats": "webpack --env gh-pages --json > stats.json",
+    "dist:es6": "del-cli ./dist-es6 &&
+      cross-env BABEL_ENV=es6 babel ./src --out-dir ./dist-es6",
+    "dist:modules": "del-cli ./dist-modules &&
+      cross-env BABEL_ENV=modules babel ./src --out-dir ./dist-modules",
 
-    "dist:all": "npm run dist && npm run dist:min",
-    "dist": "webpack --env dist",
-    "dist:min": "webpack --env dist:min",
-    "dist:modules": "rimraf ./dist-modules && babel ./src --out-dir ./dist-modules",
-
-    "pretest": "npm run lint:js",
-    "preversion": "npm run test && npm run dist:all && git commit --allow-empty -am \"Update dist\"",
-    "prepublish": "npm run dist:modules",
+    "preversion": "npm run test",
+    "prepublish": "npm run dist:es6 && npm run dist:modules",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
 
-    /* If your library is installed through Git, transpile it */
+    /* If your library is installed through Git, compile it */
     "postinstall": "node lib/post_install.js"
   },
+
+  ...
+}
+```
+
+Certain scripts, such as `start` and `test`, have shortcuts in npm. Examples:
+
+* `npm t` maps to `npm test` or `npm run test`.
+* `npm start` maps to `npm run start`.
+
+T> The `postinstall` script and how it works is discussed in detail in the next chapter.
+
+### Entry Points
+
+The entry points describe how the package should resolve to your source based on the context in which it's being used.
+
+**package.json**
+
+```json
+{
+  ...
 
   /* Entry point for terminal (i.e., <package name>). */
   /* Don't set this unless you intend to allow Command line usage */
@@ -87,11 +146,19 @@ The example below contains an annotated a part of *package.json* from my [React 
   /* Apart from the module format, the code should use ES5 otherwise. */
   "module": "dist/",
 
-  /* Files to include to npm distribution. */
-  /* Relative patterns like "./src" fail! */
-  "files": [
-    "dist/"
-  ],
+  ...
+}
+```
+
+### Dependencies
+
+A package may have different level dependencies. Some will be used only during development, some should be installed to use the package itself. If *peer dependencies* are used, then it's up to the user to decide which version of a given package to use. The definition guarantees that the package should work within the given version range.
+
+**package.json**
+
+```json
+{
+  ...
 
   /* Package dependencies needed to use it. */
   /* Peer dependencies can work too, see below. */
@@ -107,8 +174,22 @@ The example below contains an annotated a part of *package.json* from my [React 
   /* using a pattern such as ^4.0.0-0 */
   "peerDependencies": {
     "lodash": ">= 3.5.0 < 4.0.0",
-    "react": ">= 0.11.2 < 16.0.0"
+    "react": ">= 0.11.2 < 17.0.0"
   },
+
+  ...
+}
+```
+
+### Links
+
+A package should link to its repository, homepage, and issue tracker. The fields are optional but they are good to have as it will make it easier for the users to find these through npm site.
+
+**package.json**
+
+```json
+{
+  ...
 
   /* Links to repository, homepage, and issue tracker */
   "repository": {
@@ -118,27 +199,15 @@ The example below contains an annotated a part of *package.json* from my [React 
   "homepage": "https://survivejs.github.io/react-component-boilerplate/",
   "bugs": {
     "url": "https://github.com/survivejs/react-component-boilerplate/issues"
-  },
-
-  /* Keywords related to package. */
-  /* Fill this well to make the package findable. */
-  "keywords": [
-    "react",
-    "reactjs",
-    "boilerplate"
-  ],
-
-  /* Which license to use */
-  "license": "MIT"
+  }
 }
 ```
+
+### Other Fields
 
 As you can see, *package.json* can contain a lot of information. You can attach non-npm specific metadata there that can be used by tooling. Given this can bloat *package.json*, it's preferable to keep metadata in files of their own.
 
 T> JSON doesn't support comments even though I'm using them above. There are extended notations, such as [Hjson](http://hjson.org/), that do.
-
-TODO: I'd like to see more information about npm scripts here. For example, the way that `start`, `stop` and `test` are shortcuts included which can be triggered without using `run` whereas others must be preceded with `run`. And the way that you can prefix any script with 'pre' or 'post' so that it's run before or after its main script. And whether there are any special implications to the `main:sub` syntax.
-TODO: Add an example of a `postinstall` script.
 
 ## What Files to Publish
 
@@ -146,7 +215,7 @@ Even though a project can contain a lot of files, not all of them should be publ
 
 You can't find an official recommendation on what files to publish. That said, there are points to consider as [discussed in Stack Overflow](https://stackoverflow.com/questions/25124844/should-i-npmignore-my-tests).
 
-At a minimum, you should distribute the source code needed to run the package. If you have code written using the ES6 standard, you should transpile the code so that it does not lose the ES6 module definitions while everything else is converted to ES5. For the tooling to pick it up, you should point to this version of code through *package.json* `module` field.
+At a minimum, you should distribute the source code needed to run the package. If you have code written using the ES6 standard, you should compile the code so that it does not lose the ES6 module definitions while everything else is converted to ES5. For the tooling to pick it up, you should point to this version of code through *package.json* `module` field.
 
 You should point package `main` to a fully compiled version that's compatible with Node.
 
@@ -154,10 +223,10 @@ Besides the source, you can consider distributing package *README.md* and *LICEN
 
 W> Even though it's possible to tell npm what to exclude from `files` through `!src/*.test.js` kind of definitions, [using negation patterns is not recommended](https://github.com/npm/npm/wiki/Files-and-Ignores#details). Instead, you should use *.npmignore* and include `src/*.test.js` kind of pattern there.
 
-TODO: https://medium.com/@mikeal/modern-modules-d99b6867b8f1
-
 ## Conclusion
 
 An npm package contains at least metadata and source. Many of the files that are relevant for development can be skipped in a distribution build to keep downloads fast. Although that's a small issue, it's still good to consider as it doesn't take much effort to filter the files.
 
 You'll learn how to release npm packages in the next chapter.
+
+T> As browsers have evolved to support new features of JavaScript, Node is still catching up. This brings the problem of polyfilling. Ideally we should be able to author code in modern features. [Mikeal Rogers states](https://medium.com/@mikeal/modern-modules-d99b6867b8f1) that we should polyfill for older Node and not let it hold the ecosystem back.
