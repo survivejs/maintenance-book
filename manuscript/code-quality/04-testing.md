@@ -115,7 +115,7 @@ Good property testing tools like [JSVerify](https://jsverify.github.io/) or [tes
 
 ### Security Testing
 
-TODO: https://www.npmjs.com/package/nsp, https://www.npmjs.com/package/eslint-plugin-security - Security linting/testing
+**Security testing** addresses specific vulnerabilities that allow a potential attacker to breach a system. [nsp](https://www.npmjs.com/package/nsp) is a tool that checks your project against known vulnerabilities. [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) can be used to identify potential security hotspots that need to be checked by a human.
 
 ### Acceptance Testing
 
