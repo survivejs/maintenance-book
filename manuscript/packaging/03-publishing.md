@@ -71,8 +71,6 @@ Using version ranges can feel dangerous as it doesn't take much to break an appl
 
 [Yarn](https://yarnpkg.com/), an npm alternative, goes a step further as it introduces the idea of a *lockfile*. Yarn is worth a look, as it fixes certain shortcomings of npm. Yarn has value for package authors as well as it keeps maintenance easier given you can guarantee certain versions of dependencies are being used.
 
-T> [Stack Overflow](https://stackoverflow.com/questions/40057469/what-is-the-difference-between-yarn-lock-and-npm-shrinkwrap)
-
 T> [Sebastian McKenzie discusses the difference between the lockfile approaches](https://yarnpkg.com/blog/2017/05/31/determinism/). In short, Yarn needs *package.json* to work while npm doesn't. Future interoperability is still unclear due to the difference of the approaches.
 
 ## Conclusion
