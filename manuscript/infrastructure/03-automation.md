@@ -121,6 +121,9 @@ scope: {
 
 ?> I think it's worth pushing the present imperative tense for commit messages. Here's a good article on this topic: https://chris.beams.io/posts/git-commit/ Thus we describe what a commit will *do*, if applied.
 
+TODO: https://www.npmjs.com/package/gh-lint
+TODO: https://www.slideshare.net/epoberezkin/auditing-development-guidelines-in-github-repositories
+
 ## Semantic Release
 
 By default semantic-release makes everything automatically:
