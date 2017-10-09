@@ -165,10 +165,7 @@ T> Especially big and popular projects, such as [Esprima](http://esprima.org/tes
 
 As code evolves, it tends to become more complex. Dependencies form and the code will likely end up with hot spots that are fault prone. Understanding where those spots exist allows you to put your effort where it matters. The same idea applies to performance optimization. If you know what portion of your code contributes most to performance, you know it's worth optimizing.
 
-Tools like [complexity-report](https://www.npmjs.com/package/complexity-report), [plato](https://www.npmjs.com/package/plato), and [jscomplex](https://www.npmjs.com/package/jscomplex) give this type of output.
-
-TODO: http://eslint.org/docs/rules/complexity - Code complexity. This might be a chapter of its own.
-TODO: https://maierfelix.github.io/Iroh/
+Tools like [complexity-report](https://www.npmjs.com/package/complexity-report), [plato](https://www.npmjs.com/package/plato), and [jscomplex](https://www.npmjs.com/package/jscomplex) give this type of output. [ESLint has specific checks for complexity](http://eslint.org/docs/rules/complexity) [Iroh](https://maierfelix.github.io/Iroh/) performs runtime checks.
 
 ### Smoke Testing
 
