@@ -56,12 +56,12 @@ Let’s install ESLint with the Airbnb config:
 npm install eslint eslint-config-airbnb-base eslint-plugin-import --save-dev
 ```
 
-Update your *package.json* as follows to run ESLint against the project:
+Update your *package.json* as follows to run ESLint against the project. The setup will fix any errors it's able to fix thanks to the `--fix` flag:
 
 ```json
 {
   "scripts": {
-    "lint:js": "eslint ."
+    "lint:js": "eslint . --fix"
   }
 }
 ```
@@ -115,8 +115,6 @@ You may need to tweak your *.eslintrc* according to your project needs:
 ```
 
 See [ESLint docs on configuring](http://eslint.org/docs/user-guide/configuring) for more information.
-
-T> To automatically fix issues pointed out by ESLint, pass `--fix` flag to it. Example: `npm run lint:js -- --fix`.
 
 T> To get most value out of linting tools during development, make sure you have installed related editor plugins. This way you can get feedback realtime as you develop and can spot potential issues earlier.
 
