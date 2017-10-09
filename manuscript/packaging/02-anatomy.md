@@ -227,6 +227,6 @@ W> Even though it's possible to tell npm what to exclude from `files` through `!
 
 An npm package contains at least metadata and source. Many of the files that are relevant for development can be skipped in a distribution build to keep downloads fast. Although that's a small issue, it's still good to consider as it doesn't take much effort to filter the files.
 
-You'll learn how to release npm packages in the next chapter.
+You'll learn how to publish npm packages in the next chapter.
 
 T> As browsers have evolved to support new features of JavaScript, Node is still catching up. This brings the problem of polyfilling. Ideally we should be able to author code in modern features. [Mikeal Rogers states](https://medium.com/@mikeal/modern-modules-d99b6867b8f1) that we should polyfill for older Node and not let it hold the ecosystem back.
