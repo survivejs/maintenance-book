@@ -9,6 +9,8 @@ TODO
 ## How to Set Up a Site
 
 TODO: Styleguidist etc.
+TODO: Other popular tools to generate style guides
+TODO: Style guide driven development?
 
 ## Testing Site
 
