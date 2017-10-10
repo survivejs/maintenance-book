@@ -107,7 +107,7 @@ Use `pre` and `post` prefixes to group your scripts. For example, *npm run publi
       cross-env BABEL_ENV=modules babel ./src --out-dir ./dist-modules",
 
     "preversion": "npm run test",
-    "prepublish": "npm run dist:es6 && npm run dist:modules",
+    "prepublishOnly": "npm run dist:es6 && npm run dist:modules",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
 
     /* If your library is installed through Git, compile it */
@@ -124,6 +124,8 @@ Certain scripts, such as `start` and `test`, have shortcuts in npm. Examples:
 * `npm start` maps to `npm run start`.
 
 T> The `postinstall` script and how it works is discussed in detail in the next chapter.
+
+T> Before npm 5, people used `prepublish` instead of `prepublishOnly`. [According to the documentation](https://docs.npmjs.com/misc/scripts), `prepublish` is run also on `npm install`. To overcome this confusing behavior, `prepublishOnly` was implemented.
 
 ### Entry Points
 

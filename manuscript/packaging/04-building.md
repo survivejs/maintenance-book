@@ -69,7 +69,7 @@ To make sure the code gets generated before you publish it to npm, set up hooks 
   ...
   "build": "babel ./src --out-dir ./lib",
   "preversion": "npm test",
-  "prepublish": "npm run build"
+  "prepublishOnly": "npm run build"
 },
 ```
 
@@ -143,14 +143,14 @@ The technique requires two steps. Set up a helper scripts first:
 leanpub-start-delete
   "build": "babel ./src --out-dir ./lib",
   "preversion": "npm test",
-  "prepublish": "npm run build"
+  "prepublishOnly": "npm run build"
 leanpub-end-delete
 leanpub-start-insert
   "build:all": "npm run build && npm run build:tree-shaking",
   "build:tree-shaking": "BABEL_ENV=tree-shaking babel ./src --out-dir ./dist-modules",
   "build": "BABEL_ENV=build babel ./src --out-dir ./lib",
   "preversion": "npm test",
-  "prepublish": "npm run build:all"
+  "prepublishOnly": "npm run build:all"
 leanpub-end-insert
 },
 ```
