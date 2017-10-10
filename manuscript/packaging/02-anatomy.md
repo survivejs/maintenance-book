@@ -123,7 +123,7 @@ Certain scripts, such as `start` and `test`, have shortcuts in npm. Examples:
 * `npm t` maps to `npm test` or `npm run test`.
 * `npm start` maps to `npm run start`.
 
-T> The `postinstall` script and how it works is discussed in detail in the next chapter.
+T> The `postinstall` script and how it works is discussed in detail in the *Building Packages* chapter.
 
 T> Before npm 5, people used `prepublish` instead of `prepublishOnly`. [According to the documentation](https://docs.npmjs.com/misc/scripts), `prepublish` is run also on `npm install`. To overcome this confusing behavior, `prepublishOnly` was implemented.
 
