@@ -63,13 +63,13 @@ npm supports multiple version ranges as listed below:
 
 You can set the default range using `npm config set save-prefix='^'` in case you prefer something else than caret. Alternately, you can modify *~/.npmrc* directly. Especially defaulting to tilde can be a good idea that can help you to avoid trouble with dependencies, although it doesn't remove potential problems entirely. That's where shrinkwrapping comes in.
 
-## Shrinkwrapping Versions
+## Locking Versions
 
-Using version ranges can feel dangerous as it doesn't take much to break an application. A single change in the wrong place is enough. [npm shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap) allows you to fix your dependency versions and have stricter control over the versions you are using in a production environment. Most importantly it fixes the dependencies of your dependencies avoiding accidental breakage due to version changes and SemVer.
+Using version ranges can feel dangerous as it doesn't take much to break an application. A single change in the wrong place is enough. Since npm 5, npm has provided support for **lockfiles**. When `npm install` is run, it writes a file, *package-lock.json*. The file should be committed to a project repository and it contains the versions of the installed packages.
 
-[lockdown](https://www.npmjs.com/package/lockdown) goes further and gives guarantees about dependency content, not version alone. [shrinkpack](https://www.npmjs.com/package/shrinkpack) is another complementary option.
+The next time someone runs `npm install`, npm will use the versions specified in this lockfile. The point is to provide predictable environment as sometimes a package might break by not following the aforementioned SemVer rules correctly.
 
-[Yarn](https://yarnpkg.com/), an npm alternative, goes a step further as it introduces the idea of a *lockfile*. Yarn is worth a look, as it fixes certain shortcomings of npm. Yarn has value for package authors as well as it keeps maintenance easier given you can guarantee certain versions of dependencies are being used.
+[Yarn](https://yarnpkg.com/), an npm alternative, implemented the idea of lockfiles first. It provides certain functionality, such as workspaces, not found in npm and continues to push the envelope.
 
 T> [Sebastian McKenzie discusses the difference between the lockfile approaches](https://yarnpkg.com/blog/2017/05/31/determinism/). In short, Yarn needs *package.json* to work while npm doesn't. Future interoperability is still unclear due to the difference of the approaches.
 
