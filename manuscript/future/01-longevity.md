@@ -10,6 +10,7 @@ You have to consider at least the following aspects:
 * What happens if developers disappear from the project?
 * How to attract new contributors and maintainers to the project?
 * How to keep track of everything that's going on with the project?
+* How to maintain a popular project?
 
 ## Who Is Going to Develop the Project
 
@@ -50,6 +51,14 @@ To even gain contributions, the project should be contributor friendly. Various 
 ## How to Keep Track of Everything That's Going on with the Project
 
 As a project grows in complexity, it can become difficult to keep track of it. Popular services, such as GitHub, work as starting points. As the complexity grows and there's more to worry about, solutions such as [Octobox](https://octobox.io/) become valuable as they focus on these problems at scale.
+
+## How to Maintain a Popular Project
+
+Sometimes a project becomes popular even if popularity isn't a goal. This can happen particularly if the project solves an important problem and the right people find it. They will evangelize the project and make it popular whether you wanted or not.
+
+Popularity comes with its challenges. Even though it might sound like a great thing, it comes with responsibility. Popularity tends to lead to increased demand for maintainer attention. The project development process has to be solid as discussed in the *Processes* chapter and it has to be able to deal with the pressure to remain popular.
+
+Sometimes the pressure of popularity is too much and people give up on project maintenance. This is particularly true if the incentives aren't there. Once it becomes too much work for too little reward, it can feel waste of time. Thinking about project longevity and development model is important because of this reason.
 
 ## Conclusion
 
