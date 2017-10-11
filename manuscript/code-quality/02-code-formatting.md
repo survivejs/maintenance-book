@@ -177,6 +177,14 @@ And then run it like this:
 npm run format:css
 ```
 
+## Code Consistency
+
+Even though *Linting* and formatting the code in a specific way help, there are aspects that the default solutions won't capture entirely. A good example of this is **conceptual code consistency**. Formatting makes code look consistent but it can still be conceptually inconsistent.
+
+For example, it could have `FooLoader` and `BarThatLoadsFoo` abstractions. Both refer to the same concept in different ways.
+
+It's difficult, or even impossible, to detect high-level problems like this automatically. For this reason, it's important to review the code for consistency every once in a while. Sometimes you may discover something that can be turned into a linting rule to solidify a specific idea but not everything can be automated.
+
 ## Conclusion
 
 Formatting tools complement linting well. They eliminate one source of confusion and make sure your code is formatted in a consistent manner.
