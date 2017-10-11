@@ -1,8 +1,8 @@
 # Dependency Management
 
-While writing projects, dependency management tends to be a common issue. Although lockfiles can help, you still have to keep up with the development as packages you depend upon evolve.
+While writing projects, dependency management tends to be a common issue. Sometimes keeping up with the dependencies means you have to rewrite code. Bigger projects may provide **codemods** that can perform the required changes for you. They can also rely on deprecation patterns that tell you to rewrite certain pieces code before removing the functionality entirely.
 
-Sometimes this means you have to rewrite code. Bigger projects may provide **codemods** that can perform the required changes for you. They can also rely on deprecation patterns that tell you to rewrite certain pieces code before deprecating the functionality entirely.
+T> You should use **lockfiles** to manage the versions of your dependencies. Read the *Publishing Packages* chapter to learn more about the approach.
 
 ## Keeping Dependencies Up to Date
 
@@ -17,7 +17,11 @@ eslint-config-airbnb     15.1.0  15.1.0  16.0.0  react-component-boilerplate
 eslint-plugin-jsx-a11y    5.1.1   5.1.1   6.0.2  react-component-boilerplate
 ```
 
-The output tells that in this case running [npm update](https://docs.npmjs.com/cli/update) could update `catalog` to `3.1.2` given it follows SemVer. The other dependencies would require either a manual change to *package.json* or using a specific tool:
+The *catalog* case is the curious one. The project has set it as a development dependency using a version range `"catalog": "^3.0.0",`. According to the output, the project has version 3.0.0 installed while the latest available version is 3.1.2.
+
+Running [npm update](https://docs.npmjs.com/cli/update) would update it to that version but there are no guarantees the new version will work given SemVer is only a verbal contract. A package can still break functionality and you should not update package versions blindly!
+
+The other dependencies would require either a manual change to *package.json* or using a specific tool such as one listed below:
 
 * `yarn upgrade-interactive` allows you to choose which dependencies you want to update.
 * [npm-upgrade](https://www.npmjs.com/package/npm-upgrade) also shows links to change logs.
