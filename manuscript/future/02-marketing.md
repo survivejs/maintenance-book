@@ -18,9 +18,9 @@ Sometimes the approach may mean that you have to do something indirect, such as 
 
 Assuming you are developing a user interface library, it could make sense to build amazing sites using it to showcase its capabilities. These case studies bring eyes to the project and make it easier to find.
 
-As a technical marketer, you can develop **marketing channels** and combine them in creative manners. In this case each site could be considered a channel of its own that leads to the main project. The shape of a channel doesn't matter that much. It's more about being aware of the concept. You cannot control most channels but the ones you develop yourself, you can.
-
 Another way would be to allow the users to get started as fast as possible. Perhaps the project homepage could contain runnable examples or something that can delight the potential user as soon as possible. Often the problem is in showing the potential of the solution. It's also important because communicating effectively what your project does saves time of people as they waste less time understanding what it's about.
+
+As a technical marketer, you can develop these kind of **marketing channels**. Each channel addresses a certain group of people. Sometimes you own the channel, sometimes you don't. Especially the content marketing related channels require external help.
 
 ### Content Marketing
 
