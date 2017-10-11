@@ -1,10 +1,120 @@
 # Automation
 
-When to apply automation. pros/cons
+Everything that can be done by a machine, will eventually be done by a machine. One of the earliest "computers", [the Jacquard machine](https://en.wikipedia.org/wiki/Jacquard_loom), achieved this for manufacturing complex textiles. It displaced human effort this way and pushed the difficult and monotonous task to a machine. This is the whole point of automation.
+
+The same idea applies to software projects. Why to repeatedly do something that you can have the machine do for you? Or why to do something the hard way when it's possible to do it in an easier way while having the machine to assist you?
+
+## Git Commit Messages
+
+Depending on the developer and the development style, the quality of Git commit messages can vary. It's important data given it may be used in the future as you have to figure out why some code was written the way it was. The quality of commit messages becomes particularly important when more people get involved with the project.
+
+[commitizen](https://www.npmjs.com/package/commitizen) gives a specific command, `git cz`, that allows you to follow [AngularJS Git Message convention](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit) by asking you a series of questions. This way you don't have to remember the specification in detail.
+
+T> Internally commitizen relies upon [commitlint](https://github.com/marionebl/commitlint). commitlint provides a tool you can use to validate messages. commitizen wraps it in a higher level interface.
+
+Commit message conventions like the AngularJS one lets the tooling to figure out types of the changes you made. It can help with change log generation and allow automated releases over manual ones. Annotating your commits well is a good practice in any case as it makes it easier to debug your code later.
+
+In AngularJS convention each commit message consists of:
+
+* Type: `feat` for a new feature, `fix` for a bug fix, `docs` for documentation, `chore` for maintenance, etc.
+* Subject: short change description.
+* Body (optional): long change description.
+* Footer (optional): breaking changes, GitHub issues references, etc.
+
+For example:
+
+```
+feat($compile): simplify isolate scope bindings
+
+Changed the isolate scope binding options to:
+  - @attr - attribute binding (including interpolation)
+  - =model - by-directional model binding
+  - &expr - expression execution binding
+
+This change simplifies the terminology as well as
+number of choices available to the developer. It
+also supports local name aliasing from the parent.
+
+BREAKING CHANGE: isolate scope bindings definition has changed and
+the inject option for the directive controller injection was removed.
+
+To migrate the code follow the example below:
+
+Before:
+
+scope: {
+  myAttr: 'attribute',
+  myBind: 'bind',
+  myExpression: 'expression',
+  myEval: 'evaluate',
+  myAccessor: 'accessor'
+}
+
+After:
+
+scope: {
+  myAttr: '@',
+  myBind: '@',
+  myExpression: '&',
+  // myEval - usually not useful, but in cases where the expression is assignable, you can use '='
+  myAccessor: '=' // in directive's template change myAccessor() to myAccessor
+}
+```
+
+Messages can be descriptive like this when they capture a big change. During development smaller messages representing meaningful changes are enough. Messages as the one above can be written as the work gets merged to the release branch of the project.
+
+The advantage of doing this is that it makes it easier for other developers to tell what's going on. Some of the information can be reused for documentation purposes in project main documentation and change logs.
+
+T> It's a common convention to write commit titles in **imperative** tense. The main reason is that this keeps the results of `git diff` more understandable to other developers. [Chris Beams explains the message idea in detail in his blog](https://chris.beams.io/posts/git-commit/).
+
+## Semantic Release
+
+By default semantic-release makes everything automatically:
+
+* Runs on a CI server after each commit to the `master` branch.
+* After each successful build it analyzes new commits and see if there’s something to publish.
+* Determines a release type (PATCH, MINOR or MAJOR) by analyzing commit messages written using AngularJS conventions.
+* Generates a change log from important commits (skips documentation and maintenance commits).
+* Publishes a new package version to npm.
+* Publishes change log to GitHub Releases page.
+
+To use semantic-release you need to install its command line tool:
+
+```bash
+npm install -g semantic-release-cli
+```
+
+Then run it in your project folder:
+
+```bash
+semantic-release-cli setup
+```
+
+Enter your npm and GitHub credentials, choose type of your CI server.
+
+And now if you make a new commit with a message like `fix: allow doodad to work with zero`, semantic-release will publish a new PATCH version to npm and publish release notes based on the commit message to GitHub.
+
+T> You can customize every step of this process with plugins. For example, [make only PATCH releases automatically](http://blog.sapegin.me/all/semantic-release) and allow user to decide when to make MINOR and MAJOR releases and edit change logs manually.
 
 ## Git Hooks
 
-TODO: Mention commit hooks that can check things like commit message syntax and run tests. This allows rebase workflow.
+Git provides a set of hooks that trigger for example before pushing or committing a change. These hooks are ideal for quick checks and they allow you to adjust your source before finally pushing by using `git rebase --interactive` (or `git rebase -i`). Rebase workflow is good to know as it allows you to fix mistakes before they get shared with other developers.
+
+Git hooks can be used in a JavaScript project with a package such as [husky](https://www.npmjs.com/package/husky). It connects Git hook interface with npm `scripts`. Consider the example below:
+
+```json
+{
+  "scripts": {
+    ...
+    "prepush": "npm test"
+  },
+  ...
+}
+```
+
+The package will do all the wiring required and run project tests before pushing to the repository.
+
+T> Note that if you have set up Git hooks manually, it might not work! It's better to let husky control the Git side entirely.
 
 ## Automating Linting with lint-staged
 
@@ -66,92 +176,9 @@ To make it easier to comply with SemVer, [next-ver](https://www.npmjs.com/packag
 
 All these tools rely on commit message convention.
 
-## Commit Message Convention
+## gh-lint
 
-Commit message conventions lets the tooling to figure out types of the changes you made. It can help with change log generation and allow automated releases over manual ones. Annotating your commits well is a good practice in any case as it makes it easier to debug your code later.
-
-You can invent your own convention or adopt a popular one like AngularJS.
-
-In [AngularJS convention](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit) each commit message consists of:
-
-* Type: `feat` for a new feature, `fix` for a bug fix, `docs` for documentation, `chore` for maintenance, etc.
-* Subject: short change description.
-* Body (optional): long change description.
-* Footer (optional): breaking changes, GitHub issues references, etc.
-
-For example:
-
-```
-feat($compile): simplify isolate scope bindings
-
-Changed the isolate scope binding options to:
-  - @attr - attribute binding (including interpolation)
-  - =model - by-directional model binding
-  - &expr - expression execution binding
-
-This change simplifies the terminology as well as
-number of choices available to the developer. It
-also supports local name aliasing from the parent.
-
-BREAKING CHANGE: isolate scope bindings definition has changed and
-the inject option for the directive controller injection was removed.
-
-To migrate the code follow the example below:
-
-Before:
-
-scope: {
-  myAttr: 'attribute',
-  myBind: 'bind',
-  myExpression: 'expression',
-  myEval: 'evaluate',
-  myAccessor: 'accessor'
-}
-
-After:
-
-scope: {
-  myAttr: '@',
-  myBind: '@',
-  myExpression: '&',
-  // myEval - usually not useful, but in cases where the expression is assignable, you can use '='
-  myAccessor: '=' // in directive's template change myAccessor() to myAccessor
-}
-```
-
-?> I think it's worth pushing the present imperative tense for commit messages. Here's a good article on this topic: https://chris.beams.io/posts/git-commit/ Thus we describe what a commit will *do*, if applied.
-
-TODO: https://www.npmjs.com/package/gh-lint
-TODO: https://www.slideshare.net/epoberezkin/auditing-development-guidelines-in-github-repositories
-
-## Semantic Release
-
-By default semantic-release makes everything automatically:
-
-* Runs on a CI server after each commit to the `master` branch.
-* After each successful build it analyzes new commits and see if there’s something to publish.
-* Determines a release type (PATCH, MINOR or MAJOR) by analyzing commit messages written using AngularJS conventions.
-* Generates a change log from important commits (skips documentation and maintenance commits).
-* Publishes a new package version to npm.
-* Publishes change log to GitHub Releases page.
-
-To use semantic-release you need to install its command line tool:
-
-```bash
-npm install -g semantic-release-cli
-```
-
-Then run it in your project folder:
-
-```bash
-semantic-release-cli setup
-```
-
-Enter your npm and GitHub credentials, choose type of your CI server.
-
-And now if you make a new commit with a message like `fix: allow doodad to work with zero`, semantic-release will publish a new PATCH version to npm and publish release notes based on the commit message to GitHub.
-
-T> You can customize every step of this process with plugins. For example, [make only PATCH releases automatically](http://blog.sapegin.me/all/semantic-release) and allow user to decide when to make MINOR and MAJOR releases and edit change logs manually.
+https://www.npmjs.com/package/gh-lint
 
 ## Danger
 

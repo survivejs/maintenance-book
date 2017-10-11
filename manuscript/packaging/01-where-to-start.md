@@ -10,7 +10,7 @@ This situation is somewhat alleviated by the arrival of [npms](https://npms.io/)
 
 The point of a package manager like npm is to avoid unnecessary development effort. Instead of developing every piece of code yourself, you consume ready-made functionality using npm. This isn't without its problems as you have to research and test your options.
 
-npm ecosystem is vast and it hosts multiple smaller communities, such as Angular, Ember, or React. Certain utility libraries, like lodash, are valuable across these boundaries. npm offers a lot of choice and it's not uncommon to have tens of options available to address your specific problem.
+npm ecosystem is vast and it hosts multiple smaller communities, such as AngularJS, Ember, or React. Certain utility libraries, like lodash, are valuable across these boundaries. npm offers a lot of choice and it's not uncommon to have tens of options available to address your specific problem.
 
 When you are confronted with a technical problem, you have at least the following options:
 
