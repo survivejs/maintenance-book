@@ -179,7 +179,13 @@ npm run format:css
 
 ## Code Consistency
 
-Even though *Linting* and formatting the code in a specific way help, there are aspects that the default solutions won't capture entirely. A good example of this is **conceptual code consistency**. Formatting makes code look consistent but it can still be conceptually inconsistent.
+**Code consistency** can be characterized as follows:
+
+* Does the code look similar everywhere?
+* Are the programming patterns used consistent with each other?
+* Is the naming consistent?
+
+Code formatting answers the first problem. Linting can help with the second one although it might not capture it entirely. Consistency of naming is another difficult one as it's related to **conceptual code consistency**.
 
 For example, it could have `FooLoader` and `BarThatLoadsFoo` abstractions. Both refer to the same concept in different ways.
 
