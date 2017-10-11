@@ -15,13 +15,15 @@ You have to consider at least the following aspects:
 
 In single person projects you develop the project, publish the package, and perhaps forget about it. One day someone might find the project and notice that something is missing. As discussed in the *Processes* chapter, this could lead to a **pull request** and to a new contribution to the project. You gain **contributors** this way.
 
-Instead of using, a user may evolve to a contributor and give something back. The contribution may be random but it's still more active than using. A contributor may become a project **maintainer** given there is enough interest in sustaining the project development. In this case the person becomes someone who will review and merge pull requests.
+A model like this could be enough for one-off projects. You solve a problem and revisit it only when it's relevant. If the problem is big enough, then it might require a sustained effort of longer time to resolve. It could be possible that there is no clear solution and you will have to tune the approach as time goes by. Projects like this benefit from a community especially if the problem solved is important to a group of people.
+
+In community projects initial users may evolve into contributors that give something back to the project. If they are particularly active and fit the project culture, they can become project **maintainers** that shepherd the development of the project and help contributors.
 
 Sometimes new maintainers may pick up over the project completely as older maintainers fade away and find something else to do. That is normal as interests tend to vary and people move across projects. Spending some time outside of a project help in avoiding burnout or at least help you gain perspective on the project. When you look at a project too close for too long time, it can be difficult to see how to improve since it's so clear to you.
 
 ## Who Is Going to Pay for the Development
 
-Although open source software is freely available, this doesn't mean it's free to develop. At least it takes the time and effort from a developer to write and publish it. Some do this for fun or as a hobby, but there are also commercial models that enable developers to dedicate time towards development while getting paid.
+Although open source software is freely available, this doesn't mean it's free to develop and maintain. At least it takes the time and effort from a developer to write and publish it. Especially the maintenance effort tends to require a lot of energy especially for popular projects that cannot keep up with the demand. Some do this for fun or as a hobby, but there are also commercial models that enable developers to dedicate time towards development while getting paid.
 
 The models tend rely either on benevolence (donations), added value (consulting, merchandise), licensing models (dual license), and grants. [Lemonade stand by Nadia Eghbal](https://github.com/nayafia/lemonade-stand), [open funding list by ralphtheninja](https://github.com/ralphtheninja/open-funding), and [Producing Open Source Software by Karl Fogel](http://producingoss.com/en/money.html) cover common options in greater detail.
 
@@ -47,7 +49,7 @@ To even gain contributions, the project should be contributor friendly. Various 
 
 ## How to Keep Track of Everything That's Going on with the Project
 
-As a project grows in complexity, it can become difficult to keep track of it. Popular services, such as GitHub, help here in their own way. Solutions, such as [Octobox](https://octobox.io/), build on top of them and provide developer friendly abstractions that make it more convenient to work with larger amount of projects and issues at once.
+As a project grows in complexity, it can become difficult to keep track of it. Popular services, such as GitHub, work as starting points. As the complexity grows and there's more to worry about, solutions such as [Octobox](https://octobox.io/) become valuable as they focus on these problems at scale.
 
 ## Conclusion
 
