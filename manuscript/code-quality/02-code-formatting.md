@@ -74,7 +74,7 @@ It’s a good idea to disable code style rules in your ESLint config and let Pre
 
 W> Commit your code before running this command — it will reformat all your JavaScript files.
 
-T> To make your contributors’ life easier you can set up Prettier to format code before each commit with lint-staged. The idea is covered in the *Linting* chapter.
+T> To make your contributors’ life easier you can set up Prettier to format code before each commit with lint-staged. The idea is covered in the *Automation* chapter.
 
 ### Setting Up Prettier
 
