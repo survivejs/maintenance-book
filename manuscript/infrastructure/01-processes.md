@@ -2,7 +2,14 @@
 
 Each project has processes around it. Services like [GitHub](https://github.com/), [GitLab](https://gitlab.com/), and [Bitbucket](https://bitbucket.org/) provide plenty of infrastructure you need. At minimum they provide **version control** for project source. You can also find **issue tracker** and other supporting functionality like means to accept **pull requests** against projects. Often you can host the official site of a project on these platforms.
 
-## Issue Tracking
+When you think about processes, you get at least the following questions:
+
+* How to track issues?
+* How to manage pull requests?
+* How to design development process?
+* How to support users?
+
+## How to Track Issues
 
 In a small project you might be aware of everything you need to do. You implement what you intend and publish. That's it.
 
@@ -22,7 +29,7 @@ Poorly formatted and incomplete issues waste time. In the worst case you have to
 
 In GitHub this can be achieved by using an [issue template](https://github.com/serverless/serverless/blob/master/.github/ISSUE_TEMPLATE.md) that's included within a repository. When a user fills in an issue, the provided template will work as a starting point. Unfortunately, given it's in text format, it doesn't solve the problem entirely. Bots discussed in the *Automation* chapter try to solve this problem as they can close poor quality issues as long as certain criteria is met.
 
-## Pull Requests
+## How to Manage Pull Requests
 
 Instead of requesting for features or reporting bugs, sometimes the users may scratch their own itch and provide **pull requests** to a project. The point is to provide a small patch to the project that can then be merged assuming it's high enough quality.
 
@@ -30,7 +37,7 @@ Pull requests share similar problems as issues. As issues, also [pull requests h
 
 How can you make sure the proposed change doesn't break anything? This is where testing and *Continuous Integration* discussed in the next chapter come in. It's difficult to have full guarantees but at least you can make it harder for functionality to break by implementing the right practices to your project.
 
-## Designing Development Process
+## How to Design Development Process
 
 An important part of development practices is designing a development process. Especially early on this can be ad hoc as you don't have to worry about team productivity. Once more people become involved, you have to make sure they can contribute in a meaningful manner.
 
@@ -58,7 +65,17 @@ T> Platforms like GitHub model the concept of team in system level. If you use a
 
 T> The *Longevity* chapter discusses the issue further.
 
-## Designing a Support Model
+### Maintaining Project Focus
+
+To paraphrase Jono Bacon, managing open source projects is like herding cats. Everyone wants to do the thing they want and strict central control is difficult for this reason. The challenge is allowing people to do what they want while allowing the project to move forward. The downside of this is that some people still have to do some of the less pleasant work to keep wheels moving.
+
+This nature has also implications on the nature of development. It might be sporadic and sudden. A lot of progress might happen in short time as long as there's interest and then the development might stall for a while until development picks up again. Also the way you manage new contributions affects this as the longer your contributors have to wait, the more frustrated they tend to get.
+
+How to manage this type of situation? There's no one correct solution and projects tend to develop models of their own with varying success. One of the best things you can do, however, is to maintain clear goals for the project. Doing this allows you to make decisions based on the context. If something goes beyond the boundaries, it doesn't belong to the project. Saying **no** is at least as important as saying **yes**.
+
+Taken further, abstract project goals can lead to a **project roadmap** that describes what the project wants to accomplish in the near and far future. The point is to energize people to move towards the goals. The roadmap can change of course but can be used to communicate what's to come. It will give confidence to the project direction as people know what to expect.
+
+## How to Support Users
 
 Once a project reaches certain scale, managing support becomes a problem. GitHub's issue tracker works up to a point. Sometimes bigger projects move the problem of support level questions to services like Stack Overflow. This is also where commercial support may be provided as there is no obligation to help free even if the code is freely available.
 
