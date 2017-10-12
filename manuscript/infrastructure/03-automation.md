@@ -8,11 +8,17 @@ The same idea applies to software projects. Why to repeatedly do something that 
 
 Depending on the developer and the development style, the quality of Git commit messages can vary. It's important data given it may be used in the future as you have to figure out why some code was written the way it was. The quality of commit messages becomes particularly important when more people get involved with the project.
 
-[commitizen](https://www.npmjs.com/package/commitizen) gives a specific command, `git cz`, that allows you to follow [AngularJS Git Message convention](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit) by asking you a series of questions. This way you don't have to remember the specification in detail.
+### Commit Message Conventions
+
+Especially [AngularJS commit message convention](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y) has gained popularity in the JavaScript community. The ideas have been formalized in [the Conventional Commits specification](https://conventionalcommits.org/).
+
+The idea is to provide context to a commit. This enables effective filtering of Git log and it keeps the log tidy. Given the convention is standard, it has lead to tooling that can for example generate change logs for releases or even handle whole release process for you.
+
+To make it easier to follow the aforementioned conventions, [commitizen](https://www.npmjs.com/package/commitizen) gives a specific command, `git cz`. It asks you a series of questions and then fills the message with the correct information. This way you don't have to remember the specification in detail and you will gradually learn it.
 
 T> Internally commitizen relies upon [commitlint](https://github.com/marionebl/commitlint). commitlint provides a tool you can use to validate messages. commitizen wraps it in a higher level interface.
 
-Commit message conventions like the AngularJS one lets the tooling to figure out types of the changes you made. It can help with change log generation and allow automated releases over manual ones. Annotating your commits well is a good practice in any case as it makes it easier to debug your code later.
+### AngularJS Commit Message Convention
 
 In AngularJS convention each commit message consists of:
 
@@ -95,6 +101,8 @@ Enter your npm and GitHub credentials, choose type of your CI server.
 And now if you make a new commit with a message like `fix: allow doodad to work with zero`, semantic-release will publish a new PATCH version to npm and publish release notes based on the commit message to GitHub.
 
 T> You can customize every step of this process with plugins. For example, [make only PATCH releases automatically](http://blog.sapegin.me/all/semantic-release) and allow user to decide when to make MINOR and MAJOR releases and edit change logs manually.
+
+T> Look into [standard-release](https://www.npmjs.com/package/standard-version) and [unleash](https://www.npmjs.com/package/unleash) for alternatives.
 
 ## Git Hooks
 
