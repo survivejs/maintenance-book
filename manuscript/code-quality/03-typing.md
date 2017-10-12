@@ -43,7 +43,7 @@ T> See [Try Flow](https://tryflow.org/) for more concrete examples.
 
 ![TypeScript](images/typescript.png)
 
-TypeScript by Microsoft is an entire language that comes with a typing approach of its own. It's a superset of JavaScript and it has been adopted especially by the Angular community.
+TypeScript by Microsoft is an entire language that comes with a typing approach of its own. It's a superset of JavaScript and it has been adopted especially by the AngularJS community.
 
 The Flow example above works even in TypeScript. Even though there are similarities like this, the approaches differ and provide different sets of functionality. [The Flow and TypeScript comparison by Bazyli Brzóska](https://github.com/niieani/typescript-vs-flowtype) highlights these differences.
 
