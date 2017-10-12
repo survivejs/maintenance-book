@@ -177,6 +177,20 @@ And then run it like this:
 npm run format:css
 ```
 
+## Code Consistency
+
+**Code consistency** can be characterized as follows:
+
+* Does the code look similar everywhere?
+* Are the programming patterns used consistent with each other?
+* Is the naming consistent?
+
+Code formatting answers the first problem. Linting can help with the second one although it might not capture it entirely. Consistency of naming is another difficult one as it's related to **conceptual code consistency**.
+
+For example, it could have `FooLoader` and `BarThatLoadsFoo` abstractions. Both refer to the same concept in different ways.
+
+It's difficult, or even impossible, to detect high-level problems like this automatically. For this reason, it's important to review the code for consistency every once in a while. Sometimes you may discover something that can be turned into a linting rule to solidify a specific idea but not everything can be automated.
+
 ## Conclusion
 
 Formatting tools complement linting well. They eliminate one source of confusion and make sure your code is formatted in a consistent manner.
