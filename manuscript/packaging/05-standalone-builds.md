@@ -8,7 +8,7 @@ The scenarios covered in the previous chapter are enough if you consume packages
 
 The problem is that now you have additional configuration to maintain and you may skip step this entirely. If you want to generate a build, this is where **bundlers** such as [Browserify](http://browserify.org/), [Rollup](https://rollupjs.org/), [Fusebox](http://fuse-box.org/), or [webpack](https://webpack.js.org/), come in, as they were designed for the purpose.
 
-## How Bundlers Work?
+## How Bundlers Work
 
 ![Bundling process](images/bundler.png)
 
