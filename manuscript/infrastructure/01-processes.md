@@ -38,6 +38,26 @@ This is where managing issue tracking and pull requests well becomes vital. You 
 
 Most importantly it's a chance for you to apply reviews on code. That is your chance to discuss the implementation until it's in a satisfactory state. It's also a chance to grow new contributors to your project. They may even become maintainers one day and assume your position in the project.
 
+### Choosing a Git Branching Model
+
+Flexible branching is one of the core features of Git. At simplest level, you can forget branching exists and develop against the default `master` branch. It gets more complicated when you want to experiment or work with other people, though. This is where different branching models come in.
+
+[Gitflow](https://github.com/nvie/gitflow) is one of the most famous approaches. The idea is that you develop any new functionality in an appropriately named branch and then coordinate releases through release branches that eventually get merged into the `master` branch.
+
+Utilizing only **feature branches** and then merging the work back to `master` can be enough for smaller projects. This avoids some of the complexity related to Gitflow. The heavier structure may pay off if there is a large amount of development to coordinate, though, so you should choose your approach accordingly.
+
+T> [Atlassian has written a guide to different Git branching models.](https://www.atlassian.com/git/tutorials/comparing-workflows).
+
+### Coordinating Teams
+
+As a project grows in terms of people, more communication and coordination is required to keep the project running smoothly. This is one of the hardest problems in software development as it gets the more complex, the more people you add to the mix. It's made harder in open source as people have different motivations and the culture is mixed. Sometimes this is a good thing but it's also a challenge at times.
+
+This complexity can be tamed by developing organization structure. Instead of working in an ad hoc manner, people will assume different responsibilities based on their skills and interests. If multiple people align well enough, it can make sense for them to form teams. These teams in turn have to coordinate their work but now the problem has been pushed a notch further. There's still coordination to do but there's more structure in place.
+
+T> Platforms like GitHub model the concept of team in system level. If you use a GitHub organization for a project, you can assign people to teams and assign specific rights to the teams. Teams can also be used in npm to make it easier to share release rights for example.
+
+T> The *Longevity* chapter discusses the issue further.
+
 ## Designing a Support Model
 
 Once a project reaches certain scale, managing support becomes a problem. GitHub's issue tracker works up to a point. Sometimes bigger projects move the problem of support level questions to services like Stack Overflow. This is also where commercial support may be provided as there is no obligation to help free even if the code is freely available.
