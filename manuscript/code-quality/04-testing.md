@@ -38,7 +38,25 @@ Specific techniques, such as **snapshot testing** or **approval testing**, allow
 
 ## Types of Testing
 
-Each type of testing provides specific insight to the project. The following sections cover the most common techniques.
+![Test tower](images/test-tower.png)
+
+Mike Cohn popularized [the concept of the test pyramid](https://martinfowler.com/bliki/TestPyramid.html). He split testing into three levels: unit, service, and user interface. The test tower adapted from his and [Forbes Lindesay's work](https://github.com/ForbesLindesay/end-to-end-testing-react-applications) expands on the idea.
+
+Each type of testing provides specific insight to the project. The following sections cover the most common techniques while also discussed a few beyond the tower.
+
+### Acceptance Testing
+
+**Acceptance testing** looks at testing from the user perspective. It answers the question does the user interface configured in a certain way lead to the expected result. Tools like [CodeceptJS](http://codecept.io/), [Intern](https://theintern.github.io/), or [Selenium](http://www.seleniumhq.org/) provide a high-level syntax that allows you to model user behaviors against the browser.
+
+### End to End Testing
+
+**End to End testing** (E2E) is closer to technical level than acceptance testing and tests particular use flows. For example, in an application you would test that the user can log in and log out. Or that the user can fill a form in a specific view and get expected results.
+
+Tools like [TestCafé](https://devexpress.github.io/testcafe/), [Nightwatch.js](http://nightwatchjs.org/) and services such as [cypress](https://www.cypress.io/) focus exactly on this type of testing.
+
+### Integration Testing
+
+**Integration testing** asserts that separate modules work together. You can use the same ideas as above here except this time around the scope of the system under test is larger.
 
 ### Unit Testing
 
@@ -109,17 +127,13 @@ If you run the test, it should pass given `add` should be a commutative operatio
 
 Good property testing tools like [JSVerify](https://jsverify.github.io/) or [testcheck-js](http://leebyron.com/testcheck-js/) are able to shrink a failure to a specific case so you can fix it. The biggest benefit of the technique it can help to discover boundary cases to repair.
 
-### Integration Testing
+### Static Analysis
 
-**Integration testing** asserts that separate modules work together. You can use the same ideas as above here except this time around the scope of the system under test is larger.
+Static analysis tools, such as ESLint or Prettier, can help to keep code consistent and push it towards right patterns. They cannot detect each and every problem related to these aspects but they can still help as discussed in the *Linting* and *Code Formatting* chapters.
 
 ### Security Testing
 
 **Security testing** addresses specific vulnerabilities that allow a potential attacker to breach a system. [nsp](https://www.npmjs.com/package/nsp) is a tool that checks your project against known vulnerabilities. [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) can be used to identify potential security hotspots that need to be checked by a human.
-
-### Acceptance Testing
-
-**Acceptance testing** looks at testing from the user perspective. It answers the question does the user interface configured in a certain way lead to the expected result. Tools like [CodeceptJS](http://codecept.io/), [Intern](https://theintern.github.io/), or [Selenium](http://www.seleniumhq.org/) provide a high-level syntax that allows you to model user behaviors against the browser.
 
 ### Regression Testing
 
