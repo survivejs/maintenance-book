@@ -12,9 +12,9 @@ To understand which dependencies can be updated, run `npm outdated --depth=0`. Y
 
 ```bash
 Package              Current Wanted Latest Location
-catalog                3.0.0  3.1.2  3.1.2 react-component-boilerplate
-eslint-config-airbnb  15.1.0 15.1.0 16.0.0 react-component-boilerplate
-eslint-plugin-jsx-a11y 5.1.1  5.1.1  6.0.2 react-component-boilerplate
+catalog                3.0.0  3.1.2  3.1.2 demo-project
+eslint-config-airbnb  15.1.0 15.1.0 16.0.0 demo-project
+eslint-plugin-jsx-a11y 5.1.1  5.1.1  6.0.2 demo-project
 ```
 
 The *catalog* case is the curious one. The project has set it as a development dependency using a version range `"catalog": "^3.0.0",`. According to the output, the project has version 3.0.0 installed while the latest available version is 3.1.2.
