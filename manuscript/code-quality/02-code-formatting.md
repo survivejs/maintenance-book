@@ -8,6 +8,8 @@ The ideas of linting and formatting code overlap. Linting can capture language u
 
 Here is a typical config (*.editorconfig*) with separate rules for Markdown, JSON and YAML files:
 
+**.editorconfig**
+
 ```ini
 root = true
 
@@ -86,6 +88,8 @@ npm install prettier --save-dev
 
 Add a script to your *package.json* like this:
 
+**package.json**
+
 ```json
 {
   "scripts": {
@@ -95,6 +99,8 @@ Add a script to your *package.json* like this:
 ```
 
 Create a config file, *.prettierrc*:
+
+**.prettierrc**
 
 ```json
 {
@@ -121,6 +127,8 @@ npm install prettier eslint-plugin-prettier --save-dev
 ```
 
 Update your *.eslintrc* like this:
+
+**.eslintrc**
 
 ```json
 {
@@ -155,6 +163,8 @@ Prettier can format your CSS too, see how to set it up above.
 
 For CSS you’ll need one more script in *package.json*:
 
+**package.json**
+
 ```json
 {
   "scripts": {
@@ -164,6 +174,8 @@ For CSS you’ll need one more script in *package.json*:
 ```
 
 Create a config file, *.prettierrc*:
+
+**.prettierrc**
 
 ```json
 {
