@@ -60,8 +60,6 @@ To get value of these systems, you have to use **type definitions** with existin
 
 These third-party type definitions complement the actual packages and allow you to capture type errors related to them. It can be sensible to implement a package using either solution and then compile to JavaScript and a type definition file.
 
-T> [ReasonML](https://reasonml.github.io/) implements a bridge between the language and JavaScript using a programmable type definition. The approach goes further than the static definitions provided by Flow and TypeScript.
-
 ### Generating Type Definitions
 
 If you are using TypeScript to author your packages, TypeScript compiler will write file ending in *d.ts*. The file contains the type definitions. It's advisable to set `"typings": "dist/library.d.ts"` in *package.json* although TypeScript related tooling will look for the file through convention. The same type definition can be used for DefinitelyTyped.
@@ -71,6 +69,14 @@ T> [TypeScript documentation covers related details in further detail](https://w
 Flow provides `flow gen-flow-files <input file> > <output file>` that achieves closely the same. It accepts a source file to process and emits the extracted type definition. These definitions could then be submitted to *flow-typed*.
 
 T> [Patrick Stapfer has written an article that covers Flow specifics in greater detail](https://medium.com/netscape/shipping-flowtype-definitions-in-npm-packages-c987917efb65).
+
+## Challenges of Typing
+
+Even though typing can provide value, there are challenges involved. As the tooling evolves, their semantics may change. What if a package has been typed using an older version of Flow than the one you are using and it broke in the process? What if you are using a different version of a dependency than one of your dependencies? Which typings to use then?
+
+It's possible to overcome some of these problems in user level as you can override typings yourself. Typing doesn't come without a cost as now you have a new source of potential problems. But if the potential benefits are greater than potential problems, there's value in typing.
+
+T> [ReasonML](https://reasonml.github.io/) implements a bridge between the language and JavaScript using a programmable type definition. The approach goes further than the static definitions provided by Flow and TypeScript.
 
 ## Conclusion
 
