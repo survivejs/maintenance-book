@@ -37,13 +37,13 @@ Prettier is smarter than other tools. For example, you can restrict line length 
 
 <!-- textlint-disable -->
 
-```js
+```javascript
 foo(wowJs(), suchFunction(), muchParameters(), shouldReformat());
 ```
 
 After the code goes through Prettier, you'll end up with the code below:
 
-```js
+```javascript
 foo(
   wowJs(),
   suchFunction(),
@@ -54,7 +54,7 @@ foo(
 
 However, shorter statement would be printed as one line:
 
-```js
+```javascript
 foo('coffee', 'croissant', 'toast', 'eggs');
 ```
 
