@@ -176,7 +176,7 @@ npm run lint:ts
 
 [stylelint-config-standard](https://www.npmjs.com/package/stylelint-config-standard) is a config maintaned by stylelint team and based on CSS style guides of GitHub, Google and Airbnb.
 
-### Setting up Stylelint
+### Setting Up Stylelint
 
 Let’s install stylelint:
 
