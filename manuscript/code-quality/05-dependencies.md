@@ -35,3 +35,5 @@ T> `npm ls`, and more specifically `npm ls <package name>`, allow you to figure 
 ## Conclusion
 
 Managing dependencies is a necessary part of package maintenance. Especially having good tests in place helps in the process and makes upgrades less painful. If you make bigger changes, it can be a good idea to publish **pre-release** versions so that the users have a chance to test the upcoming code against their projects.
+
+T> There's more to code quality than the topics covered in this part. Books like Code Complete by Steve McConnell and Clean Code by Robert Martin give further insight to the topic.
