@@ -6,7 +6,7 @@ When you think about processes, you get at least the following questions:
 
 * How to track issues?
 * How to manage pull requests?
-* How to design development process?
+* How to design a development process?
 * How to support users?
 
 ## How to Track Issues
@@ -37,7 +37,9 @@ Pull requests share similar problems as issues. As issues, also [pull requests h
 
 How can you make sure the proposed change doesn't break anything? This is where testing and *Continuous Integration* discussed in the next chapter come in. It's difficult to have full guarantees but at least you can make it harder for functionality to break by implementing the right practices to your project.
 
-## How to Design Development Process
+## How to Design a Development Process
+
+![Maintainers, contributors, and users](images/maintenance.png)
 
 An important part of development practices is designing a development process. Especially early on this can be ad hoc as you don't have to worry about team productivity. Once more people become involved, you have to make sure they can contribute in a meaningful manner.
 
