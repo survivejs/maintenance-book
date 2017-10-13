@@ -51,7 +51,8 @@ Define a small **package.json** to contain the build script:
   "name": "umd-demo",
   "main": "index.js",
   "scripts": {
-    "build": "rollup ./index.js --format umd --name Demo --output dist/demo.umd.js"
+    "build": "rollup ./index.js --format umd --name Demo
+      --output dist/demo.umd.js"
   }
 }
 ```
