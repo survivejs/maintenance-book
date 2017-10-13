@@ -2,7 +2,7 @@
 
 Tests can be seen as a runnable specification that describes truths about the implementation. Automated testing is a form of risk management and reduces risks related to the project. Manual testing is the other end of the spectrum. It's also the most labor intensive and brittle option.
 
-## What to Verify with Testing?
+## What to Verify with Testing
 
 Testing can be used to verify at least the following aspects:
 
@@ -22,7 +22,7 @@ In addition to verifying that a system has been developed right, you can assert 
 
 Popular projects put a lot of effort into the façade encountered by their users. This has led to techniques such as **defensive coding**. A good API should fail fast instead of swallowing errors while giving descriptive messages. Projects may go as far as to provide **codemods** which allow users to upgrade from older APIs to newer by running them.
 
-## How Much to Test?
+## How Much to Test
 
 Regardless of how much you test, manual testing may still be required, especially if you target multiple platforms. But it's a good goal to minimize the amount of it and even try to eliminate it.
 
@@ -30,7 +30,7 @@ No matter how much you test, problems may still slip through. For this reason, i
 
 Tests come with a cost. Test code is the code you have to maintain in addition to the implementation. Having more tests isn't necessarily better. It's good to put conscious effort into maintaining good tests. Fortunately, tests allow refactoring and sometimes finding better ways to implement the desired features can simplify both the implementation and tests.
 
-## How to Test Old Projects Without Tests?
+## How to Test Old Projects Without Tests
 
 When it comes to older projects that have poor **test coverage**, tests can be used for exploration. **Explorative testing** allows you to learn how the code works by testing it. Instead of running the code and examining it, you can write tests to assert your knowledge. As you gain confidence with the way the code works, you are more willing to make changes to it as the risk of breakage becomes smaller.
 
@@ -129,7 +129,7 @@ Good property testing tools like [JSVerify](https://jsverify.github.io/) or [tes
 
 ### Static Analysis
 
-Static analysis tools, such as ESLint or Prettier, can help to keep code consistent and push it towards right patterns. They cannot detect each and every problem related to these aspects but they can still help as discussed in the *Linting* and *Code Formatting* chapters.
+Static analysis tools, such as ESLint or Prettier, can help to keep code consistent and push it towards right patterns. They cannot detect each problem related to these aspects but they can still help as discussed in the *Linting* and *Code Formatting* chapters.
 
 ### Security Testing
 
