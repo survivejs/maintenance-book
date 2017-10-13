@@ -49,8 +49,6 @@ The biggest win of pushing shared configuration to a package like this is that i
 
 *webpack-defaults* relies on [mrm-core](https://www.npmjs.com/package/mrm-core) for handling project level migrations. It's at its best in patching configuration file formats like JSON or YAML. The problems begin if you have to patch configuration based on JavaScript as then the needed transformations become arbitrary given code can be written in so many ways. This is where [codemods](https://www.npmjs.com/package/js-codemod) can come in for limited scenarios.
 
-TODO: https://www.npmjs.com/package/lerna-semantic-release
-
 ## Conclusion
 
 Monorepos provide a refreshing alternative to managing each package per repository. They allow you to share the same configuration across separate packages and also coordinate related changes more easily. The approach comes with technical cost as performing this orchestration requires tooling.
