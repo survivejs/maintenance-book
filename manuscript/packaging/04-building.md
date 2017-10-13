@@ -133,7 +133,7 @@ To make this possible, you have to use the ES6 module definition as it's possibl
 
 For this reason, you have to set up another process to generate tree shaking compatible code. When it comes to Babel, you have to disable its module processing. Also, you have to point **package.json** `module` field to the generated source. The existing tooling relies on this convention and can pick up the tree-shakeable code based on the field.
 
-The technique requires two steps. Set up a helper scripts first:
+The technique requires two steps. Set up helper scripts first:
 
 **package.json**
 
@@ -147,13 +147,16 @@ leanpub-start-delete
 leanpub-end-delete
 leanpub-start-insert
   "build:all": "npm run build && npm run build:tree-shaking",
-  "build:tree-shaking": "BABEL_ENV=tree-shaking babel ./src --out-dir ./dist-modules",
-  "build": "BABEL_ENV=build babel ./src --out-dir ./lib",
+  "build:tree-shaking": "cross-env BABEL_ENV=tree-shaking
+    babel ./src --out-dir ./dist-modules",
+  "build": "cross-env BABEL_ENV=build babel ./src --out-dir ./lib",
   "preversion": "npm test",
   "prepublishOnly": "npm run build:all"
 leanpub-end-insert
 },
 ```
+
+W> The example relies on the *cross-env* tool discussed later in this chapter. If you are on Unix only, you can skip it.
 
 To make sure Babel's module processing gets disabled during processing, set it up as follows:
 
