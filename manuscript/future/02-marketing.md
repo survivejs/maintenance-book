@@ -2,7 +2,7 @@
 
 Even the technically most excellent project in the world won't have much impact unless it reaches potential users. Popularity isn't a goal always, but if it's, then it's good to know how to approach marketing the project.
 
-The purpose of marketing is to connect the potential user with the project. The topic is covered from the user point of view in the *Where to Start Packaging* chapter. Marketing is the exact opposite and answers the question how to make it possible for the user to find the project.
+The purpose of marketing is to connect the potential user with the project. The topic is covered from the user point of view in the *Where to Start Packaging* chapter. Marketing is the opposite and answers the question how to make it possible for the user to find the project.
 
 ## Marketing Approaches
 
@@ -10,7 +10,7 @@ Marketing is a creative pursuit. Given we are dealing with programming, this giv
 
 Given often you don't have a marketing budget to use, you have to be mindful about the approaches you use. Certain approaches allow you to reach a large amount of people at once while converting only few. More targeted approaches reach less people but convert better.
 
-### Technical Marketing
+## Technical Marketing
 
 The purpose of technical marketing is to use technology somehow for marketing purposes. This is where techniques like Twitter automation come in. Especially popular projects may have social media accounts of their own. Automation can be used to generate meaningful content to them. This includes announcing new releases or highlighting popular blog posts related to the project.
 
@@ -22,13 +22,13 @@ Another way would be to allow the users to get started as fast as possible. Perh
 
 As a technical marketer, you can develop these kind of **marketing channels**. Each channel addresses a certain group of people. Sometimes you own the channel, sometimes you don't. Especially the content marketing related channels require external help.
 
-### Content Marketing
+## Content Marketing
 
 It's a good idea to know where the potential users spend time. These are potential marketing channels where you can be visible while leading eyes to your technology. The influence can be sometimes indirect and lead to channels you control.
 
 **Content marketing** can be applied by writing guest posts for relevant blogs and making sure the posts reach the right aggregators, such as [Reddit](https://www.reddit.com/r/javascript/), [Echo JS](http://www.echojs.com/), or [Hashnode](https://hashnode.com/). Another way is to produce video series around the technology to discuss its merits. The approaches can be combined and creativity is the key here as you have to stand out from the competition somehow.
 
-### Word of Mouth
+## Word of Mouth
 
 Word of mouth is the most classic way of marketing. A happy user will spread the word and convert other people to use your technology. This type of message can amplify the others as marketing is a repetition exercise. It's not enough to reach the right people once. You have to do it repeatedly to be effective.
 
