@@ -82,6 +82,8 @@ npm run lint:js
 
 You may need to tweak your *.eslintrc* according to your project needs:
 
+**.eslintrc**
+
 ```json
 {
   "extends": "airbnb-base",
@@ -115,6 +117,10 @@ You may need to tweak your *.eslintrc* according to your project needs:
 ```
 
 See [ESLint docs on configuring](http://eslint.org/docs/user-guide/configuring) for more information.
+
+T> *.eslintrc* supports [JSON5](http://json5.org/) format by default. It's a proposed extension to JSON that enables features like commenting and trailing commas.
+
+T> ESLint configuration can be written in other formats, such as YAML or JavaScript, as well. JSON5 is a good default, though, given it's a good format for other tools to consume.
 
 T> To get most value out of linting tools during development, make sure you have installed related editor plugins. This way you can get feedback realtime as you develop and can spot potential issues earlier.
 
