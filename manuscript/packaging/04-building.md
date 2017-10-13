@@ -17,11 +17,11 @@ That said, if you prefer to use features that are not supported by LTS yet or wa
 
 To communicate in which Node environments your package should work, you should set *package.json* `engines` field. It accepts a range in a similar way as for dependencies. Consider the example adapted from [npm documentation](https://docs.npmjs.com/files/package.json#engines):
 
+**package.json**
+
 ```json
-{
-  "engines": {
-    "node": ">= 4"
-  }
+"engines": {
+  "node": ">= 4"
 }
 ```
 
