@@ -151,6 +151,8 @@ And finally run:
 npm run lint:js
 ```
 
+When used like this, Prettier itself doesn't perform any alterations itself but instructs ESLint to implement its rules. ESLint will perform the fixing process itself.
+
 T> You can set up your editor to run `eslint --fix` on save and it will reformat your code every time you save a file.
 
 ## Formatting CSS with Stylelint
