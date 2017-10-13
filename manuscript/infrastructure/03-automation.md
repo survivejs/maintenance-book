@@ -110,14 +110,13 @@ Git provides a set of hooks that trigger for example before pushing or committin
 
 Git hooks can be used in a JavaScript project with a package such as [husky](https://www.npmjs.com/package/husky). It connects Git hook interface with npm `scripts`. Consider the example below:
 
+**package.json**
+
 ```json
-{
-  "scripts": {
-    ...
-    "prepush": "npm test"
-  },
+"scripts": {
   ...
-}
+  "prepush": "npm test"
+},
 ```
 
 The package will do all the wiring required and run project tests before pushing to the repository.
@@ -141,6 +140,8 @@ npm install lint-staged husky --save-dev
 ```
 
 Update your *package.json* like this:
+
+**package.json**
 
 ```json
 {
