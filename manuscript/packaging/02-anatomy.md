@@ -178,11 +178,11 @@ A package should link to its repository, homepage, and issue tracker. The fields
 /* Links to repository, homepage, and issue tracker */
 "repository": {
   "type": "git",
-  "url": "https://github.com/survivejs/react-component-boilerplate.git"
+  "url": "https://github.com/<organization/user>/<project>.git"
 },
-"homepage": "https://survivejs.github.io/react-component-boilerplate/",
+"homepage": "https://<organization/user>.github.io/<project>/",
 "bugs": {
-  "url": "https://github.com/survivejs/react-component-boilerplate/issues"
+  "url": "https://github.com/<organization/user>/<project>/issues"
 }
 ```
 
