@@ -18,6 +18,8 @@ Given SemVer can be tricky to manage, [ComVer](https://github.com/staltz/comver)
 
 T> You can understand SemVer much better by studying [the online tool](http://semver.npmjs.com/) and how it behaves.
 
+T> Not all version number systems are created equal. Sometimes people prefer to use their own and go against the mainstream. [Sentimental versioning by Dominic Tarr](http://sentimentalversioning.org/) discusses this phenomenon.
+
 ## Increasing a Version
 
 To increase the version of your packages, you need to invoke one of these commands:
