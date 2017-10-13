@@ -55,7 +55,7 @@ The description fields describe who created the package, what it does, related k
   "version": "0.0.0",
 
   /* Keywords related to package. */
-  /* Fill this well to make the package findable. */
+  /* Fill this well to make the package discoverable. */
   "keywords": [
     "react",
     "reactjs",
@@ -84,38 +84,32 @@ Use `pre` and `post` prefixes to group your scripts. For example, *npm run publi
 **package.json**
 
 ```json
-{
-  ...
+/* `npm run <name>` - `npm run` to get the available commands */
+"scripts": {
+  "start": "catalog start docs",
 
-  /* `npm run <name>` - `npm run` to get the available commands */
-  "scripts": {
-    "start": "catalog start docs",
+  /* Namespacing (namespace:task) is a convention used for */
+  /* grouping. npm doesn't do anything with the information. */
+  "test": "jest",
+  "test:coverage": "jest --coverage",
+  "test:watch": "jest --watch",
+  "test:lint": "eslint . --ignore-path .gitignore",
 
-    /* Namespacing (namespace:task) is a convention used for */
-    /* grouping. npm doesn't do anything with the information. */
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch",
-    "test:lint": "eslint . --ignore-path .gitignore",
+  "gh-pages": "catalog build docs",
+  "gh-pages:deploy": "gh-pages -d docs/build",
 
-    "gh-pages": "catalog build docs",
-    "gh-pages:deploy": "gh-pages -d docs/build",
+  "dist:es6": "del-cli ./dist-es6 &&
+    cross-env BABEL_ENV=es6 babel ./src --out-dir ./dist-es6",
+  "dist:modules": "del-cli ./dist-modules &&
+    cross-env BABEL_ENV=modules babel ./src --out-dir ./dist-modules",
 
-    "dist:es6": "del-cli ./dist-es6 &&
-      cross-env BABEL_ENV=es6 babel ./src --out-dir ./dist-es6",
-    "dist:modules": "del-cli ./dist-modules &&
-      cross-env BABEL_ENV=modules babel ./src --out-dir ./dist-modules",
+  "preversion": "npm run test",
+  "prepublishOnly": "npm run dist:es6 && npm run dist:modules",
+  "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
 
-    "preversion": "npm run test",
-    "prepublishOnly": "npm run dist:es6 && npm run dist:modules",
-    "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
-
-    /* If your library is installed through Git, compile it */
-    "postinstall": "node lib/post_install.js"
-  },
-
-  ...
-}
+  /* If your library is installed through Git, compile it */
+  "postinstall": "node lib/post_install.js"
+},
 ```
 
 Certain scripts, such as `start` and `test`, have shortcuts in npm. Examples:
@@ -136,22 +130,17 @@ The entry points describe how the package should resolve to your source based on
 **package.json**
 
 ```json
-{
-  ...
+/* Entry point for terminal (i.e., <package name>). */
+/* Don't set this unless you intend to allow Command line usage */
+"bin": "bin/index.js",
 
-  /* Entry point for terminal (i.e., <package name>). */
-  /* Don't set this unless you intend to allow Command line usage */
-  "bin": "bin/index.js",
+/* Entry point (defaults to index.js) */
+"main": "dist-modules/",
 
-  /* Entry point (defaults to index.js) */
-  "main": "dist-modules/",
-
-  /* ES6 module based entry point for tree shaking bundlers to pick up. */
-  /* Apart from the module format, the code should use ES5 otherwise. */
-  "module": "dist/",
-
-  ...
-}
+/* ES6 module based entry point for tree shaking bundlers to use. */
+/* The transformation should retain the module definitions while */
+/* transforming everything else. */
+"module": "dist/",
 ```
 
 ### Dependencies
@@ -161,28 +150,22 @@ A package may have different level dependencies. Some will be used only during d
 **package.json**
 
 ```json
-{
-  ...
+/* Package dependencies needed to use it. */
+/* Peer dependencies can work too, see below. */
+"dependencies": { ... },
 
-  /* Package dependencies needed to use it. */
-  /* Peer dependencies can work too, see below. */
-  "dependencies": { ... },
+/* Package development dependencies needed to develop/compile it */
+"devDependencies": { ... },
 
-  /* Package development dependencies needed to develop/compile it */
-  "devDependencies": { ... },
-
-  /* Package peer dependencies. The consumer fixes exact versions. */
-  /* In npm3 these don't get installed automatically and it's */
-  /* up to the user to define which versions to use. */
-  /* If you want to include RC versions to the range, consider */
-  /* using a pattern such as ^4.0.0-0 */
-  "peerDependencies": {
-    "lodash": ">= 3.5.0 < 4.0.0",
-    "react": ">= 0.11.2 < 17.0.0"
-  },
-
-  ...
-}
+/* Package peer dependencies. The consumer fixes exact versions. */
+/* In npm3 these don't get installed automatically and it's */
+/* up to the user to define which versions to use. */
+/* If you want to include RC versions to the range, consider */
+/* using a pattern such as ^4.0.0-0 */
+"peerDependencies": {
+  "lodash": ">= 3.5.0 < 4.0.0",
+  "react": ">= 0.11.2 < 17.0.0"
+},
 ```
 
 ### Links
@@ -192,18 +175,14 @@ A package should link to its repository, homepage, and issue tracker. The fields
 **package.json**
 
 ```json
-{
-  ...
-
-  /* Links to repository, homepage, and issue tracker */
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/survivejs/react-component-boilerplate.git"
-  },
-  "homepage": "https://survivejs.github.io/react-component-boilerplate/",
-  "bugs": {
-    "url": "https://github.com/survivejs/react-component-boilerplate/issues"
-  }
+/* Links to repository, homepage, and issue tracker */
+"repository": {
+  "type": "git",
+  "url": "https://github.com/survivejs/react-component-boilerplate.git"
+},
+"homepage": "https://survivejs.github.io/react-component-boilerplate/",
+"bugs": {
+  "url": "https://github.com/survivejs/react-component-boilerplate/issues"
 }
 ```
 
