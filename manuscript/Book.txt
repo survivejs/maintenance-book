@@ -42,3 +42,4 @@ Backmatter.txt
 15-Appendices.md
 
 appendices/01-monorepos.md
+appendices/02-customizing-eslint.md
