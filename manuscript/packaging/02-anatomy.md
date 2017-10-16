@@ -168,6 +168,14 @@ A package may have different level dependencies. Some will be used only during d
 },
 ```
 
+An npm package comes with different types of dependencies:
+
+* `dependencies` refer to the direct dependencies a package needs to work. On application level you could list the dependencies of the application code itself. This excludes dependencies needed to build it.
+* `devDependencies` are dependencies you need to develop the package. They include packages related to building, testing, and similar tasks. When you install a package from npm, they won't be installed by default. If you run `npm install` on a project locally, npm will install them.
+* `peerDependencies` are usually given as version ranges. The idea is to allow the user to decide the exact versions of these dependencies without fixing it to a specific one. The behavior was changed in npm 3. Before that npm install peer dependencies automatically. Now you have to install and include them to your project explicitly.
+* `bundledDependencies` refer to dependencies that are bundled with the package itself. They are used rarely, though.
+* `optionalDependencies` are dependencies that the user can install but aren't required for the package to work. This is another rare field.
+
 ### Links
 
 A package should link to its repository, homepage, and issue tracker. The fields are optional but they are good to have as it will make it easier for the users to find these through npm site.
