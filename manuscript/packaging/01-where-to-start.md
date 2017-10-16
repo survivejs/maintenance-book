@@ -127,6 +127,25 @@ The pros and cons are roughly opposite compared to using an existing package:
 * You may re-invent the wheel.
 * You may have to work a lot.
 
+## Consumption Workflow
+
+Often npm consumption workflow resolves around two commands:
+
+* `npm install <package> --save` or `npm i <package> -S`.
+* `npm install <package> --save-dev` or `npm i <package> -D`
+
+To install a specific version, you should pass it through `@<version>`. npm will set the version prefix based on *~/.npmrc*. The related ranges are discussed later in this chapter.
+
+You can refer to a package by its name and version but that is not the only way. Consider the following alternatives:
+
+* `<git repository>#<reference>` points to a Git repository and a Git reference.
+* `<github user>/<project>#<reference>` shortcut points to GitHub in a similar manner.
+* `<github user>/<project>#pull/<id>/head` points to a specific GitHub pull request.
+
+`<reference>` can be either commit hash, tag, or a branch. The technique does not work unless the package has been set up to support consumption outside of Git. The *Package Authoring Techniques* chapter shows how to achieve this.
+
+T> To avoid sharing all your packages in public, npm allows you to maintain private packages through their commercial offering. Another option is to use a package like [verdaccio](https://www.npmjs.com/package/verdaccio). verdaccio allows you to maintain a private server that can also work as a cache for npm. You can also override public packages using it.
+
 ## Conclusion
 
 Before writing a package of your own, investigate existing packages. You may find that a new package is not required after all or that you can contribute to a thriving one. Even forking an old package and revitalizing the effort can be a good option that allows you to save the pain of re-inventing the wheel.
