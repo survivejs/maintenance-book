@@ -146,6 +146,26 @@ You can refer to a package by its name and version but that is not the only way.
 
 T> To avoid sharing all your packages in public, npm allows you to maintain private packages through their commercial offering. Another option is to use a package like [verdaccio](https://www.npmjs.com/package/verdaccio). verdaccio allows you to maintain a private server that can also work as a cache for npm. You can also override public packages using it.
 
+## Understanding npm Lookup
+
+npm's lookup algorithm is another aspect that's good to understand. Sometimes this can explain certain errors, and it also leads to good practices, such as preferring local dependencies over global ones. The basic algorithm goes as below:
+
+1. Look into immediate packages. If there is *node_modules*, crawl through that and also check the parent directories until the project root is reached. You can check that using `npm root`.
+2. If nothing was found, check globally installed packages. If you are using Unix, look into */usr/local/lib/node_modules* to find them. You can figure out the specific directory using `npm root -g`.
+3. If the global lookup fails, it fails hard. You should get an error now.
+
+On a package level, npm resolves to a file through the following process:
+
+1. Look up *package.json* of the package.
+2. Get the contents of the `main` field. If it doesn't exist, default to *<package>/index.js*.
+3. Resolve to the `main` file.
+
+The general lookup algorithm respects an environment variable `NODE_PATH`. If you are using Unix, you can patch it through `NODE_PATH=$NODE_PATH:./demo`. The call can be included at the beginning of a *package.json* scripts to tweak `NODE_PATH` temporarily.
+
+W> Installing global packages can lead to surprising behavior. If you have a package installed both globally and it a project happens to contain it, executing associated terminal command (say `webpack`) points to the version of the project. It doesn't work unless the global package exists.
+
+T> [app-module-path](https://www.npmjs.com/package/app-module-path) allows you adjust Node module lookup within JavaScript and this can be an alternative to patching `NODE_PATH`.
+
 ## Conclusion
 
 Before writing a package of your own, investigate existing packages. You may find that a new package is not required after all or that you can contribute to a thriving one. Even forking an old package and revitalizing the effort can be a good option that allows you to save the pain of re-inventing the wheel.
