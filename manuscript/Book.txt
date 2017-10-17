@@ -1,6 +1,5 @@
 Frontmatter.txt
 
-01-foreword.md
 02-preface.md
 03-introduction.md
 
@@ -36,8 +35,6 @@ future/01-longevity.md
 future/02-marketing.md
 
 Backmatter.txt
-
-14-Conclusion.md
 
 15-Appendices.md
 
