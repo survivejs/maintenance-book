@@ -2,6 +2,14 @@
 
 Even though you can get far with vanilla ESLint, there are certain techniques you should know. For instance, sometimes you want to skip specific rules per file. You can even implement rules of your own.
 
+## Speeding Up ESLint Execution
+
+One of the most convenient ways to speed up ESLint execution on big projects is to run it on only files that have been changed while you are working. It's possible to achieve this by using *lint-staged*. The exact technique is covered in the *Automation* chapter.
+
+Node comes with startup overhead and it takes a while for the processing to begin. [eslint_d](https://www.npmjs.com/package/eslint_d) is a daemon process designed to overcome this problem. It runs ESLint as a process in the background. [esprint](https://www.npmjs.com/package/esprint) is a similar solution. It runs ESLint across multiple threads parallel.
+
+T> You can find [more technical details about esprint in its introduction post](https://medium.com/@Pinterest_Engineering/introducing-esprint-a-fast-open-source-eslint-cli-19a470cd1c7d).
+
 ## Skipping ESLint Rules
 
 ESLint allows you to skip rules on several levels. Consider the following examples:
