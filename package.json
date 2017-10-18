@@ -1,7 +1,7 @@
 {
   "name": "survivejs-maintenance",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.9.0",
   "description": "SurviveJS - Maintenance",
   "scripts": {
     "publish:silent": "leanpub-cli publish-silent survivejs-maintenance",
