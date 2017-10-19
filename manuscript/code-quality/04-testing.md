@@ -52,7 +52,9 @@ Each type of testing provides specific insight to the project. The following sec
 
 **End to End testing** (E2E) is closer to technical level than acceptance testing and tests particular use flows. For example, in an application you would test that the user can log in and log out. Or that the user can fill a form in a specific view and get expected results.
 
-Tools like [TestCafé](https://devexpress.github.io/testcafe/), [Nightwatch.js](http://nightwatchjs.org/) and services such as [cypress](https://www.cypress.io/) focus exactly on this type of testing.
+Tools like [puppeteer](https://www.npmjs.com/package/puppeteer), [TestCafé](https://devexpress.github.io/testcafe/), [Nightwatch.js](http://nightwatchjs.org/) and services such as [cypress](https://www.cypress.io/) focus exactly on this type of testing.
+
+T> [Ropig demonstrates puppeteer and its value for E2E testing in their blog post](https://ropig.com/blog/end-end-tests-dont-suck-puppeteer/).
 
 ### Integration Testing
 
