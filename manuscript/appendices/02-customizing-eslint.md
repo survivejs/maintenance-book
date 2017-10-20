@@ -6,7 +6,7 @@ Even though you can get far with vanilla ESLint, there are certain techniques yo
 
 One of the most convenient ways to speed up ESLint execution on big projects is to run it on only files that have been changed while you are working. It's possible to achieve this by using *lint-staged*. The exact technique is covered in the *Automation* chapter.
 
-Node comes with startup overhead and it takes a while for the processing to begin. [eslint_d](https://www.npmjs.com/package/eslint_d) is a daemon process designed to overcome this problem. It runs ESLint as a process in the background. [esprint](https://www.npmjs.com/package/esprint) is a similar solution. It runs ESLint across multiple threads parallel.
+Node comes with startup overhead and it takes a while for the processing to begin. [eslint_d](https://www.npmjs.com/package/eslint_d) is a daemon process designed to overcome this problem. It runs ESLint as a process in the background. [esprint](https://www.npmjs.com/package/esprint) is a similar approach. It runs ESLint across multiple threads parallel.
 
 T> You can find [more technical details about esprint in its introduction post](https://medium.com/@Pinterest_Engineering/introducing-esprint-a-fast-open-source-eslint-cli-19a470cd1c7d).
 
@@ -48,7 +48,7 @@ The rule specific examples assume you have the rules in your configuration in th
 
 Sometimes, you want to run ESLint in a specific environment, such as Node or Mocha. These environments have certain conventions of their own. For instance, Mocha relies on custom keywords (e.g., `describe`, `it`) and it's good if the linter doesn't choke on those.
 
-ESLint provides two ways to deal with this: local and global. If you want to set it per file, you can use a declaration at the beginning of a file:
+ESLint provides two ways to deal with this: local and global. To set it per file, you can use a declaration at the beginning of a file:
 
 <!-- textlint-disable -->
 
@@ -80,7 +80,7 @@ ESLint plugins rely on Abstract Syntax Tree (AST) definition of JavaScript. It's
 
 ### Understanding AST
 
-To get a better idea of how AST works and what it looks like, you can check [Esprima online JavaScript AST visualization](http://esprima.org/demo/parse.html) or [AST Explorer by Felix Kling](http://astexplorer.net/). Alternately, you can install `recast` and examine the output it gives. That is the structure you work with for ESLint rules.
+To get a better idea of how AST works and what it looks like, you can check [Esprima online JavaScript AST visualization](http://esprima.org/demo/parse.html) or [AST Explorer by Felix Kling](http://astexplorer.net/). Alternately, you can install `recast` and examine the output it gives. You work with the structure for ESLint rules.
 
 T> [Codemod](https://github.com/facebook/codemod) allows you to perform large-scale changes to your codebase through AST based transformations.
 
@@ -88,7 +88,7 @@ T> [Codemod](https://github.com/facebook/codemod) allows you to perform large-sc
 
 In ESLint's case, the AST structure can be checked. If something is wrong, it should let you know. Follow the steps below to set up a plugin:
 
-1. Set up a new project named `eslint-plugin-custom`. You can replace `custom` with whatever you want. ESLint follows this naming convention.
+1. Set up a new project named `eslint-plugin-custom`. You can replace `custom` with something else. ESLint follows this naming convention.
 2. Execute `npm init -y` to create a dummy *package.json*
 3. Set up `index.js` in the project root with content.
 
@@ -130,8 +130,6 @@ module.exports = {
 In this case, you report for every identifier found. In practice, you likely want to do something more complex than this, but this is a good starting point.
 
 Next, you need to execute `npm link` within `eslint-plugin-custom` to make your plugin visible to your system. `npm link` allows you to consume a development version of a library you are developing. To reverse the link, you can execute `npm unlink` when you feel like it.
-
-T> If you want to do something serious, you should point to your plugin through *package.json*.
 
 You need to alter the project configuration to make it find the plugin and the rule within.
 
@@ -175,10 +173,10 @@ If you want a starting point, you can pick one of [eslint-config- packages](http
 
 ## Conclusion
 
-Especially the fact that you can customize ESLint to various purposes makes it a powerful tool. Thanks to its vibrant ecosystem, it's likely you find rules that are close to your purposes. Those make excellent starting points for your own development.
+You can customize ESLint to various purposes. Thanks to its vibrant ecosystem, it's likely you find rules that are close to your purposes. Those make excellent starting points for your own development.
 
 To recap:
 
 * ESLint allows rules to be skipped locally. Use this feature sparingly.
-* You can override ESLint environment per file. It's good to consider other solutions if you notice a lot of overrides in your source, though.
+* You can override ESLint environment per file. It's good to consider other approaches if you notice a lot of overrides in your source, though.
 * ESLint can be extended through plugins. They allow you to adjust its behavior to your liking. Given the ecosystem is strong, check it first before going this way.

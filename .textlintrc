@@ -89,6 +89,7 @@
         // ["(\\w+[^.?!]\\)? )webpack", "$1webpack"]
       ]
     },
+    "stop-words": true,
     "common-misspellings": true,
     "write-good": {
       "adverb": false,

@@ -35,7 +35,7 @@ Code style is subjective and automation can reduce pointless discussions and imp
 
 [ESLint](http://eslint.org/) is a popular linter for JavaScript. It’s primarily used to capture language related issues but can be used to enforce code style and good practices. It can fix many issues automatically, especially code style. You can write your own rules to ensure code consistency across your team or organization.
 
-JavaScript doesn’t have an official coding style but the community maintains a few. [Airbnb](https://github.com/airbnb/javascript) and [Standard](http://standardjs.com/) are especially popular: Airbnb is detailed and pragmatic, Standard is a bit controversial because it doesn’t use semicolons. [Semistandard](https://www.npmjs.com/package/semistandard) is a variant that fixes that issue. All of these options use two spaces for indentation.
+JavaScript doesn’t have an official coding style but the community maintains a few. [Airbnb](https://github.com/airbnb/javascript) and [Standard](http://standardjs.com/) are especially popular: Airbnb is detailed and pragmatic, Standard is a bit controversial because it doesn’t use semicolons. [Semistandard](https://www.npmjs.com/package/semistandard) is a variant that fixes that issue. These options use two spaces for indentation.
 
 ESLint is unopinionated and doesn’t have any rules by default so you should enable them manually or use a configuration like [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base), that implements Airbnb style guide. To get started, use `eslint --init` and let it generate a starting point for you.
 
@@ -168,7 +168,7 @@ npm run lint:ts
 
 [Stylelint](https://stylelint.io/) is a CSS linting tool, it’s like ESLint but for CSS. Stylelint understands CSS, including the latest features like custom properties, and SCSS. Sass-like indented syntaxes are supported using PostCSS [SugarSS](https://github.com/postcss/sugarss). It also has an experimental support for Less.
 
-[stylelint-config-standard](https://www.npmjs.com/package/stylelint-config-standard) is a config maintaned by stylelint team and based on CSS style guides of GitHub, Google and Airbnb.
+[stylelint-config-standard](https://www.npmjs.com/package/stylelint-config-standard) is a config maintained by stylelint team and follows CSS style guides of GitHub, Google and Airbnb.
 
 ### Setting Up Stylelint
 

@@ -4,7 +4,7 @@ The ideas of linting and formatting code overlap. Linting can capture language u
 
 ## Configuring IDEs and Editors with EditorConfig
 
-[EditorConfig](http://editorconfig.org/) allows you to define indentation style and other whitespace settings for any file type. This way your editor can automatically choose the correct settings, which is especially handy when developers use platforms with different line endings, e.g., Mac and Windows.
+[EditorConfig](http://editorconfig.org/) allows you to define indentation style and other whitespace settings for any file type. This way your editor can automatically choose the correct settings. This is handy when developers use platforms with different line endings, e.g., Mac and Windows.
 
 Here is a typical config (*.editorconfig*) with separate rules for Markdown, JSON and YAML files:
 
@@ -31,9 +31,9 @@ T> It's possible to force line endings through *.gitattributes* by setting `* te
 
 ## Formatting JavaScript and TypeScript with Prettier
 
-[Prettier](https://prettier.io/) is an opinionated JavaScript formatter. It has a limited number of settings and most of the code style rules are built in. Prettier removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
+[Prettier](https://prettier.io/) is an opinionated JavaScript formatter. It has few settings and most of the code style rules are built in. Prettier removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
 
-Prettier is smarter than other tools. For example, you can restrict line length whereas tools like ESLint can only yell at you if a line is too long and you would have to reformat the code yourself. If any line exceeds the limit, Prettier reformats the whole code block:
+Prettier is smarter than other tools. For example, you can restrict line length while tools like ESLint can only yell at you if a line is too long and you would have to reformat the code yourself. If any line exceeds the limit, Prettier reformats the whole code block:
 
 <!-- textlint-disable -->
 
@@ -74,7 +74,7 @@ Prettier has few [options](https://prettier.io/docs/en/options.html) to modify i
 
 It’s a good idea to disable code style rules in your ESLint config and let Prettier deal with the code style. For example, you can use [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) instead of [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base).
 
-W> Commit your code before running this command — it will reformat all your JavaScript files.
+W> Commit your code before running the command — it will reformat all your JavaScript files.
 
 T> To make your contributors’ life easier you can set up Prettier to format code before each commit with lint-staged. The idea is covered in the *Automation* chapter.
 
@@ -201,13 +201,13 @@ npm run format:css
 
 Code formatting answers the first problem. Linting can help with the second one although it might not capture it entirely. Consistency of naming is another difficult one as it's related to **conceptual code consistency**.
 
-For example, it could have `FooLoader` and `BarThatLoadsFoo` abstractions. Both refer to the same concept in different ways.
+For example, it could have `FooLoader` and `BarThatLoadsFoo` abstractions. Both use the same concept in different ways.
 
 It's difficult, or even impossible, to detect high-level problems like this automatically. For this reason, it's important to review the code for consistency every once in a while. Sometimes you may discover something that can be turned into a linting rule to solidify a specific idea but not everything can be automated.
 
 ## Conclusion
 
-Formatting tools complement linting well. They eliminate one source of confusion and make sure your code is formatted in a consistent manner.
+Formatting tools complement linting well. They eliminate one source of confusion and make sure your code is formatted in a consistent way.
 
 You'll learn about typing in the next chapter.
 

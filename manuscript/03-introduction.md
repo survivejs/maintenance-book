@@ -18,11 +18,11 @@ The parts of the book have been designed as follows:
 * **Code Quality** discusses how to maintain the quality of your project on a high level. You will learn what code quality consists of and how to manage it.
 * **Infrastructure** shows how to develop support structure around the project and keep it maintainable so that other people can contribute. You will also learn about scaling the project while buying yourself time to continue progressing.
 * **Documentation** is often overlooked, but it's a vital aspect for projects that are meant to be consumed by a wider community. The part shows how to achieve this to support the growth of your project.
-* **Future** and project longevity is important as without thought it's possible to end up with a project that is a failure. To succeed, you have to think about success first and plan accordingly.
+* **Future** and project longevity is important as without thought it's possible to end up with a failure. To succeed, you have to think about success first and plan carefully.
 
 There's a short conclusion chapter after the main content that recaps the main points of the book. This contains a checklist that allows you to go through compare your projects with the book's recommendations.
 
-The appendices in the end of the book cover secondary topics and sometimes dig more deeply into the main ones. You can approach these in any order you wish, depending on your interests.
+The appendices cover secondary topics and sometimes dig more deeply into the main ones. You can approach these in any order you wish, depending on your interests.
 
 ## Who Is The Book For
 
@@ -32,7 +32,7 @@ The book won't teach you to use a specific language. Instead, it covers higher l
 
 ## Book Versioning
 
-Given this book receives a fair amount of maintenance and improvements due to the pace of innovation, there's a versioning scheme in place. Release notes for each new version are maintained at the [book blog](https://survivejs.com/blog/). You can also use GitHub *compare* tool for this purpose. Example:
+Given this book receives a fair amount of maintenance and improvements, there's a versioning scheme in place. Release notes for each new version are maintained at the [book blog](https://survivejs.com/blog/). You can also use GitHub *compare* tool for this purpose. Example:
 
 ```
 https://github.com/survivejs/maintenance-book/compare/v0.9.0...v0.9.1

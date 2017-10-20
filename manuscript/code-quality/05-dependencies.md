@@ -4,9 +4,9 @@ While writing projects, dependency management tends to be a common issue. Someti
 
 T> You should use **lockfiles** to manage the versions of your dependencies. Read the *Publishing Packages* chapter to learn more about the approach.
 
-## Keeping Dependencies Up to Date
+## Keeping Dependencies Updated
 
-An important part of maintaining a project is keeping their dependencies up to date. The hard part is to understand which updates won’t break your code and how to migrate to a new version otherwise. Ideally, dependencies have change logs with clear migration instructions and your project has a good test coverage as that will help in the process.
+An important part of maintaining a project is keeping their dependencies updated. The hard part is to understand which updates won’t break your code and how to migrate to a new version otherwise. Ideally, dependencies have change logs with clear migration instructions and your project has a good test coverage as that will help in the process.
 
 To understand which dependencies can be updated, run `npm outdated --depth=0`. You should get a result along this:
 
@@ -30,7 +30,7 @@ The other dependencies would require either a manual change to *package.json* or
 * [Renovate](https://www.npmjs.com/package/renovate) is an open source alternative to Greenkeeper. [Read Renovate interview](https://survivejs.com/blog/renovate-interview/) to learn more about the tool.
 * [David](https://david-dm.org/) gives you a *README* badge that will show status of your dependencies.
 
-T> `npm ls`, and more specifically `npm ls <package name>`, allow you to figure out which versions you have installed. `npm ls -g` performs a similar lookup against the globally installed packages.
+T> `npm ls` and `npm ls <package name>` allow you to figure out which versions you have installed. `npm ls -g` performs a similar lookup against the globally installed packages.
 
 ## Conclusion
 

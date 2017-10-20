@@ -6,7 +6,7 @@ Most of the community follows a specific versioning convention which you should 
 
 ## Understanding SemVer
 
-Most popular packages out there comply with SemVer. Roughly, SemVer states that you should not break backward compatibility, given [certain rules](http://semver.org/) are met:
+Most popular packages out there follow SemVer. Roughly, SemVer states that you should not break backward compatibility, given [certain rules](http://semver.org/) are met:
 
 1. The MAJOR version increments when incompatible API changes are made.
 2. The MINOR version increments when backwards-compatible features are added.
@@ -25,7 +25,7 @@ T> Not all version number systems are created equal. Sometimes people prefer to 
 To increase the version of your packages, you need to invoke one of these commands:
 
 * `npm version <x.y.z>` - Define version yourself.
-* `npm version <major|minor|patch>` - Let npm bump the version for you based on SemVer.
+* `npm version <major|minor|patch>` - Let npm bump the version for you using SemVer.
 * `npm version <premajor|preminor|prepatch|prerelease>` - Same as previous expect this time it generates `-<prerelease number>` suffix. Example: `v2.1.2-2`.
 
 Invoking any of these updates *package.json* and creates a version commit to git automatically. If you execute `npm publish` after doing this, you should have a new version out there.
@@ -71,9 +71,9 @@ Using version ranges can feel dangerous as it doesn't take much to break an appl
 
 The next time someone runs `npm install`, npm will use the versions specified in this lockfile. The point is to provide predictable environment as sometimes a package might break by not following the aforementioned SemVer rules correctly.
 
-[Yarn](https://yarnpkg.com/), an npm alternative, implemented the idea of lockfiles first. It provides certain functionality, such as workspaces, not found in npm and continues to push the envelope.
+[Yarn](https://yarnpkg.com/), an npm alternative, implemented the idea of lockfiles first. It provides certain functionality, such as workspaces, not found in npm and continues to improve over npm.
 
-T> [Sebastian McKenzie discusses the difference between the lockfile approaches](https://yarnpkg.com/blog/2017/05/31/determinism/). In short, Yarn needs *package.json* to work while npm doesn't. Future interoperability is still unclear due to the difference of the approaches.
+T> [Sebastian McKenzie discusses the difference between the lockfile approaches](https://yarnpkg.com/blog/2017/05/31/determinism/). In short, Yarn needs *package.json* to work while npm doesn't. Future interoperability is unclear.
 
 ## Conclusion
 

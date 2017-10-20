@@ -12,7 +12,7 @@ Examples convey how to use the package. Ideally you are able to run them as test
 
 If the package is small, you can include its entire API documentation in the README. For bigger packages it can make sense to push the information below separate documents and host the information on the package site. Too big a README can also mean you have to split your package up somehow. This is where the **monorepo** approach may come in handy.
 
-You should include licensing information at the end of the README as that is a good convention to have. You can also mention sponsors and maintainers there so they get the visibility they have earned.
+You should include licensing information at the end of the README as it's a good convention to have. You can also mention sponsors and maintainers there so they get the visibility they have earned.
 
 ## Automating README Fields
 

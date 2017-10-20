@@ -6,7 +6,7 @@ The same idea applies to software projects. Why to repeatedly do something that 
 
 ## Git Commit Messages
 
-Depending on the developer and the development style, the quality of Git commit messages can vary. It's important data given it may be used in the future as you have to figure out why some code was written the way it was. The quality of commit messages becomes particularly important when more people get involved with the project.
+Depending on the developer and the development style, the quality of Git commit messages can vary. It's important data given it may be used in the future as you have to figure out why some code was written the way it was. The quality of commit messages becomes important when more people get involved with the project.
 
 ### Commit Message Conventions
 
@@ -98,7 +98,7 @@ semantic-release-cli setup
 
 Enter your npm and GitHub credentials, choose type of your CI server.
 
-And now if you make a new commit with a message like `fix: allow doodad to work with zero`, semantic-release will publish a new PATCH version to npm and publish release notes based on the commit message to GitHub.
+And now if you make a new commit with a message like `fix: allow doodad to work with zero`, semantic-release will publish a new PATCH version to npm and publish release notes to GitHub.
 
 T> You can customize every step of this process with plugins. For example, [make only PATCH releases automatically](http://blog.sapegin.me/all/semantic-release) and allow user to decide when to make MINOR and MAJOR releases and edit change logs manually.
 
@@ -181,7 +181,7 @@ This configuration will perform the following steps:
 
 ## Automating Releases
 
-To make it easier to comply with SemVer, [next-ver](https://www.npmjs.com/package/next-ver) can compute the next version you should use and update it for you. [commitizen](https://www.npmjs.com/package/commitizen) goes further and allows change log generation and automated releases. [semantic-release](https://www.npmjs.com/package/semantic-release) allows you to automatically make new npm releases and publish release notes to GitHub.
+To make it easier to manage SemVer, [next-ver](https://www.npmjs.com/package/next-ver) can compute the next version you should use and update it for you. [commitizen](https://www.npmjs.com/package/commitizen) goes further and allows change log generation and automated releases. [semantic-release](https://www.npmjs.com/package/semantic-release) allows you to automatically make new npm releases and publish release notes to GitHub.
 
 All these tools rely on commit message convention.
 

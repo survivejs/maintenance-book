@@ -8,7 +8,7 @@ The purpose of marketing is to connect the potential user with the project. The 
 
 Marketing is a creative pursuit. Given we are dealing with programming, this gives a powerful tool - **technical marketing**. Also, more traditional approaches, such as **content marketing** and **word of mouth** apply.
 
-Given often you don't have a marketing budget to use, you have to be mindful about the approaches you use. Certain approaches allow you to reach a large amount of people at once while converting only few. More targeted approaches reach less people but convert better.
+Given often you don't have a marketing budget to use, you should be mindful about the approaches you use. Certain approaches allow you to reach a large amount of people at once while converting only few. More targeted approaches reach less people but convert better.
 
 ## Technical Marketing
 
@@ -18,7 +18,7 @@ Sometimes the approach may mean that you have to do something indirect, such as 
 
 Assuming you are developing a user interface library, it could make sense to build amazing sites using it to showcase its capabilities. These case studies bring eyes to the project and make it easier to find.
 
-Another way would be to allow the users to get started as fast as possible. Perhaps the project homepage could contain runnable examples or something that can delight the potential user as soon as possible. Often the problem is in showing the potential of the solution. It's also important because communicating effectively what your project does saves time of people as they waste less time understanding what it's about.
+Another way would be to allow the users to get started as fast as possible. The project homepage could contain runnable examples or something that can delight the potential user as soon as possible. Often the problem is in showing the potential. It's also important because communicating effectively what your project does saves time of people as they waste less time understanding what it's about.
 
 As a technical marketer, you can develop these kind of **marketing channels**. Each channel addresses a certain group of people. Sometimes you own the channel, sometimes you don't. Especially the content marketing related channels require external help.
 
@@ -34,4 +34,4 @@ Word of mouth is the most classic way of marketing. A happy user will spread the
 
 ## Conclusion
 
-When it comes to marketing projects, first you have to decide whether you want to market it even. Sometimes popularity isn't a primary concern as it comes with its challenges related to project growth as discussed in the *Longevity* chapter. If popularity is the goal, though, then choosing smart marketing approaches can contribute towards this.
+When marketing projects, first you have to decide whether you want to market it even. Sometimes popularity isn't a primary concern as it comes with its challenges related to project growth as discussed in the *Longevity* chapter. If popularity is the goal, though, then choosing smart marketing approaches can contribute towards this.

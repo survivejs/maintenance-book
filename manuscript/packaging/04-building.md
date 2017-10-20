@@ -27,15 +27,15 @@ To communicate in which Node environments your package should work, you should s
 
 The same idea works for npm version and you can control it by setting `engines.npm` field like `engines.node` above.
 
-You can also document operating system in which the code should run through the `os` field. You can specify the CPU architecture through the `cpu` field. Both of these are niche cases and come into play only if you have platform specific code that is compiled for example.
+You can also document operating system in which the code should run through the `os` field. You can specify the CPU architecture through the `cpu` field. Both of these are niche cases and come into play only if you have platform specific code.
 
 ## Compiling to Support Specific Environments
 
 [Babel](https://babeljs.io/) is a popular JavaScript compiler that allows you to transform future code into a format that works in legacy environments. It can be used through Node, [a CLI client](https://www.npmjs.com/package/babel-cli), or available task runners and bundlers.
 
-In addition to a method to run, you will have to configure Babel to use specific plugins or presets. [babel-preset-env](https://www.npmjs.com/package/babel-preset-env) allows you to define which environments you want to support and can use the right plugins based on the definition and generate the minimal code required.
+Additionally you have to configure Babel to use specific plugins or presets. [babel-preset-env](https://www.npmjs.com/package/babel-preset-env) allows you to define which environments you want to support and can use the right plugins while generating the minimal code required.
 
-During this process, it will also shim the code appropriately so that the features work as they should. It's important to note that the shimming process isn't perfect and you may still have to include [Babel polyfill](https://babeljs.io/docs/usage/polyfill/) to the end result or at least advice consumers to use it.
+During this process, it will also shim the code appropriately so that the features work as they should. It's important to note that the shimming process isn't perfect and you may still have to include [Babel polyfill](https://babeljs.io/docs/usage/polyfill/) or at least advice consumers to use it.
 
 To configure *babel-preset-env* to work with Node, set it up as follows:
 
@@ -123,15 +123,15 @@ function exec(command) {
 }
 ```
 
-After these two steps, you have a build that should work whether or not you consume it through npm or not.
+After these two steps, you have a build that should work regardless whether consume it through npm or not.
 
 ## Configuring Babel for Tree Shaking
 
 Certain tools, like webpack or Rollup, support **tree shaking**. It's a form of **dead code elimination** (DCE) that relies on detecting which parts of the code are being used and which are not. The process relies on **static analysis** meaning it goes through the source, detects module imports and exports exist, checks which are being used, and drops the code of those that are not.
 
-To make this possible, you have to use the ES6 module definition as it's possible to analyze code relying on it exactly like this. CommonJS definition is too dynamic for proper analysis. That's a problem in the configuration above as it converts the possible ES6 code to CommonJS given that's what Node supports at the moment.
+To make this possible, you have to use the ES6 module definition as it's possible to analyze code relying on it exactly like this. CommonJS definition is too dynamic for proper analysis. That's a problem in the configuration above as it converts the possible ES6 code to CommonJS given that's what Node supports.
 
-For this reason, you have to set up another process to generate tree shaking compatible code. When it comes to Babel, you have to disable its module processing. Also, you have to point **package.json** `module` field to the generated source. The existing tooling relies on this convention and can pick up the tree-shakeable code based on the field.
+For this reason, you have to set up another process to generate tree shaking compatible code. You have to disable its module processing in Babel for this reason. Also, you have to point **package.json** `module` field to the generated source. The existing tooling relies on this convention and can pick up the tree-shakeable code if the field is set.
 
 The technique requires two steps. Set up helper scripts first:
 
@@ -191,13 +191,13 @@ To make sure Babel's module processing gets disabled during processing, set it u
 }
 ```
 
-Now it should build both a version of the package for Node and a version for tree shaking compatible environments. To perfect the solution, you should make the *postinstall* script point at `build:all` to build both targets.
+Now it should build both a version of the package for Node and a version for tree shaking compatible environments. You should make the *postinstall* script point at `build:all` to build both targets to finish the setup.
 
-T> There is [an experimental CommonJS based tree shaking solution for webpack](https://www.npmjs.com/package/webpack-common-shake).
+T> There is [an experimental CommonJS based tree shaking approach for webpack](https://www.npmjs.com/package/webpack-common-shake).
 
 ## Using Other Languages than JavaScript
 
-If you want to use some other language than JavaScript to author your packages, you cannot avoid a compilation process as above. The idea is similar and in this case you may end up with additional build artifacts, such as type definitions, that you may want to include in the distributed version of the package.
+You cannot avoid a compilation process as above with languages other than JavaScript. The idea is similar and in this case you may end up with additional build artifacts, such as type definitions, that you may want to include in the distributed version of the package.
 
 T> The *Typing* chapter covers a few popular options including Flow and TypeScript.
 

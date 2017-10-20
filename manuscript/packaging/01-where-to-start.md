@@ -1,8 +1,8 @@
 # Where to Start Packaging
 
-npm has become wildly popular for managing JavaScript packages. It started in the backend world but has since grown to include frontend libraries as well. Perhaps one of the reason for the proliferation of packages is that it can be difficult to find exactly the package you need, so you end up making your own.
+npm has become wildly popular for managing JavaScript packages. It started in the backend world but has since grown to include frontend libraries as well. One cause for the proliferation of packages is that it can be difficult to find exactly the package you need, so you end up making your own.
 
-This situation is somewhat alleviated by the arrival of [npms](https://npms.io/) and similar solutions, but it still exists. One problem with developing your own package is that then you have something to maintain. Unless it's your core business or something you like to do, this can become a problem.
+This situation is somewhat alleviated by the arrival of [npms](https://npms.io/) and similar services, but it still exists. One problem with developing your own package is that then you have something to maintain. Unless it's your core business or something you like to do, this can become a problem.
 
 ![Module counts in package managers based on modulecounts.com](images/module-counts.png)
 
@@ -42,13 +42,13 @@ T> Services like [npm trends](http://www.npmtrends.com/) and [npm-stat](https://
 
 ## Enhance an Existing Package
 
-It's possible you found something that almost fits. Perhaps there's small piece of functionality missing. Sometimes this can be an oversight in design as the use case you have in mind never came up.
+It's possible you found something that almost fits. There could be a small piece of functionality missing. Sometimes this can be an oversight in design as the use case you have in mind never came up.
 
-Although there is some development cost involved, contributing the missing functionality back to the project is a viable option. This is particularly true if the project is in a healthy state and there's activity and a good chance that the work gets merged.
+Although there is some development cost involved, contributing the missing functionality back to the project is a viable option. This is true if the project is in a healthy state and there's activity and a good chance that the work gets merged.
 
-Before contributing, you should discuss the design with the project owners. Normally this is done by opening an issue at the project issue tracker, explaining the use case, and the desired solution. This may lead to further insights and avoid redundant effort as you spend time on design.
+Before contributing, you should discuss the design with the project owners. Normally this is done by opening an issue at the project issue tracker, explaining the use case, and the desired outcome. This may lead to further insights and avoid redundant effort as you spend time on design.
 
-If everything goes fine, then the new functionality becomes a part of the official distribution and you essentially offload the maintenance effort to the project. You may still remain involved to support the project development to keep it in a good state of course.
+If everything goes fine, then the new functionality becomes a part of the official distribution and you essentially offload the maintenance effort to the project. You may still remain involved to support the project development to keep it in a good state.
 
 The pros and cons are similar as before but there are a few more:
 
@@ -62,18 +62,18 @@ The pros and cons are similar as before but there are a few more:
 
 ## Take Over an Existing Package
 
-Sometimes the process doesn't work ideally. Perhaps the project you want to contribute to has been abandoned by its authors or they are too busy to maintain it actively.
+Sometimes the process doesn't work ideally. The project you want to contribute could have been abandoned by its authors or they are too busy to maintain it actively.
 
-If you see value in the project and want to take over the maintenance, get in touch with the authors. You might be able to negotiate a good solution. Perhaps they would like to continue to work under some conditions. Contracting is an option.
+If you see value in the project and want to take over the maintenance, get in touch with the authors. You might negotiate a good outcome. It's possible they would like to continue to work under some conditions. Contracting is an option.
 
-It's important to consider the project rights. This becomes important if you want to go into a more commercial direction with it and for example **dual license** it. In that case you would sell a specific version for commercial usage while also maintaining a version free for the community at large.
+It's important to consider the project rights. This becomes vital in a more commercial direction and you could for example **dual license** it. In that case you would sell a specific version for commercial usage while also maintaining a version free for the community at large.
 
 This time pros and cons are more involved as you become more active.
 
 **Pros:**
 
 * You have control over the direction of the codebase.
-* The code stays maintained as long as you are willing to put effort to it.
+* The code stays maintained as long as you are willing to do it.
 
 **Cons:**
 
@@ -83,9 +83,9 @@ This time pros and cons are more involved as you become more active.
 
 You can also fork the project. This can be done in a few ways. You could maintain a private fork that's used only by your projects. In npm terms this could be achieved using **scoping** and you could end up with `@organization/some-package` that contains the modified version. In this case the maintenance cost is higher as you assume the responsibility for further development.
 
-Another option would be to rename the project while retaining references to the original project to comply with common licensing clauses (esp. MIT) and then publish it publicly under a new name.
+Another option would be to rename the project while retaining references to the original project to follow common licensing clauses (esp. MIT) and then publish it publicly under a new name.
 
-Depending on what you are doing, original licensing can become problematic. This applies particularly to so called copyleft (or viral) licenses which include GPL and AGPL (a stricter variant), which put restrictions on the usage. If you fork a project like this, note that the license still applies!
+Depending on what you are doing, original licensing can become problematic. This applies to so called copyleft (or viral) licenses which include GPL and AGPL (a stricter variant), which put restrictions on the usage. If you fork a project like this, note that the license still applies!
 
 Over time the original project might become active again and you could look into merging the efforts. This has happened in the past with bigger projects like Node and io.js or ayo. A fork can revitalize a stagnant project and force it to pick up pace again.
 
@@ -105,7 +105,7 @@ T> Learn different licensing options by reading [The Legal Side of Open Source](
 
 ## Develop Your Own Package
 
-If there's nothing that fits your purposes or you want to develop a solution of your own, that's certainly possible. Sometimes people end up developing a solution of their own because they aren't aware of the existing options. Discoverability is a real problem given the amount of packages available.
+If there's nothing that fits your purposes or you want to develop on your own, that's certainly possible. Sometimes people end up developing on their own because they aren't aware of the existing options. Discoverability is a real problem given the amount of packages available.
 
 One of early stage problems is figuring out a good name for a package. npm root namespace has become crowded and it can be difficult to find a free name. Also, you may have to worry about existing trademarks to avoid problems later on. By skipping this you may have to rename your package later as happened for [Jade which had to rename as Pug](https://github.com/pugjs/pug/issues/2184).
 
@@ -119,7 +119,7 @@ The pros and cons are roughly opposite compared to using an existing package:
 
 **Pros:**
 
-* You get exactly the solution you are capable of developing.
+* You get exactly what you are capable of developing.
 * You control package releases and can publish fixes and features as you prefer.
 
 **Cons:**
@@ -134,15 +134,15 @@ Often npm consumption workflow resolves around two commands:
 * `npm install <package> --save` or `npm i <package> -S`.
 * `npm install <package> --save-dev` or `npm i <package> -D`
 
-To install a specific version, you should pass it through `@<version>`. npm will set the version prefix based on *~/.npmrc*. The related ranges are discussed later in this chapter.
+To install a specific version, you should pass it through `@<version>`. npm will set the version prefix following *~/.npmrc*. The related ranges are discussed later in this chapter.
 
-You can refer to a package by its name and version but that is not the only way. Consider the following alternatives:
+You can point to a package by its name and version but it's not the only way. Consider the following alternatives:
 
 * `<git repository>#<reference>` points to a Git repository and a Git reference.
-* `<github user>/<project>#<reference>` shortcut points to GitHub in a similar manner.
+* `<github user>/<project>#<reference>` shortcut points to GitHub in a similar way.
 * `<github user>/<project>#pull/<id>/head` points to a specific GitHub pull request.
 
-`<reference>` can be either commit hash, tag, or a branch. The technique does not work unless the package has been set up to support consumption outside of Git. The *Package Authoring Techniques* chapter shows how to achieve this.
+`<reference>` can be either commit hash, tag, or a branch. The technique does not work unless the package has been set up to support consumption beyond Git. The *Package Authoring Techniques* chapter shows how to achieve this.
 
 T> To avoid sharing all your packages in public, npm allows you to maintain private packages through their commercial offering. Another option is to use a package like [verdaccio](https://www.npmjs.com/package/verdaccio). verdaccio allows you to maintain a private server that can also work as a cache for npm. You can also override public packages using it.
 

@@ -18,11 +18,11 @@ Text linting is less common than code linting but in large projects with many co
 * [terminology](https://www.npmjs.com/package/textlint-rule-terminology) — checks and fixes terms spelling in your tech writing.
 * [write-good](https://www.npmjs.com/package/textlint-rule-write-good) — tries to improve your English styles.
 
-[Proselint](http://proselint.com/) is prose linter based on advice of world’s greatest writers and editors, it checks your texts for things like redundancy, jargon, illogic, clichés, sexism, misspelling, inconsistency and misuse of symbols. It has [several dozens of rules](https://github.com/amperser/proselint/#checks) by default.
+[Proselint](http://proselint.com/) is prose linter following the advice of world’s greatest writers and editors, it checks your texts for things like redundancy, jargon, illogic, clichés, sexism, misspelling, inconsistency and misuse of symbols. It has [several dozens of rules](https://github.com/amperser/proselint/#checks) by default.
 
 It’s written in Python but we recommend using it via a [JavaScript wrapper](https://www.npmjs.com/package/proselint) for better UI.
 
-T> If you want to check Markdown syntax and consistency, try [remark-lint](https://www.npmjs.com/package/remark-lint).
+T> To check Markdown syntax and consistency, try [remark-lint](https://www.npmjs.com/package/remark-lint).
 
 ### Setting up Textlint
 
