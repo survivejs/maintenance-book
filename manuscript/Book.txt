@@ -26,9 +26,10 @@ infrastructure/03-automation.md
 
 07-Documentation.md
 documentation/01-readme.md
-documentation/02-site.md
-documentation/03-api.md
-documentation/04-linting.md
+documentation/02-change-log.md
+documentation/03-site.md
+documentation/04-api.md
+documentation/05-linting.md
 
 08-Future.md
 future/01-longevity.md
