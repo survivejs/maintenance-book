@@ -232,7 +232,7 @@ leanpub-end-insert
 ]
 ```
 
-And finally make the CI fail on size changes:
+And finally make the CI fail on size increase:
 
 ```json
 "scripts": {
@@ -242,6 +242,15 @@ leanpub-start-insert
   "posttest": "size-limit"
 leanpub-end-insert
 }
+```
+
+If the package will ever grow over 9 KB, you’ll see an error like this:
+
+```
+  Package size limit has exceeded by 25.57 KB
+  Package size: 34.57 KB
+  Size limit:   9 KB
+  With all dependencies, minified and gzipped
 ```
 
 T> To find out why your library is bigger than expected, run `npm run size -- --why`.
