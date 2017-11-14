@@ -191,9 +191,67 @@ https://www.npmjs.com/package/gh-lint
 
 ## Danger
 
-TODO
+TODO: You need a GitHub bot user
 
-* What problems does Danger solve
+[Danger JS](https://github.com/danger/danger-js) runs as a part of your CI script, can validate common code review requirements and fail the CI if they aren’t met.
+
+For example:
+
+* Require to update the npm lock file every time *package.json* changes.
+* Require new tests when new code is added.
+* Require a change log entry.
+
+You write validations using JavaScript in a so called Dangerfile, that has access to:
+
+* changes from Git;
+* changes from GitHub, GitLab or BitBucket.
+
+T> Two good examples of relatively complex Dangerfiles are [Styled Components](https://github.com/styled-components/styled-components/blob/master/dangerfile.js) and [???](???).
+
+Let’s install Danger JS:
+
+```shell
+npm install --save-dev danger
+```
+
+Create a Dangerfile, *dangerfile.js* in your project root folder, like this:
+
+```js
+import { danger, warn } from 'danger';
+
+// Warn if the PR has changes in package.json but no changes in package-lock.json
+const packageChanged = danger.git.modified_files.includes('package.json');
+const lockfileChanged = danger.git.modified_files.includes('package-lock.json');
+if (packageChanged && !lockfileChanged) {
+  warn(`Changes were made to package.json, but not to package-lock.json.
+Perhaps you need to run \`npm install\` and commit changes in package-lock.json.. Make sure you’re using npm 5+.`);
+}
+```
+
+Add a new script to your *package.json*:
+
+```json
+{
+  "scripts": {
+    "danger": "danger"
+  }
+}
+```
+
+And update your *.travis.yml* to make it run on Travis CI:
+
+```yaml
+language: node_js
+node_js:
+  - 8
+script:
+  npm run test
+  npm run danger
+```
+
+Now every time someone sends a pull request that changes *package.json* but not *pakcage-lock.json*, bot will warn them:
+
+TODO: comment screenshot
 
 ## Bots
 
