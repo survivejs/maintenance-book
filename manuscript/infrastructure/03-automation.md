@@ -249,9 +249,9 @@ script:
   npm run danger
 ```
 
-Now every time someone sends a pull request that changes *package.json* but not *pakcage-lock.json*, bot will warn them:
+Now every time someone sends a pull request that changes *package.json* but not *pakcage-lock.json*, the bot will warn them:
 
-TODO: comment screenshot
+![Danger JS comment](images/danger.png)
 
 ## Bots
 
