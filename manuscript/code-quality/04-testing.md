@@ -189,7 +189,54 @@ The idea of *smoke testing* is to verify that vital functionality works in produ
 
 ### Code Size
 
-The size of the code can be important especially for frontend related packages as you want to minimize the amount of code the client has to download and parse. Tools like [bundlesize](https://www.npmjs.com/package/bundlesize) and [size-limit](https://www.npmjs.com/package/size-limit) achieve this.
+The size of the code can be important especially for frontend related packages as you want to minimize the amount of code the client has to download and parse. Tools like [size-limit](https://www.npmjs.com/package/size-limit) and [bundlesize](https://www.npmjs.com/package/bundlesize) achieve this.
+
+You can set up size-limit to fail the CI if your library accidentally grows over a certain limit.
+
+To do that, install size-limit first:
+
+```shell
+npm install --save-dev size-limit
+```
+
+Update a new script and a `size-limit` section to your *package.json*:
+
+```diff
++ "size-limit": [
++   {
++     "path": "index.js"
++   }
++ ],
+  "scripts": {
++   "size": "size-limit",
+    "test": "jest"
+  }
+```
+
+Run `npm run size` to see the current size of your library, with all dependencies, minified and gzipped.
+
+Now, set the limit: it’s recommended to add around 1 KB over the current size, so you’ll know about any size increase:
+
+```diff
+ "size-limit": [
+    {
++     "limit": "9 KB",
+      "path": "index.js"
+    }
+ ],
+```
+
+And finally make the CI fail on size changes:
+
+```diff
+  "scripts": {
+    "size": "size-limit",
+    "test": "jest"
++   "posttest": "size-limit"
+  }
+```
+
+T> To find out why your library is bigger than expected, run `npm run size -- --why`.
 
 ### Design by Contract
 
