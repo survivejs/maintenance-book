@@ -201,39 +201,47 @@ npm install --save-dev size-limit
 
 Update a new script and a `size-limit` section to your *package.json*:
 
-```diff
-+ "size-limit": [
-+   {
-+     "path": "index.js"
-+   }
-+ ],
-  "scripts": {
-+   "size": "size-limit",
-    "test": "jest"
+```json
+leanpub-start-insert
+"size-limit": [
+  {
+    "path": "index.js"
   }
+],
+leanpub-end-insert
+"scripts": {
+leanpub-start-insert
+  "size": "size-limit",
+leanpub-end-insert
+  "test": "jest"
+}
 ```
 
 Run `npm run size` to see the current size of your library, with all dependencies, minified and gzipped.
 
 Now, set the limit: it’s recommended to add around 1 KB over the current size, so you’ll know about any size increase:
 
-```diff
- "size-limit": [
-    {
-+     "limit": "9 KB",
-      "path": "index.js"
-    }
- ],
+```json
+"size-limit": [
+  {
+leanpub-start-insert
+    "limit": "9 KB",
+leanpub-end-insert
+    "path": "index.js"
+  }
+]
 ```
 
 And finally make the CI fail on size changes:
 
-```diff
-  "scripts": {
-    "size": "size-limit",
-    "test": "jest"
-+   "posttest": "size-limit"
-  }
+```json
+"scripts": {
+  "size": "size-limit",
+  "test": "jest"
+leanpub-start-insert
+  "posttest": "size-limit"
+leanpub-end-insert
+}
 ```
 
 T> To find out why your library is bigger than expected, run `npm run size -- --why`.
