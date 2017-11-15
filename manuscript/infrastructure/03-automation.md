@@ -191,9 +191,89 @@ https://www.npmjs.com/package/gh-lint
 
 ## Danger
 
-TODO
+[Danger JS](https://github.com/danger/danger-js) runs as a part of your CI script, can validate common code review requirements and fail the CI if they aren’t met.
 
-* What problems does Danger solve
+For example:
+
+* Require to update the npm lock file every time *package.json* changes.
+* Require new tests when new code is added.
+* Require a change log entry.
+* Check for test shortcuts like `it.only` or `describe.only`.
+* Check for `TODO` and `FIXME` comments.
+* Check that the pull request was sent to a correct branch.
+* Check number of changed lines and suggest to split the pull request if it’s too big.
+* Check that new files have a proper copyright message.
+* Ping specific people on changes in specific files.
+
+Danger has no default rules but it has a JavaScript API that allows you to inspect source code changes, pull request metadata, build log, post comments on the pull request and mark the build as failed.
+
+T> Two good examples of relatively complex Dangerfiles are [Styled Components](https://github.com/styled-components/styled-components/blob/master/dangerfile.js) and [RxJS](https://github.com/ReactiveX/rxjs/blob/master/dangerfile.js).
+
+To use Danger you need a GitHub bot user. Each GitHub user is allowed to create one bot user. You do it the same way you’ve created your own account but you can use this user for automation, like posting comments using a script.
+
+Let’s install Danger:
+
+```shell
+npm install --save-dev danger
+```
+
+Create a Dangerfile, *dangerfile.js* in your project root folder, like this:
+
+```js
+import { danger, warn, fail } from 'danger';
+
+// Warn (won’t fail the CI, just post a comment) if the PR has changes in package.json but no changes in package-lock.json
+const packageChanged = danger.git.modified_files.includes('package.json');
+const lockfileChanged = danger.git.modified_files.includes('package-lock.json');
+if (packageChanged && !lockfileChanged) {
+  warn(`Changes were made to package.json, but not to package-lock.json.
+Perhaps you need to run \`npm install\` and commit changes in package-lock.json. Make sure you’re using npm 5+.`);
+}
+
+// Fail the CI when test shorcuts are found
+const jsTestChanges = danger.git.modified_files.filter(f =>
+  f.endsWith('.spec.js')
+);
+jsTestChanges.forEach(file => {
+  const content = fs.readFileSync(file).toString();
+  if (content.includes('it.only') || content.includes('describe.only')) {
+    fail(`An \`.only\` was left in tests (${file})`);
+  }
+});
+```
+
+Add a new script to your *package.json*:
+
+```json
+{
+  "scripts": {
+    "danger": "danger"
+  }
+}
+```
+
+Update your *.travis.yml* to make it run on Travis CI:
+
+```yaml
+language: node_js
+node_js:
+  - 8
+script:
+  npm run test
+  npm run danger
+```
+
+You also need to add API token to Travis settings, see [getting started guide](http://danger.systems/js/guides/getting_started.html) for details.
+
+Now every time someone sends a pull request that changes *package.json* but not *package-lock.json*, the bot will warn them:
+
+![Danger JS comment](images/danger.png)
+
+Danger has some plugins, like:
+
+* [fixme](https://www.npmjs.com/package/danger-plugin-fixme) — check for `TODO` and `FIXME` comments;
+* [no-test-shortcuts](https://www.npmjs.com/package/danger-plugin-no-test-shortcuts) — check for test shortcuts;
+* [spellcheck](https://www.npmjs.com/package/danger-plugin-spellcheck) — spell checks created or modified Markdown files.
 
 ## Bots
 
