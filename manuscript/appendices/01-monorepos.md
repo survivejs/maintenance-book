@@ -41,16 +41,16 @@ Webpack is a popular project bundler. Managing the project comes with its own ch
 
 Separating each package to a repository of its own makes them snowflakes in sense that each repository easily becomes different and it's hard to keep them in sync if infrastructure evolves somehow. To solve the problem, [webpack-defaults](https://www.npmjs.com/package/webpack-defaults) was developed.
 
-The idea was to push project configuration (e.g. GitHub templates, linting, testing setup) to a single package that could be consumed across webpack-contrib repositories. When you install *webpack-defaults* to your project, it writes an npm script that pulls project defaults from the package and migrates the project as well it can to follow the standard.
+The idea was to push project configuration (e.g. GitHub templates, linting, testing setup) to a single package that could be consumed across webpack-contrib repositories. When you install _webpack-defaults_ to your project, it writes an npm script that pulls project defaults from the package and migrates the project as well it can to follow the standard.
 
 Sometimes this can mean replacing entire file (i.e. Travis CI configuration) but there are times when patching the existing configuration is enough (i.e. `.gitignore`). This allows you to maintain control and it avoids customization per project following specific needs.
 
 The biggest win of pushing shared configuration to a package like this is that it allows webpack to push project standards to a single place where they can be maintained. The changes can be consumed by running a single command at each project. This still requires inspection by programmers but it beats the alternative where it's not possible to cascade changes across projects.
 
-*webpack-defaults* relies on [mrm-core](https://www.npmjs.com/package/mrm-core) for handling project level migrations. It's at its best in patching configuration file formats like JSON or YAML. The problems begin if you have to patch JavaScript configuration as then the needed transformations become arbitrary given code can be written in so many ways. This is where [codemods](https://www.npmjs.com/package/js-codemod) can come in for limited scenarios.
+_webpack-defaults_ relies on [mrm-core](https://www.npmjs.com/package/mrm-core) for handling project level migrations. It's at its best in patching configuration file formats like JSON or YAML. The problems begin if you have to patch JavaScript configuration as then the needed transformations become arbitrary given code can be written in so many ways. This is where [codemods](https://www.npmjs.com/package/js-codemod) can come in for limited scenarios.
 
 ## Conclusion
 
 Monorepos provide a refreshing alternative to managing each package per repository. They allow you to share the same configuration across separate packages and also coordinate related changes more easily. The approach comes with technical cost as performing this orchestration requires tooling.
 
-Another option is to push the configuration problem to a package as was done in *webpack-defaults*. This way you can manage shared standards in a single place and share them across multiple projects.
+Another option is to push the configuration problem to a package as was done in _webpack-defaults_. This way you can manage shared standards in a single place and share them across multiple projects.

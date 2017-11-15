@@ -62,11 +62,11 @@ These third-party type definitions complement the actual packages and allow you 
 
 ### Generating Type Definitions
 
-If you are using TypeScript to author your packages, TypeScript compiler will write file ending in *d.ts*. The file contains the type definitions. It's advisable to set `"typings": "dist/library.d.ts"` in *package.json* although TypeScript related tooling will look for the file through convention. The same type definition can be used for DefinitelyTyped.
+If you are using TypeScript to author your packages, TypeScript compiler will write file ending in _d.ts_. The file contains the type definitions. It's advisable to set `"typings": "dist/library.d.ts"` in _package.json_ although TypeScript related tooling will look for the file through convention. The same type definition can be used for DefinitelyTyped.
 
 T> [TypeScript documentation covers related details in further detail](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html).
 
-Flow provides `flow gen-flow-files <input file> > <output file>` that achieves closely the same. It accepts a source file to process and emits the extracted type definition. These definitions could then be submitted to *flow-typed*.
+Flow provides `flow gen-flow-files <input file> > <output file>` that achieves closely the same. It accepts a source file to process and emits the extracted type definition. These definitions could then be submitted to _flow-typed_.
 
 T> [Patrick Stapfer has written an article that covers Flow specifics in greater detail](https://medium.com/netscape/shipping-flowtype-definitions-in-npm-packages-c987917efb65).
 

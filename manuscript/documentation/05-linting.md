@@ -7,16 +7,16 @@ TODO
 Text linting is less common than code linting but in large projects with many contributors it could improve documentation quality. You can:
 
 * Validate links.
-* Ensure consistent terminology (e.g., *JavaScript* vs. *Java&#x200b;script* or *npm* vs. *N&#x200b;PM*).
-* Improve language (e.g., do not allow words like *ju&#x200b;st*, *easi&#x200b;ly* and *si&#x200b;mply*).
+* Ensure consistent terminology (e.g., _JavaScript_ vs. _Java&#x200b;script_ or _npm_ vs. _N&#x200b;PM_).
+* Improve language (e.g., do not allow words like _ju&#x200b;st_, _easi&#x200b;ly_ and _si&#x200b;mply_).
 
 [Textlint](https://textlint.github.io/) is an extendable text linter written in JavaScript, it’s a fork of ESLint so setup is similar. And like ESLint it can fix certain rules for you. It has many plugins:
 
 * [eslint](https://www.npmjs.com/package/textlint-rule-eslint) — checks code examples in Markdown using ESLint (autofixing is also possible).
-* [common-misspellings](https://www.npmjs.com/package/textlint-rule-common-misspellings) — fixes common English misspellings (e.g. *simi&#x200b;liarity* → *similarity*).
+* [common-misspellings](https://www.npmjs.com/package/textlint-rule-common-misspellings) — fixes common English misspellings (e.g. _simi&#x200b;liarity_ → _similarity_).
 * [no-dead-link](https://www.npmjs.com/package/textlint-rule-no-dead-link) — finds dead links, automatically fixes redirects.
 * [terminology](https://www.npmjs.com/package/textlint-rule-terminology) — checks and fixes terms spelling in your tech writing.
-* [write-good](https://www.npmjs.com/package/textlint-rule-write-good) — tries to improve your English styles.
+* [write-good](https://www.npmjs.com/package/textlint-rule-write-good) — tries to improve your English styles.
 
 [Proselint](http://proselint.com/) is prose linter following the advice of world’s greatest writers and editors, it checks your texts for things like redundancy, jargon, illogic, clichés, sexism, misspelling, inconsistency and misuse of symbols. It has [several dozens of rules](https://github.com/amperser/proselint/#checks) by default.
 
@@ -32,7 +32,7 @@ Let’s install Textlint with several rules:
 npm install --save-dev textlint textlint-rule-terminology textlint-rule-common-misspellings textlint-rule-write-good textlint-rule-no-dead-link
 ```
 
-Add a script to your *package.json* like this:
+Add a script to your _package.json_ like this:
 
 ```json
 {
@@ -77,7 +77,7 @@ pip install proselint
 npm install --save-dev proselint
 ```
 
-Add a script to your *package.json* like this:
+Add a script to your _package.json_ like this:
 
 ```json
 {

@@ -2,7 +2,7 @@
 
 Even the technically most excellent project in the world won't have much impact unless it reaches potential users. Popularity isn't a goal always, but if it's, then it's good to know how to approach marketing the project.
 
-The purpose of marketing is to connect the potential user with the project. The topic is covered from the user point of view in the *Where to Start Packaging* chapter. Marketing is the opposite and answers the question how to make it possible for the user to find the project.
+The purpose of marketing is to connect the potential user with the project. The topic is covered from the user point of view in the _Where to Start Packaging_ chapter. Marketing is the opposite and answers the question how to make it possible for the user to find the project.
 
 ## Marketing Approaches
 
@@ -34,4 +34,4 @@ Word of mouth is the most classic way of marketing. A happy user will spread the
 
 ## Conclusion
 
-When marketing projects, first you have to decide whether you want to market it even. Sometimes popularity isn't a primary concern as it comes with its challenges related to project growth as discussed in the *Longevity* chapter. If popularity is the goal, though, then choosing smart marketing approaches can contribute towards this.
+When marketing projects, first you have to decide whether you want to market it even. Sometimes popularity isn't a primary concern as it comes with its challenges related to project growth as discussed in the _Longevity_ chapter. If popularity is the goal, though, then choosing smart marketing approaches can contribute towards this.

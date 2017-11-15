@@ -1,6 +1,6 @@
 # Standalone Builds
 
-The scenarios covered in the previous chapter are enough if you consume packages through npm. There may be users that prefer pre-built *standalone builds* instead. This comes with a several advantages:
+The scenarios covered in the previous chapter are enough if you consume packages through npm. There may be users that prefer pre-built _standalone builds_ instead. This comes with a several advantages:
 
 * The build can be served through a Content Delivery Network (CDN). Especially popular libraries are available this way.
 * Users that want to optimize their development experience can point to the built version. This avoids additional processing during development as their tooling doesn't have to process the original source.
@@ -20,7 +20,7 @@ T> [Webpack and Rollup: the same but different](https://medium.com/webpack/webpa
 
 T> You can also use webpack and Rollup together through [rollup-loader](https://www.npmjs.com/package/rollup-loader) and leave JavaScript handling to Rollup as this enables tree shaking through Rollup and allows you to use Rollup specific plugins.
 
-T> Both webpack and Rollup support *scope hoisting*. It's a performance oriented feature that pulls modules into a single scope instead of writing separate scope for each module. This reduces the overhead related to function calls.
+T> Both webpack and Rollup support _scope hoisting_. It's a performance oriented feature that pulls modules into a single scope instead of writing separate scope for each module. This reduces the overhead related to function calls.
 
 ## Universal Module Definition (UMD)
 

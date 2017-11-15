@@ -7,7 +7,7 @@ While publishing packages, you have a few concerns to worry about:
 * What to do if we want to use another language than JavaScript to author our package?
 * How to support modern module bundlers and their tree shaking features?
 
-If you author your packages using a source format that works directly with Node, you can avoid additional processing. In this case it's enough to point *package.json* `main` field to the source as discussed in the previous chapter.
+If you author your packages using a source format that works directly with Node, you can avoid additional processing. In this case it's enough to point _package.json_ `main` field to the source as discussed in the previous chapter.
 
 If you support only the newest [LTS (Long-term support) version](https://github.com/nodejs/LTS), you can use [new features of the language](http://node.green/) without having to compile the code in any way.
 
@@ -15,7 +15,7 @@ That said, if you prefer to use features that are not supported by LTS yet or wa
 
 ## Communicating Where Code Should Work
 
-To communicate in which Node environments your package should work, you should set *package.json* `engines` field. It accepts a range in a similar way as for dependencies. Consider the example adapted from [npm documentation](https://docs.npmjs.com/files/package.json#engines):
+To communicate in which Node environments your package should work, you should set _package.json_ `engines` field. It accepts a range in a similar way as for dependencies. Consider the example adapted from [npm documentation](https://docs.npmjs.com/files/package.json#engines):
 
 **package.json**
 
@@ -37,7 +37,7 @@ Additionally you have to configure Babel to use specific plugins or presets. [ba
 
 During this process, it will also shim the code appropriately so that the features work as they should. It's important to note that the shimming process isn't perfect and you may still have to include [Babel polyfill](https://babeljs.io/docs/usage/polyfill/) or at least advice consumers to use it.
 
-To configure *babel-preset-env* to work with Node, set it up as follows:
+To configure _babel-preset-env_ to work with Node, set it up as follows:
 
 **.babelrc**
 
@@ -118,7 +118,7 @@ fs.stat(distDirectory, (error, stat) => {
 function exec(command) {
   execSync(command, {
     // Print stdin/stdout/stderr
-    stdio: 'inherit'
+    stdio: 'inherit',
   });
 }
 ```
@@ -156,7 +156,7 @@ leanpub-end-insert
 },
 ```
 
-W> The example relies on the *cross-env* tool discussed later in this chapter. If you are on Unix only, you can skip it.
+W> The example relies on the _cross-env_ tool discussed later in this chapter. If you are on Unix only, you can skip it.
 
 To make sure Babel's module processing gets disabled during processing, set it up as follows:
 
@@ -191,7 +191,7 @@ To make sure Babel's module processing gets disabled during processing, set it u
 }
 ```
 
-Now it should build both a version of the package for Node and a version for tree shaking compatible environments. You should make the *postinstall* script point at `build:all` to build both targets to finish the setup.
+Now it should build both a version of the package for Node and a version for tree shaking compatible environments. You should make the _postinstall_ script point at `build:all` to build both targets to finish the setup.
 
 T> There is [an experimental CommonJS based tree shaking approach for webpack](https://www.npmjs.com/package/webpack-common-shake).
 
@@ -199,7 +199,7 @@ T> There is [an experimental CommonJS based tree shaking approach for webpack](h
 
 You cannot avoid a compilation process as above with languages other than JavaScript. The idea is similar and in this case you may end up with additional build artifacts, such as type definitions, that you may want to include in the distributed version of the package.
 
-T> The *Typing* chapter covers a few popular options including Flow and TypeScript.
+T> The _Typing_ chapter covers a few popular options including Flow and TypeScript.
 
 ## Cross-Platform Concerns
 
@@ -207,10 +207,10 @@ To make sure your npm scripts work across different platforms, you cannot rely o
 
 * [cpy-cli](https://www.npmjs.com/package/cpy-cli) - Copy files and folders.
 * [cross-env](https://www.npmjs.com/package/cross-env) - Set environment variables.
-* [mkdirp](https://www.npmjs.com/package/mkdirp) - *mkdirp* equals to Unix `mkdir -p <path>` which creates all directories given to it. A normal `mkdir <path>` would fail if any of the parents are missing. `-p` stands for `--parents`.
-* [npm-run-all](https://www.npmjs.com/package/npm-run-all) - Running npm scripts in series and parallel is problematic as there's no native support for that and you have to rely on OS level semantics. *npm-run-all* solves this problem by hiding it behind a small CLI interface. Example: `npm-run-all clean build:*`.
-* [rimraf](https://www.npmjs.com/package/rimraf) - *rimraf* equals to `rm -rf <path>` which in Unix terms removes the given path and its contents without any confirmation. The command is both powerful and dangerous.
-* [fs-extra](https://www.npmjs.com/package/fs-extra) - *fs-extra* extends Node `fs` module with commonly needed utilities. It works as a drop-in replacement to it.
+* [mkdirp](https://www.npmjs.com/package/mkdirp) - _mkdirp_ equals to Unix `mkdir -p <path>` which creates all directories given to it. A normal `mkdir <path>` would fail if any of the parents are missing. `-p` stands for `--parents`.
+* [npm-run-all](https://www.npmjs.com/package/npm-run-all) - Running npm scripts in series and parallel is problematic as there's no native support for that and you have to rely on OS level semantics. _npm-run-all_ solves this problem by hiding it behind a small CLI interface. Example: `npm-run-all clean build:*`.
+* [rimraf](https://www.npmjs.com/package/rimraf) - _rimraf_ equals to `rm -rf <path>` which in Unix terms removes the given path and its contents without any confirmation. The command is both powerful and dangerous.
+* [fs-extra](https://www.npmjs.com/package/fs-extra) - _fs-extra_ extends Node `fs` module with commonly needed utilities. It works as a drop-in replacement to it.
 
 ## Conclusion
 

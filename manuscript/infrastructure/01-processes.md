@@ -27,7 +27,7 @@ Especially popular projects are constrained by the amount of maintainers they ha
 
 Poorly formatted and incomplete issues waste time. In the worst case you have to dig the information you require to debug the problem. The problem can be solved by improving the standard of issues and not accepting poor ones.
 
-In GitHub this can be achieved by using an [issue template](https://github.com/serverless/serverless/blob/master/.github/ISSUE_TEMPLATE.md) that's included within a repository. When a user fills in an issue, the provided template will work as a starting point. Unfortunately, given it's in text format, it doesn't solve the problem entirely. Bots discussed in the *Automation* chapter try to solve this problem as they can close poor quality issues as long as certain criteria is met.
+In GitHub this can be achieved by using an [issue template](https://github.com/serverless/serverless/blob/master/.github/ISSUE_TEMPLATE.md) that's included within a repository. When a user fills in an issue, the provided template will work as a starting point. Unfortunately, given it's in text format, it doesn't solve the problem entirely. Bots discussed in the _Automation_ chapter try to solve this problem as they can close poor quality issues as long as certain criteria is met.
 
 ## How to Manage Pull Requests
 
@@ -35,7 +35,7 @@ Instead of requesting for features or reporting bugs, sometimes the users may sc
 
 Pull requests share similar problems as issues. As issues, also [pull requests have templates](https://github.com/serverless/serverless/blob/master/.github/PULL_REQUEST_TEMPLATE.md) in GitHub but the same caveat as before applies and there are a few additional problems as well.
 
-How can you make sure the proposed change doesn't break anything? This is where testing and *Continuous Integration* discussed in the next chapter come in. It's difficult to have full guarantees but at least you can make it harder for functionality to break by implementing the right practices to your project.
+How can you make sure the proposed change doesn't break anything? This is where testing and _Continuous Integration_ discussed in the next chapter come in. It's difficult to have full guarantees but at least you can make it harder for functionality to break by implementing the right practices to your project.
 
 ## How to Design a Development Process
 
@@ -65,7 +65,7 @@ This complexity can be tamed by developing organization structure. Instead of wo
 
 T> Platforms like GitHub model the concept of team in system level. If you use a GitHub organization for a project, you can assign people to teams and assign specific rights to the teams. Teams can also be used in npm to make it easier to share release rights for example.
 
-T> The *Longevity* chapter discusses the issue further.
+T> The _Longevity_ chapter discusses the issue further.
 
 ### Maintaining Project Focus
 
@@ -87,7 +87,7 @@ Once a project reaches certain scale, managing support becomes a problem. GitHub
 
 One of the best ways to deal with support is to reduce the amount of support required through design and documentation. If certain part of software requires constant support, it could be re-designed in such way that it's easier to understand. Documentation can make it easier to understand the concepts behind the implementation and provide the needed knowledge to get most out of the design.
 
-T> The *Documentation* part of the book digs deeper into these topics.
+T> The _Documentation_ part of the book digs deeper into these topics.
 
 ## Conclusion
 

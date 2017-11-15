@@ -22,7 +22,7 @@ T> Internally commitizen relies upon [commitlint](https://github.com/marionebl/c
 
 In AngularJS convention each commit message consists of:
 
-* Type: `feat` for a new feature, `fix` for a bug fix, `docs` for documentation, `chore` for maintenance, etc.
+* Type: `feat` for a new feature, `fix` for a bug fix, `docs` for documentation, `chore` for maintenance, etc.
 * Subject: short change description.
 * Body (optional): long change description.
 * Footer (optional): breaking changes, GitHub issues references, etc.
@@ -77,7 +77,7 @@ T> It's a common convention to write commit titles in **imperative** tense. The 
 
 By default semantic-release makes everything automatically:
 
-* Runs on a CI server after each commit to the `master` branch.
+* Runs on a CI server after each commit to the `master` branch.
 * After each successful build it analyzes new commits and see if there’s something to publish.
 * Determines a release type (PATCH, MINOR or MAJOR) by analyzing commit messages written using AngularJS conventions.
 * Generates a change log from important commits (skips documentation and maintenance commits).
@@ -139,7 +139,7 @@ Let’s install lint-staged and [husky](https://www.npmjs.com/package/husky) to 
 npm install lint-staged husky --save-dev
 ```
 
-Update your *package.json* like this:
+Update your _package.json_ like this:
 
 **package.json**
 
@@ -155,25 +155,21 @@ Update your *package.json* like this:
       "prettier --write",
       "git add"
     ],
-    "*.scss": [
-      "stylefmt",
-      "stylelint --syntax scss",
-      "git add"
-    ]
+    "*.scss": ["stylefmt", "stylelint --syntax scss", "git add"]
   }
 }
 ```
 
 This configuration will perform the following steps:
 
-* Every time you commit a *.js* file:
+* Every time you commit a _.js_ file:
 
   1. Run ESLint with autofixing on files you are committing.
   2. Run Jest tests related to files you are committing.
-  3. Format files you are committing with Prettier. (See the *Code Formatting* chapter for more details.)
+  3. Format files you are committing with Prettier. (See the _Code Formatting_ chapter for more details.)
   4. Add changes caused by autofixing and reformatting to your commit.
 
-* Every time you commit an *.scss* file:
+* Every time you commit an _.scss_ file:
 
   1. Format files you are committing with stylefmt.
   2. Run stylelint on files you are committing.
@@ -195,11 +191,11 @@ https://www.npmjs.com/package/gh-lint
 
 For example:
 
-* Require to update the npm lock file every time *package.json* changes.
+* Require to update the npm lock file every time _package.json_ changes.
 * Require new tests when new code is added.
 * Require a change log entry.
-* Check for test shortcuts like `it.only` or `describe.only`.
-* Check for `TODO` and `FIXME` comments.
+* Check for test shortcuts like `it.only` or `describe.only`.
+* Check for `TODO` and `FIXME` comments.
 * Check that the pull request was sent to a correct branch.
 * Check number of changed lines and suggest to split the pull request if it’s too big.
 * Check that new files have a proper copyright message.
@@ -217,17 +213,26 @@ Let’s install Danger:
 npm install --save-dev danger
 ```
 
-Create a Dangerfile, *dangerfile.js* in your project root folder, like this:
+Create a Dangerfile, _dangerfile.js_ in your project root folder, like this:
 
 ```js
 import { danger, warn, fail } from 'danger';
 
-// Warn (won’t fail the CI, just post a comment) if the PR has changes in package.json but no changes in package-lock.json
-const packageChanged = danger.git.modified_files.includes('package.json');
-const lockfileChanged = danger.git.modified_files.includes('package-lock.json');
+// Warn (won’t fail the CI, just post a comment) if the PR has
+// changes in package.json but no changes in package-lock.json
+const packageChanged = danger.git.modified_files.includes(
+  'package.json'
+);
+const lockfileChanged = danger.git.modified_files.includes(
+  'package-lock.json'
+);
 if (packageChanged && !lockfileChanged) {
-  warn(`Changes were made to package.json, but not to package-lock.json.
-Perhaps you need to run \`npm install\` and commit changes in package-lock.json. Make sure you’re using npm 5+.`);
+  warn(
+    'Changes were made to package.json, but not to ' +
+      'package-lock.json.' +
+      'Perhaps you need to run `npm install` and commit changes ' +
+      'in package-lock.json. Make sure you’re using npm 5+.'
+  );
 }
 
 // Fail the CI when test shorcuts are found
@@ -236,13 +241,16 @@ const jsTestChanges = danger.git.modified_files.filter(f =>
 );
 jsTestChanges.forEach(file => {
   const content = fs.readFileSync(file).toString();
-  if (content.includes('it.only') || content.includes('describe.only')) {
+  if (
+    content.includes('it.only') ||
+    content.includes('describe.only')
+  ) {
     fail(`An \`.only\` was left in tests (${file})`);
   }
 });
 ```
 
-Add a new script to your *package.json*:
+Add a new script to your _package.json_:
 
 ```json
 {
@@ -252,7 +260,7 @@ Add a new script to your *package.json*:
 }
 ```
 
-Update your *.travis.yml* to make it run on Travis CI:
+Update your _.travis.yml_ to make it run on Travis CI:
 
 ```yaml
 language: node_js
@@ -265,13 +273,13 @@ script:
 
 You also need to add API token to Travis settings, see [getting started guide](http://danger.systems/js/guides/getting_started.html) for details.
 
-Now every time someone sends a pull request that changes *package.json* but not *package-lock.json*, the bot will warn them:
+Now every time someone sends a pull request that changes _package.json_ but not _package-lock.json_, the bot will warn them:
 
 ![Danger JS comment](images/danger.png)
 
 Danger has some plugins, like:
 
-* [fixme](https://www.npmjs.com/package/danger-plugin-fixme) — check for `TODO` and `FIXME` comments;
+* [fixme](https://www.npmjs.com/package/danger-plugin-fixme) — check for `TODO` and `FIXME` comments;
 * [no-test-shortcuts](https://www.npmjs.com/package/danger-plugin-no-test-shortcuts) — check for test shortcuts;
 * [spellcheck](https://www.npmjs.com/package/danger-plugin-spellcheck) — spell checks created or modified Markdown files.
 

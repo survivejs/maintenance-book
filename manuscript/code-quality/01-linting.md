@@ -6,17 +6,14 @@ We read code more often then we write it: sometimes we spend hours looking for w
 
 Good code style can save you from a bug one day. Consider this code:
 
-<!-- textlint-disable -->
-
+<!-- prettier-ignore -->
 ```js
 if (mealType === BREAKFAST)
   drinkCoffee();
   eatCroissant();
 ```
 
-<!-- textlint-enable -->
-
-Can you spot the issue? `eatCroissant();` gets evaluated with *any* `mealType` value.
+Can you spot the issue? `eatCroissant();` gets evaluated with _any_ `mealType` value.
 
 Many popular JavaScript code styles require curly braces around all blocks and consistent indentation for this reason. Doing this forces you to write the correct code:
 
@@ -56,7 +53,7 @@ Let’s install ESLint with the Airbnb config:
 npm install eslint eslint-config-airbnb-base eslint-plugin-import --save-dev
 ```
 
-Update your *package.json* as follows to run ESLint against the project. The setup will fix any errors it's able to fix thanks to the `--fix` flag:
+Update your _package.json_ as follows to run ESLint against the project. The setup will fix any errors it's able to fix thanks to the `--fix` flag:
 
 ```json
 {
@@ -66,7 +63,7 @@ Update your *package.json* as follows to run ESLint against the project. The set
 }
 ```
 
-Create a config file, *.eslintrc*:
+Create a config file, _.eslintrc_:
 
 ```json
 {
@@ -80,7 +77,7 @@ And finally run:
 npm run lint:js
 ```
 
-You may need to tweak your *.eslintrc* according to your project needs:
+You may need to tweak your _.eslintrc_ according to your project needs:
 
 **.eslintrc**
 
@@ -118,13 +115,13 @@ You may need to tweak your *.eslintrc* according to your project needs:
 
 See [ESLint docs on configuring](http://eslint.org/docs/user-guide/configuring) for more information.
 
-T> *.eslintrc* supports [JSON5](http://json5.org/) format by default. It's a proposed extension to JSON that enables features like commenting and trailing commas.
+T> _.eslintrc_ supports [JSON5](http://json5.org/) format by default. It's a proposed extension to JSON that enables features like commenting and trailing commas.
 
 T> ESLint configuration can be written in other formats, such as YAML or JavaScript, as well. JSON5 is a good default, though, given it's a good format for other tools to consume.
 
 T> To get most value out of linting tools during development, make sure you have installed related editor plugins. This way you can get feedback realtime as you develop and can spot potential issues earlier.
 
-T> The *Customizing ESLint* appendix discusses how to get more out of ESLint.
+T> The _Customizing ESLint_ appendix discusses how to get more out of ESLint.
 
 ## Linting TypeScript with TSLint
 
@@ -140,7 +137,7 @@ Let’s install TSLint with the Airbnb config:
 npm install tslint tslint-config-airbnb --save-dev
 ```
 
-Update your *package.json* like this:
+Update your _package.json_ like this:
 
 ```json
 {
@@ -150,7 +147,7 @@ Update your *package.json* like this:
 }
 ```
 
-Create a config file, *tslint.json*:
+Create a config file, _tslint.json_:
 
 ```json
 {
@@ -178,7 +175,7 @@ Let’s install stylelint:
 npm install stylelint stylelint-config-standard --save-dev
 ```
 
-Add a script to your *package.json* like this:
+Add a script to your _package.json_ like this:
 
 ```json
 {
@@ -188,7 +185,7 @@ Add a script to your *package.json* like this:
 }
 ```
 
-Create a config file, *.stylelintrc*:
+Create a config file, _.stylelintrc_:
 
 ```json
 {
@@ -208,4 +205,4 @@ Code style is an important aspect of code quality and you can enforce code style
 
 You'll learn about formatting in the next chapter.
 
-T> See the *Automation* chapter to learn how to automate linting.
+T> See the _Automation_ chapter to learn how to automate linting.
