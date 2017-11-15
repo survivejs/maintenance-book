@@ -189,7 +189,71 @@ The idea of *smoke testing* is to verify that vital functionality works in produ
 
 ### Code Size
 
-The size of the code can be important especially for frontend related packages as you want to minimize the amount of code the client has to download and parse. Tools like [bundlesize](https://www.npmjs.com/package/bundlesize) and [size-limit](https://www.npmjs.com/package/size-limit) achieve this.
+The size of the code can be important especially for frontend related packages as you want to minimize the amount of code the client has to download and parse. Tools like [size-limit](https://www.npmjs.com/package/size-limit) and [bundlesize](https://www.npmjs.com/package/bundlesize) achieve this.
+
+You can set up size-limit to fail the CI if your library accidentally grows over a certain limit.
+
+To do that, install size-limit first:
+
+```shell
+npm install --save-dev size-limit
+```
+
+Update a new script and a `size-limit` section to your *package.json*:
+
+```json
+leanpub-start-insert
+"size-limit": [
+  {
+    "path": "index.js"
+  }
+],
+leanpub-end-insert
+"scripts": {
+leanpub-start-insert
+  "size": "size-limit",
+leanpub-end-insert
+  "test": "jest"
+}
+```
+
+Run `npm run size` to see the current size of your library, with all dependencies, minified and gzipped.
+
+Now, set the limit: it’s recommended to add around 1 KB over the current size, so you’ll know about any size increase:
+
+```json
+"size-limit": [
+  {
+leanpub-start-insert
+    "limit": "9 KB",
+leanpub-end-insert
+    "path": "index.js"
+  }
+]
+```
+
+And finally make the CI fail on size increase:
+
+```json
+"scripts": {
+  "size": "size-limit",
+  "test": "jest"
+leanpub-start-insert
+  "posttest": "size-limit"
+leanpub-end-insert
+}
+```
+
+If the package will ever grow over 9 KB, you’ll see an error like this:
+
+```
+  Package size limit has exceeded by 25.57 KB
+  Package size: 34.57 KB
+  Size limit:   9 KB
+  With all dependencies, minified and gzipped
+```
+
+T> To find out why your library is bigger than expected, run `npm run size -- --why`.
 
 ### Design by Contract
 
