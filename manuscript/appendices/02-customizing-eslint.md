@@ -4,7 +4,7 @@ Even though you can get far with vanilla ESLint, there are certain techniques yo
 
 ## Speeding Up ESLint Execution
 
-One of the most convenient ways to speed up ESLint execution on big projects is to run it on only files that have been changed while you are working. It's possible to achieve this by using *lint-staged*. The exact technique is covered in the *Automation* chapter.
+One of the most convenient ways to speed up ESLint execution on big projects is to run it on only files that have been changed while you are working. It's possible to achieve this by using _lint-staged_. The exact technique is covered in the _Automation_ chapter.
 
 Node comes with startup overhead and it takes a while for the processing to begin. [eslint_d](https://www.npmjs.com/package/eslint_d) is a daemon process designed to overcome this problem. It runs ESLint as a process in the background. [esprint](https://www.npmjs.com/package/esprint) is a similar approach. It runs ESLint across multiple threads parallel.
 
@@ -89,7 +89,7 @@ T> [Codemod](https://github.com/facebook/codemod) allows you to perform large-sc
 In ESLint's case, the AST structure can be checked. If something is wrong, it should let you know. Follow the steps below to set up a plugin:
 
 1. Set up a new project named `eslint-plugin-custom`. You can replace `custom` with something else. ESLint follows this naming convention.
-2. Execute `npm init -y` to create a dummy *package.json*
+2. Execute `npm init -y` to create a dummy _package.json_
 3. Set up `index.js` in the project root with content.
 
 {pagebreak}
@@ -105,25 +105,25 @@ module.exports = {
       docs: {
         description: 'Demo rule',
         category: 'Best Practices',
-        recommended: true
+        recommended: true,
       },
       schema: [
         {
           type: 'object',
           // JSON Schema to describe properties
           properties: {},
-          additionalProperties: false
-        }
+          additionalProperties: false,
+        },
       ],
       create(context) {
         return {
           Identifier(node) {
             context.report(node, 'This is unexpected!');
-          }
+          },
         };
-      }
-    }
-  }
+      },
+    },
+  },
 };
 ```
 

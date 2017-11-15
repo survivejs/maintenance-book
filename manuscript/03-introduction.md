@@ -32,7 +32,7 @@ The book won't teach you to use a specific language. Instead, it covers higher l
 
 ## Book Versioning
 
-Given this book receives a fair amount of maintenance and improvements, there's a versioning scheme in place. Release notes for each new version are maintained at the [book blog](https://survivejs.com/blog/). You can also use GitHub *compare* tool for this purpose. Example:
+Given this book receives a fair amount of maintenance and improvements, there's a versioning scheme in place. Release notes for each new version are maintained at the [book blog](https://survivejs.com/blog/). You can also use GitHub _compare_ tool for this purpose. Example:
 
 ```
 https://github.com/survivejs/maintenance-book/compare/v0.9.0...v0.9.3

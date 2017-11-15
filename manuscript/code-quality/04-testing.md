@@ -131,7 +131,7 @@ Good property testing tools like [JSVerify](https://jsverify.github.io/) or [tes
 
 ### Static Analysis
 
-Static analysis tools, such as ESLint or Prettier, can help to keep code consistent and push it towards right patterns. They cannot detect each problem related to these aspects but they can still help as discussed in the *Linting* and *Code Formatting* chapters.
+Static analysis tools, such as ESLint or Prettier, can help to keep code consistent and push it towards right patterns. They cannot detect each problem related to these aspects but they can still help as discussed in the _Linting_ and _Code Formatting_ chapters.
 
 ### Security Testing
 
@@ -185,7 +185,7 @@ Tools like [complexity-report](https://www.npmjs.com/package/complexity-report),
 
 ### Smoke Testing
 
-The idea of *smoke testing* is to verify that vital functionality works in production. The purpose of these tests is to give high level idea of whether the application might be working or not. They are light to write and can be a starting point if the codebase doesn't have any tests yet. You could for instance assert that the application runs. This can be done for example by logging in and out of the application after deployment to production.
+The idea of _smoke testing_ is to verify that vital functionality works in production. The purpose of these tests is to give high level idea of whether the application might be working or not. They are light to write and can be a starting point if the codebase doesn't have any tests yet. You could for instance assert that the application runs. This can be done for example by logging in and out of the application after deployment to production.
 
 ### Code Size
 
@@ -199,7 +199,7 @@ To do that, install size-limit first:
 npm install --save-dev size-limit
 ```
 
-Update a new script and a `size-limit` section to your *package.json*:
+Update a new script and a `size-limit` section to your _package.json_:
 
 ```json
 leanpub-start-insert
@@ -217,7 +217,7 @@ leanpub-end-insert
 }
 ```
 
-Run `npm run size` to see the current size of your library, with all dependencies, minified and gzipped.
+Run `npm run size` to see the current size of your library, with all dependencies, minified and gzipped.
 
 Now, set the limit: it’s recommended to add around 1 KB over the current size, so you’ll know about any size increase:
 

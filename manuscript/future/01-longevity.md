@@ -14,7 +14,7 @@ You have to consider at least the following aspects:
 
 ## Who Is Going to Develop the Project
 
-In single person projects you develop the project, publish the package, and forget about it. One day someone might find the project and notice that something is missing. As discussed in the *Processes* chapter, this could lead to a **pull request** and to a new contribution to the project. You gain **contributors** this way.
+In single person projects you develop the project, publish the package, and forget about it. One day someone might find the project and notice that something is missing. As discussed in the _Processes_ chapter, this could lead to a **pull request** and to a new contribution to the project. You gain **contributors** this way.
 
 A model like this could be enough for one-off projects. You solve a problem and revisit it only when it's relevant. If the problem is big enough, then it might require a sustained effort of longer time to resolve. It could be possible that there is no clear way and you will have to tune the approach as time goes by. Projects like this benefit from a community especially if the problem solved is important to a group of people.
 
@@ -38,7 +38,7 @@ A project can have a group of core developers that steer the direction of the pr
 
 ## What Happens If Developers Disappear from the Project
 
-In the worst case, a project becomes abandoned by its maintainers and new contributions cannot make it to the project. A fork may be needed to rejuvenate the development. The problem is discussed in detail in the *Where to Start Packaging* chapter.
+In the worst case, a project becomes abandoned by its maintainers and new contributions cannot make it to the project. A fork may be needed to rejuvenate the development. The problem is discussed in detail in the _Where to Start Packaging_ chapter.
 
 ## How to Attract New Contributors and Maintainers to the Project
 
@@ -56,7 +56,7 @@ As a project grows in complexity, it can become difficult to keep track of it. P
 
 Sometimes a project becomes popular even if popularity isn't a goal. This can happen if the project solves an important problem and the right people find it. They will evangelize the project and make it popular whether you wanted or not.
 
-Popularity comes with its challenges. Even though it might sound like a great thing, it comes with responsibility. Popularity tends to lead to increased demand for maintainer attention. The project development process needs to be solid as discussed in the *Processes* chapter and has to deal with the pressure to remain popular.
+Popularity comes with its challenges. Even though it might sound like a great thing, it comes with responsibility. Popularity tends to lead to increased demand for maintainer attention. The project development process needs to be solid as discussed in the _Processes_ chapter and has to deal with the pressure to remain popular.
 
 Sometimes the pressure of popularity is too much and people give up on project maintenance. This is true if the incentives aren't there. Once it becomes too much work for too little reward, it can feel waste of time. Thinking about project longevity and development model is important because of this reason.
 

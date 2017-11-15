@@ -28,7 +28,7 @@ To increase the version of your packages, you need to invoke one of these comman
 * `npm version <major|minor|patch>` - Let npm bump the version for you using SemVer.
 * `npm version <premajor|preminor|prepatch|prerelease>` - Same as previous expect this time it generates `-<prerelease number>` suffix. Example: `v2.1.2-2`.
 
-Invoking any of these updates *package.json* and creates a version commit to git automatically. If you execute `npm publish` after doing this, you should have a new version out there.
+Invoking any of these updates _package.json_ and creates a version commit to git automatically. If you execute `npm publish` after doing this, you should have a new version out there.
 
 ## Publishing a Pre-Release Version
 
@@ -47,8 +47,8 @@ The release candidates (RC) are close to an actual release and don't introduce a
 
 The workflow has two steps:
 
-1. `npm version 0.5.0-alpha1` - Update *package.json* as discussed earlier.
-2. `npm publish --tag alpha` - Publish the package under *alpha* tag.
+1. `npm version 0.5.0-alpha1` - Update _package.json_ as discussed earlier.
+2. `npm publish --tag alpha` - Publish the package under _alpha_ tag.
 
 To consume the test version, your users have to use `npm install <your package name>@alpha`.
 
@@ -63,17 +63,17 @@ npm supports multiple version ranges as listed below:
 * `*` - Asterisk matches major releases, and it's the most dangerous of the ranges. Using this recklessly can easily break your project in the future.
 * `>= 1.3.0 < 2.0.0` - Ranges between versions come in handy with `peerDependencies`.
 
-You can set the default range using `npm config set save-prefix='^'` in case you prefer something else than caret. Alternately, you can modify *~/.npmrc* directly. Especially defaulting to tilde can be a good idea that can help you to avoid trouble with dependencies, although it doesn't remove potential problems entirely. That's where shrinkwrapping comes in.
+You can set the default range using `npm config set save-prefix='^'` in case you prefer something else than caret. Alternately, you can modify _~/.npmrc_ directly. Especially defaulting to tilde can be a good idea that can help you to avoid trouble with dependencies, although it doesn't remove potential problems entirely. That's where shrinkwrapping comes in.
 
 ## Locking Versions
 
-Using version ranges can feel dangerous as it doesn't take much to break an application. A single change in the wrong place is enough. Since npm 5, npm has provided support for **lockfiles**. When `npm install` is run, it writes a file, *package-lock.json*. The file should be committed to a project repository and it contains the versions of the installed packages.
+Using version ranges can feel dangerous as it doesn't take much to break an application. A single change in the wrong place is enough. Since npm 5, npm has provided support for **lockfiles**. When `npm install` is run, it writes a file, _package-lock.json_. The file should be committed to a project repository and it contains the versions of the installed packages.
 
 The next time someone runs `npm install`, npm will use the versions specified in this lockfile. The point is to provide predictable environment as sometimes a package might break by not following the aforementioned SemVer rules correctly.
 
 [Yarn](https://yarnpkg.com/), an npm alternative, implemented the idea of lockfiles first. It provides certain functionality, such as workspaces, not found in npm and continues to improve over npm.
 
-T> [Sebastian McKenzie discusses the difference between the lockfile approaches](https://yarnpkg.com/blog/2017/05/31/determinism/). In short, Yarn needs *package.json* to work while npm doesn't. Future interoperability is unclear.
+T> [Sebastian McKenzie discusses the difference between the lockfile approaches](https://yarnpkg.com/blog/2017/05/31/determinism/). In short, Yarn needs _package.json_ to work while npm doesn't. Future interoperability is unclear.
 
 ## Deprecating, Unpublishing, and Renaming Packages
 
