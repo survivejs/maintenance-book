@@ -35,12 +35,12 @@ The book won't teach you to use a specific language. Instead, it covers higher l
 Given this book receives a fair amount of maintenance and improvements, there's a versioning scheme in place. Release notes for each new version are maintained at the [book blog](https://survivejs.com/blog/). You can also use GitHub *compare* tool for this purpose. Example:
 
 ```
-https://github.com/survivejs/maintenance-book/compare/v0.9.0...v0.9.2
+https://github.com/survivejs/maintenance-book/compare/v0.9.0...v0.9.3
 ```
 
 The page shows you the individual commits that went to the project between the given version range. You can also see the lines that have changed in the book.
 
-The current version of the book is **0.9.2**.
+The current version of the book is **0.9.3**.
 
 ## Getting Support
 
