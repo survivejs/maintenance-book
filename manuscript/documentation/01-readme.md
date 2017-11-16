@@ -50,7 +50,7 @@ T> You can also use Markdown Magic to generate table of contents — see below.
 
 [Markdown Magic](https://github.com/DavidWells/markdown-magic) is a tool to include external files or any dynamic data.
 
-First, install Markdown Magic:
+Let’s install Markdown Magic:
 
 ```bash
 npm install --save-dev markdown-magic
