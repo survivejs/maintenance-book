@@ -1,6 +1,6 @@
-# Linting
+# Linting and Formatting
 
-TODO
+Text linting is much less common than code linting, but if you have to maintain a lot of text it may save you a lot of time, and improve quality of your documentation.
 
 ## Linting Markdown with Textlint and Proselint
 
@@ -15,6 +15,7 @@ Text linting is less common than code linting but in large projects with many co
 * [eslint](https://www.npmjs.com/package/textlint-rule-eslint) — checks code examples in Markdown using ESLint (autofixing is also possible).
 * [common-misspellings](https://www.npmjs.com/package/textlint-rule-common-misspellings) — fixes common English misspellings (e.g. _simi&#x200b;liarity_ → _similarity_).
 * [no-dead-link](https://www.npmjs.com/package/textlint-rule-no-dead-link) — finds dead links, automatically fixes redirects.
+* [stop-words](https://www.npmjs.com/package/textlint-rule-stop-words) — filler words, buzzwords and chiches.
 * [terminology](https://www.npmjs.com/package/textlint-rule-terminology) — checks and fixes terms spelling in your tech writing.
 * [write-good](https://www.npmjs.com/package/textlint-rule-write-good) — tries to improve your English styles.
 
@@ -93,6 +94,65 @@ And finally run:
 npm run lint:prose
 ```
 
+## Formatting Markdown with Prettier
+
+We’re discussed Prettier in great detail in the *Code Formatting* chapter but it can do more. It can format your Markdown files, and not only text but also code example for languages it supports: JavaScript, TypeScript, CSS, Less, SCSS, JSON, GraphQL, and Markdown.
+
+### Setting up Prettier
+
+Let’s install Prettier:
+
+```bash
+npm install --save-dev prettier
+```
+
+Add a script to your _package.json_ like this:
+
+```json
+{
+  "scripts": {
+    "prettier": "prettier --write '**/*.md'",
+  }
+}
+```
+
+Create a config file, `.prettierrc`:
+
+```json
+{
+  "printWidth": 68,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "proseWrap": false
+}
+```
+
+If you’re using Prettier to format your code, you may want to define different rules for code inside Markdown files:
+
+```json
+{
+  "printWidth": 100,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "proseWrap": false,
+  "overrides": [{
+    "files": "*.md",
+    "options": {
+      "printWidth": 68,
+      "useTabs": false,
+      "trailingComma": "none"
+    }
+  }]
+}
+```
+
+And finally run:
+
+```bash
+npm run prettier
+```
+
 ## Conclusion
 
-TODO
+Documentation linting is as important as code linting: it helps you to improve quality, find mistakes and keep formatting consistent.
