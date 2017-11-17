@@ -96,7 +96,7 @@ npm run lint:prose
 
 ## Formatting Markdown with Prettier
 
-We’re discussed Prettier in great detail in the *Code Formatting* chapter but it can do more. It can format your Markdown files, and not only text but also code example for languages it supports: JavaScript, TypeScript, CSS, Less, SCSS, JSON, GraphQL, and Markdown.
+We’re discussed Prettier in great detail in the _Code Formatting_ chapter but it can do more. It can format your Markdown files, and not only text but also code example for languages it supports: JavaScript, TypeScript, CSS, Less, SCSS, JSON, GraphQL, and Markdown.
 
 ### Setting up Prettier
 
@@ -111,7 +111,7 @@ Add a script to your _package.json_ like this:
 ```json
 {
   "scripts": {
-    "prettier": "prettier --write '**/*.md'",
+    "prettier": "prettier --write '**/*.md'"
   }
 }
 ```
@@ -136,14 +136,16 @@ If you’re using Prettier to format your code, you may want to define different
   "trailingComma": "es5",
   "useTabs": true,
   "proseWrap": false,
-  "overrides": [{
-    "files": "*.md",
-    "options": {
-      "printWidth": 68,
-      "useTabs": false,
-      "trailingComma": "none"
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 68,
+        "useTabs": false,
+        "trailingComma": "none"
+      }
     }
-  }]
+  ]
 }
 ```
 

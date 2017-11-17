@@ -138,6 +138,7 @@ You need to alter the project configuration to make it find the plugin and the r
 <!-- textlint-disable -->
 
 <!-- skip-example -->
+
 ```javascript
 module.exports = {
   ...
