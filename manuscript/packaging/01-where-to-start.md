@@ -117,6 +117,8 @@ One of early stage problems is figuring out a good name for a package. npm root 
 
 This is the most expensive option as in this case you assume most of the development cost. You will also have to deal with maintenance and possible community support if the package becomes popular.
 
+{pagebreak}
+
 The pros and cons are roughly opposite compared to using an existing package:
 
 **Pros:**
@@ -146,7 +148,9 @@ You can point to a package by its name and version but it's not the only way. Co
 
 `<reference>` can be either commit hash, tag, or a branch. The technique does not work unless the package has been set up to support consumption beyond Git. The _Package Authoring Techniques_ chapter shows how to achieve this.
 
-T> To avoid sharing all your packages in public, npm allows you to maintain private packages through their commercial offering. Another option is to use a package like [verdaccio](https://www.npmjs.com/package/verdaccio). verdaccio allows you to maintain a private server that can also work as a cache for npm. You can also override public packages using it.
+## Using Private Packages
+
+To avoid sharing all your packages in public, npm allows you to maintain private packages through their commercial offering. Another option is to use a package like [verdaccio](https://www.npmjs.com/package/verdaccio). verdaccio allows you to maintain a private server that can also work as a cache for npm. You can also override public packages using it.
 
 ## Understanding npm Lookup
 

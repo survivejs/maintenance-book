@@ -10,6 +10,8 @@ Node comes with startup overhead and it takes a while for the processing to begi
 
 T> You can find [more technical details about esprint in its introduction post](https://medium.com/@Pinterest_Engineering/introducing-esprint-a-fast-open-source-eslint-cli-19a470cd1c7d).
 
+{pagebreak}
+
 ## Skipping ESLint Rules
 
 ESLint allows you to skip rules on several levels. Consider the following examples:
@@ -91,8 +93,6 @@ In ESLint's case, the AST structure can be checked. If something is wrong, it sh
 1. Set up a new project named `eslint-plugin-custom`. You can replace `custom` with something else. ESLint follows this naming convention.
 2. Execute `npm init -y` to create a dummy _package.json_
 3. Set up `index.js` in the project root with content.
-
-{pagebreak}
 
 You can get started with a skeleton as below:
 

@@ -216,6 +216,8 @@ Besides the source, you can consider distributing package _README.md_ and _LICEN
 
 W> Even though it's possible to tell npm what to exclude from `files` through `!src/*.test.js` kind of definitions, [using negation patterns is not recommended](https://github.com/npm/npm/wiki/Files-and-Ignores#details). Instead, you should use _.npmignore_ and include `src/*.test.js` kind of pattern there.
 
+{pagebreak}
+
 ## Conclusion
 
 An npm package contains at least metadata and source. Many of the files that are relevant for development can be skipped in a distribution build to keep downloads fast. Although that's a small issue, it's still good to consider as it doesn't take much effort to filter the files.

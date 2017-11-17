@@ -117,19 +117,23 @@ You may need to tweak your _.eslintrc_ according to your project needs:
 
 See [ESLint docs on configuring](http://eslint.org/docs/user-guide/configuring) for more information.
 
-T> _.eslintrc_ supports [JSON5](http://json5.org/) format by default. It's a proposed extension to JSON that enables features like commenting and trailing commas.
-
-T> ESLint configuration can be written in other formats, such as YAML or JavaScript, as well. JSON5 is a good default, though, given it's a good format for other tools to consume.
-
 T> To get most value out of linting tools during development, make sure you have installed related editor plugins. This way you can get feedback realtime as you develop and can spot potential issues earlier.
 
 T> The _Customizing ESLint_ appendix discusses how to get more out of ESLint.
+
+### ESLint Configuration Formats
+
+_.eslintrc_ supports [JSON5](http://json5.org/) format by default. It's a proposed extension to JSON that enables features like commenting and trailing commas.
+
+ESLint configuration can be written in other formats, such as YAML or JavaScript, as well. JSON5 is a good default, though, given it's a good format for other tools to consume.
 
 ## Linting TypeScript with TSLint
 
 [TSLint](https://palantir.github.io/tslint/) is a linter for TypeScript. It has a much smaller community than ESLint and overall experience is not as nice but otherwise it’s like ESLint.
 
 T> [TypeScript support](https://github.com/eslint/typescript-eslint-parser) for ESLint is experimental and has known issues.
+
+{pagebreak}
 
 ### Setting Up TSLint
 

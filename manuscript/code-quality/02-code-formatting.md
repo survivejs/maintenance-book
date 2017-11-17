@@ -99,6 +99,8 @@ Add a script to your _package.json_ like this:
 }
 ```
 
+{pagebreak}
+
 Create a config file, _.prettierrc_:
 
 **.prettierrc**
