@@ -199,6 +199,7 @@ For example:
 * Check that the pull request was sent to a correct branch.
 * Check number of changed lines and suggest to split the pull request if it’s too big.
 * Check that new files have a proper copyright message.
+* Welcome first time contributors to your project.
 * Ping specific people on changes in specific files.
 
 Danger has no default rules but it has a JavaScript API that allows you to inspect source code changes, pull request metadata, build log, post comments on the pull request and mark the build as failed.
