@@ -39,8 +39,6 @@ How can you make sure the proposed change doesn't break anything? This is where 
 
 ## How to Design a Development Process
 
-![Maintainers, contributors, and users](images/maintenance.png)
-
 An important part of development practices is designing a development process. Especially early on this can be ad hoc as you don't have to worry about team productivity. Once more people become involved, you have to make sure they can contribute in a meaningful way.
 
 This is where managing issue tracking and pull requests well becomes vital. You should design a system for issues where you set them in a particular way. For example, each issue could gain a priority (0-4 for example), categorization (bug, feature request), and difficulty (0-3 for example). The labels you need depend on the type of the project and there's no one right answer on which labels to use.
