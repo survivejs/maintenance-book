@@ -79,7 +79,9 @@ The description fields describe who created the package, what it does, related k
 
 npm can be used as a task runner through `npm run` interface. Running the command shows all available scripts. npm works so that if you install a dependency, such as webpack, it links _node_modules/.bin_ commands to the environment during the script execution. The scripts are commonly used for different build tasks.
 
-Use `pre` and `post` prefixes to group your scripts. For example, _npm run publish_ will try to run `pretest`, `test`, and then `posttest` scripts. In the example below, the convention is used to control what happens when `npm publish` is executed.
+{pagebreak}
+
+Use `pre` and `post` prefixes to group your scripts. For example, _npm run publish_ will try to run `pretest`, `test`, and then `posttest` scripts. In the example below, the convention is used to control what happens when `npm publish` is executed:
 
 **package.json**
 

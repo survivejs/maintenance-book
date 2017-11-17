@@ -30,6 +30,8 @@ To increase the version of your packages, you need to invoke one of these comman
 
 Invoking any of these updates _package.json_ and creates a version commit to git automatically. If you execute `npm publish` after doing this, you should have a new version out there.
 
+{pagebreak}
+
 ## Publishing a Pre-Release Version
 
 Sometimes, you want to publish something preliminary to test. Tag your release as below:

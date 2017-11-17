@@ -40,6 +40,8 @@ Prettier is smarter than other tools. For example, you can restrict line length 
 foo(wowJs(), suchFunction(), muchParameters(), shouldReformat());
 ```
 
+{pagebreak}
+
 After the code goes through Prettier, you'll end up with the code below:
 
 <!-- prettier-ignore -->

@@ -30,6 +30,8 @@ If you develop or maintain a web project, be it open source or not, you will hav
 
 The book won't teach you to use a specific language. Instead, it covers higher level topics and shows how they fit together. This higher level knowledge has value, regardless of your technology stack. The focus is on the web and open source, but certain ideas transcend the book despite this.
 
+{pagebreak}
+
 ## Book Versioning
 
 Given this book receives a fair amount of maintenance and improvements, there's a versioning scheme in place. Release notes for each new version are maintained at the [book blog](https://survivejs.com/blog/). You can also use GitHub _compare_ tool for this purpose. Example:
@@ -52,6 +54,8 @@ If you run into trouble or have questions related to the content, there are seve
 * Ask me anything at [SurviveJS AmA](https://github.com/survivejs/ama/issues).
 
 If you post questions to Stack Overflow, tag them using **survivejs**. You can use the hashtag **#survivejs** on Twitter for the same result.
+
+{pagebreak}
 
 ## Additional Material
 

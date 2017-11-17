@@ -77,6 +77,8 @@ And finally run:
 npm run lint:js
 ```
 
+{pagebreak}
+
 You may need to tweak your _.eslintrc_ according to your project needs:
 
 **.eslintrc**

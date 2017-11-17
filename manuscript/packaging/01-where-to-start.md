@@ -26,6 +26,8 @@ If you get lucky, maybe there's a package that addresses your problem exactly. T
 
 A lot depends on the scope and the focus of the project. Bigger projects tend to have more issues while they can still solve a series of important problems.
 
+{pagebreak}
+
 There are several pros and cons to this approach:
 
 **Pros:**

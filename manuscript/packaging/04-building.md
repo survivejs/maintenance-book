@@ -13,6 +13,8 @@ If you support only the newest [LTS (Long-term support) version](https://github.
 
 That said, if you prefer to use features that are not supported by LTS yet or want to support features like **tree shaking**, you have extra effort ahead of you. In this case you have to compile your code in a specific way.
 
+{pagebreak}
+
 ## Communicating Where Code Should Work
 
 To communicate in which Node environments your package should work, you should set _package.json_ `engines` field. It accepts a range in a similar way as for dependencies. Consider the example adapted from [npm documentation](https://docs.npmjs.com/files/package.json#engines):
@@ -90,6 +92,8 @@ To consume a package like this from Git, you have to make sure the consumer can 
   "postinstall": "node lib/postinstall.js"
 },
 ```
+
+{pagebreak}
 
 Write a script as below that will check if a build exists and then generates it if it doesn't:
 
