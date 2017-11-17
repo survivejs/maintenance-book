@@ -21,14 +21,14 @@ ESLint allows you to skip rules on several levels. Consider the following exampl
 ```javascript
 // everything
 /* eslint-disable */
-...
+// ...
 /* eslint-enable */
 ```
 
 ```javascript
 // specific rule
 /* eslint-disable no-unused-vars */
-...
+// ...
 /* eslint-enable no-unused-vars */
 ```
 
@@ -70,7 +70,7 @@ module.exports = {
     es6: true,
     node: true,
   },
-  ...
+  // ...
 };
 ```
 
@@ -137,6 +137,7 @@ You need to alter the project configuration to make it find the plugin and the r
 
 <!-- textlint-disable -->
 
+<!-- skip-example -->
 ```javascript
 module.exports = {
   ...

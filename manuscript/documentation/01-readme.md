@@ -94,7 +94,71 @@ You can create [your own transforms](https://github.com/DavidWells/markdown-magi
 
 ## Testing Examples
 
-TODO
+Generating documentation from source code helps to make sure your examples are correct, testing code snippets in Markdown files is another option. [markdown-doctest](https://www.npmjs.com/package/markdown-doctest) tries to run every JavaScript code snippet in your documentation and report errors.
+
+Let’s install markdown-doctest:
+
+```bash
+npm install --save-dev markdown-doctest
+```
+
+Add a new script to your _package.json_:
+
+```json
+"scripts": {
+  "test:docs": "markdown-doctest"
+},
+```
+
+Create a config file, _.markdown-doctest-setup.js_:
+
+```js
+module.exports = {
+    // Define all global variables you use in code examples, including standard Node or browser APIs
+    globals: {
+        module: {
+            exports: {},
+        },
+        alert: () => {},
+        foo: () => {},
+    },
+    // Define all dependencies: anything that your code examples will `require`
+    require: {
+        'assert': require('assert'),
+        'fs': require('fs'),
+        './add': (a, b) => a + b,
+    }
+};
+```
+
+And finally run:
+
+```bash
+npm run test:docs
+```
+
+If something is wrong, you’ll see an error like this:
+
+```
+Failed - manuscript/appendices/02-customizing-eslint.md:42:1
+evalmachine.<anonymous>:4
+alert('foo'); // eslint-disable-line no-alert
+^
+
+ReferenceError: alert is not defined
+
+You can declare alert in the globals section in .markdown-doctest-setup.js
+
+For example:
+// .markdown-doctest-setup.js
+module.exports = {
+  globals: {
+    alert: ...
+  }
+}
+```
+
+T> To skip a code snippet, add a `<!-- skip-example -->` comment before it.
 
 ## Conclusion
 

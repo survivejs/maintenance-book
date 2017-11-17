@@ -21,6 +21,7 @@ Once you can communicate types on language level, you will get at least the foll
 
 <!-- textlint-disable -->
 
+<!-- skip-example -->
 ```javascript
 // @flow
 function add(x: number, y: number): number {
