@@ -195,7 +195,7 @@ You can set up size-limit to fail the CI if your library accidentally grows over
 
 To do that, install size-limit first:
 
-```shell
+```bash
 npm install --save-dev size-limit
 ```
 

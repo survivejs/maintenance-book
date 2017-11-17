@@ -209,7 +209,7 @@ To use Danger you need a GitHub bot user. Each GitHub user is allowed to create 
 
 Let’s install Danger:
 
-```shell
+```bash
 npm install --save-dev danger
 ```
 
