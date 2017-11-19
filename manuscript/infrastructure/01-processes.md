@@ -25,9 +25,9 @@ You can use labels to sort issues. For example, create labels for priorities (0-
 
 Especially popular projects are constrained by the amount of maintainers they have. This means that the demand for support can exceed the bandwidth of the team. Managing issues well is one of the keys to dealing with this problem.
 
-Poorly formatted and incomplete issues waste time. In the worst case you won’t have enough information to reproduce the issue and won’t be able to help the user. The problem can be solved by improving the standard of issues and not accepting poor ones.
+Poorly formatted and incomplete issues waste time. In the worst case you won’t have enough information to reproduce the issue and couldn’t help the user. The problem can be solved by improving the standard of issues and not accepting poor ones.
 
-GitHub’s [issue templates](https://help.github.com/articles/creating-an-issue-template-for-your-repository/) can help with this issue. When a user creates an issue, they will see the template instead of a blank text field. [Babel](https://raw.githubusercontent.com/babel/babel/master/.github/ISSUE_TEMPLATE.md) and [npm](https://raw.githubusercontent.com/npm/npm/latest/.github/issue_template.md) have good examples of issue templates. Unfortunately, these templates are just text, and the user may (and many of them do) remove it, so some projects use bots to verify that the user has answered questions from the template, see the _Automation_ chapter for more details.
+GitHub’s [issue templates](https://help.github.com/articles/creating-an-issue-template-for-your-repository/) can help with this issue. When a user creates an issue, they will see the template instead of a blank text field. [Babel](https://raw.githubusercontent.com/babel/babel/master/.github/ISSUE_TEMPLATE.md) and [npm](https://raw.githubusercontent.com/npm/npm/latest/.github/issue_template.md) have good examples of issue templates. Unfortunately, these templates are only text, and the user may (and many of them do) remove it, so some projects use bots to verify that the user has answered questions from the template, see the _Automation_ chapter for more details.
 
 ## How to Manage Pull Requests
 
@@ -53,11 +53,11 @@ T> Read more in the Atlassian’s [guide to different Git branching models](http
 
 ### Coordinating Teams
 
-As a project grows and has more people working on it, more communication and coordination is required to keep the project running smoothly — this is one of the hardest problems in software development It’s even harder in open source as people have different motivations and very limited time.
+As a project grows and has more people working on it, more communication and coordination is required to keep the project running smoothly — this is one of the hardest problems in software development It’s even harder in open source as people have different motivations and limited time.
 
 This complexity can be tamed by developing organization structure. Instead of working in an ad hoc manner, people will take different responsibilities according to their skills and interests. If multiple people align well enough, it can make sense for them to form smaller teams. These teams in turn have to coordinate their work but coordination of a small team is easier than of a large one.
 
-T> If you use a *GitHub organization* for a project, you can assign people to *teams* and assign specific rights to the teams. Teams can also be used in npm to make it easier to share release rights.
+T> If you use a _GitHub organization_ for a project, you can assign people to _teams_ and assign specific rights to the teams. Teams can also be used in npm to make it easier to share release rights.
 
 T> The _Longevity_ chapter discusses the issue further.
 
