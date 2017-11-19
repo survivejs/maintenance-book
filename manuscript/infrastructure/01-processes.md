@@ -1,6 +1,6 @@
 # Processes
 
-Each project has processes around it. Services like [GitHub](https://github.com/), [GitLab](https://gitlab.com/), and [Bitbucket](https://bitbucket.org/) provide plenty of infrastructure you need. At minimum they provide **version control** for project source. You can also find **issue tracker** and other supporting functionality like means to accept **pull requests** against projects. Often you can host the official site of a project on these platforms.
+Each project has processes around it. Services like [GitHub](https://github.com/), [GitLab](https://gitlab.com/), and [Bitbucket](https://bitbucket.org/) provide plenty of tool to manage open source projects: **version control** for project source, **issue tracker**, **pull requests** to accept code from your users, and often hosting your project site.
 
 When you think about processes, you get at least the following questions:
 
@@ -11,57 +11,53 @@ When you think about processes, you get at least the following questions:
 
 ## How to Track Issues
 
-In a small project you might be aware of everything you need to do. You implement what you intend and publish. That's it.
-
-It gets more complex if you plan for the future or if the users of the package discover problems. This where **issue tracking** is required.
+Your users will want to report a bug, request a new feature or ask how to use a certain function.
 
 ### What Issue Data to Capture
 
-Depending on the system, an issue contains at least the following data: title, description, labels or tags. The point is to capture this data so that development decisions can be made.
+An issue usually contains at least the following data: title, description, labels or tags.
 
 An issue itself can be a feature request, a bug report, or sometimes a support request. It's up to project policies on how to deal with support in particular as discussed later in this chapter.
 
+You can use labels to sort issues. For example, create labels for priorities (0-4 for example), issue types (bug, feature request), and difficulty (0-3 for example). Default GitHub labels “help wanted” and “good first issue” may attract new contributors — there are even sites to show these issues in different projects, like [Up For Grabs](http://up-for-grabs.net/).
+
 ### Capturing the Right Data
 
-Especially popular projects are constrained by the amount of maintainers they have. This means that the demand for support in different means can exceed the bandwidth of the team. Managing issue tracking well is one of the keys to dealing with this problem.
+Especially popular projects are constrained by the amount of maintainers they have. This means that the demand for support can exceed the bandwidth of the team. Managing issues well is one of the keys to dealing with this problem.
 
-Poorly formatted and incomplete issues waste time. In the worst case you have to dig the information you require to debug the problem. The problem can be solved by improving the standard of issues and not accepting poor ones.
+Poorly formatted and incomplete issues waste time. In the worst case you won’t have enough information to reproduce the issue and won’t be able to help the user. The problem can be solved by improving the standard of issues and not accepting poor ones.
 
-In GitHub this can be achieved by using an [issue template](https://github.com/serverless/serverless/blob/master/.github/ISSUE_TEMPLATE.md) that's included within a repository. When a user fills in an issue, the provided template will work as a starting point. Unfortunately, given it's in text format, it doesn't solve the problem entirely. Bots discussed in the _Automation_ chapter try to solve this problem as they can close poor quality issues as long as certain criteria is met.
+GitHub’s [issue templates](https://help.github.com/articles/creating-an-issue-template-for-your-repository/) can help with this issue. When a user creates an issue, they will see the template instead of a blank text field. [Babel](https://raw.githubusercontent.com/babel/babel/master/.github/ISSUE_TEMPLATE.md) and [npm](https://raw.githubusercontent.com/npm/npm/latest/.github/issue_template.md) have good examples of issue templates. Unfortunately, these templates are just text, and the user may (and many of them do) remove it, so some projects use bots to verify that the user has answered questions from the template, see the _Automation_ chapter for more details.
 
 ## How to Manage Pull Requests
 
-Instead of requesting for features or reporting bugs, sometimes the users may scratch their own itch and provide **pull requests** to a project. The point is to provide a small patch to the project that can then be merged assuming it's high enough quality.
+Instead of requesting new features or reporting bugs, users may send **pull requests** to a project. Pull request is usually a small patch to the project that can be merged if maintainers agree with the change and code quality is good enough.
 
-Pull requests share similar problems as issues. As issues, also [pull requests have templates](https://github.com/serverless/serverless/blob/master/.github/PULL_REQUEST_TEMPLATE.md) in GitHub but the same caveat as before applies and there are a few additional problems as well.
+GitHub’s [pull request templates](https://help.github.com/articles/creating-a-pull-request-template-for-your-repository/) can be used to point contributors to contribution guidelines and as a check list to verify a pull request before submission. [React](https://raw.githubusercontent.com/facebook/react/master/.github/PULL_REQUEST_TEMPLATE.md) and [Serverless](https://raw.githubusercontent.com/serverless/serverless/master/.github/PULL_REQUEST_TEMPLATE.md) have good examples.
 
-How can you make sure the proposed change doesn't break anything? This is where testing and _Continuous Integration_ discussed in the next chapter come in. It's difficult to have full guarantees but at least you can make it harder for functionality to break by implementing the right practices to your project.
+How can you make sure the proposed change doesn’t break anything? Testing and _Continuous Integration_ discussed in the next chapter can help with that.
 
 ## How to Design a Development Process
 
-An important part of development practices is designing a development process. Especially early on this can be ad hoc as you don't have to worry about team productivity. Once more people become involved, you have to make sure they can contribute in a meaningful way.
-
-This is where managing issue tracking and pull requests well becomes vital. You should design a system for issues where you set them in a particular way. For example, each issue could gain a priority (0-4 for example), categorization (bug, feature request), and difficulty (0-3 for example). The labels you need depend on the type of the project and there's no one right answer on which labels to use.
-
-Most importantly it's a chance for you to apply reviews on code. You can discuss the implementation until it's in a satisfactory state. It's also a chance to grow new contributors to your project. They may even become maintainers one day and assume your position in the project.
+When you’re working on a project alone, ??????
 
 ### Choosing a Git Branching Model
 
-Flexible branching is one of the core features of Git. At simplest level, you can forget branching exists and develop against the default `master` branch. It gets more complicated when you want to experiment or work with other people, though. This is where different branching models come in.
+Flexible branching is one of the core features of Git. At simplest level, you can work in the default `master` branch, but when you want to experiment or work with other people, multiple branches will allow you to work on multiple tasks at the same time.
 
-[Gitflow](https://github.com/nvie/gitflow) is one of the most famous approaches. The idea is that you develop any new functionality in an appropriately named branch and then coordinate releases through release branches that eventually get merged into the `master` branch.
+[Gitflow](https://github.com/nvie/gitflow) is one of the most famous approaches. The idea is that you develop any new functionality in an appropriately named branch, then merge them into a release branch, that eventually get merged into the `master` branch.
 
-Utilizing only **feature branches** and then merging the work back to `master` can be enough for smaller projects. This avoids some of the complexity related to Gitflow. The heavier structure may pay off if there is a large amount of development to coordinate, though, so you should choose your approach carefully.
+Using only **feature branches** and then merging the work back to `master` can be enough for smaller projects. This avoids some of the complexity related to Gitflow. The heavier structure may pay off if there is a large amount of development to coordinate.
 
-T> [Atlassian has written a guide to different Git branching models.](https://www.atlassian.com/git/tutorials/comparing-workflows).
+T> Read more in the Atlassian’s [guide to different Git branching models](https://www.atlassian.com/git/tutorials/comparing-workflows).
 
 ### Coordinating Teams
 
-As a project grows and has more people working on it, more communication and coordination is required to keep the project running smoothly. This is one of the hardest problems in software development as it gets the more complex, the more people you add to the mix. It's made harder in open source as people have different motivations and the culture is mixed. Sometimes this is a good thing but it's also a challenge at times.
+As a project grows and has more people working on it, more communication and coordination is required to keep the project running smoothly — this is one of the hardest problems in software development It’s even harder in open source as people have different motivations and very limited time.
 
-This complexity can be tamed by developing organization structure. Instead of working in an ad hoc manner, people will assume different responsibilities following skills and interests. If multiple people align well enough, it can make sense for them to form teams. These teams in turn have to coordinate their work but now the problem has been pushed a notch further. There's still coordination to do but there's more structure in place.
+This complexity can be tamed by developing organization structure. Instead of working in an ad hoc manner, people will take different responsibilities according to their skills and interests. If multiple people align well enough, it can make sense for them to form smaller teams. These teams in turn have to coordinate their work but coordination of a small team is easier than of a large one.
 
-T> Platforms like GitHub model the concept of team in system level. If you use a GitHub organization for a project, you can assign people to teams and assign specific rights to the teams. Teams can also be used in npm to make it easier to share release rights for example.
+T> If you use a *GitHub organization* for a project, you can assign people to *teams* and assign specific rights to the teams. Teams can also be used in npm to make it easier to share release rights.
 
 T> The _Longevity_ chapter discusses the issue further.
 
@@ -73,22 +69,22 @@ To paraphrase Jono Bacon, managing open source projects is like herding cats. Ev
 
 <!-- textlint-enable -->
 
-This nature has also implications on the nature of development. It might be sporadic and sudden. A lot of progress might happen in short time as long as there's interest and then the development might stall for a while until development picks up again. Also the way you manage new contributions affects this as the longer your contributors have to wait, the more frustrated they tend to get.
+This nature also affects development. It might be sporadic and sudden. A lot of progress might happen in short time as long as there's interest and then the development might stall for a while until it picks up again. Also the way you manage new contributions affects this as the longer your contributors have to wait, the more frustrated they tend to get.
 
-How to manage this type of situation? There's no one correct way and projects tend to develop models of their own with varying success. One of the best things you can do, however, is to maintain clear goals for the project. Doing this allows you to make contextual decisions. If something goes beyond the boundaries, it doesn't belong to the project. Saying **no** is at least as important as saying **yes**.
+How to manage this situation? There's no one correct way and projects tend to develop models of their own with varying success. One of the best things you can do, however, is to maintain clear goals for the project. Saying **no** is at least as important as saying **yes**.
 
-Taken further, abstract project goals can lead to a **project roadmap** that describes what the project wants to accomplish in the near and far future. The point is to energize people to move towards the goals. The roadmap can change but can be used to communicate what's to come. It will give confidence to the project direction as people know what to expect.
+**Project roadmap** is a more specific description of what the project wants to accomplish in the near and far future. The roadman will energize people to move towards the goals, it will give confidence to the project direction as people know what to expect.
 
 ## How to Support Users
 
-Once a project reaches certain scale, managing support becomes a problem. GitHub's issue tracker works up to a point. Sometimes bigger projects move the problem of support level questions to services like Stack Overflow. This is also where commercial support may be provided as there is no obligation to help free even if the code is freely available.
+Once a project reaches certain scale, managing support questions becomes a problem. GitHub’s issue tracker works up to a point. Sometimes bigger projects move the problem of support questions to services like Stack Overflow. This is also where commercial support may be provided as there is no obligation to help free even if the code is freely available.
 
-One of the best ways to deal with support is to reduce the amount of support required through design and documentation. If certain part of software requires constant support, it could be re-designed in such way that it's easier to understand. Documentation can make it easier to understand the concepts behind the implementation and provide the needed knowledge to get most out of the design.
+One of the best ways to deal with support is to reduce the amount of support required through design and documentation. If certain part of software requires constant support, it could be redesigned to make it easier to use. Documentation can make the concepts behind the implementation easier to understand.
 
 T> The _Documentation_ part of the book digs deeper into these topics.
 
 ## Conclusion
 
-Designing and maintaining solid development processes is an important part of project maintenance. A good process supports project longevity and encourages people to push it further. A bad process hinders progress and may even make it impossible. It's an important aspect of a project to get right.
+Designing and maintaining solid development processes is an important part of project maintenance. A good process supports project longevity and encourages people to push it further. A bad process hinders progress and may even make it impossible.
 
 You'll learn about continuous integration in the next chapter. The practice complements process thinking in a technical way.
