@@ -39,7 +39,7 @@ How can you make sure the proposed change doesn’t break anything? Testing and 
 
 ## How to Design a Development Process
 
-When you’re working on a project alone, ??????
+When you’re working on a project alone, you can keep all the details and plans in your help, but as soon as other people start to help, you need to be more transparent on what are you doing, direction of the project and workflow that contributors should follow.
 
 ### Choosing a Git Branching Model
 
