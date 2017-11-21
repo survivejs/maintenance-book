@@ -40,7 +40,7 @@ A project can have a group of core developers that steer the direction of the pr
 
 In the worst case, a project becomes abandoned by its maintainers and new contributions cannot make it to the project. A fork may be needed to rejuvenate the development. The problem is discussed in detail in the _Where to Start Packaging_ chapter.
 
-## How to Attract New Contributors and Maintainers to the Project
+## How to Attract People to the Project
 
 To keep projects sustainable over longer term, especially the bigger ones focus on attracting new contributors and maintainers. The interests of the different parties need to align for this to work.
 
@@ -48,7 +48,7 @@ At its core you have the project maintainers. Their work is normally split betwe
 
 To even gain contributions, the project should be contributor friendly. Various aspects discussed in this book, such as documentation, are important here because if project is too difficult to contribute to, you won't get contributions. Certain development practices, such as testing and continuous integration, can make it easier to contribute while pushing the quality of contributions higher and avoiding maintainer work.
 
-## How to Keep Track of Everything That's Going on with the Project
+## How to Keep Track of Everything
 
 As a project grows in complexity, it can become difficult to keep track of it. Popular services, such as GitHub, work as starting points. As the complexity grows and there's more to worry about, solutions such as [Octobox](https://octobox.io/) become valuable as they focus on these problems at scale.
 

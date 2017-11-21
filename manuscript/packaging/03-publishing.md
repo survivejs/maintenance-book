@@ -9,8 +9,8 @@ Most of the community follows a specific versioning convention which you should 
 Most popular packages out there follow SemVer. Roughly, SemVer states that you should not break backward compatibility, given [certain rules](http://semver.org/) are met:
 
 1. The MAJOR version increments when incompatible API changes are made.
-2. The MINOR version increments when backwards-compatible features are added.
-3. The PATCH version increments when backwards-compatible bugs are fixed.
+1. The MINOR version increments when backwards-compatible features are added.
+1. The PATCH version increments when backwards-compatible bugs are fixed.
 
 The rules are different for `0.x` versions. There the rule is `0.<MAJOR>.<MINOR>`. For packages considered stable and suitable for public usage (`1.0.0` and above), the rule is `<MAJOR>.<MINOR>.<PATCH>`. For example, if the current version of a package is `0.1.4` and a breaking change is performed, it should bump to `0.2.0`.
 
@@ -50,7 +50,7 @@ The release candidates (RC) are close to an actual release and don't introduce a
 The workflow has two steps:
 
 1. `npm version 0.5.0-alpha1` - Update _package.json_ as discussed earlier.
-2. `npm publish --tag alpha` - Publish the package under _alpha_ tag.
+1. `npm publish --tag alpha` - Publish the package under _alpha_ tag.
 
 To consume the test version, your users have to use `npm install <your package name>@alpha`.
 

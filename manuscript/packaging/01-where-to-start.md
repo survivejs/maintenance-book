@@ -15,10 +15,10 @@ npm ecosystem is vast and it hosts multiple smaller communities, such as Angular
 When you are confronted with a technical problem, you have at least the following options:
 
 1. Use an existing package.
-2. Enhance an existing package.
-3. Take over an existing package.
-4. Fork an existing package.
-5. Develop your own package.
+1. Enhance an existing package.
+1. Take over an existing package.
+1. Fork an existing package.
+1. Develop your own package.
 
 ## Use an Existing Package
 
@@ -157,14 +157,14 @@ To avoid sharing all your packages in public, npm allows you to maintain private
 npm's lookup algorithm is another aspect that's good to understand. Sometimes this can explain certain errors, and it also leads to good practices, such as preferring local dependencies over global ones. The basic algorithm goes as below:
 
 1. Look into immediate packages. If there is _node_modules_, crawl through that and also check the parent directories until the project root is reached. You can check that using `npm root`.
-2. If nothing was found, check globally installed packages. If you are using Unix, look into _/usr/local/lib/node_modules_ to find them. You can figure out the specific directory using `npm root -g`.
-3. If the global lookup fails, it fails hard. You should get an error now.
+1. If nothing was found, check globally installed packages. If you are using Unix, look into _/usr/local/lib/node_modules_ to find them. You can figure out the specific directory using `npm root -g`.
+1. If the global lookup fails, it fails hard. You should get an error now.
 
 On a package level, npm resolves to a file through the following process:
 
 1. Look up _package.json_ of the package.
-2. Get the contents of the `main` field. If it doesn't exist, default to _<package>/index.js_.
-3. Resolve to the `main` file.
+1. Get the contents of the `main` field. If it doesn't exist, default to _<package>/index.js_.
+1. Resolve to the `main` file.
 
 The general lookup algorithm respects an environment variable `NODE_PATH`. If you are using Unix, you can patch it through `NODE_PATH=$NODE_PATH:./demo`. The call can be included at the beginning of a _package.json_ scripts to tweak `NODE_PATH` temporarily.
 

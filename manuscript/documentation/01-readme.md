@@ -143,7 +143,7 @@ npm run test:docs
 
 If something is wrong, you’ll see an error like this:
 
-```
+```bash
 Failed - manuscript/appendices/02-customizing-eslint.md:42:1
 evalmachine.<anonymous>:4
 alert('foo'); // eslint-disable-line no-alert

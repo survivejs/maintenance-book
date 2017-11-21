@@ -6,7 +6,7 @@ Change log is an essential part of an open source project: it tells the user wha
 
 Many projects don’t have change logs and ask users to read the commit log. But commit logs often don’t work well as change logs. Consider this commit log:
 
-```
+```bash
 * Refactor: Replace Markdown links with the Link component instead of the styles
 * Docs: Clarify logging in Node API
 * Docs: Correct the `static` modifier note
@@ -30,7 +30,7 @@ It shouldn’t contain anything that doesn’t affect the public API, like refac
 
 For example, a change log for a group of commits above may look like this:
 
-```
+```bash
 Fix an error caused by a newer version of uglifyjs-webpack-plugin with a breaking change.
 ```
 

@@ -246,7 +246,7 @@ leanpub-end-insert
 
 If the package will ever grow over 9 KB, you’ll see an error like this:
 
-```
+```bash
   Package size limit has exceeded by 25.57 KB
   Package size: 34.57 KB
   Size limit:   9 KB

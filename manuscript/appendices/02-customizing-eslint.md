@@ -91,8 +91,8 @@ T> [Codemod](https://github.com/facebook/codemod) allows you to perform large-sc
 In ESLint's case, the AST structure can be checked. If something is wrong, it should let you know. Follow the steps below to set up a plugin:
 
 1. Set up a new project named `eslint-plugin-custom`. You can replace `custom` with something else. ESLint follows this naming convention.
-2. Execute `npm init -y` to create a dummy _package.json_
-3. Set up `index.js` in the project root with content.
+1. Execute `npm init -y` to create a dummy _package.json_
+1. Set up `index.js` in the project root with content.
 
 You can get started with a skeleton as below:
 

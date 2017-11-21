@@ -29,7 +29,7 @@ In AngularJS convention each commit message consists of:
 
 For example:
 
-```
+```bash
 feat($compile): simplify isolate scope bindings
 
 Changed the isolate scope binding options to:
@@ -162,18 +162,18 @@ Update your _package.json_ like this:
 
 This configuration will perform the following steps:
 
-* Every time you commit a _.js_ file:
+**Every time you commit a _.js_ file:**
 
-  1. Run ESLint with autofixing on files you are committing.
-  2. Run Jest tests related to files you are committing.
-  3. Format files you are committing with Prettier. (See the _Code Formatting_ chapter for more details.)
-  4. Add changes caused by autofixing and reformatting to your commit.
+1. Run ESLint with autofixing on files you are committing.
+1. Run Jest tests related to files you are committing.
+1. Format files you are committing with Prettier. (See the _Code Formatting_ chapter for more details.)
+1. Add changes caused by autofixing and reformatting to your commit.
 
-* Every time you commit an _.scss_ file:
+**Every time you commit an _.scss_ file:**
 
-  1. Format files you are committing with stylefmt.
-  2. Run stylelint on files you are committing.
-  3. Add changes caused by reformatting to your commit.
+1. Format files you are committing with stylefmt.
+1. Run stylelint on files you are committing.
+1. Add changes caused by reformatting to your commit.
 
 ## Automating Releases
 
