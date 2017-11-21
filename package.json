@@ -11,7 +11,7 @@
     "test:links": "check-markdown-links manuscript",
     "test:md": "markdown-doctest",
     "proselint": "proselintjs 'manuscript/**/*.md'",
-    "remarklint": "remark 'manuscript/**/*md'",
+    "remarklint": "remark --quiet 'manuscript/**/*md'",
     "textlint": "textlint 'manuscript/**/*.md'",
     "textlint:fix": "textlint --fix 'manuscript/**/*.md'",
     "prettier": "prettier --write 'manuscript/**/*.md'",
