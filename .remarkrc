@@ -1,0 +1,33 @@
+{
+  "plugins": {
+    "lint": {
+      "reset": true,
+      "code-block-style": "fenced",
+      "fenced-code-flag": [
+        "bash",
+        "css",
+        "diff",
+        "html",
+        "javascript",
+        "json",
+        "markdown",
+        "sass",
+        "yaml"
+      ],
+      "file-extension": "md",
+      "heading-increment": true,
+      "no-duplicate-headings": true,
+      "no-file-name-articles": true,
+      "no-file-name-consecutive-dashes": true,
+      "no-file-name-irregular-characters": true,
+      "no-file-name-mixed-case": true,
+      "no-file-name-outer-dashes": true,
+      "no-heading-punctuation": ".,;:!?",
+      "no-shell-dollars": true,
+      "no-shortcut-reference-image": true,
+      "no-shortcut-reference-link": true,
+      "no-undefined-references": true,
+      "no-unused-definitions": true
+    }
+  }
+}

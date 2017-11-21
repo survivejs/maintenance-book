@@ -29,18 +29,6 @@
   "bugs": {
     "url": "https://github.com/survivejs/maintenance-book/issues"
   },
-  "remarkConfig": {
-    "plugins": [
-      "remark-preset-lint-recommended",
-      ["remark-lint-list-item-indent", false],
-      "preset-lint-markdown-style-guide",
-      ["remark-lint-maximum-line-length", false],
-      ["remark-lint-emphasis-marker", false],
-      ["remark-lint-no-file-name-mixed-case", false],
-      ["remark-lint-unordered-list-marker-style", false],
-      "lint-fenced-code-flag"
-    ]
-  },
   "homepage": "https://github.com/survivejs/maintenance-book",
   "dependencies": {},
   "devDependencies": {
