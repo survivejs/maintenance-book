@@ -1,6 +1,22 @@
 # Code Formatting
 
-The ideas of linting and formatting code overlap. Linting can capture language usage related issues while formatting can be seen as a more general idea. Consider handling line endings for example. The problem is the same regardless of the file type. On a more specific level, you may want to format source files in a particular way.
+Usually linters can validate and fix code formatting but there are specialized tools that work better.
+
+## Achieving Code Consistency
+
+**Code consistency** helps when several people work on the same codebase:
+
+* code look similar everywhere;
+* programming patterns used consistently across the codebase;
+* naming is consistent.
+
+Code formatting tools solve the first problem. They also [solve another problem](https://medium.freecodecamp.org/why-robots-should-format-our-code-159fd06d17f7) — arguments on the right code style in a team.
+
+Linters can help with the second problem, although they won’t solve it entirely. This like `var` v. `const` / `let` can be detected by ESLint, but higher level patterns can’t.
+
+Problems like naming consistency are hard, or even impossible, to detect automatically. For example, you could have `FooLoader` and `BarThatLoadsFoo` that both do the same thing but in different ways. To detect such issues you’ll have to review all new code manually.
+
+A common misconception is that if you use a code formatter like Prettier you don’t need a linter anymore. There’s some overlap between two tools, for example, ESLint can change code formatting a bit, but you can’t achieve 100% code consistency with ESLint, like you can with Prettier. Most of the time you’ll benefit from using both tools at the same time: use ESLint to catch possible errors and achieve consistent language usage and Prettier to format code.
 
 ## Configuring IDEs and Editors with EditorConfig
 
@@ -29,9 +45,9 @@ EditorConfig is supported by popular IDEs and editors through [plugins](http://e
 
 T> It's possible to force line endings through _.gitattributes_ by setting `* text=auto` and `bin/* eol=lf` but EditorConfig has more options.
 
-## Formatting JavaScript and TypeScript with Prettier
+## Formatting Code with Prettier
 
-[Prettier](https://prettier.io/) is an opinionated JavaScript formatter. It has few settings and most of the code style rules are built in. Prettier removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
+[Prettier](https://prettier.io/) is an opinionated code formatter that supports JavaScript, TypeScript, CSS, GraphQL, JSON and Markdown. It has few settings and most of the code style rules are built in. Prettier removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
 
 Prettier is smarter than other tools. For example, you can restrict line length while tools like ESLint can only yell at you if a line is too long and you would have to reformat the code yourself. If any line exceeds the limit, Prettier reformats the whole code block:
 
@@ -73,11 +89,9 @@ This approach has many benefits:
 
 Prettier has few [options](https://prettier.io/docs/en/options.html) to modify its behavior, like indentation, quotes and semicolons.
 
-It’s a good idea to disable code style rules in your ESLint config and let Prettier deal with the code style. For example, you can use [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) instead of [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base).
+W> You’ll need to disable code style rules in your ESLint config, otherwise they will conflict with Prettier. For example, you can use [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) instead of [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base). [eslint:recommended](https://eslint.org/docs/rules/) will work fine because it has no code style rules.
 
-W> Commit your code before running the command — it will reformat all your JavaScript files.
-
-T> To make your contributors’ life easier you can set up Prettier to format code before each commit with lint-staged. The idea is covered in the _Automation_ chapter.
+T> To make your contributors’ life easier you can set up Prettier to format code before each commit with lint-staged — see the _Automation_ chapter.
 
 ### Setting Up Prettier
 
@@ -87,6 +101,8 @@ Let’s install Prettier:
 npm install prettier --save-dev
 ```
 
+W> Prettier team recommends pinning an exact version of Prettier in your _package.json_ as they may introduce stylistic changes in patch releases.
+
 Add a script to your _package.json_ like this:
 
 **package.json**
@@ -94,7 +110,7 @@ Add a script to your _package.json_ like this:
 ```json
 {
   "scripts": {
-    "format:js": "prettier --write"
+    "format": "prettier --write '**/*.{js,css,md}'"
   }
 }
 ```
@@ -116,14 +132,18 @@ Create a config file, _.prettierrc_:
 And finally run:
 
 ```bash
-npm run format:js
+npm run format
 ```
+
+W> Commit your code before running Prettier for the first time — it will reformat all your codebase.
+
+T> Prettier will ignore `node_modules` by default, use _.prettierignore_ file to ignore other files.
 
 ### Setting Up Prettier as ESLint Plugin
 
-You can also run Prettier as a [ESLint plugin](https://github.com/prettier/eslint-plugin-prettier). This way Prettier formats all files that go through ESLint and you will not need to repeat glob patterns.
+You can also run Prettier as a [ESLint plugin](https://github.com/prettier/eslint-plugin-prettier). This way Prettier formats all files that go through ESLint and you will not need to setup another script.
 
-Let’s install Prettier and eslint-plugin-prettier, assuming you already have ESLint configured as described in the _Linting_ chapter:
+Let’s install Prettier and `eslint-plugin-prettier`, assuming you already have ESLint configured as described in the _Linting_ chapter:
 
 ```bash
 npm install prettier eslint-plugin-prettier --save-dev
@@ -157,59 +177,13 @@ And finally run:
 npm run lint:js
 ```
 
-When used like this, Prettier itself doesn't perform any alterations itself but instructs ESLint to implement its rules. ESLint will perform the fixing process itself.
-
 T> You can set up your editor to run `eslint --fix` on save and it will reformat your code every time you save a file.
+
+W> If you have ESLint in your editor, you may notice that it reports too many issues while you’re writing code because of Prettier. To solve this issue you can disable `prettier/prettier` rule in your editor’s ESLint settings.
 
 ## Formatting CSS with Stylelint
 
 Stylelint can format your CSS with `--fix` switch, check the _Linting_ chapter to know how to set it up.
-
-## Formatting CSS with Prettier
-
-Prettier can format your CSS too, see how to set it up above.
-
-For CSS you’ll need one more script in _package.json_:
-
-**package.json**
-
-```json
-{
-  "scripts": {
-    "format:css": "prettier --write"
-  }
-}
-```
-
-Create a config file, _.prettierrc_:
-
-**.prettierrc**
-
-```json
-{
-  "printWidth": 100
-}
-```
-
-And then run it like this:
-
-```bash
-npm run format:css
-```
-
-## Code Consistency
-
-**Code consistency** can be characterized as follows:
-
-* Does the code look similar everywhere?
-* Are the programming patterns used consistent with each other?
-* Is the naming consistent?
-
-Code formatting answers the first problem. Linting can help with the second one although it might not capture it entirely. Consistency of naming is another difficult one as it's related to **conceptual code consistency**.
-
-For example, it could have `FooLoader` and `BarThatLoadsFoo` abstractions. Both use the same concept in different ways.
-
-It's difficult, or even impossible, to detect high-level problems like this automatically. For this reason, it's important to review the code for consistency every once in a while. Sometimes you may discover something that can be turned into a linting rule to solidify a specific idea but not everything can be automated.
 
 ## Conclusion
 
