@@ -16,7 +16,9 @@ Linters can help with the second problem, although they won’t solve it entirel
 
 Problems like naming consistency are hard, or even impossible, to detect automatically. For example, you could have `FooLoader` and `BarThatLoadsFoo` that both do the same thing but in different ways. To detect such issues you’ll have to review all new code manually.
 
-A common misconception is that if you use a code formatter like Prettier you don’t need a linter anymore. There’s some overlap between two tools, for example, ESLint can change code formatting a bit, but you can’t achieve 100% code consistency with ESLint, like you can with Prettier. Most of the time you’ll benefit from using both tools at the same time: use ESLint to catch possible errors and achieve consistent language usage and Prettier to format code.
+A common misconception is that if you use a code formatter like Prettier you don’t need a linter anymore. There’s some overlap between two tools, for example, ESLint can indentation, semicolons or type of quotes in JavaScript, but you can’t achieve 100% code consistency with ESLint, like you can with Prettier because it removes removes the original formatting and reprints the code using its own formatting rules.
+
+Most of the time you’ll benefit from using both tools at the same time: use ESLint to catch possible errors and achieve consistent language usage and Prettier to format the code.
 
 ## Configuring IDEs and Editors with EditorConfig
 
