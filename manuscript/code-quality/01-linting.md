@@ -186,7 +186,7 @@ Add a script to your _package.json_ like this:
 ```json
 {
   "scripts": {
-    "lint:css": "stylelint --fix '**/*.scss' --syntax scss"
+    "lint:css": "stylelint --fix '**/*.scss'"
   }
 }
 ```
