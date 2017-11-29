@@ -155,7 +155,7 @@ Update your _package.json_ like this:
       "prettier --write",
       "git add"
     ],
-    "*.scss": ["stylefmt", "stylelint --syntax scss", "git add"]
+    "*.scss": ["stylelint --fix", "prettier --write", "git add"]
   }
 }
 ```
@@ -166,14 +166,16 @@ This configuration will perform the following steps:
 
 1. Run ESLint with autofixing on files you are committing.
 1. Run Jest tests related to files you are committing.
-1. Format files you are committing with Prettier. (See the _Code Formatting_ chapter for more details.)
+1. Format files you are committing with Prettier.
 1. Add changes caused by autofixing and reformatting to your commit.
 
 **Every time you commit an _.scss_ file:**
 
-1. Format files you are committing with stylefmt.
-1. Run stylelint on files you are committing.
+1. Run stylelint with autofixing on files you are committing.
+1. Format files you are committing with Prettier.
 1. Add changes caused by reformatting to your commit.
+
+T> Read more about Prettier in the _Code Formatting_ chapter.
 
 ## Automating Releases
 
