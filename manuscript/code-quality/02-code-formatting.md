@@ -12,11 +12,13 @@ Usually linters can validate and fix code formatting but there are specialized t
 
 Code formatting tools solve the first problem. They also [solve another problem](https://medium.freecodecamp.org/why-robots-should-format-our-code-159fd06d17f7) — arguments on the right code style in a team.
 
-Linters can help with the second problem, although they won’t solve it entirely. This like `var` v. `const` / `let` can be detected by ESLint, but higher level patterns can’t.
+Linters can help with the second problem, although they won’t solve it entirely. This like `var` v. `const` / `let` can be detected by ESLint, but higher level patterns can’t.
 
 Problems like naming consistency are hard, or even impossible, to detect automatically. For example, you could have `FooLoader` and `BarThatLoadsFoo` that both do the same thing but in different ways. To detect such issues you’ll have to review all new code manually.
 
-A common misconception is that if you use a code formatter like Prettier you don’t need a linter anymore. There’s some overlap between two tools, for example, ESLint can change code formatting a bit, but you can’t achieve 100% code consistency with ESLint, like you can with Prettier. Most of the time you’ll benefit from using both tools at the same time: use ESLint to catch possible errors and achieve consistent language usage and Prettier to format code.
+A common misconception is that if you use a code formatter like Prettier then you don’t need a linter anymore. There’s some overlap between two tools. ESLint can fix indentation, semicolons or quote type in JavaScript, but Prettier can achieve 100% code consistency, because it removes the original formatting and reprints all the code using its own formatting rules.
+
+Most of the time you’ll benefit from using both tools at the same time: use ESLint to catch possible errors and achieve consistent language usage and Prettier to format the code.
 
 ## Configuring IDEs and Editors with EditorConfig
 
@@ -137,7 +139,7 @@ npm run format
 
 W> Commit your code before running Prettier for the first time — it will reformat all your codebase.
 
-T> Prettier will ignore `node_modules` by default, use _.prettierignore_ file to ignore other files.
+T> Prettier will ignore `node_modules` by default, use _.prettierignore_ file to ignore other files.
 
 ### Setting Up Prettier as ESLint Plugin
 
@@ -179,7 +181,7 @@ npm run lint:js
 
 T> You can set up your editor to run `eslint --fix` on save and it will reformat your code every time you save a file.
 
-W> If you have ESLint in your editor, you may notice that it reports too many issues while you’re writing code because of Prettier. To solve this issue you can disable `prettier/prettier` rule in your editor’s ESLint settings.
+W> If you have ESLint in your editor, you may notice that it reports too many issues while you’re writing code because of Prettier. To solve this issue you can disable `prettier/prettier` rule in your editor’s ESLint settings.
 
 ## Formatting CSS with Stylelint
 
