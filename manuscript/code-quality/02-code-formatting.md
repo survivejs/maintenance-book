@@ -47,6 +47,8 @@ EditorConfig is supported by popular IDEs and editors through [plugins](http://e
 
 T> It's possible to force line endings through _.gitattributes_ by setting `* text=auto` and `bin/* eol=lf` but EditorConfig has more options.
 
+T> [Use Mrm](https://github.com/sapegin/mrm-tasks/tree/master/packages/mrm-task-editorconfig) to add EditorConfig to your project with a single command.
+
 ## Formatting Code with Prettier
 
 [Prettier](https://prettier.io/) is an opinionated code formatter that supports JavaScript, TypeScript, CSS, GraphQL, JSON and Markdown. It has few settings and most of the code style rules are built in. Prettier removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
@@ -140,6 +142,8 @@ npm run format
 W> Commit your code before running Prettier for the first time — it will reformat all your codebase.
 
 T> Prettier will ignore `node_modules` by default, use _.prettierignore_ file to ignore other files.
+
+T> [Use Mrm](https://github.com/sapegin/mrm-tasks/tree/master/packages/mrm-task-prettier) to add Prettier to your project with a single command.
 
 ### Setting Up Prettier as ESLint Plugin
 

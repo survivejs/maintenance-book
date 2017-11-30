@@ -121,6 +121,8 @@ T> To get most value out of linting tools during development, make sure you have
 
 T> The _Customizing ESLint_ appendix discusses how to get more out of ESLint.
 
+T> [Use Mrm](https://github.com/sapegin/mrm-tasks/tree/master/packages/mrm-task-eslint) to add ESLint to your project with a single command.
+
 ### ESLint Configuration Formats
 
 _.eslintrc_ supports [JSON5](http://json5.org/) format by default. It's a proposed extension to JSON that enables features like commenting and trailing commas.
@@ -204,6 +206,8 @@ And finally run:
 ```bash
 npm run lint:css
 ```
+
+T> [Use Mrm](https://github.com/sapegin/mrm-tasks/tree/master/packages/mrm-task-stylelint) to add stylelint to your project with a single command.
 
 ## Conclusion
 

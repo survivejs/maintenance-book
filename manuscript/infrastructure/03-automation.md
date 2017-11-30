@@ -286,6 +286,46 @@ Danger has some plugins, like:
 * [no-test-shortcuts](https://www.npmjs.com/package/danger-plugin-no-test-shortcuts) — check for test shortcuts;
 * [spellcheck](https://www.npmjs.com/package/danger-plugin-spellcheck) — spell checks created or modified Markdown files.
 
+## Configuration automation
+
+Most of the tools described in this book require some configuration. But maintaining this configuration is far from easy, especially if you want up-to-date configs in all your projects.
+
+[Mrm](https://github.com/sapegin/mrm) tries to solve this problem. It works like [codemods](https://www.sitepoint.com/getting-started-with-codemods/): it doesn’t use templates that would overwrite everything, you’re describing in code how to _modify_ or create files to achieve the desired state.
+
+Mrm has [many tasks](https://github.com/sapegin/mrm-tasks/tree/master/packages/mrm-preset-default) out of the box: CodeCov, EditorConfig, ESLint, .gitignore, Jest, lint-staged, Prettier, semantic-release, React Styleguidist, stylelint, Travis CI, TypeScript, package.json, contributing guidelines, license and readme file. You can create your own task or combine multiple tasks using aliases.
+
+Mrm tries to do minimal changes by inferring indentation style or read it from the EditorConfig and keeping comments in JSON files. It has minimal required configuration by inferring values from the project itself or from the environment, like reading your name and email from your Git or npm configs.
+
+Mrm has utilities to work with the most popular config file formats: JSON, YAML, INI and new line separated text files; install and uninstall npm modules; and file operations.
+
+Let’s install Mrm:
+
+```bash
+npm install -g mrm
+```
+
+And run like this:
+
+```bash
+mrm gitignore
+mrm license --config:licenseFile README
+```
+
+Optionally, create a config file at `~/.mrm/config.json` or `~/dotfiles/mrm/config.json` instead of passing values via command line:
+
+```json5
+{
+  "github": "sapegin",
+  "eslintPreset": "airbnb",
+  "aliases": {
+    // Aliases to run multiple tasks at once
+    "node": ["license", "readme", "editorconfig", "gitignore"]
+  }
+}
+```
+
+See more usage examples and options [in the docs](https://github.com/sapegin/mrm#usage).
+
 ## Bots
 
 TODO
