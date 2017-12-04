@@ -8,7 +8,7 @@ To develop your own package or not is a hard decision you have to make, with pro
 
 ## To Consume Packages or to Develop Them
 
-The point of a package manager like npm is to avoid unnecessary development effort. Instead of developing every piece of code yourself, you consume ready-made functionality using npm. This isn't without its problems as you have to research and test your options.
+The point of a package manager like npm is to avoid unnecessary development effort. Instead of developing every piece of code yourself, you consume readymade functionality using npm. This isn't without its problems as you have to research and test your options.
 
 npm ecosystem is vast and it hosts multiple smaller communities, such as AngularJS, Ember, or React. Certain utility libraries, like Lodash, are valuable across these boundaries. npm offers a lot of choice and it's not uncommon to have tens of options available to address your specific problem.
 
@@ -31,7 +31,6 @@ There are several pros and cons to this approach:
 **Pros:**
 
 * You can avoid potentially a lot of work.
-* You don't reinvent the wheel.
 
 **Cons:**
 
@@ -45,7 +44,7 @@ T> Services like [npm trends](http://www.npmtrends.com/) and [npm-stat](https://
 
 Often you’ll find something that almost fits. Improving an existing project is usually simpler than developing your own from scratch. If the project is in a healthy state, there’s a good chance that the work gets merged.
 
-If it’s a simple bug or a small feature, you can send a pull request right away, otherwise you should discuss the feature with the project maintainers. Normally this is done by opening an issue at the project issue tracker, explaining the use case, and the desired outcome. This may lead to further insights and avoid redundant effort as you spend time on design.
+If it’s a bug or a small feature, you can send a pull request right away, otherwise you should discuss the feature with the project maintainers. Normally this is done by opening an issue at the project issue tracker, explaining the use case, and the desired outcome. This may lead to further insights and avoid redundant effort as you spend time on design.
 
 The pros and cons are similar as before but there are a few more:
 
@@ -123,7 +122,7 @@ The pros and cons are roughly opposite compared to using an existing package:
 
 **Cons:**
 
-* You may reinvent the wheel.
+* You may repeat someone else’s work.
 * Development cost is much higher than in other options.
 * You may have to deal with maintenance and possible community support if the package becomes popular.
 
@@ -172,6 +171,6 @@ T> [app-module-path](https://www.npmjs.com/package/app-module-path) allows you a
 
 ## Conclusion
 
-Before writing a package of your own, investigate existing packages. You may find that a new package is not required after all or that you can contribute to a thriving one. Even forking an old package and revitalizing the effort can be a good option that allows you to save the pain of reinventing the wheel.
+Before writing your own package, investigate existing packages: you may find that a new package is not required and you can contribute to a thriving one or even use it as is. Even forking an existing package can be a good option that may save you a lot of work.
 
 You'll learn how npm packages are structured in the next chapter.
