@@ -8,7 +8,7 @@ For small project you can write API documentation manually in the README file, b
 
 The most popular format for documenting JavaScript APIs is [JSDoc](http://usejsdoc.org/). It uses a special comment syntax:
 
-```js
+```javascript
 /**
  * Bake pizzas.
  * @param {string} type Type of the pizza.
@@ -26,7 +26,7 @@ T> [Read more about JSDoc](http://speakingjs.com/es5/ch29.html) in Axel Rauschma
 
 If you use TypeScript or Flow, half of the work on documenting your APIs is done: most likely you already have type annotations for all your public functions. The only missing thing is textual comments:
 
-```ts
+```typescript
 /**
  * Bake pizzas.
  * @param type Type of the pizza.
