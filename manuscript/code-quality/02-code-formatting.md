@@ -81,6 +81,8 @@ foo('coffee', 'croissant', 'toast', 'eggs');
 
 T> Try Prettier in [an interactive playground](https://prettier.io/playground/).
 
+{pagebreak}
+
 This approach has many benefits:
 
 * Minimal configuration.
@@ -94,6 +96,8 @@ Prettier has few [options](https://prettier.io/docs/en/options.html) to modify i
 W> You’ll need to disable code style rules in your ESLint config, otherwise they will conflict with Prettier. For example, you can use [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) instead of [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base). [eslint:recommended](https://eslint.org/docs/rules/) will work fine because it has no code style rules.
 
 T> To make your contributors’ life easier you can set up Prettier to format code before each commit with lint-staged — see the _Automation_ chapter.
+
+{pagebreak}
 
 ### Setting Up Prettier
 
