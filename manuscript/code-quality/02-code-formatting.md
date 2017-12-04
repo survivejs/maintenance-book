@@ -155,6 +155,8 @@ Let’s install Prettier and `eslint-plugin-prettier`, assuming you already have
 npm install prettier eslint-plugin-prettier --save-dev
 ```
 
+{pagebreak}
+
 Update your _.eslintrc_ like this:
 
 **.eslintrc**
