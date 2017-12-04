@@ -232,6 +232,8 @@ leanpub-end-insert
 ]
 ```
 
+{pagebreak}
+
 And finally make the CI fail on size increase:
 
 ```json
@@ -258,6 +260,8 @@ T> To find out why your library is bigger than expected, run `npm run size -- --
 ### Design by Contract
 
 [Design by Contract](http://wiki.c2.com/?DesignByContract) is a technique that allows you to push invariants, preconditions, and postconditions close to the implementation. The idea can be implemented on code level, but you can also extend the language to support the idea as [babel-plugin-contracts](https://www.npmjs.com/package/babel-plugin-contracts) does.
+
+{pagebreak}
 
 ## Conclusion
 
