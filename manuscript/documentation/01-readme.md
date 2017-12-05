@@ -16,7 +16,7 @@ You should include licensing information at the end of the README: people will w
 
 ## Automating README
 
-### Table Of Contents
+### Table of Contents
 
 If your README is big, table of contents will give readers a quick overview of what’s inside. With [markdown-toc](https://github.com/jonschlinkert/markdown-toc) you can keep links in a table of contents correct and up to date:
 

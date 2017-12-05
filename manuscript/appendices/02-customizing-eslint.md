@@ -2,7 +2,7 @@
 
 Even though you can get far with vanilla ESLint, there are certain techniques you should know. For instance, sometimes you want to skip specific rules per file. You can even implement rules of your own.
 
-## Speeding Up ESLint Execution
+## Speeding up ESLint Execution
 
 One of the most convenient ways to speed up ESLint execution on big projects is to run it on only files that have been changed while you are working. It's possible to achieve this by using _lint-staged_. The exact technique is covered in the _Automation_ chapter.
 

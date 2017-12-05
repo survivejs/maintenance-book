@@ -28,7 +28,7 @@ You can enforce code style in your project or even autoformat code with linters 
 
 Code style is subjective and automation can reduce pointless discussions and improve team productivity. It also simplifies switching between different projects and reduces time to ramp up on a new project.
 
-## Linting JavaScript with ESLint
+## Linting JavaScript With ESLint
 
 [ESLint](http://eslint.org/) is a popular linter for JavaScript. It’s primarily used to capture language related issues but can be used to enforce code style and good practices. It can fix many issues automatically, especially code style. You can write your own rules to ensure code consistency across your team or organization.
 
@@ -45,7 +45,7 @@ ESLint itself is modular and uses plugins to operate - for example:
 * [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) contains best practices for React, JSX code style.
 * [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) finds potential security issues in Node code.
 
-### Setting Up ESLint
+### Setting up ESLint
 
 Let’s install ESLint with the Airbnb config:
 
@@ -129,7 +129,7 @@ _.eslintrc_ supports [JSON5](http://json5.org/) format by default. It's a propos
 
 ESLint configuration can be written in other formats, such as YAML or JavaScript, as well. JSON5 is a good default, though, given it's a good format for other tools to consume.
 
-## Linting TypeScript with TSLint
+## Linting TypeScript With TSLint
 
 [TSLint](https://palantir.github.io/tslint/) is a linter for TypeScript. It has a much smaller community than ESLint and overall experience is not as nice but otherwise it’s like ESLint.
 
@@ -137,7 +137,7 @@ T> [TypeScript support](https://github.com/eslint/typescript-eslint-parser) for 
 
 {pagebreak}
 
-### Setting Up TSLint
+### Setting up TSLint
 
 Let’s install TSLint with the Airbnb config:
 
@@ -169,13 +169,13 @@ And finally run:
 npm run lint:ts
 ```
 
-## Linting CSS with Stylelint
+## Linting CSS With Stylelint
 
 [Stylelint](https://stylelint.io/) is a CSS linting tool, it’s like ESLint but for CSS. Stylelint understands CSS, including the latest features like custom properties, and SCSS. Sass-like indented syntaxes are supported using PostCSS [SugarSS](https://github.com/postcss/sugarss). It also has an experimental support for Less.
 
 [stylelint-config-standard](https://www.npmjs.com/package/stylelint-config-standard) is a config maintained by stylelint team and follows CSS style guides of GitHub, Google and Airbnb.
 
-### Setting Up Stylelint
+### Setting up Stylelint
 
 Let’s install stylelint:
 

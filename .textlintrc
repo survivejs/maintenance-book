@@ -107,6 +107,15 @@
       "passive": false,
       "tooWordy": false,
       "weasel": false
+    },
+    "title-case": {
+      "exclusions": [
+        "documentation.js",
+        "gh-lint",
+        "lint-staged",
+        "npm",
+        "webpack"        
+      ]
     }
   },
   "filters": {

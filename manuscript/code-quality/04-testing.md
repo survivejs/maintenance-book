@@ -2,7 +2,7 @@
 
 Tests can be seen as a runnable specification that describes truths about the implementation. Automated testing is a form of risk management and reduces risks related to the project. Manual testing is the other end of the spectrum. It's also the most labor intensive and brittle option.
 
-## What to Verify with Testing
+## What to Verify With Testing
 
 Testing can be used to verify at least the following aspects:
 

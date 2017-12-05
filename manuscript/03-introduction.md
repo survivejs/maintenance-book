@@ -8,7 +8,7 @@ The purpose of this book is to give insight into these particular concerns. Even
 
 The book shows you **how to organize** npm packages and manage them. You will also learn about higher level topics, such as **code quality**, **infrastructure**, **documentation**, and **future** prospects. A good project is more than the technical implementation. For that reason you should understand what's beyond the technical side as this knowledge has impact on project longevity and success.
 
-## How Is The Book Organized
+## How Is the Book Organized
 
 The book has been split into a few distinct parts, each of which discusses the topic from a different angle. You can approach them one by one in any order you prefer and pick up techniques and ideas as you go along.
 
@@ -24,7 +24,7 @@ There's a short conclusion chapter after the main content that recaps the main p
 
 The appendices cover secondary topics and sometimes dig more deeply into the main ones. You can approach these in any order you wish, depending on your interests.
 
-## Who Is The Book For
+## Who Is the Book For
 
 If you develop or maintain a web project, be it open source or not, you will have something to learn from this book. It captures aspects related to this particular niche allowing you to develop more effectively.
 

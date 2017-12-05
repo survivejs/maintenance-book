@@ -20,7 +20,7 @@ A common misconception is that if you use a code formatter like Prettier then yo
 
 Most of the time you’ll benefit from using both tools at the same time: use ESLint to catch possible errors and achieve consistent language usage and Prettier to format the code.
 
-## Configuring IDEs and Editors with EditorConfig
+## Configuring IDEs and Editors With EditorConfig
 
 [EditorConfig](http://editorconfig.org/) allows you to define indentation style and other whitespace settings for any file type. This way your editor can automatically choose the correct settings. This is handy when developers use platforms with different line endings, e.g., Mac and Windows.
 
@@ -49,7 +49,7 @@ T> It's possible to force line endings through _.gitattributes_ by setting `* te
 
 T> [Use Mrm](https://github.com/sapegin/mrm-tasks/tree/master/packages/mrm-task-editorconfig) to add EditorConfig to your project with a single command.
 
-## Formatting Code with Prettier
+## Formatting Code With Prettier
 
 [Prettier](https://prettier.io/) is an opinionated code formatter that supports JavaScript, TypeScript, CSS, GraphQL, JSON and Markdown. It has few settings and most of the code style rules are built in. Prettier removes any existing formatting from your code and prints its own version which makes code absolutely consistent.
 
@@ -99,7 +99,7 @@ T> To make your contributors’ life easier you can set up Prettier to format co
 
 {pagebreak}
 
-### Setting Up Prettier
+### Setting up Prettier
 
 Let’s install Prettier:
 
@@ -145,7 +145,7 @@ T> Prettier will ignore `node_modules` by default, use _.prettierignore_ file to
 
 T> [Use Mrm](https://github.com/sapegin/mrm-tasks/tree/master/packages/mrm-task-prettier) to add Prettier to your project with a single command.
 
-### Setting Up Prettier as ESLint Plugin
+### Setting up Prettier As ESLint Plugin
 
 You can also run Prettier as a [ESLint plugin](https://github.com/prettier/eslint-plugin-prettier). This way Prettier formats all files that go through ESLint and you will not need to setup another script.
 
@@ -189,7 +189,7 @@ T> You can set up your editor to run `eslint --fix` on save and it will reformat
 
 W> If you have ESLint in your editor, you may notice that it reports too many issues while you’re writing code because of Prettier. To solve this issue you can disable `prettier/prettier` rule in your editor’s ESLint settings.
 
-## Formatting CSS with Stylelint
+## Formatting CSS With Stylelint
 
 Stylelint can format your CSS with `--fix` switch, check the _Linting_ chapter to know how to set it up.
 

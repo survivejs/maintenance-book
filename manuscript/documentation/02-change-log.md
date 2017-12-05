@@ -18,7 +18,7 @@ Many projects don’t have change logs and ask users to read the commit log. But
 
 Only one commit out of seven is relevant for the package user: last but one that fixes a bug, all the rest are documentation updates and code changes that don’t affect the public API.
 
-## What is a Good Change Log
+## What Is a Good Change Log
 
 A good change log should answer these questions:
 

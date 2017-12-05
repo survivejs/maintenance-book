@@ -2,7 +2,7 @@
 
 Text linting is much less common than code linting, but if you have to maintain a lot of text it may save you a lot of time, and improve quality of your documentation.
 
-## Linting Markdown with Textlint and Proselint
+## Linting Markdown With Textlint and Proselint
 
 Text linting is less common than code linting but in large projects with many contributors it could improve documentation quality. You can:
 
@@ -94,7 +94,7 @@ And finally run:
 npm run lint:prose
 ```
 
-## Formatting Markdown with Prettier
+## Formatting Markdown With Prettier
 
 We’re discussed Prettier in great detail in the _Code Formatting_ chapter but it can do more. It can format your Markdown files, and not only text but also code example for languages it supports: JavaScript, TypeScript, CSS, Less, SCSS, JSON, GraphQL, and Markdown.
 

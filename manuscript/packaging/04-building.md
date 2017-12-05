@@ -199,7 +199,7 @@ Now it should build both a version of the package for Node and a version for tre
 
 T> There is [an experimental CommonJS based tree shaking approach for webpack](https://www.npmjs.com/package/webpack-common-shake).
 
-## Using Other Languages than JavaScript
+## Using Other Languages Than JavaScript
 
 You cannot avoid a compilation process as above with languages other than JavaScript. The idea is similar and in this case you may end up with additional build artifacts, such as type definitions, that you may want to include in the distributed version of the package.
 

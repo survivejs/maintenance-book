@@ -28,7 +28,7 @@ Although open source software is freely available, this doesn't mean it's free t
 
 The models tend rely either on benevolence (donations), added value (consulting, merchandise), licensing models (dual license), and grants. [Lemonade stand by Nadia Eghbal](https://github.com/nayafia/lemonade-stand), [open funding list by ralphtheninja](https://github.com/ralphtheninja/open-funding), and [Producing Open Source Software by Karl Fogel](http://producingoss.com/en/money.html) cover common options in greater detail.
 
-## Who is Going to Make Sure the Project Stays on Track
+## Who Is Going to Make Sure the Project Stays on Track
 
 A project may have explicit goals or it may evolve organically and find its purpose. Regardless of how it evolves, the maintainers of the project have to shepherd it into a good direction.
 
@@ -36,7 +36,7 @@ In some projects, all design decisions go through a certain person. This model, 
 
 A project can have a group of core developers that steer the direction of the project together. The model combines with BDFL and doesn't necessary exclude the existence of such in a project.
 
-## What Happens If Developers Disappear from the Project
+## What Happens If Developers Disappear From the Project
 
 In the worst case, a project becomes abandoned by its maintainers and new contributions cannot make it to the project. A fork may be needed to rejuvenate the development. The problem is discussed in detail in the _Where to Start Packaging_ chapter.
 

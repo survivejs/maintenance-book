@@ -6,7 +6,7 @@ TODO: How/why to maintain a site (hosted demos, usage gifs, marketing, first imp
 
 TODO
 
-## How to Set Up a Site
+## How to Set up a Site
 
 TODO: Styleguidist etc.
 

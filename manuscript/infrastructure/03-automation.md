@@ -123,7 +123,7 @@ The package will do all the wiring required and run project tests before pushing
 
 T> Note that if you have set up Git hooks manually, it might not work! It's better to let husky control the Git side entirely.
 
-## Automating Linting with lint-staged
+## Automating Linting With lint-staged
 
 [lint-staged](https://github.com/okonet/lint-staged) runs linters only for changed files before each commit which makes linting mandatory and fast. It uses `pre-commit` Git hook and you can map any file extension to a shell command. You can also configure it to autofix code.
 
@@ -131,7 +131,7 @@ T> lint-staged works with [Flow since v0.48.0](https://github.com/facebook/flow/
 
 W> You still need to run linters on your CI server: it’s possible to avoid the `pre-commit` hook with `git commit --no-verify` in the GitHub UI.
 
-### Setting Up lint-staged
+### Setting up lint-staged
 
 Let’s install lint-staged and [husky](https://www.npmjs.com/package/husky) to manage Git hooks:
 
@@ -286,7 +286,7 @@ Danger has some plugins, like:
 * [no-test-shortcuts](https://www.npmjs.com/package/danger-plugin-no-test-shortcuts) — check for test shortcuts;
 * [spellcheck](https://www.npmjs.com/package/danger-plugin-spellcheck) — spell checks created or modified Markdown files.
 
-## Configuration automation
+## Configuration Automation
 
 Most of the tools described in this book require some configuration. But maintaining this configuration is far from easy, especially if you want up-to-date configs in all your projects.
 

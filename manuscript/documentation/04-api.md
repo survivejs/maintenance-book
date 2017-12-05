@@ -2,7 +2,7 @@
 
 For small project you can write API documentation manually in the README file, but for larger projects it’d be hard to maintain. You will need to generate API documentation from the code.
 
-## Documenting APIs in code
+## Documenting APIs in Code
 
 ### JavaScript
 
@@ -37,7 +37,7 @@ export function bakePizzas(type: string, quantity = 1): string {
 }
 ```
 
-### Other types of documentation
+### Other Types of Documentation
 
 One example is using [PropTypes](https://www.npmjs.com/package/prop-types) to document React components:
 
@@ -71,7 +71,7 @@ Button.defaultProps = {
 };
 ```
 
-## Generating documentation
+## Generating Documentation
 
 ### documentation.js
 
