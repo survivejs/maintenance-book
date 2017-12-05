@@ -10,14 +10,15 @@
         "Browsersync",
         "ESLint",
         "JavaScript",
-        "JSDoc",
         "Lodash",
         "Markdown",
         "Sass",
+        "TypeScript",
         "UglifyJS",
-        "Sass",
+        ["JSDocs?", "JSDoc"],
         ["Node[ .]js", "Node"], // Official is Node.js, but it’s way too complicated
         ["React[ .]js", "React"],
+        ["StackOverflow", "Stack Overflow"],
         ["HTTP[ /]2(?:\\.0)?", "HTTP/2"],
         ["OS X", "macOS"],
         ["Mac ?OS", "macOS"],
@@ -68,6 +69,7 @@
         ["id['’]?s", "IDs"],
         ["back[- ]end(\\w*)", "backend$1"],
         ["front[- ]end(\\w*)", "frontend$1"],
+        ["end ?to ?end", "end-to-end"],
         ["hot[- ]key", "hotkey"],
         ["build system(s?)", "build tool$1"],
         ["CLI tool(s?)", "command line tool$1"],
@@ -77,16 +79,25 @@
         ["change-?log(s?)", "change log$1"],
         ["source-?map(s?)", "source map$1"],
         ["pre ?release(s?)", "pre-release$1"],
-        ["environemnt(s?)", "environment$1"],
+        ["server ?side", "server-side"],
+        ["client ?side", "client-side"],
         ["filetype(s?)", "file type$1"],
         ["auto[- ]?complete", "autocomplete"],
         ["auto[- ]?format", "autoformat"],
+        ["auto[- ]?fix", "autofix"],
+        ["auto[- ]?fixing", "autofixing"],
+        ["name[- ]space(s?)", "namespace$1"],
         ["tree-?shaking", "tree shaking"],
+        ["css-?in-?js", "CSS in JS"],
+        ["higher ?order", "higher-order"],
 
         // Starts from a lower case letter in the middle of a sentence
         ["(\\w+[^.?!]\\)? )internet", "$1internet"],
         ["(\\w+[^.?!]\\)? )stylelint", "$1stylelint"],
         // ["(\\w+[^.?!]\\)? )webpack", "$1webpack"]
+
+        // Typos
+        ["environemnt(s?)", "environment$1"]
       ]
     },
     "stop-words": true,
