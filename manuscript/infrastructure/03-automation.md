@@ -313,7 +313,7 @@ mrm license --config:licenseFile README
 
 Optionally, create a config file at `~/.mrm/config.json` or `~/dotfiles/mrm/config.json` instead of passing values via command line:
 
-```json
+```json5
 {
   "github": "sapegin",
   "eslintPreset": "airbnb",
