@@ -6,7 +6,7 @@ A good README can “sell” the project to a potential user. A badly written or
 
 ## What a README Should Contain
 
-README should describe briefly what the package is about before delving into the details. A high level overview of the functionality and why the package was developed is enough. By doing this well, you save time as it will either attract people that have the same problem or make them understand the package isn't something they need.
+README should describe briefly what the package is about before delving into the details. A high level overview of the functionality and why the package was developed is enough. By doing this well, you save time as it will either attract people that have the same problem or make them understand the package isn’t something they need.
 
 Examples convey how to use the package. Ideally you are able to run them as tests or generate documentation from the real source code. Besides making sure the examples work, this is also a rough way of **acceptance testing**. It’s a good idea to start designing a package by writing the README. This forces you to think about the API carefully from the user point of view and come up with a design you can document easily.
 

@@ -45,7 +45,7 @@ indent_size = 2
 
 EditorConfig is supported by popular IDEs and editors through [plugins](http://editorconfig.org/#download).
 
-T> It's possible to force line endings through _.gitattributes_ by setting `* text=auto` and `bin/* eol=lf` but EditorConfig has more options.
+T> It’s possible to force line endings through _.gitattributes_ by setting `* text=auto` and `bin/* eol=lf` but EditorConfig has more options.
 
 T> [Use Mrm](https://github.com/sapegin/mrm-tasks/tree/master/packages/mrm-task-editorconfig) to add EditorConfig to your project with a single command.
 
@@ -60,7 +60,7 @@ Prettier is smarter than other tools. For example, you can restrict line length 
 foo(wowJs(), suchFunction(), muchParameters(), shouldReformat());
 ```
 
-After the code goes through Prettier, you'll end up with the code below:
+After the code goes through Prettier, you’ll end up with the code below:
 
 <!-- prettier-ignore -->
 ```javascript
@@ -197,6 +197,6 @@ Stylelint can format your CSS with `--fix` switch, check the _Linting_ chapter t
 
 Formatting tools complement linting well. They eliminate one source of confusion and make sure your code is formatted in a consistent way.
 
-You'll learn about typing in the next chapter.
+You’ll learn about typing in the next chapter.
 
 T> See the _Automation_ chapter to learn how to automate code formatting.

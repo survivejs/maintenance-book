@@ -17,7 +17,7 @@ Your users will want to report a bug, request a new feature or ask how to use a 
 
 An issue usually contains at least the following data: title, description, labels or tags.
 
-An issue itself can be a feature request, a bug report, or sometimes a support request. It's up to project policies on how to deal with support in particular as discussed later in this chapter.
+An issue itself can be a feature request, a bug report, or sometimes a support request. It’s up to project policies on how to deal with support in particular as discussed later in this chapter.
 
 You can use labels to sort issues. For example, create labels for priorities (0-4 for example), issue types (bug, feature request), and difficulty (0-3 for example). Default GitHub labels “help wanted” and “good first issue” may attract new contributors — there are even sites to show these issues in different projects, like [Up For Grabs](http://up-for-grabs.net/).
 
@@ -69,9 +69,9 @@ To paraphrase Jono Bacon, managing open source projects is like herding cats. Ev
 
 <!-- textlint-enable -->
 
-This nature also affects development. It might be sporadic and sudden. A lot of progress might happen in short time as long as there's interest and then the development might stall for a while until it picks up again. Also the way you manage new contributions affects this as the longer your contributors have to wait, the more frustrated they tend to get.
+This nature also affects development. It might be sporadic and sudden. A lot of progress might happen in short time as long as there’s interest and then the development might stall for a while until it picks up again. Also the way you manage new contributions affects this as the longer your contributors have to wait, the more frustrated they tend to get.
 
-How to manage this situation? There's no one correct way and projects tend to develop models of their own with varying success. One of the best things you can do, however, is to maintain clear goals for the project. Saying **no** is at least as important as saying **yes**.
+How to manage this situation? There’s no one correct way and projects tend to develop models of their own with varying success. One of the best things you can do, however, is to maintain clear goals for the project. Saying **no** is at least as important as saying **yes**.
 
 **Project roadmap** is a more specific description of what the project wants to accomplish in the near and far future. The roadman will energize people to move towards the goals, it will give confidence to the project direction as people know what to expect.
 
@@ -87,4 +87,4 @@ T> The _Documentation_ part of the book digs deeper into these topics.
 
 Designing and maintaining solid development processes is an important part of project maintenance. A good process supports project longevity and encourages people to push it further. A bad process hinders progress and may even make it impossible.
 
-You'll learn about continuous integration in the next chapter. The practice complements process thinking in a technical way.
+You’ll learn about continuous integration in the next chapter. The practice complements process thinking in a technical way.

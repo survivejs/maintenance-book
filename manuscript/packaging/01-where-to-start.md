@@ -8,9 +8,9 @@ To develop your own package or not is a hard decision you have to make, with pro
 
 ## To Consume Packages or to Develop Them
 
-The point of a package manager like npm is to avoid unnecessary development effort. Instead of developing every piece of code yourself, you consume readymade functionality using npm. This isn't without its problems as you have to research and test your options.
+The point of a package manager like npm is to avoid unnecessary development effort. Instead of developing every piece of code yourself, you consume readymade functionality using npm. This isn’t without its problems as you have to research and test your options.
 
-npm ecosystem is vast and it hosts multiple smaller communities, such as AngularJS, Ember, or React. Certain utility libraries, like Lodash, are valuable across these boundaries. npm offers a lot of choice and it's not uncommon to have tens of options available to address your specific problem.
+npm ecosystem is vast and it hosts multiple smaller communities, such as AngularJS, Ember, or React. Certain utility libraries, like Lodash, are valuable across these boundaries. npm offers a lot of choice and it’s not uncommon to have tens of options available to address your specific problem.
 
 When you are confronted with a technical problem, you have at least the following options:
 
@@ -80,7 +80,7 @@ This time pros and cons are more involved as you become more active.
 
 You can also fork the project. This can be done in a few ways:
 
-1. Maintain a private fork that's used only by your projects. In npm terms this could be achieved using **scoping** and you could end up with `@organization/some-package` that contains the modified version. The maintenance cost is lower than when taking over a package because you’ll be the only user of your package.
+1. Maintain a private fork that’s used only by your projects. In npm terms this could be achieved using **scoping** and you could end up with `@organization/some-package` that contains the modified version. The maintenance cost is lower than when taking over a package because you’ll be the only user of your package.
 2. Rename the project while retaining references to the original project to follow common licensing clauses (esp. MIT) and then publish it publicly under a new name. Users of the original project may become yours eventually if it’s no longer maintained or if your fork has more features.
 
 Original licensing can become problematic. This applies to so called copyleft (or viral) licenses, like GPL and stricter AGPL, which put restrictions on the usage. If you fork a project like this, note that the license still applies!
@@ -103,7 +103,7 @@ T> Learn different licensing options by reading [The Legal Side of Open Source](
 
 ## Develop Your Own Package
 
-If there's nothing that fits your purposes you may want to develop on your own package. Sometimes people end up developing their own packages because they aren't aware of the existing options. Discoverability is a real problem given the amount of packages available.
+If there’s nothing that fits your purposes you may want to develop on your own package. Sometimes people end up developing their own packages because they aren’t aware of the existing options. Discoverability is a real problem given the amount of packages available.
 
 One of early stage problems is figuring out a good name for a package. npm root namespace has become crowded and it can be difficult to find a free name. Also, you may have to worry about existing trademarks to avoid problems later on. By skipping this you may have to rename your package later as happened for [Jade which had to rename as Pug](https://github.com/pugjs/pug/issues/2184).
 
@@ -151,7 +151,7 @@ To avoid sharing all your packages in public, npm allows you to maintain private
 
 ## Understanding npm Lookup
 
-npm's lookup algorithm is another aspect that's good to understand. Sometimes this can explain certain errors, and it also leads to good practices, such as preferring local dependencies over global ones. The basic algorithm goes as below:
+npm’s lookup algorithm is another aspect that’s good to understand. Sometimes this can explain certain errors, and it also leads to good practices, such as preferring local dependencies over global ones. The basic algorithm goes as below:
 
 1. If there is _node_modules_ directory, crawl through that.
 1. Check parent directories until the project root is reached. You can check that using `npm root`.
@@ -160,12 +160,12 @@ npm's lookup algorithm is another aspect that's good to understand. Sometimes th
 On a package level, npm resolves to a file as below:
 
 1. Look up _package.json_ of the package.
-1. Get the contents of the `main` field. If it doesn't exist, default to _<package>/index.js_.
+1. Get the contents of the `main` field. If it doesn’t exist, default to _<package>/index.js_.
 1. Resolve to the `main` file.
 
 The general lookup algorithm respects an environment variable `NODE_PATH`. If you are using Unix, you can patch it through `NODE_PATH=./demo:$NODE_PATH`. The call can be included at the beginning of a _package.json_ scripts to tweak `NODE_PATH` temporarily.
 
-W> Installing global packages can lead to surprising behavior. If you have a package installed both globally and if a project happens to contain it, executing associated terminal command (say `webpack`) points to the version of the project. It doesn't work unless the global package exists. Also note that `webpack` in npm script will call a local package if it exists and fallbacks to a global one otherwise.
+W> Installing global packages can lead to surprising behavior. If you have a package installed both globally and if a project happens to contain it, executing associated terminal command (say `webpack`) points to the version of the project. It doesn’t work unless the global package exists. Also note that `webpack` in npm script will call a local package if it exists and fallbacks to a global one otherwise.
 
 T> [app-module-path](https://www.npmjs.com/package/app-module-path) allows you adjust Node module lookup within JavaScript and this can be an alternative to patching `NODE_PATH`.
 
@@ -173,4 +173,4 @@ T> [app-module-path](https://www.npmjs.com/package/app-module-path) allows you a
 
 Before writing your own package, investigate existing packages: you may find that a new package is not required and you can contribute to a thriving one or even use it as is. Even forking an existing package can be a good option that may save you a lot of work.
 
-You'll learn how npm packages are structured in the next chapter.
+You’ll learn how npm packages are structured in the next chapter.

@@ -31,7 +31,9 @@
     "url": "https://github.com/survivejs/maintenance-book/issues"
   },
   "homepage": "https://github.com/survivejs/maintenance-book",
-  "dependencies": {},
+  "dependencies": {
+    "textlint-rule-apostrophe": "^0.1.0"
+  },
   "devDependencies": {
     "check-markdown-links": "^0.1.1",
     "husky": "^0.14.3",

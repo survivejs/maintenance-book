@@ -1,6 +1,6 @@
 # Testing
 
-Tests can be seen as a runnable specification that describes truths about the implementation. Automated testing is a form of risk management and reduces risks related to the project. Manual testing is the other end of the spectrum. It's also the most labor intensive and brittle option.
+Tests can be seen as a runnable specification that describes truths about the implementation. Automated testing is a form of risk management and reduces risks related to the project. Manual testing is the other end of the spectrum. It’s also the most labor intensive and brittle option.
 
 ## What to Verify With Testing
 
@@ -14,7 +14,7 @@ Testing can be used to verify at least the following aspects:
 * What is the quality of the tests?
 * Does the system solve user problems?
 
-You can test both quantitative and qualitative aspects. Qualitative testing is harder as it requires a comparison point, but without tracking quality, such as performance, it's difficult to reach it. If you track how the system is being used and capture **analytics**, you can tell how the users experience the system.
+You can test both quantitative and qualitative aspects. Qualitative testing is harder as it requires a comparison point, but without tracking quality, such as performance, it’s difficult to reach it. If you track how the system is being used and capture **analytics**, you can tell how the users experience the system.
 
 ## Develop the Right System the Right Way
 
@@ -24,11 +24,11 @@ Popular projects put a lot of effort into the façade encountered by their users
 
 ## How Much to Test
 
-Regardless of how much you test, manual testing may still be required, especially if you target multiple platforms. But it's a good goal to minimize the amount of it and even try to eliminate it.
+Regardless of how much you test, manual testing may still be required, especially if you target multiple platforms. But it’s a good goal to minimize the amount of it and even try to eliminate it.
 
-No matter how much you test, problems may still slip through. For this reason, it's good to remember that you get what you measure. If you want performance, you should test against performance. To avoid regressions against downstream projects, you should test against them before publishing changes.
+No matter how much you test, problems may still slip through. For this reason, it’s good to remember that you get what you measure. If you want performance, you should test against performance. To avoid regressions against downstream projects, you should test against them before publishing changes.
 
-Tests come with a cost. Test code is the code you have to maintain. Having more tests isn't always better. Put conscious effort into maintaining good tests instead of many. Fortunately, tests allow refactoring and sometimes finding better ways to implement the desired features can simplify both the implementation and tests.
+Tests come with a cost. Test code is the code you have to maintain. Having more tests isn’t always better. Put conscious effort into maintaining good tests instead of many. Fortunately, tests allow refactoring and sometimes finding better ways to implement the desired features can simplify both the implementation and tests.
 
 ## How to Test Old Projects Without Tests
 
@@ -40,7 +40,7 @@ Specific techniques, such as **snapshot testing** or **approval testing**, allow
 
 ![Test tower](images/test-tower.png)
 
-Mike Cohn popularized [the concept of the test pyramid](https://martinfowler.com/bliki/TestPyramid.html). He split testing into three levels: unit, service, and user interface. The test tower adapted from his and [Forbes Lindesay's work](https://github.com/ForbesLindesay/end-to-end-testing-react-applications) expands on the idea.
+Mike Cohn popularized [the concept of the test pyramid](https://martinfowler.com/bliki/TestPyramid.html). He split testing into three levels: unit, service, and user interface. The test tower adapted from his and [Forbes Lindesay’s work](https://github.com/ForbesLindesay/end-to-end-testing-react-applications) expands on the idea.
 
 Each type of testing provides specific insight to the project. The following sections cover the most common techniques while also discussed a few beyond the tower.
 
@@ -85,17 +85,17 @@ const add = require('./add');
 assert(add(1, 1) === 2);
 ```
 
-If you run `node ./add.test.js`, you shouldn't see any output. Try breaking the test or the code to get an assertion error. A good test runner can pick up the wanted tests and run them like this. [globbing](https://www.npmjs.com/package/glob) is another way.
+If you run `node ./add.test.js`, you shouldn’t see any output. Try breaking the test or the code to get an assertion error. A good test runner can pick up the wanted tests and run them like this. [globbing](https://www.npmjs.com/package/glob) is another way.
 
-People have written a lot of good test runners and frameworks, so you don't have to do this work yourself. [Jest](https://www.npmjs.com/package/jest), [Mocha](https://www.npmjs.com/package/mocha), and [tape](https://www.npmjs.com/package/tape) are decent starting points.
+People have written a lot of good test runners and frameworks, so you don’t have to do this work yourself. [Jest](https://www.npmjs.com/package/jest), [Mocha](https://www.npmjs.com/package/mocha), and [tape](https://www.npmjs.com/package/tape) are decent starting points.
 
-It's good to understand that unit tests cover functionality from the developer perspective. These small assertions can be used to define a low-level API. **Test Driven Development** allows you to shape the implementation as you figure out a proper specification for your API.
+It’s good to understand that unit tests cover functionality from the developer perspective. These small assertions can be used to define a low-level API. **Test Driven Development** allows you to shape the implementation as you figure out a proper specification for your API.
 
 ### Property Based Testing
 
 **Property based testing** asserts specific **invariants** about code. For example, a sorting algorithm should return items sorted in a specific order for example. This fact is invariant and should never change.
 
-When invariants as the sorting one are known, it's possible to generate tests against them. Property based testing can find issues unit testing could miss, but the invariants can be problematic to find.
+When invariants as the sorting one are known, it’s possible to generate tests against them. Property based testing can find issues unit testing could miss, but the invariants can be problematic to find.
 
 To continue the previous example, a property based test could be used to show that `add` is a **commutative** operation. Commutativity means that swapping the parameters should still yield the same result so that the result of `a + b` should equal `b + a`. The idea can be modeled behind an API like this:
 
@@ -122,10 +122,10 @@ function generateNumber() {
 
 If you run the test, it should pass given `add` should be a commutative operation. The same idea can be applied to more complicated scenarios. There are a few improvements that could be made:
 
-* Instead of running a single test, it's possible to run `testProperty` many times with different values. You could model this as `testProperties(<property>, timesToRun)`.
-* Now it generates random values without allowing the user to set the seed value. This is a limitation of JavaScript API. To keep the tests reproducible, it's a good idea to replace `Math.random` with an alternative that allows you to control the seed.
+* Instead of running a single test, it’s possible to run `testProperty` many times with different values. You could model this as `testProperties(<property>, timesToRun)`.
+* Now it generates random values without allowing the user to set the seed value. This is a limitation of JavaScript API. To keep the tests reproducible, it’s a good idea to replace `Math.random` with an alternative that allows you to control the seed.
 * `testProperty` and `generateNumber` should be pushed elsewhere. Given there are existing implementations for both in npm, the custom code could be replaced entirely.
-* If the `add` function contained type information, it's possible to extract that and then map the types to generators. Doing this would keep the test code slightly neater if you have multiple tests as then you would have to define the mapping between types and generators in one place while individual tests could skip the definition problem.
+* If the `add` function contained type information, it’s possible to extract that and then map the types to generators. Doing this would keep the test code slightly neater if you have multiple tests as then you would have to define the mapping between types and generators in one place while individual tests could skip the definition problem.
 
 Good property testing tools like [JSVerify](https://jsverify.github.io/) or [testcheck-js](http://leebyron.com/testcheck-js/) are able to shrink a failure so you can fix it. The biggest benefit of the technique it can help to discover boundary cases to repair.
 
@@ -153,7 +153,7 @@ T> [dont-break](https://www.npmjs.com/package/dont-break) is a good example of a
 
 Given you get what you measure, **performance testing** is valuable for performant projects. Packages like [k6](https://k6.io/), [Benchmark.js](https://benchmarkjs.com/) and [matcha](https://www.npmjs.com/package/matcha) can be helpful here. You can benchmark your implementation against competing libraries or an older version of yours.
 
-Ideally, you should store the old results somewhere and keep the runtime environment the same across separate runs. If the environment varies between runs, benchmarking results aren't comparable. Assuming you are using a conventional **Continuous Integration** (CI) server without storing the performance data somewhere in between and cannot control the environment, you can run both the older and the current version of the system during the same run to detect performance regressions.
+Ideally, you should store the old results somewhere and keep the runtime environment the same across separate runs. If the environment varies between runs, benchmarking results aren’t comparable. Assuming you are using a conventional **Continuous Integration** (CI) server without storing the performance data somewhere in between and cannot control the environment, you can run both the older and the current version of the system during the same run to detect performance regressions.
 
 Performance testing also yields insight into different environments, and you can test against different versions of Node for example. The same point is true for other forms of testing. If possible, run tests on a CI environment to capture more information.
 
@@ -167,25 +167,25 @@ To make sure your npm package paths (`main`, `module`, i.e.) work, you can valid
 
 ### Code Coverage
 
-**Code coverage** tells you how much of the code is covered by tests. The technique can reveal parts of the code that aren't being tested. Those parts have unspecified behavior and as a result may contain issues. Code coverage doesn't tell anything about the quality of the tests, but it can be used to discover places to test.
+**Code coverage** tells you how much of the code is covered by tests. The technique can reveal parts of the code that aren’t being tested. Those parts have unspecified behavior and as a result may contain issues. Code coverage doesn’t tell anything about the quality of the tests, but it can be used to discover places to test.
 
 To measure code coverage, you have to instrument the code first. You can find [Istanbul](https://www.npmjs.com/package/istanbul) integration for many test frameworks and Jest includes it by default. [babel-plugin-istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) comes in handy if you are using Babel.
 
 [Codecov](https://codecov.io/) and [Coveralls](https://coveralls.io/) hook into the coverage data and provide a badge to include in your README. They collect coverage for every pull request and post a comment explaining how a pull request would affect project coverage as you should maintain the current coverage at a minimum and ideally improve it.
 
-T> There's a [Codecov extension](https://chrome.google.com/webstore/detail/codecov-extension/keefkhehidemnokodkdkejapdgfjmijf) for Chrome that allows you to see code coverage through GitHub user interface.
+T> There’s a [Codecov extension](https://chrome.google.com/webstore/detail/codecov-extension/keefkhehidemnokodkdkejapdgfjmijf) for Chrome that allows you to see code coverage through GitHub user interface.
 
 T> Especially big and popular projects, such as [Esprima](http://esprima.org/test/ci.html), test their work against downstream, the other projects that consume their code. Doing this allows them to uncover bugs their own test suite fails to capture.
 
 ### Code Complexity
 
-As code evolves, it tends to become more complex. Dependencies form and the code will likely end up with hot spots that are fault prone. Understanding where those spots exist allows you work where it matters. The same idea applies to performance optimization. If you know what portion of your code contributes most to performance, you know it's worth optimizing.
+As code evolves, it tends to become more complex. Dependencies form and the code will likely end up with hot spots that are fault prone. Understanding where those spots exist allows you work where it matters. The same idea applies to performance optimization. If you know what portion of your code contributes most to performance, you know it’s worth optimizing.
 
 Tools like [complexity-report](https://www.npmjs.com/package/complexity-report), [plato](https://www.npmjs.com/package/plato), and [jscomplex](https://www.npmjs.com/package/jscomplex) give this type of output. [ESLint has specific checks for complexity](http://eslint.org/docs/rules/complexity) [Iroh](https://maierfelix.github.io/Iroh/) performs runtime checks.
 
 ### Smoke Testing
 
-The idea of _smoke testing_ is to verify that vital functionality works in production. The purpose of these tests is to give high level idea of whether the application might be working or not. They are light to write and can be a starting point if the codebase doesn't have any tests yet. You could for instance assert that the application runs. This can be done for example by logging in and out of the application after deployment to production.
+The idea of _smoke testing_ is to verify that vital functionality works in production. The purpose of these tests is to give high level idea of whether the application might be working or not. They are light to write and can be a starting point if the codebase doesn’t have any tests yet. You could for instance assert that the application runs. This can be done for example by logging in and out of the application after deployment to production.
 
 ### Code Size
 
@@ -265,11 +265,11 @@ T> To find out why your library is bigger than expected, run `npm run size -- --
 
 ## Conclusion
 
-Testing is a complex topic worth understanding. Testing isn't about developing faster but rather developing in a sustainable way. Tests show their value especially when multiple people work on the same project. They support the development process and allow the team to move faster while avoiding breakage. And even if breakage happens, good practices improve the process to avoid the problems in the future.
+Testing is a complex topic worth understanding. Testing isn’t about developing faster but rather developing in a sustainable way. Tests show their value especially when multiple people work on the same project. They support the development process and allow the team to move faster while avoiding breakage. And even if breakage happens, good practices improve the process to avoid the problems in the future.
 
-The biggest question is what tests to write and when. It's good to remember testing is a form of risk management. Especially when prototyping, tests won't provide their maximum value since at this stage you are prepared to throw the code away. But if you are developing long term, the absence begins to cause pain as new requirements appear and the implementation has to evolve to fit the new needs.
+The biggest question is what tests to write and when. It’s good to remember testing is a form of risk management. Especially when prototyping, tests won’t provide their maximum value since at this stage you are prepared to throw the code away. But if you are developing long term, the absence begins to cause pain as new requirements appear and the implementation has to evolve to fit the new needs.
 
-You'll learn about dependency management in the next chapter.
+You’ll learn about dependency management in the next chapter.
 
 T> [An Overview of JavaScript Testing in 2017](https://medium.com/powtoon-engineering/a-complete-guide-to-testing-javascript-in-2017-a217b4cd5a2a) lists current testing tools using a similar categorization.
 

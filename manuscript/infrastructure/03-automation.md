@@ -2,11 +2,11 @@
 
 Everything that can be done by a machine, will eventually be done by a machine. One of the earliest "computers", [the Jacquard machine](https://en.wikipedia.org/wiki/Jacquard_loom), achieved this for manufacturing complex textiles. It displaced human effort this way and pushed the difficult and monotonous task to a machine. This is the whole point of automation.
 
-The same idea applies to software projects. Why to repeatedly do something that you can have the machine do for you? Or why to do something the hard way when it's possible to do it in an easier way while having the machine to assist you?
+The same idea applies to software projects. Why to repeatedly do something that you can have the machine do for you? Or why to do something the hard way when it’s possible to do it in an easier way while having the machine to assist you?
 
 ## Git Commit Messages
 
-Depending on the developer and the development style, the quality of Git commit messages can vary. It's important data given it may be used in the future as you have to figure out why some code was written the way it was. The quality of commit messages becomes important when more people get involved with the project.
+Depending on the developer and the development style, the quality of Git commit messages can vary. It’s important data given it may be used in the future as you have to figure out why some code was written the way it was. The quality of commit messages becomes important when more people get involved with the project.
 
 ### Commit Message Conventions
 
@@ -14,7 +14,7 @@ Especially [AngularJS commit message convention](https://docs.google.com/documen
 
 The idea is to provide context to a commit. This enables effective filtering of Git log and it keeps the log tidy. Given the convention is standard, it has lead to tooling that can for example generate change logs for releases or even handle whole release process for you.
 
-To make it easier to follow the aforementioned conventions, [commitizen](https://www.npmjs.com/package/commitizen) gives a specific command, `git cz`. It asks you a series of questions and then fills the message with the correct information. This way you don't have to remember the specification in detail and you will gradually learn it.
+To make it easier to follow the aforementioned conventions, [commitizen](https://www.npmjs.com/package/commitizen) gives a specific command, `git cz`. It asks you a series of questions and then fills the message with the correct information. This way you don’t have to remember the specification in detail and you will gradually learn it.
 
 T> Internally commitizen relies upon [commitlint](https://github.com/marionebl/commitlint). commitlint provides a tool you can use to validate messages. commitizen wraps it in a higher level interface.
 
@@ -69,9 +69,9 @@ scope: {
 
 Messages can be descriptive like this when they capture a big change. During development smaller messages representing meaningful changes are enough. Messages as the one above can be written as the work gets merged to the release branch of the project.
 
-The advantage of doing this is that it makes it easier for other developers to tell what's going on. Some of the information can be reused for documentation purposes in project main documentation and change logs.
+The advantage of doing this is that it makes it easier for other developers to tell what’s going on. Some of the information can be reused for documentation purposes in project main documentation and change logs.
 
-T> It's a common convention to write commit titles in **imperative** tense. The main reason is that this keeps the results of `git diff` more understandable to other developers. [Chris Beams explains the message idea in detail in his blog](https://chris.beams.io/posts/git-commit/).
+T> It’s a common convention to write commit titles in **imperative** tense. The main reason is that this keeps the results of `git diff` more understandable to other developers. [Chris Beams explains the message idea in detail in his blog](https://chris.beams.io/posts/git-commit/).
 
 ## Semantic Release
 
@@ -121,7 +121,7 @@ Git hooks can be used in a JavaScript project with a package such as [husky](htt
 
 The package will do all the wiring required and run project tests before pushing to the repository.
 
-T> Note that if you have set up Git hooks manually, it might not work! It's better to let husky control the Git side entirely.
+T> Note that if you have set up Git hooks manually, it might not work! It’s better to let husky control the Git side entirely.
 
 ## Automating Linting With lint-staged
 

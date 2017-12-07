@@ -8,25 +8,25 @@ Often projects contain more files than are required to execute them. To keep pac
 
 Most of the available npm packages are small and include only a couple of files:
 
-* _index.js_ - On small projects, it's enough to have the code at the root. On larger ones, you likely want to start splitting it up further and push it below a directory. The directory in turn can be compiled in different ways depending on which users you target.
+* _index.js_ - On small projects, it’s enough to have the code at the root. On larger ones, you likely want to start splitting it up further and push it below a directory. The directory in turn can be compiled in different ways depending on which users you target.
 * _package.json_ - npm metadata in JSON format.
-* _README.md_ - README is the most important document of your project. It's written in Markdown format and provides an overview. For smallest projects, the full documentation can fit there. It's shown on the package page at _npmjs.com_ and is a good place for "selling" the project for a potential user.
+* _README.md_ - README is the most important document of your project. It’s written in Markdown format and provides an overview. For smallest projects, the full documentation can fit there. It’s shown on the package page at _npmjs.com_ and is a good place for "selling" the project for a potential user.
 * _LICENSE_ - You can include licensing information within your project. You should point to the license by name from _package.json_ as otherwise, npm gives a warning. If you are using a custom license, you can link to it instead. In commercial projects, you should to set `"private": true` to avoid pushing your work to public inadvertently.
 
 In larger projects, you often find the following files that should be excluded from an npm distribution:
 
 * _CONTRIBUTING.md_ - A guide for potential contributors describing how the code should be developed.
-* _CHANGELOG.md_ - This document describes major changes per version. If you do significant API changes, it can be a good idea to cover them here. It's possible to generate the file using Git commit history, provided you write nice enough commits.
+* _CHANGELOG.md_ - This document describes major changes per version. If you do significant API changes, it can be a good idea to cover them here. It’s possible to generate the file using Git commit history, provided you write nice enough commits.
 * _.travis.yml_ - [Travis CI](https://travis-ci.org/) is a popular continuous integration platform free for open source projects. You can run the tests of your package over multiple systems using it.
-* _.gitignore_ - Ignore patterns for Git, i.e., which files shouldn't go under version control. You can ignore npm distribution files here, so they don't clutter your repository.
-* _.npmignore_ - Ignore patterns for npm describe which files shouldn't go to your distribution version. A good alternative is to use the [files](https://docs.npmjs.com/files/package.json#files) field at _package.json_. It allows you to maintain a whitelist of files to include into your distribution version.
+* _.gitignore_ - Ignore patterns for Git, i.e., which files shouldn’t go under version control. You can ignore npm distribution files here, so they don’t clutter your repository.
+* _.npmignore_ - Ignore patterns for npm describe which files shouldn’t go to your distribution version. A good alternative is to use the [files](https://docs.npmjs.com/files/package.json#files) field at _package.json_. It allows you to maintain a whitelist of files to include into your distribution version.
 * _.eslintignore_ - Ignore patterns for ESLint. Again, tool specific.
 * _.eslintrc_ - Linting rules.
 * _webpack.config.js_ - Depending on the build tool you are using, you likely have configuration related to it.
 
 Also, you likely have separate directories for the source, tests, demos, documentation, and so on.
 
-T> To decrease the size of your dependencies, consider using a tool like [package-config-checker](https://www.npmjs.com/package/package-config-checker). It can pinpoint packages not using the `files` field correctly. Once you know which ones haven't set it, you can consider making Pull Requests (PRs) to those projects.
+T> To decrease the size of your dependencies, consider using a tool like [package-config-checker](https://www.npmjs.com/package/package-config-checker). It can pinpoint packages not using the `files` field correctly. Once you know which ones haven’t set it, you can consider making Pull Requests (PRs) to those projects.
 
 ## Understanding _package.json_
 
@@ -147,7 +147,7 @@ The entry points describe how the package should resolve to your source when use
 
 ### Dependencies
 
-A package may have different level dependencies. Some will be used only during development, some should be installed to use the package itself. If _peer dependencies_ are used, then it's up to the user to decide which version of a given package to use. The definition guarantees that the package should work within the given version range.
+A package may have different level dependencies. Some will be used only during development, some should be installed to use the package itself. If _peer dependencies_ are used, then it’s up to the user to decide which version of a given package to use. The definition guarantees that the package should work within the given version range.
 
 **package.json**
 
@@ -173,10 +173,10 @@ A package may have different level dependencies. Some will be used only during d
 An npm package comes with different types of dependencies:
 
 * `dependencies` are the direct dependencies a package needs to work. On application level you could list the dependencies of the application code itself. This excludes dependencies needed to build it.
-* `devDependencies` are dependencies you need to develop the package. They include packages related to building, testing, and similar tasks. When you install a package from npm, they won't be installed by default. If you run `npm install` on a project locally, npm will install them.
+* `devDependencies` are dependencies you need to develop the package. They include packages related to building, testing, and similar tasks. When you install a package from npm, they won’t be installed by default. If you run `npm install` on a project locally, npm will install them.
 * `peerDependencies` are usually given as version ranges. The idea is to allow the user to decide the exact versions of these dependencies without fixing it to a specific one. The behavior was changed in npm 3. Before that npm install peer dependencies automatically. Now you have to install and include them to your project explicitly.
 * `bundledDependencies` are the dependencies that are bundled with the package itself. They are used rarely, though.
-* `optionalDependencies` are the dependencies that the user can install but aren't required for the package to work. This is another rare field.
+* `optionalDependencies` are the dependencies that the user can install but aren’t required for the package to work. This is another rare field.
 
 ### Links
 
@@ -198,30 +198,30 @@ A package should link to its repository, homepage, and issue tracker. The fields
 
 ### Other Fields
 
-As you can see, _package.json_ can contain a lot of information. You can attach non-npm specific metadata there that can be used by tooling. Given this can bloat _package.json_, it's preferable to keep metadata in files of their own.
+As you can see, _package.json_ can contain a lot of information. You can attach non-npm specific metadata there that can be used by tooling. Given this can bloat _package.json_, it’s preferable to keep metadata in files of their own.
 
-T> JSON doesn't support comments even though I'm using them above. There are extended notations, such as [Hjson](http://hjson.org/), that do.
+T> JSON doesn’t support comments even though I’m using them above. There are extended notations, such as [Hjson](http://hjson.org/), that do.
 
 ## What Files to Publish
 
-Even though a project can contain a lot of files, not all should be published. Besides wasting bandwidth, this can leak personal files to a public registry. This is why it's a good idea to maintain a [files](https://docs.npmjs.com/files/package.json#files) array at _package.json_ and enumerate which files and directories you want to publish.
+Even though a project can contain a lot of files, not all should be published. Besides wasting bandwidth, this can leak personal files to a public registry. This is why it’s a good idea to maintain a [files](https://docs.npmjs.com/files/package.json#files) array at _package.json_ and enumerate which files and directories you want to publish.
 
-You can't find an official recommendation on what files to publish. That said, there are points to consider as [discussed in Stack Overflow](https://stackoverflow.com/questions/25124844/should-i-npmignore-my-tests).
+You can’t find an official recommendation on what files to publish. That said, there are points to consider as [discussed in Stack Overflow](https://stackoverflow.com/questions/25124844/should-i-npmignore-my-tests).
 
 At a minimum, you should distribute the source code needed to run the package. If you have code written using the ES6 standard, you should compile the code so that it does not lose the ES6 module definitions while everything else is converted to ES5. For the tooling to pick it up, you should point to this version of code through _package.json_ `module` field.
 
-You should point package `main` to a fully compiled version that's compatible with Node.
+You should point package `main` to a fully compiled version that’s compatible with Node.
 
-Besides the source, you can consider distributing package _README.md_ and _LICENSE_. Any metadata that's required by third-party systems, like Travis, can be safely skipped. Full documentation of the package doesn't need to be included as you can point to the package homepage through its metadata instead.
+Besides the source, you can consider distributing package _README.md_ and _LICENSE_. Any metadata that’s required by third-party systems, like Travis, can be safely skipped. Full documentation of the package doesn’t need to be included as you can point to the package homepage through its metadata instead.
 
-W> Even though it's possible to tell npm what to exclude from `files` through `!src/*.test.js` kind of definitions, [using negation patterns is not recommended](https://github.com/npm/npm/wiki/Files-and-Ignores#details). Instead, you should use _.npmignore_ and include `src/*.test.js` kind of pattern there.
+W> Even though it’s possible to tell npm what to exclude from `files` through `!src/*.test.js` kind of definitions, [using negation patterns is not recommended](https://github.com/npm/npm/wiki/Files-and-Ignores#details). Instead, you should use _.npmignore_ and include `src/*.test.js` kind of pattern there.
 
 {pagebreak}
 
 ## Conclusion
 
-An npm package contains at least metadata and source. Many of the files that are relevant for development can be skipped in a distribution build to keep downloads fast. Although that's a small issue, it's still good to consider as it doesn't take much effort to filter the files.
+An npm package contains at least metadata and source. Many of the files that are relevant for development can be skipped in a distribution build to keep downloads fast. Although that’s a small issue, it’s still good to consider as it doesn’t take much effort to filter the files.
 
-You'll learn how to publish npm packages in the next chapter.
+You’ll learn how to publish npm packages in the next chapter.
 
 T> As browsers have evolved to support new features of JavaScript, Node is still catching up. This brings the problem of polyfilling. Ideally we would author code in modern features. [Mikeal Rogers states](https://medium.com/@mikeal/modern-modules-d99b6867b8f1) that we should polyfill for older Node and not let it hold the ecosystem back.

@@ -53,7 +53,7 @@ Let’s install ESLint with the Airbnb config:
 npm install eslint eslint-config-airbnb-base eslint-plugin-import --save-dev
 ```
 
-Update your _package.json_ as follows to run ESLint against the project. The setup will fix any errors it's able to fix thanks to the `--fix` flag:
+Update your _package.json_ as follows to run ESLint against the project. The setup will fix any errors it’s able to fix thanks to the `--fix` flag:
 
 ```json
 {
@@ -125,9 +125,9 @@ T> [Use Mrm](https://github.com/sapegin/mrm-tasks/tree/master/packages/mrm-task-
 
 ### ESLint Configuration Formats
 
-_.eslintrc_ supports [JSON5](http://json5.org/) format by default. It's a proposed extension to JSON that enables features like commenting and trailing commas.
+_.eslintrc_ supports [JSON5](http://json5.org/) format by default. It’s a proposed extension to JSON that enables features like commenting and trailing commas.
 
-ESLint configuration can be written in other formats, such as YAML or JavaScript, as well. JSON5 is a good default, though, given it's a good format for other tools to consume.
+ESLint configuration can be written in other formats, such as YAML or JavaScript, as well. JSON5 is a good default, though, given it’s a good format for other tools to consume.
 
 ## Linting TypeScript With TSLint
 
@@ -213,6 +213,6 @@ T> [Use Mrm](https://github.com/sapegin/mrm-tasks/tree/master/packages/mrm-task-
 
 Code style is an important aspect of code quality and you can enforce code style through tooling. Doing so forces contributors to code using the same standard and this also keeps the source consistent to read. Pushing code style to configuration also avoids arguments about which conventions to apply.
 
-You'll learn about formatting in the next chapter.
+You’ll learn about formatting in the next chapter.
 
 T> See the _Automation_ chapter to learn how to automate linting.
