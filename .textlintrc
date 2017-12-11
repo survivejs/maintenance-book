@@ -86,6 +86,8 @@
         ["auto[- ]?format", "autoformat"],
         ["auto[- ]?fix", "autofix"],
         ["auto[- ]?fixing", "autofixing"],
+        ["bug[- ]?fix(es?)", "bugfix$1"],
+        ["lock[- ]?file(s?)", "lockfile$1"],
         ["name[- ]space(s?)", "namespace$1"],
         ["tree-?shaking", "tree shaking"],
         ["css-?in-?js", "CSS in JS"],

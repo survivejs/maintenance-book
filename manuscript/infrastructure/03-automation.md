@@ -193,7 +193,7 @@ https://www.npmjs.com/package/gh-lint
 
 For example:
 
-* Require to update the npm lock file every time _package.json_ changes.
+* Require to update the npm lockfile every time _package.json_ changes.
 * Require new tests when new code is added.
 * Require a change log entry.
 * Check for test shortcuts like `it.only` or `describe.only`.
