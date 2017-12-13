@@ -12,6 +12,8 @@ The examples below is an annotated part of _package.json_ from the SurviveJS [Re
 
 W> npm doesn’t support comments in JSON even though we’re using them below. Some tools use extended notations, such as [JSON5](http://json5.org/), that do.
 
+{pagebreak}
+
 ### Description Fields
 
 The description fields describe who created the package, what it does, search keywords, and more.
