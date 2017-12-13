@@ -10,6 +10,8 @@ All packages come with a _package.json_ file that contains package metadata, lik
 
 The examples below is an annotated part of _package.json_ from the SurviveJS [React component boilerplate](https://github.com/survivejs/react-component-boilerplate).
 
+W> npm doesn’t support comments in JSON even though we’re using them below. Some tools use extended notations, such as [JSON5](http://json5.org/), that do.
+
 ### Description Fields
 
 The description fields describe who created the package, what it does, search keywords, and more.
@@ -219,8 +221,6 @@ T> See [The Legal Side of Open Source](https://opensource.guide/legal/) and [Ope
 
 As you can see, _package.json_ can contain a lot of information. You can attach non-npm specific metadata there that can be used by tooling. Given this can bloat _package.json_, it’s preferable to keep metadata in files of their own.
 
-W> JSON doesn’t support comments even though I’m using them above. There are extended notations, such as [JSON5](http://json5.org/), that do.
-
 ## What Files to Publish
 
 Even though a project can contain a lot of files, not all should be published. Besides wasting bandwidth, this can leak sensitive files to a public registry.
@@ -231,7 +231,7 @@ Most of the available npm packages are small and include only a couple of files:
 
 * Entry point, like _index.js_.
 * _package.json_ - package metadata.
-* _README_ - it’s shown on the package page at _npmjs.com_ and is a good place for “selling” the project for a potential user. See the *README* chapter for details.
+* _README_ - it’s shown on the package page at _npmjs.com_ and is a good place for “selling” the project for a potential user. See the _README_ chapter for details.
 * _CHANGELOG_, _CHANGES_ or _HISTORY_ - describe changes for each package version. See _Change Logs_ chapter for details.
 * _LICENSE_ or _LICENCE_ - license of your package. You should point to the license by name from _package.json_.
 
