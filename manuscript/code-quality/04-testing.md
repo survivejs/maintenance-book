@@ -269,8 +269,8 @@ Testing is a complex topic worth understanding. Testing isn’t about developing
 
 The biggest question is what tests to write and when. It’s good to remember testing is a form of risk management. Especially when prototyping, tests won’t provide their maximum value since at this stage you are prepared to throw the code away. But if you are developing long term, the absence begins to cause pain as new requirements appear and the implementation has to evolve to fit the new needs.
 
-You’ll learn about dependency management in the next chapter.
-
 T> [An Overview of JavaScript Testing in 2017](https://medium.com/powtoon-engineering/a-complete-guide-to-testing-javascript-in-2017-a217b4cd5a2a) lists current testing tools using a similar categorization.
 
 T> [JavaScript test automation list](https://github.com/atinfo/awesome-test-automation/blob/master/javascript-test-automation.md) is another good source for tools.
+
+T> There’s more to code quality than the topics covered in this part. Books like Code Complete by Steve McConnell and Clean Code by Robert Martin give further insight to the topic.

@@ -11,13 +11,13 @@ packaging/02-anatomy.md
 packaging/03-publishing.md
 packaging/04-building.md
 packaging/05-standalone-builds.md
+packaging/06-managing-dependencies.md
 
 05-Code-Quality.md
 code-quality/01-linting.md
 code-quality/02-code-formatting.md
 code-quality/03-typing.md
 code-quality/04-testing.md
-code-quality/05-dependencies.md
 
 06-Infrastructure.md
 infrastructure/01-processes.md

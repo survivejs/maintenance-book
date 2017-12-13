@@ -81,3 +81,5 @@ T> You can achieve a similar result with other tools as well. The specifics will
 ## Conclusion
 
 Generating standalone builds is more common for application purposes than for packaging. Especially popular packages tend to have standalone builds and it’s common to find them both in non-minified (`.js`) and minified (`.min.js`) formats.
+
+You’ll learn how to manage dependencies in the next chapter.

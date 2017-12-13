@@ -1,4 +1,4 @@
-# Dependency Management
+# Managing Dependencies
 
 Keeping dependencies updated is important to have the latest bugfixes and security updates, but it needs a lot of work: once in a while you need to check which packages have new versions and how to migrate, sometimes you have to rewrite parts of your code. Bigger projects may provide [codemods](https://github.com/reactjs/react-codemod) that can perform the required changes for you. Or they can deprecate a feature with a warning message, giving you time to migrate before the feature is completely removed from the package.
 
@@ -49,5 +49,3 @@ T> Check out the [npm semver calculator](https://semver.npmjs.com/) to better un
 ## Conclusion
 
 Managing dependencies is a necessary part of package maintenance. Especially having good tests in place helps in the process and makes upgrades less painful. If you make bigger changes, it can be a good idea to publish **pre-release** versions so that the users have a chance to test the upcoming code against their projects.
-
-T> There’s more to code quality than the topics covered in this part. Books like Code Complete by Steve McConnell and Clean Code by Robert Martin give further insight to the topic.
