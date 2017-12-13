@@ -47,6 +47,8 @@ The description fields describe who created the package, what it does, search ke
 }
 ```
 
+{pagebreak}
+
 ### Scripts
 
 npm can be used as a task runner through `npm run` command. Running the command shows all available scripts. The scripts are commonly used for different build tasks.
