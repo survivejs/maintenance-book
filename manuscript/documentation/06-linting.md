@@ -123,7 +123,7 @@ Create a config file, `.prettierrc`:
   "printWidth": 68,
   "singleQuote": true,
   "trailingComma": "es5",
-  "proseWrap": false
+  "proseWrap": "never"
 }
 ```
 
@@ -135,7 +135,7 @@ If you’re using Prettier to format your code, you may want to define different
   "singleQuote": true,
   "trailingComma": "es5",
   "useTabs": true,
-  "proseWrap": false,
+  "proseWrap": "never",
   "overrides": [
     {
       "files": "*.md",

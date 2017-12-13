@@ -39,7 +39,7 @@
     "husky": "^0.14.3",
     "leanpub-cli": "^0.2.0",
     "markdown-doctest": "^0.9.1",
-    "prettier": "^1.8.2",
+    "prettier": "^1.9.2",
     "proselint": "^0.1.7",
     "remark-cli": "^4.0.0",
     "remark-lint": "^6.0.1",
