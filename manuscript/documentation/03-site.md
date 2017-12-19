@@ -14,6 +14,8 @@ There are countless number of tools to make a site — look at the list of [top 
 
 Many open source projects’ sites are built with the [JAMstack](https://jamstack.org/): static HTML, generated from Markdown content, and, possibly, data from different APIs. [It’s convenient](https://jamstack.org/best-practices/) because you don’t need any backend or a database and can use any hosting, and some of them are free for open source projects.
 
+{pagebreak}
+
 ### Docusaurus
 
 [Docusaurus](https://docusaurus.io/) is static site generator that was made for open source sites. It’s React-based, supports localizations, versioning, blog and has Algolia documentation search integration.
@@ -41,6 +43,8 @@ Now you can run a dev server:
 cd website
 npm run start
 ```
+
+{pagebreak}
 
 And open `http://localhost:3000` in your browser:
 
