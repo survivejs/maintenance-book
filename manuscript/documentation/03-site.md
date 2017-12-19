@@ -14,6 +14,40 @@ There are countless number of tools to make a site — look at the list of [top 
 
 Many open source projects’ sites are built with the [JAMstack](https://jamstack.org/): static HTML, generated from Markdown content, and, possibly, data from different APIs. [It’s convenient](https://jamstack.org/best-practices/) because you don’t need any backend or a database and can use any hosting, and some of them are free for open source projects.
 
+### Docusaurus
+
+[Docusaurus](https://docusaurus.io/) is static site generator that was made for open source sites. It’s React-based, supports localizations, versioning, blog and has Algolia documentation search integration.
+
+### Setting Up Docusaurus
+
+First run:
+
+```bash
+npx docusaurus-init
+```
+
+This command will create a basic configuration for Docusaurus in _website_ and folders with example documentation and a blog. The _website_ has its own _package.json_ and npm scripts to run and build your new site.
+
+Then tweak example files to your needs:
+
+1. Move your Markdown documentation to the _docs_ folder.
+2. [Edit _website/siteConfig.js_](https://docusaurus.io/docs/en/site-config.html) as you wish. It defines things like site title, logo, menu links and colors.
+3. Edit *website/core/Footer.js* as you wish. It’s a React component that is used to render the footer of your site with external links, like GitHub, Twitter or Gitter.
+4. Edit *website/pages/index.js* as you wish. This is your site’s index page.
+
+Now you can run a dev server:
+
+```bash
+cd website
+npm run start
+```
+
+And open `http://localhost:3000` in your browser:
+
+![Docusaurus](images/docusaurus.png)
+
+Even with minimal setup you can create a good-looking site. And later you can customize styles and layout as you like.
+
 ### Jekyll
 
 [Jekyll](https://jekyllrb.com/) is a popular Ruby-based static site generator.
