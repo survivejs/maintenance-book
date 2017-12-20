@@ -53,7 +53,9 @@ Let’s install ESLint with the Airbnb config:
 npm install eslint eslint-config-airbnb-base eslint-plugin-import --save-dev
 ```
 
-Update your _package.json_ as follows to run ESLint against the project. The setup will fix any errors it’s able to fix thanks to the `--fix` flag:
+W> eslint-plugin-import is a peer dependency of eslint-config-airbnb-base, you need to install it to use the Airbnb preset.
+
+Add a new script to your _package.json_.
 
 ```json
 {
@@ -62,6 +64,8 @@ Update your _package.json_ as follows to run ESLint against the project. The set
   }
 }
 ```
+
+The `--fix` flag tells ESLint to fix problems automatically [if it can](https://eslint.org/docs/rules/).
 
 Create a config file, _.eslintrc_:
 
@@ -117,7 +121,7 @@ You may need to tweak your _.eslintrc_ according to your project needs:
 
 See [ESLint docs on configuring](http://eslint.org/docs/user-guide/configuring) for more information.
 
-T> To get most value out of linting tools during development, make sure you have installed related editor plugins. This way you can get feedback realtime as you develop and can spot potential issues earlier.
+T> To get most value out of linting tools during development, make sure you have installed editor plugins. This way you can get feedback realtime as you develop and can spot potential issues earlier.
 
 T> The _Customizing ESLint_ appendix discusses how to get more out of ESLint.
 
@@ -125,9 +129,9 @@ T> [Use Mrm](https://github.com/sapegin/mrm-tasks/tree/master/packages/mrm-task-
 
 ### ESLint Configuration Formats
 
-_.eslintrc_ supports [JSON5](http://json5.org/) format by default. It’s a proposed extension to JSON that enables features like commenting and trailing commas.
+_.eslintrc_ supports [JSON5](http://json5.org/) format by default. It’s a proposed extension to JSON that enables features like comments and trailing commas.
 
-ESLint configuration can be written in other formats, such as YAML or JavaScript, as well. JSON5 is a good default, though, given it’s a good format for other tools to consume.
+ESLint supports other formats of config files, such as YAML or JavaScript. JSON5 is a good choice, because other tools can modify such files.
 
 ## Linting TypeScript With TSLint
 
