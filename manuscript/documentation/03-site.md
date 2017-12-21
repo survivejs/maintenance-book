@@ -20,7 +20,7 @@ Many open source projects’ sites are built with the [JAMstack](https://jamstac
 
 [Docusaurus](https://docusaurus.io/) is static site generator that was made for open source sites. It’s React-based, supports localizations, versioning, blog and has Algolia documentation search integration.
 
-### Setting Up Docusaurus
+#### Setting Up Docusaurus
 
 First run:
 
