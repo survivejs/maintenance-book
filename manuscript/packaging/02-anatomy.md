@@ -134,13 +134,7 @@ On small projects, it’s enough to have all code in `index.js` in the root fold
 
 ### Dependencies
 
-An npm package can have different types of dependencies:
-
-* `dependencies` are the direct dependencies a package needs to work. On application level you could list the dependencies of the application code itself. This excludes dependencies needed to build it.
-* `devDependencies` are dependencies you need to develop the package. They include packages related to building, testing, and similar tasks. When you install a package from npm, they won’t be installed by default. If you run `npm install` on a project locally, npm will install them.
-* `peerDependencies` are usually given as version ranges. The idea is to allow the user to decide the exact versions of these dependencies without locking them to specific ones. The behavior was changed in npm 3. Before that npm install peer dependencies automatically. Now you have to install and include them to your project explicitly.
-* `bundledDependencies` are the dependencies that are bundled with the package itself. They are used rarely, though.
-* `optionalDependencies` are the dependencies that the user can install but aren’t required for the package to work. This is another rare field.
+An npm package can have different types of dependencies. We discuss them in the _Types of Dependencies_ section.
 
 **package.json**
 
@@ -157,8 +151,6 @@ An npm package can have different types of dependencies:
   },
 
   /* Package peer dependencies. The consumer chooses exact versions. */
-  /* To include RC versions to the range, consider */
-  /* using a pattern such as ^4.0.0-0 */
   "peerDependencies": {
     "lodash": ">= 3.5.0 < 4.0.0",
     "react": ">= 0.14.0 < 17.0.0"

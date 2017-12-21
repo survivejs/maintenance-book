@@ -56,27 +56,6 @@ To consume the test version, your users have to use `npm install <your package n
 
 T> [npm link](https://docs.npmjs.com/cli/link) allows you to link a package as a globally available symbolic link. Node resolves to the linked version unless local `node_modules` exists. Use `npm unlink` or `npm unlink <package>` to remove the link.
 
-## Version Ranges
-
-npm supports multiple version ranges as listed below:
-
-* `~` - Tilde matches only patch versions. For example, `~1.2` would be equal to `1.2.x`.
-* `^` - Caret is the default you get using `--save` or `--save-dev`. It matches minor versions, and this means `^0.2.0` would be equal to `0.2.x`.
-* `*` - Asterisk matches major releases, and it’s the most dangerous of the ranges. Using this recklessly can easily break your project in the future.
-* `>= 1.3.0 < 2.0.0` - Ranges between versions come in handy with `peerDependencies`.
-
-You can set the default range using `npm config set save-prefix='^'` in case you prefer something else than caret. Alternately, you can modify _~/.npmrc_ directly. Especially defaulting to tilde can be a good idea that can help you to avoid trouble with dependencies, although it doesn’t remove potential problems entirely. That’s where shrinkwrapping comes in.
-
-## Locking Versions
-
-Using version ranges can feel dangerous as it doesn’t take much to break an application. A single change in the wrong place is enough. Since npm 5, npm has provided support for **lockfiles**. When `npm install` is run, it writes a file, _package-lock.json_. The file should be committed to a project repository and it contains the versions of the installed packages.
-
-The next time someone runs `npm install`, npm will use the versions specified in this lockfile. The point is to provide predictable environment as sometimes a package might break by not following the aforementioned SemVer rules correctly.
-
-[Yarn](https://yarnpkg.com/), an npm alternative, implemented the idea of lockfiles first. It provides certain functionality, such as workspaces, not found in npm and continues to improve over npm.
-
-T> [Sebastian McKenzie discusses the difference between the lockfile approaches](https://yarnpkg.com/blog/2017/05/31/determinism/). In short, Yarn needs _package.json_ to work while npm doesn’t. Future interoperability is unclear.
-
 ## Deprecating, Unpublishing, and Renaming Packages
 
 It’s possible that your package reaches the end of its life. Another package could replace it, or it can become obsolete. For this purpose, npm provides [npm deprecate](https://docs.npmjs.com/cli/deprecate) command. You can state `npm deprecate foo@"< 0.4.0" "Use bar package instead"`.

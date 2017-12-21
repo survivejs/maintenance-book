@@ -2,7 +2,38 @@
 
 Keeping dependencies updated is important to have the latest bugfixes and security updates, but it needs a lot of work: once in a while you need to check which packages have new versions and how to migrate, sometimes you have to rewrite parts of your code. Bigger projects may provide [codemods](https://github.com/reactjs/react-codemod) that can perform the required changes for you. Or they can deprecate a feature with a warning message, giving you time to migrate before the feature is completely removed from the package.
 
-T> You should use **lockfiles** to manage the versions of your dependencies. Read the _Publishing Packages_ chapter to learn more about the approach.
+## Types of Dependencies
+
+### Global and Local Dependencies
+
+Global dependencies are installed with the `--global` (or `-g`) flag for `npm install`, and usually used for command line tools. Almost the only good use case for global dependencies is generators: tools that generate new projects, like [Create React App](https://github.com/facebookincubator/create-react-app). You run them once to create a new project and forget about them until you need to create another project.
+
+Most of the time, though, you’ll want to use local dependencies and store list of required packages and their versions close to the project — in its _package.json_ — to guarantee that the project will work:
+
+* You could always reproduce the same versions of packages.
+* You can run projects that require incompatible versions of packages on the same computer at the same time.
+* You can share your project, and other developers could install all required dependencies with a single command.
+
+T> **Lockfiles** go even further and lock the whole dependency tree — all dependencies of dependencies of dependencies. We discuss lockfiles in the _Publishing Packages_ chapter.
+
+### Dependencies and Development Dependencies
+
+Normal dependencies (`dependencies` field in _package.json_) are packages that will be installed when the user runs `npm install packagename`. They are needed to run the package. You should be careful what you add there, because this affects download times for all users of your package, and, for a frontend library, all users of an app that uses your package.
+
+Development dependencies (`devDependencies` field in _package.json_) are dependencies you need to develop the package. For example, packages for building and testing. When you install a package from npm, they won’t be installed, but if you run `npm install` on a project locally, npm will install them.
+
+### Peer Dependencies
+
+Peer dependencies (`peerDependencies` field in _package.json_) are dependencies that are required to use your package but the user should install them separately. They are usually given as version ranges.
+
+The most common use case is plugins, for example a Babel plugins or a React component. You want to let your users decide which version of Babel or React they want to use to avoid installing multiple, and maybe incompatible, versions. That may be especially bad for frontend libraries.
+
+### Other Dependencies
+
+Other types of dependencies are rarely used:
+
+* `bundledDependencies` are the dependencies that are bundled with the package itself.
+* `optionalDependencies` are the dependencies that npm will try to install but they aren’t required for the package to work. For example, packages that don’t work on all platforms.
 
 ## Keeping Dependencies Updated
 
@@ -41,10 +72,27 @@ Many npm packages follow [SemVer](https://semver.org/), which means that only ma
 Depending on a project you may want to specify [version ranges](https://docs.npmjs.com/misc/semver) differently in _package.json_:
 
 * Caret (`^1.2.3`, npm default) — good for most projects, will catch all updates inside a major version (1.9.3 but not 2.0.0).
-* Tilda (`~1.2.3`) — projects that may have breaking changes in minor releases, will catch all updates inside a minor version (1.2.17 but not 1.3.0).
+* Tilde (`~1.2.3`) — projects that may have breaking changes in minor releases, will catch all updates inside a minor version (1.2.17 but not 1.3.0).
 * Exact version (`1.2.3`) — the most strict, only manual updates.
+* Range (`>=1.3.0 <2.0.0`) - defines a range of versions. Usually used for peer dependencies.
+
+T> To include prerelease versions, use a pattern such as ^4.0.0-0.
+
+T> By default npm installs packages with a caret, you can change it using `npm config set save-prefix='~'`. Tilde can be a good default that can help you to avoid some issues with dependencies, see more in the _Locking Versions_ section.
 
 T> Check out the [npm semver calculator](https://semver.npmjs.com/) to better understand how version ranges work.
+
+## Locking Versions
+
+Even if you use exact versions in your _package.json_, you may have problems because dependencies of dependencies aren’t locked. A single breaking change in a patch release of some deeply nested dependency may break your build. This is especially hard to debug when it happens on the CI or during the deployment.
+
+Since version 5, npm supports **lockfiles**. `npm install` will write versions of the installed packages to a file, _package-lock.json_. This file should be committed to a project repository. The next time someone runs `npm install`, npm will use the versions specified in this lockfile.
+
+[Yarn](https://yarnpkg.com/), an npm alternative, implemented the idea of lockfiles first but they use incompatible format and _yarn.lock_ file.
+
+T> [Sebastian McKenzie discusses the difference between the lockfile approaches](https://yarnpkg.com/blog/2017/05/31/determinism/). In short, Yarn needs _package.json_ to work while npm doesn’t. In the future we may have [interoperability between two formats](https://www.npmjs.com/package/synp).
+
+W> npm will never publish lockfiles and will not use them when someone installs your package, only when you run `npm install` locally.
 
 ## Conclusion
 
