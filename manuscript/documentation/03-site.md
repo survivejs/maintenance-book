@@ -20,7 +20,7 @@ Many open source projects’ sites are built with the [JAMstack](https://jamstac
 
 [Docusaurus](https://docusaurus.io/) is static site generator that was made for open source sites. It’s React-based, supports localizations, versioning, blog and has Algolia documentation search integration.
 
-#### Setting Up Docusaurus
+#### Setting up Docusaurus
 
 First run:
 
@@ -28,13 +28,13 @@ First run:
 npx docusaurus-init
 ```
 
-This command will create a basic configuration for Docusaurus in _website_ and folders with example documentation and a blog. The _website_ has its own _package.json_ and npm scripts to run and build your new site.
+It will create a basic configuration for Docusaurus in _website_ and folders with example documentation and a blog. The _website_ has its own _package.json_ and npm scripts to run and build your new site.
 
 Then tweak example files to your needs:
 
 1. Move your Markdown documentation to the _docs_ folder.
 2. [Edit _website/siteConfig.js_](https://docusaurus.io/docs/en/site-config.html) as you wish. It defines things like site title, logo, menu links and colors.
-3. Edit *website/core/Footer.js* as you wish. It’s a React component that is used to render the footer of your site with external links, like GitHub, Twitter or Gitter.
+3. Edit *website/core/Footer.js* as you wish. It’s a React component that renders the footer of your site with external links, like GitHub, Twitter or Gitter.
 4. Edit *website/pages/index.js* as you wish. This is your site’s index page.
 
 Now you can run a dev server:

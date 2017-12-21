@@ -104,7 +104,7 @@ T> See how to embed one Markdown into another in the _README_ section.
 
 T> Read an [interview with documentation.js creator](https://survivejs.com/blog/documentationjs-interview/), Tom MacWright.
 
-#### Setting Up documentation.js
+#### Setting up documentation.js
 
 Let’s install documentation.js:
 

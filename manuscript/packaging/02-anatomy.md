@@ -207,7 +207,7 @@ You should always [specify](https://docs.npmjs.com/files/package.json#license) a
 }
 ```
 
-You can use an [SPDX license identifier](https://spdx.org/licenses/) or refer to a file with a custom license:
+You can use an [SPDX license identifier](https://spdx.org/licenses/) or a file with a custom license:
 
 ```json
 {
@@ -243,11 +243,11 @@ These files will be included in your package regardless of the _package.json_ `f
 
 ### What Could Be in a Package
 
-There’s no official recommendations on on what files to publish, except [a list](https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package) of files that should be ignored by default or included regardless of your settings (the ones listed above).
+There’s no official recommendations on what files to publish, except [a list](https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package) of files that should be ignored by default or included regardless of your settings (the ones listed above).
 
 The most controversial question is whether you should publish tests and documentation as part of an npm package. There’s a [good Stack Overflow discussion](https://stackoverflow.com/questions/25124844/should-i-npmignore-my-tests).
 
-Same can be said about the source code if you compile it before publishing. These files aren’t required to use the package but may be useful for some users, if they want to compile your code themselves or like to dig into packages on a plane.
+Same with the source code if you compile it before publishing. These files aren’t required to use the package but some people may want them to compile your code themselves or if they like to dig into packages on a plane.
 
 ### What Should Not Be in a Package
 
@@ -263,9 +263,9 @@ T> To decrease the size of your dependencies, use [package-config-checker](https
 
 ### Including and Ignoring Files
 
-There are two ways to tell npm which files to publish.
+You can whitelist files that npm will publish, or blacklist files which it won’t publish.
 
-### `files` field in _package.json_
+### `files` Field in _package.json_
 
 Only files or folders listed in the [files](https://docs.npmjs.com/files/package.json#files) field will be published.
 
@@ -280,9 +280,9 @@ Only files or folders listed in the [files](https://docs.npmjs.com/files/package
 
 W> [npm doesn’t support](https://github.com/npm/npm/wiki/Files-and-Ignores#details) negative glob patterns, like `!src/*.test.js`, in the `files` field, Use _.npmignore_ file with a pattern like `src/*.test.js` instead.
 
-### _.npmignore_ file
+### _.npmignore_ File
 
-Lists glob patterns of files and folders that shouldn’t be published, similar to _.gitignore_ (and _.gitignore_ will be used by npm if there’s no _.npmignore_).
+Lists glob patterns of files and folders that shouldn’t be published, like _.gitignore_ (and _.gitignore_ will be used by npm if there’s no _.npmignore_).
 
 **Pros:**
 
@@ -292,7 +292,7 @@ Lists glob patterns of files and folders that shouldn’t be published, similar 
 
 **Cons:**
 
-* Easy to accidentally make you package bigger that it could.
+* You can accidentally make your package bigger than it could.
 
 ## Conclusion
 

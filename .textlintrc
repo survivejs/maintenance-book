@@ -99,7 +99,7 @@
         // ["(\\w+[^.?!]\\)? )webpack", "$1webpack"]
 
         // Typos
-        ["environemnt(s?)", "environment$1"]
+        ["environemnt(s?)", "environment$1"],
         ["pacakge(s?)", "package$1"]
       ]
     },
