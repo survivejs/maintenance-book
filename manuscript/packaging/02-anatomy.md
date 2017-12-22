@@ -158,6 +158,8 @@ An npm package can have different types of dependencies. We discuss them in the 
 }
 ```
 
+{pagebreak}
+
 ### Links
 
 A package should link to its repository, homepage, and issue tracker. The fields are optional but they are good to have as it will make it easier for the users to find these through npm site.
