@@ -191,6 +191,8 @@ If you use GitHub, you can simplify like this:
 }
 ```
 
+{pagebreak}
+
 ### License
 
 You should always [specify](https://docs.npmjs.com/files/package.json#license) a license of your package, otherwise people will not know if they are allowed to use it. If you don’t specify any license, it means nobody can use your package.
