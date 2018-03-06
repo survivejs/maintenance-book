@@ -117,7 +117,8 @@
         "gh-lint",
         "lint-staged",
         "npm",
-        "webpack"        
+        "webpack",
+        "size-limit"
       ]
     },
     "apostrophe": true
