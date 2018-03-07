@@ -94,7 +94,7 @@ You can create a basic REPL by embedding a playground like [CodePen](https://cod
 
 ![CodePen on mo.js](images/mojs-codepen.png)
 
-[CodeSandbox](https://codesandbox.io/) and [WebpackBin](https://www.webpackbin.com/) allow you to create a REPL for a whole project with many files, webpack and dependencies.
+[CodeSandbox](https://codesandbox.io/) allows you to create a REPL for a whole project with many files, webpack and dependencies.
 
 ## Hosting
 
