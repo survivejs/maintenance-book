@@ -232,8 +232,6 @@ leanpub-end-insert
 ]
 ```
 
-{pagebreak}
-
 And finally make the CI fail on size increase:
 
 ```json
