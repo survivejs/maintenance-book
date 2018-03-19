@@ -170,7 +170,7 @@ To make sure Babel’s module processing gets disabled during processing, set it
 {
   ...
   "env": {
-    "tree-shaking": {
+    "build": {
       "presets": [
         "env",
         {
