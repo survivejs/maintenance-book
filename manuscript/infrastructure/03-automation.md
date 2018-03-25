@@ -253,16 +253,6 @@ jsTestChanges.forEach(file => {
 });
 ```
 
-Add a new script to your _package.json_:
-
-```json
-{
-  "scripts": {
-    "danger": "danger"
-  }
-}
-```
-
 Update your _.travis.yml_ to make it run on Travis CI:
 
 ```yaml
@@ -271,7 +261,7 @@ node_js:
   - 8
 script:
   npm run test
-  npm run danger
+  npx danger ci
 ```
 
 You also need to add API token to Travis settings, see [getting started guide](http://danger.systems/js/guides/getting_started.html) for details.
