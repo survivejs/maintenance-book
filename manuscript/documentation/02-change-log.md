@@ -34,7 +34,7 @@ For example, a change log for a group of commits above may look like this:
 Fix an error caused by a newer version of uglifyjs-webpack-plugin with a breaking change.
 ```
 
-T> [Keep a CHANGELOG](https://keepachangelog.com/) discusses good change logs in in greater detail.
+T> [Keep a CHANGELOG](https://keepachangelog.com/) discusses good change logs in greater detail.
 
 T> You can partially automate change log generation as discussed in [an article](http://blog.sapegin.me/all/semantic-release) and the _Automation_ chapter.
 
