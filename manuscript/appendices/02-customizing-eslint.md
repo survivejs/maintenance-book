@@ -60,18 +60,18 @@ ESLint provides two ways to deal with this: local and global. To set it per file
 
 Global configuration is possible as well. In this case, you can use `env` key:
 
-**.eslintrc.js**
+**.eslintrc.json**
 
-```javascript
-module.exports = {
-  env: {
-    browser: true,
-    commonjs: true,
-    es6: true,
-    node: true,
+```json
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true,
   },
   // ...
-};
+}
 ```
 
 <!-- textlint-enable -->
@@ -133,35 +133,35 @@ Next, you need to execute `npm link` within `eslint-plugin-custom` to make your 
 
 You need to alter the project configuration to make it find the plugin and the rule within.
 
-**.eslintrc.js**
+**.eslintrc.json**
 
 <!-- textlint-disable -->
 
 <!-- skip-example -->
 
-```javascript
-module.exports = {
-  ...
-  plugins: [
-    ...
+```json
+{
+  // ...
+  "plugins": [
+    // ...
 leanpub-start-insert
-    'custom'
+    "custom"
 leanpub-end-insert
   ],
-  rules: {
-    ...
+  "rules": {
+    // ...
 leanpub-start-insert
-    'custom/demo': 1,
+    "custom/demo": 1,
 leanpub-end-insert
   }
-};
+}
 ```
 
 <!-- textlint-enable -->
 
 If you invoke ESLint now, you should see a bunch of warnings. Of course, the rule doesn’t do anything impressive yet. To move forward, check out the [official plugin documentation](http://eslint.org/docs/developer-guide/working-with-plugins.html) and [rules](http://eslint.org/docs/developer-guide/working-with-rules.html).
 
-You can also check out the existing rules and plugins for inspiration to see how they achieve certain things. ESLint allows you to [extend these rulesets](http://eslint.org/docs/user-guide/configuring.html#extending-configuration-files) through `extends` property. It accepts either a path to it (`"extends": "./node_modules/coding-standard/.eslintrc"`) or an array of paths. The entries are applied in the given order, and later ones override the former.
+You can also check out the existing rules and plugins for inspiration to see how they achieve certain things. ESLint allows you to [extend these rulesets](http://eslint.org/docs/user-guide/configuring.html#extending-configuration-files) through `extends` property. It accepts either a path to it (`"extends": "./node_modules/coding-standard/.eslintrc.json"`) or an array of paths. The entries are applied in the given order, and later ones override the former.
 
 ## ESLint Resources
 
