@@ -74,7 +74,7 @@ Create a **package.json** with a build script and entry points:
 Install Microbundle:
 
 ```bash
-npm install microbundle
+npm install --save-dev microbundle
 ```
 
 Then run `npm run build`, and examine the generated **dist** directory.
