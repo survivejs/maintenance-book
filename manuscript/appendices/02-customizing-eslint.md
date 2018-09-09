@@ -68,8 +68,8 @@ Global configuration is possible as well. In this case, you can use `env` key:
     "browser": true,
     "commonjs": true,
     "es6": true,
-    "node": true,
-  },
+    "node": true
+  }
   // ...
 }
 ```

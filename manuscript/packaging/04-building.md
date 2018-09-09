@@ -17,50 +17,55 @@ That said, if you prefer to use features that are not supported by LTS yet or wa
 
 ## Communicating Where Code Should Work
 
-To communicate in which Node environments your package should work, you should set _package.json_ `engines` field. It accepts a range in a similar way as for dependencies. Consider the example adapted from [npm documentation](https://docs.npmjs.com/files/package.json#engines):
+To communicate in which Node environments your package should work, you should set _package.json_ [engines](https://docs.npmjs.com/files/package.json#engines) field. It accepts a range in a similar way as for dependencies:
 
 **package.json**
 
 ```json
 "engines": {
-  "node": ">= 4"
+  "node": ">= 6"
 }
 ```
 
 The same idea works for npm version and you can control it by setting `engines.npm` field like `engines.node` above.
 
-You can also document operating system in which the code should run through the `os` field. You can specify the CPU architecture through the `cpu` field. Both of these are niche cases and come into play only if you have platform specific code.
-
 ## Compiling to Support Specific Environments
 
-[Babel](https://babeljs.io/) is a popular JavaScript compiler that allows you to transform future code into a format that works in legacy environments. It can be used through Node, [a CLI client](https://www.npmjs.com/package/babel-cli), or available task runners and bundlers.
+[Babel](https://babeljs.io/) is a popular JavaScript compiler that allows you to transform future code into a format that works in current environments, such as browsers and Node. You can use it as [a command line tool](https://www.npmjs.com/package/babel-cli), or with task runners and bundlers.
 
-Additionally you have to configure Babel to use specific plugins or presets. [babel-preset-env](https://www.npmjs.com/package/babel-preset-env) allows you to define which environments you want to support and can use the right plugins while generating the minimal code required.
+Babel doesn’t do any transformations by default, so you need to enable ones you need to support your target environment. [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) allows you to define which environments you want to support and can use the right plugins while generating the minimal code required.
 
-During this process, it will also shim the code appropriately so that the features work as they should. It’s important to note that the shimming process isn’t perfect and you may still have to include [Babel polyfill](https://babeljs.io/docs/usage/polyfill/) or at least advice consumers to use it.
+Let’s install it from npm:
 
-To configure _babel-preset-env_ to work with Node, set it up as follows:
-
-**.babelrc**
-
-```json
-{
-  "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "node": "4"
-        }
-      }
-    ]
-  ]
-}
+```bash
+npm install --save-dev @babel/core @babel/cli @babel/preset-env
 ```
 
-After this change, Babel will pick up any features not supported by the specified version and transform them into a form that works.
+To configure _@babel/preset-env_ to work with Node 6 and above, set it up as follows:
 
-To see the configuration in action, install **babel-cli** to your project, and invoke `babel ./src --out-dir ./lib`. The command picks up the source and writes it below `./lib` directory. You should set `"main": "lib",` and also ignore `lib` at **.gitignore** to avoid including it in source control by accident.
+**babel.config.js**
+
+```js
+module.exports = {
+  presets: [
+    [
+      '@babel/env',
+      {
+        targets: {
+          node: 6,
+          useBuiltIns: 'usage',
+        },
+      },
+    ],
+  ],
+};
+```
+
+After this change, Babel will transform any features, not supported by the specified Node version, into a form that works.
+
+`useBuiltIns: 'usage'` includes polyfills needed for the feature you are using.
+
+To see the configuration in action, run `babel src --out-dir lib`. It will compile all source files in the `src` folder, and write the result into the `lib` folder. This code should work in Node 6.
 
 To make sure the code gets generated before you publish it to npm, set up hooks as below:
 
@@ -68,14 +73,15 @@ To make sure the code gets generated before you publish it to npm, set up hooks 
 
 ```json
 "scripts": {
-  ...
-  "build": "babel ./src --out-dir ./lib",
+  "build": "babel --delete-dir-on-start src --out-dir lib",
   "preversion": "npm test",
   "prepublishOnly": "npm run build"
 },
 ```
 
-The code should work in the current Node after these changes. There’s one problem, though. If you try to consume a package that relies on a build script like this, it won’t work if you try to use it directly through Git. For this reason customization is required.
+You should point the `main` field to `lib` in your **package.json**, and also ignore `lib` in **.gitignore** to avoid including it in source control.
+
+T> You may want to avoid compiling and publishing of test files. Tweak your Babel command like this: `babel --delete-dir-on-start --ignore '**/*.spec.js' src --out-dir lib`.
 
 T> It can be convenient to set up a watch process using `babel --watch` to generate the build during development. [npm-watch](https://www.npmjs.com/package/npm-watch) gives more control if needed.
 
@@ -87,7 +93,6 @@ To consume a package like this from Git, you have to make sure the consumer can 
 
 ```json
 "scripts": {
-  ...
   /* Point to the script that generates the missing source. */
   "postinstall": "node lib/postinstall.js"
 },
@@ -131,71 +136,85 @@ After these two steps, you have a build that should work regardless whether cons
 
 ## Configuring Babel for Tree Shaking
 
-Certain tools, like webpack or Rollup, support **tree shaking**. It’s a form of **dead code elimination** (DCE) that relies on detecting which parts of the code are being used and which are not. The process relies on **static analysis** meaning it goes through the source, detects module imports and exports exist, checks which are being used, and drops the code of those that are not.
+Some bundlers, like webpack or Rollup, support **tree shaking**. It’s a form of **dead code elimination** that detects which parts of the code are being used and which are not. Tree shaking relies on **static analysis** meaning it goes through the source, detects module imports and exports, checks which are being used, and drops the code of those that are not.
 
-To make this possible, you have to use the ES6 module definition as it’s possible to analyze code relying on it exactly like this. CommonJS definition is too dynamic for proper analysis. That’s a problem in the configuration above as it converts the possible ES6 code to CommonJS given that’s what Node supports.
+To make this possible, you need to use ECMAScript modules (ESM) as it’s possible to analyze them statically. CommonJS supports dynamic imports (like `require('foo/' + bar)`, which makes static analysis impossible.
 
-For this reason, you have to set up another process to generate tree shaking compatible code. You have to disable its module processing in Babel for this reason. Also, you have to point **package.json** `module` field to the generated source. The existing tooling relies on this convention and can pick up the tree-shakeable code if the field is set.
+The Babel configuration above converts ESM to CommonJS to make it work in Node, so you need to set up another process to generate tree shaking compatible code. You need to disable ESM to CommonJS transformation.
 
-The technique requires two steps. Set up helper scripts first:
+Set up npm scripts:
 
 **package.json**
 
 ```json
 "scripts": {
-  ...
 leanpub-start-delete
-  "build": "babel ./src --out-dir ./lib",
+  "build": "babel src --out-dir lib",
   "preversion": "npm test",
   "prepublishOnly": "npm run build"
 leanpub-end-delete
 leanpub-start-insert
-  "build:all": "npm run build && npm run build:tree-shaking",
-  "build:tree-shaking": "cross-env BABEL_ENV=tree-shaking
-    babel ./src --out-dir ./dist-modules",
-  "build": "cross-env BABEL_ENV=build babel ./src --out-dir ./lib",
+  "build": "npm run build:esm && npm run build:cjs",
+  "build:esm": "babel --delete-dir-on-start -d esm/ src/",
+  "build:cjs": "babel --delete-dir-on-start --env-name cjs -d lib/ src/",
   "preversion": "npm test",
-  "prepublishOnly": "npm run build:all"
+  "prepublishOnly": "npm run build"
 leanpub-end-insert
 },
 ```
 
-W> The example relies on the _cross-env_ tool discussed later in this chapter. If you are on Unix only, you can skip it.
+Add a new environment to your Babel config:
 
-To make sure Babel’s module processing gets disabled during processing, set it up as follows:
+**babel.config.js**
 
-**.babelrc**
-
-```json
-{
-  ...
-  "env": {
-    "build": {
-      "presets": [
-        "env",
-        {
-          "targets": {
-            "node": "current"
-          }
-        }
-      ]
-    }
-    "tree-shaking": {
-      "presets": [
-        "env",
-        {
-          "modules": false,
-          "targets": {
-            "node": "current"
-          }
-        }
-      ]
-    }
-  }
-}
+```js
+module.exports = {
+  presets: [
+    [
+      '@babel/env',
+      {
+        modules: false,
+        useBuiltIns: 'usage',
+      },
+    ],
+  ],
+  env: {
+    cjs: {
+      presets: [
+        [
+          '@babel/env',
+          {
+            targets: {
+              node: 6,
+            },
+            useBuiltIns: 'usage',
+          },
+        ],
+      ],
+    },
+  },
+};
 ```
 
-Now it should build both a version of the package for Node and a version for tree shaking compatible environments. You should make the _postinstall_ script point at `build:all` to build both targets to finish the setup.
+Now running `npm run build` should build a version of the package for Node and a version for tree shaking compatible environments.
+
+**@babel/preset-env** will take target browsers from your [Browserslist](https://github.com/browserslist/browserslist) config, if you omit the `targets` option. So let’s add it to your **package.json**:
+
+```json
+"browserslist": [
+  ">1%",
+  "last 1 version",
+  "Firefox ESR",
+  "not dead"
+],
+```
+
+The last thing is to point your **package.json** `module` field to the generated source. Bundlers will pick up the tree-shakeable code if the field is set:
+
+```json
+"main": "lib/",
+"module": "esm/",
+```
 
 T> There is [an experimental CommonJS based tree shaking approach for webpack](https://www.npmjs.com/package/webpack-common-shake).
 

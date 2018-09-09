@@ -43,7 +43,7 @@ The description fields describe who created the package, what it does, search ke
 
   /* Files to include to npm distribution. */
   /* Relative patterns like "./src" fail! */
-  "files": ["dist/"]
+  "files": ["lib/", "esm/", "bin/"]
 }
 ```
 
@@ -73,13 +73,13 @@ npm can be used as a task runner through `npm run` command. Running the command 
     "gh-pages": "catalog build docs",
     "gh-pages:deploy": "gh-pages -d docs/build",
 
-    "dist:es6": "del-cli ./dist-es6 &&
-      cross-env BABEL_ENV=es6 babel ./src --out-dir ./dist-es6",
-    "dist:modules": "del-cli ./dist-modules &&
-      cross-env BABEL_ENV=modules babel ./src --out-dir ./dist-modules",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "babel --delete-dir-on-start -d esm/ src/",
+    "build:cjs":
+      "babel --delete-dir-on-start --env-name cjs -d lib/ src/",
 
     "preversion": "npm run test",
-    "prepublishOnly": "npm run dist:es6 && npm run dist:modules",
+    "prepublishOnly": "npm run build",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
 
     /* If your library is installed through Git, compile it */
@@ -97,7 +97,7 @@ npm commands, such as `npm install`, `npm publish` or `npm version`, can have [h
 
 Use `pre` and `post` prefixes to group your scripts. For example, _npm run test_ will try to run `pretest`, `test`, and then `posttest` scripts. In the example above, the feature is used to control what happens when `npm publish` is executed.
 
-Though for npm namespaces (like, `namespace:task`) don’t mean anything, some tools support this convention. For example, [npm-run-all](https://www.npmjs.com/package/npm-run-all) allows you to run all tasks inside a namespace — `npm-run-all dist:*`.
+Though for npm namespaces (like, `namespace:task`) don’t mean anything, some tools support this convention. For example, [npm-run-all](https://www.npmjs.com/package/npm-run-all) allows you to run all tasks inside a namespace — `npm-run-all build:*`.
 
 T> The `postinstall` script and how it works is discussed in detail in the _Building Packages_ chapter.
 
@@ -110,7 +110,7 @@ The entry points describe how the package should resolve to your code when used 
 If your code is using JavaScript features not supported by Node, or other language like TypeScript, you should compile the code in two ways:
 
 * To ES5, and use this files as the `main` entry point. It will be used by Node.
-* To ES5 except ECMAScript modules (ESM), and use it as the `module` entry point. It will be used by bundlers, like webpack. This will allow them to do tree shaking.
+* To ES5 except ECMAScript modules (ESM), and use it as the `module` entry point. It will be used by bundlers. This will allow them to do tree shaking.
 
 **package.json**
 
@@ -121,14 +121,14 @@ If your code is using JavaScript features not supported by Node, or other langua
   "bin": "bin/index.js",
 
   /* Main entry point (defaults to index.js) */
-  "main": "dist/",
+  "main": "lib/",
 
   /* ESM-based entry point for bundlers. */
-  "module": "dist-modules/"
+  "module": "esm/"
 }
 ```
 
-T> Use [babel-preset-env](https://www.npmjs.com/package/babel-preset-env) to apply only necessary transformations for Node versions or browsers you support.
+T> See _Building Packages_ chapter for more details on building your package for different environments and tree shaking.
 
 On small projects, it’s enough to have all code in `index.js` in the root folder. On larger ones, you likely want to start splitting it up and move into a directory. Having all code in a directory will make compilation easier.
 
@@ -249,7 +249,7 @@ Same with the source code if you compile it before publishing. These files aren�
 
 In larger projects, you often find the following files that should be excluded from an npm distribution:
 
-* Tooling configuration, like _.babelrc_, _.eslintrc.json_, _.travis.yml_ or _webpack.config.js_ — files like _.babelrc_ may easily break your user’s build if they try to compile _node_modules_ folder and don’t have one of the plugins listed in your config.
+* Tooling configuration, like _babel.config.json_, _.eslintrc.json_, _.travis.yml_ or _webpack.config.js_ — files like _babel.config.json_ may easily break your user’s build if they try to compile _node_modules_ folder and don’t have one of the plugins listed in your config.
 * Tooling or build artifacts like log files — usually anything you have in _.gitignore_ which npm will use by default unless you have _.npmignore_ file. In the latter case you’ll need to copy these patterns from _.gitignore_.
 * File that are required only for development: build scripts or _CONTRIBUTING.md_.
 * Any big files, like images.
