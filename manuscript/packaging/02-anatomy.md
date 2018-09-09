@@ -249,7 +249,7 @@ Same with the source code if you compile it before publishing. These files aren�
 
 In larger projects, you often find the following files that should be excluded from an npm distribution:
 
-* Tooling configuration, like _.babelrc_, _.eslintrc_, _.travis.yml_ or _webpack.config.js_ — files like _.babelrc_ may easily break your user’s build if they try to compile _node_modules_ folder and don’t have one of the plugins listed in your config.
+* Tooling configuration, like _.babelrc_, _.eslintrc.json_, _.travis.yml_ or _webpack.config.js_ — files like _.babelrc_ may easily break your user’s build if they try to compile _node_modules_ folder and don’t have one of the plugins listed in your config.
 * Tooling or build artifacts like log files — usually anything you have in _.gitignore_ which npm will use by default unless you have _.npmignore_ file. In the latter case you’ll need to copy these patterns from _.gitignore_.
 * File that are required only for development: build scripts or _CONTRIBUTING.md_.
 * Any big files, like images.

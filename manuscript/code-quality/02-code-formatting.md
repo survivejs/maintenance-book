@@ -157,9 +157,9 @@ npm install prettier eslint-plugin-prettier --save-dev
 
 {pagebreak}
 
-Update your _.eslintrc_ like this:
+Update your ESLint config like this:
 
-**.eslintrc**
+**.eslintrc.json**
 
 ```json
 {

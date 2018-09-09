@@ -67,7 +67,7 @@ Add a new script to your _package.json_.
 
 The `--fix` flag tells ESLint to fix problems automatically [if it can](https://eslint.org/docs/rules/).
 
-Create a config file, _.eslintrc_:
+Create a config file, _.eslintrc.json_:
 
 ```json
 {
@@ -83,9 +83,9 @@ And finally run:
 npm run lint:js
 ```
 
-You may need to tweak your _.eslintrc_ according to your project needs:
+You may need to tweak your ESLint config according to your project needs:
 
-**.eslintrc**
+**.eslintrc.json**
 
 ```json
 {
@@ -129,9 +129,9 @@ T> [Use Mrm](https://github.com/sapegin/mrm-tasks/tree/master/packages/mrm-task-
 
 ### ESLint Configuration Formats
 
-_.eslintrc_ supports [JSON5](http://json5.org/) format by default. It’s a proposed extension to JSON that enables features like comments and trailing commas.
+_.eslintrc.json_ supports JavaScript-style comments.
 
-ESLint supports other formats of config files, such as YAML or JavaScript. JSON5 is a good choice, because other tools can modify such files.
+ESLint supports other formats of config files, such as YAML or JavaScript. JSON is a good choice, because other tools can modify such files.
 
 ## Linting TypeScript With TSLint
 
