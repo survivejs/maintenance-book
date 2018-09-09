@@ -1,20 +1,31 @@
 # Standalone Builds
 
-The scenarios covered in the previous chapter are enough if you consume packages through npm. There may be users that prefer pre-built _standalone builds_ instead. This comes with a several advantages:
+The scenarios covered in the previous chapter are enough if you consume packages through npm. There may be users that prefer pre-built _standalone builds_ or _bundles_ instead. This comes with a several advantages:
 
-* The build can be served through a Content Delivery Network (CDN). Especially popular libraries are available this way.
-* Users that want to optimize their development experience can point to the built version. This avoids additional processing during development as their tooling doesn’t have to process the original source.
-* The build can be integrated easily to online code playgrounds easily.
+* Everything is packaged into a single file.
+* You can include the bundle using a `<script>` tag.
+* The build can be served through a Content Delivery Network (CDN), like [unpkg](https://unpkg.com/#/).
+* The build can be integrated easily to online code playgrounds, like [JS Bin](http://jsbin.com/).
 
-The problem is that now you have additional configuration to maintain and you may skip step this entirely. This is where **bundlers** such as [Browserify](http://browserify.org/), [Rollup](https://rollupjs.org/), [Fusebox](http://fuse-box.org/), or [webpack](https://webpack.js.org/), come in, as they were designed for the purpose.
+For example, you can add React to your page using its browser bundle:
+
+```html
+<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+```
+
+You don’t need to setup any build process, and it’s a great option for quick prototyping.
+
+To make a bundle for your own library, you need to use a **bundler**, such as [webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/), or [Parcel](https://parceljs.org/).
 
 ## How Bundlers Work
 
 ![Bundling process](images/bundler.png)
 
-A **bundler** is a transformation tool that takes the given source, performs given operations on it, and emits **bundles** as output. Bundles contain the manipulated source in such form that the code can be executed in the wanted environment. The process begins from **entry points** which are modules themselves.
+A **bundler** takes an **entry point** — your main source file — and produces a single file that contains all dependencies and converted to format, that browsers can understand.
 
-Depending on the bundler, you have varying degrees of control over the process. Application-oriented bundlers like webpack allow you to define **split points** which generate dynamically loaded bundles. The feature can be used to defer loading of certain functionality and it enables powerful application development patterns such as [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/).
+Application-oriented bundlers, like webpack, allow you to define **split points** which generate dynamically loaded bundles. The feature can be used to defer loading of certain functionality and it enables powerful application development patterns such as [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/).
 
 T> [Webpack and Rollup: the same but different](https://medium.com/webpack/webpack-and-rollup-the-same-but-different-a41ad427058c) explains how webpack and Rollup differ. To summarize, webpack works better for applications while Rollup is a better choice for libraries.
 
@@ -24,62 +35,81 @@ T> Both webpack and Rollup support _scope hoisting_. It’s a performance orient
 
 ## Universal Module Definition (UMD)
 
-To make the generated bundle work in different environments, bundlers support [Universal Module Definition](https://github.com/umdjs/umd) (UMD). The UMD wrapper allows the code to be consumed from different environments including the browser (global), [Asynchronous Module Definition](http://requirejs.org/docs/whyamd.html) (AMD), and CommonJS. AMD is an older format that’s still being used in legacy projects.
+To make the generated bundle work in different environments, bundlers support [Universal Module Definition](https://github.com/umdjs/umd) (UMD). The UMD wrapper allows the code to be consumed in browsers and Node (CommonJS).
 
 UMD isn’t as relevant anymore as it used to be in the past but it’s good to be aware of the format as you come around it.
 
 {pagebreak}
 
-## Generating a Build Using Rollup
+## Generating a Bundle Using Microbundle
 
-To illustrate bundling and UMD, set up an entry point for the demo as below:
+[Microbundle](https://github.com/developit/microbundle) is a zero-configuration tool, based on Rollup, to create bundles for browsers (UMD), Node (Common.js), and bundlers with ECMAScript modules support, like webpack.
+
+To illustrate bundling, set up an entry point as below:
 
 **index.js**
 
 ```javascript
-function demo() {
+export default function demo() {
   console.log('demo');
 }
-
-export default demo;
 ```
 
-Define a small **package.json** to contain the build script:
+Create a **package.json** with a build script and entry points:
 
 **package.json**
 
 ```json
 {
-  "name": "umd-demo",
-  "main": "index.js",
+  "name": "bundling-demo",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.m.js",
   "scripts": {
-    "build": "rollup ./index.js --format umd --name Demo
-      --output dist/demo.umd.js"
+    "build": "microbundle"
   }
 }
 ```
 
-Install Rollup to the project:
+Install Microbundle:
 
 ```bash
-npm install rollup --save-dev
+npm install --save-dev microbundle
 ```
 
-To prove that the setup works, execute `npm run build` and examine the generated **./dist** directory. It should contain a new file with transformed code and the UMD wrapper. You can import the file from Node REPL like this:
+Then run `npm run build`, and examine the generated **dist** directory.
+
+The `dist/index.js` is a Common.js build, that you can use in Node:
 
 ```bash
 node
-> require('./dist/demo.umd')()
+> require('./dist/index.js')()
 demo
 undefined
 ```
 
-The same build should also work from the browser or as a part of an AMD build.
+The `dist/index.m.js` is build for bundlers, like webpack, that you can import in another ECMAScript module:
 
-T> You can achieve a similar result with other tools as well. The specifics will differ depending on the tool, but the basic idea is always the same.
+```js
+import demo from './dist/index.umd.js';
+demo();
+```
+
+And the `dist/index.umd.js` is a browser build, that you can use in HTML:
+
+```html
+<script src="./dist/index.umd.js"></script>
+```
+
+If you publish your library to npm, your users could import it by its name in Node or webpack, thanks to `main` and `module` fields in our `package.json`:
+
+```js
+import demo from 'bundling-demo';
+demo();
+```
 
 ## Conclusion
 
-Generating standalone builds is more common for application purposes than for packaging. Especially popular packages tend to have standalone builds and it’s common to find them both in non-minified (`.js`) and minified (`.min.js`) formats.
+Generating standalone builds is another responsibility for the package author, but they make your users’ experience better by giving them bundles that are the most suitable for the tools they are using, whether it’s Node, webpack, or plain HTML.
 
 You’ll learn how to manage dependencies in the next chapter.
