@@ -50,7 +50,7 @@
   },
   "husky": {
     "hooks": {
-      "prepush": "npm run test"
+      "pre-push": "npm run test"
     }
   }
 }
