@@ -40,10 +40,10 @@ All ES6 features are supported and [babel-eslint](https://www.npmjs.com/package/
 
 ESLint itself is modular and uses plugins to operate - for example:
 
-* [eslint-plugin-compat](https://www.npmjs.com/package/eslint-plugin-compat) checks browser compatibility using [Browserslist](https://github.com/ai/browserslist), [Can I use](http://caniuse.com/) and [@kangax’s compat](http://kangax.github.io/compat-table/es6/) table.
-* [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) validates ES6 import/export syntax, prevents misspelling of file paths.
-* [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) contains best practices for React, JSX code style.
-* [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) finds potential security issues in Node code.
+- [eslint-plugin-compat](https://www.npmjs.com/package/eslint-plugin-compat) checks browser compatibility using [Browserslist](https://github.com/ai/browserslist), [Can I use](http://caniuse.com/) and [@kangax’s compat](http://kangax.github.io/compat-table/es6/) table.
+- [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) validates ES6 import/export syntax, prevents misspelling of file paths.
+- [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) contains best practices for React, JSX code style.
+- [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) finds potential security issues in Node code.
 
 ### Setting up ESLint
 

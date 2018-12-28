@@ -4,10 +4,10 @@ Each project has processes around it. Services like [GitHub](https://github.com/
 
 When you think about processes, you get at least the following questions:
 
-* How to track issues?
-* How to manage pull requests?
-* How to design a development process?
-* How to support users?
+- How to track issues?
+- How to manage pull requests?
+- How to design a development process?
+- How to support users?
 
 ## How to Track Issues
 

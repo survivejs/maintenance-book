@@ -84,7 +84,7 @@ Markdown output looks like this:
 
 ### Table of Contents
 
-* [bakePizzas](#bakepizzas)
+- [bakePizzas](#bakepizzas)
 
 ## bakePizzas
 
@@ -92,8 +92,8 @@ Bake pizzas.
 
 **Parameters**
 
-* `type` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Type of the pizza.
-* `quantity` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** How many pizzas to make. (optional, default `1`)
+- `type` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Type of the pizza.
+- `quantity` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** How many pizzas to make. (optional, default `1`)
 
 Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 ```

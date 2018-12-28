@@ -27,19 +27,19 @@ If your README is big, table of contents will give readers a quick overview of w
 
 <!-- toc -->
 
-* [Installation](#installation)
-* [Upgrade from v0.4](#upgrade-from-v04)
-* [Example](#example)
-* [More examples](#more-examples)
-* [Custom blocks](#custom-blocks)
-* [Available webpack blocks](#available-webpack-blocks)
-* [Helpers](#helpers)
-* [Shorthand setters](#shorthand-setters)
-* [Third-party blocks](#third-party-blocks)
-* [Design principles](#design-principles)
-* [FAQ](#faq)
-* [Like what you see?](#like-what-you-see)
-* [License](#license)
+- [Installation](#installation)
+- [Upgrade from v0.4](#upgrade-from-v04)
+- [Example](#example)
+- [More examples](#more-examples)
+- [Custom blocks](#custom-blocks)
+- [Available webpack blocks](#available-webpack-blocks)
+- [Helpers](#helpers)
+- [Shorthand setters](#shorthand-setters)
+- [Third-party blocks](#third-party-blocks)
+- [Design principles](#design-principles)
+- [FAQ](#faq)
+- [Like what you see?](#like-what-you-see)
+- [License](#license)
 
 <!-- tocstop -->
 ```
@@ -66,9 +66,9 @@ Add a new script to your _package.json_:
 
 By default you can use one of these _transforms_:
 
-* CODE — includes code from a file;
-* REMOTE — content of a remote files;
-* TOC — table of contents.
+- CODE — includes code from a file;
+- REMOTE — content of a remote files;
+- TOC — table of contents.
 
 For example, to include code from a file:
 
@@ -84,15 +84,15 @@ And now run `npm run docs` every time you want to update your Markdown files.
 
 You can create [your own transforms](https://github.com/DavidWells/markdown-magic#adding-custom-transforms) or use plugins:
 
-* [github-contributors](https://github.com/DavidWells/markdown-magic-github-contributors) — GitHub contributors list;
-* [install-command](https://github.com/camacho/markdown-magic-install-command) — install command with `peerDependencies` included;
-* [subpackage-list](https://github.com/camacho/markdown-magic-subpackage-list) — list of all subpackages (great for projects that use Lerna);
-* [package-scripts](https://github.com/camacho/markdown-magic-package-scripts) — a table of _package.json_ scripts with descriptions.
+- [github-contributors](https://github.com/DavidWells/markdown-magic-github-contributors) — GitHub contributors list;
+- [install-command](https://github.com/camacho/markdown-magic-install-command) — install command with `peerDependencies` included;
+- [subpackage-list](https://github.com/camacho/markdown-magic-subpackage-list) — list of all subpackages (great for projects that use Lerna);
+- [package-scripts](https://github.com/camacho/markdown-magic-package-scripts) — a table of _package.json_ scripts with descriptions.
 
 ### Other Tools
 
-* [projectz](https://github.com/bevry/projectz) — generates everything using data from _package.json_.
-* [Mrm](https://github.com/sapegin/mrm) — generates basic README and updates README as part of other task.
+- [projectz](https://github.com/bevry/projectz) — generates everything using data from _package.json_.
+- [Mrm](https://github.com/sapegin/mrm) — generates basic README and updates README as part of other task.
 
 ## Testing Examples
 

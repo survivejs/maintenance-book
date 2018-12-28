@@ -6,18 +6,18 @@ Text linting is much less common than code linting, but if you have to maintain 
 
 Text linting is less common than code linting but in large projects with many contributors it could improve documentation quality. You can:
 
-* Validate links.
-* Ensure consistent terminology (e.g., _JavaScript_ vs. _Java&#x200b;script_ or _npm_ vs. _N&#x200b;PM_).
-* Improve language (e.g., do not allow words like _ju&#x200b;st_, _easi&#x200b;ly_ and _si&#x200b;mply_).
+- Validate links.
+- Ensure consistent terminology, like _JavaScript_ vs. _Java&#x200b;script_ or _npm_ vs. _N&#x200b;PM_.
+- Improve language, like disallowing _ju&#x200b;st_, _easi&#x200b;ly_ and _si&#x200b;mply_.
 
 [Textlint](https://textlint.github.io/) is an extendable text linter written in JavaScript, it’s a fork of ESLint so setup is similar. And like ESLint it can fix certain rules for you. It has many plugins:
 
-* [eslint](https://www.npmjs.com/package/textlint-rule-eslint) — checks code examples in Markdown using ESLint (autofixing is also possible).
-* [common-misspellings](https://www.npmjs.com/package/textlint-rule-common-misspellings) — fixes common English misspellings (e.g. _simi&#x200b;liarity_ → _similarity_).
-* [no-dead-link](https://www.npmjs.com/package/textlint-rule-no-dead-link) — finds dead links, automatically fixes redirects.
-* [stop-words](https://www.npmjs.com/package/textlint-rule-stop-words) — filler words, buzzwords and chiches.
-* [terminology](https://www.npmjs.com/package/textlint-rule-terminology) — checks and fixes terms spelling in your tech writing.
-* [write-good](https://www.npmjs.com/package/textlint-rule-write-good) — tries to improve your English styles.
+- [eslint](https://www.npmjs.com/package/textlint-rule-eslint) — checks code examples in Markdown using ESLint (autofixing is also possible).
+- [common-misspellings](https://www.npmjs.com/package/textlint-rule-common-misspellings) — fixes common English misspellings, like _simi&#x200b;liarity_ → _similarity_.
+- [no-dead-link](https://www.npmjs.com/package/textlint-rule-no-dead-link) — finds dead links, automatically fixes redirects.
+- [stop-words](https://www.npmjs.com/package/textlint-rule-stop-words) — filler words, buzzwords and chiches.
+- [terminology](https://www.npmjs.com/package/textlint-rule-terminology) — checks and fixes terms spelling in your tech writing.
+- [write-good](https://www.npmjs.com/package/textlint-rule-write-good) — tries to improve your English styles.
 
 [Proselint](http://proselint.com/) is prose linter following the advice of world’s greatest writers and editors, it checks your texts for things like redundancy, jargon, illogic, clichés, sexism, misspelling, inconsistency and misuse of symbols. It has [several dozens of rules](https://github.com/amperser/proselint/#checks) by default.
 

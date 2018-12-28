@@ -10,9 +10,9 @@ Global dependencies are installed with the `--global` (or `-g`) flag for `npm in
 
 Most of the time, though, you’ll want to use local dependencies and store list of required packages and their versions close to the project — in its _package.json_ — to guarantee that the project will work:
 
-* You could always reproduce the same versions of packages.
-* You can run projects that require incompatible versions of packages on the same computer at the same time.
-* You can share your project, and other developers could install all required dependencies with a single command.
+- You could always reproduce the same versions of packages.
+- You can run projects that require incompatible versions of packages on the same computer at the same time.
+- You can share your project, and other developers could install all required dependencies with a single command.
 
 T> **Lockfiles** go even further and lock the whole dependency tree — all dependencies of dependencies of dependencies. We discuss lockfiles in the _Publishing Packages_ chapter.
 
@@ -32,8 +32,8 @@ The most common use case is plugins, for example a Babel plugins or a React comp
 
 Other types of dependencies are rarely used:
 
-* `bundledDependencies` are the dependencies that are bundled with the package itself.
-* `optionalDependencies` are the dependencies that npm will try to install but they aren’t required for the package to work. For example, packages that don’t work on all platforms.
+- `bundledDependencies` are the dependencies that are bundled with the package itself.
+- `optionalDependencies` are the dependencies that npm will try to install but they aren’t required for the package to work. For example, packages that don’t work on all platforms.
 
 ## Keeping Dependencies Updated
 
@@ -54,12 +54,12 @@ Running [npm update](https://docs.npmjs.com/cli/update) would update it to that 
 
 The other dependencies would require either a manual change to _package.json_ or using a specific tool such as one listed below:
 
-* `yarn upgrade-interactive` allows you to choose which dependencies you want to update.
-* [npm-upgrade](https://www.npmjs.com/package/npm-upgrade) also shows links to change logs.
-* [updtr](https://www.npmjs.com/package/updtr) will try to run your tests for the latest version of each dependency and update your _package.json_ only if they pass.
-* [Greenkeeper](https://greenkeeper.io/) will send a pull request for every dependency update so you’ll know when it’s safe to update by the CI results.
-* [Renovate](https://www.npmjs.com/package/renovate) is an open source alternative to Greenkeeper. [Read Renovate interview](https://survivejs.com/blog/renovate-interview/) to learn more about the tool.
-* [David](https://david-dm.org/) gives you a _README_ badge that will show status of your dependencies.
+- `yarn upgrade-interactive` allows you to choose which dependencies you want to update.
+- [npm-upgrade](https://www.npmjs.com/package/npm-upgrade) also shows links to change logs.
+- [updtr](https://www.npmjs.com/package/updtr) will try to run your tests for the latest version of each dependency and update your _package.json_ only if they pass.
+- [Greenkeeper](https://greenkeeper.io/) will send a pull request for every dependency update so you’ll know when it’s safe to update by the CI results.
+- [Renovate](https://www.npmjs.com/package/renovate) is an open source alternative to Greenkeeper. [Read Renovate interview](https://survivejs.com/blog/renovate-interview/) to learn more about the tool.
+- [David](https://david-dm.org/) gives you a _README_ badge that will show status of your dependencies.
 
 T> `npm ls` and `npm ls <package name>` allow you to figure out which versions you have installed. `npm ls -g` shows versions of globally installed packages.
 
@@ -71,10 +71,10 @@ Many npm packages follow [SemVer](https://semver.org/), which means that only ma
 
 Depending on a project you may want to specify [version ranges](https://docs.npmjs.com/misc/semver) differently in _package.json_:
 
-* Caret (`^1.2.3`, npm default) — good for most projects, will catch all updates inside a major version (1.9.3 but not 2.0.0).
-* Tilde (`~1.2.3`) — projects that may have breaking changes in minor releases, will catch all updates inside a minor version (1.2.17 but not 1.3.0).
-* Exact version (`1.2.3`) — the most strict, only manual updates.
-* Range (`>=1.3.0 <2.0.0`) - defines a range of versions. Usually used for peer dependencies.
+- Caret (`^1.2.3`, npm default) — good for most projects, will catch all updates inside a major version (1.9.3 but not 2.0.0).
+- Tilde (`~1.2.3`) — projects that may have breaking changes in minor releases, will catch all updates inside a minor version (1.2.17 but not 1.3.0).
+- Exact version (`1.2.3`) — the most strict, only manual updates.
+- Range (`>=1.3.0 <2.0.0`) - defines a range of versions. Usually used for peer dependencies.
 
 T> To include prerelease versions, use a pattern such as ^4.0.0-0.
 

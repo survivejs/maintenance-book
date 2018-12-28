@@ -2,10 +2,10 @@
 
 While publishing packages, you have a few concerns to worry about:
 
-* Which browsers and Node versions to support?
-* What to do if we want to use language features that aren’t supported by these targets?
-* What to do if we want to use another language than JavaScript to author our package?
-* How to support modern module bundlers and their tree shaking features?
+- Which browsers and Node versions to support?
+- What to do if we want to use language features that aren’t supported by these targets?
+- What to do if we want to use another language than JavaScript to author our package?
+- How to support modern module bundlers and their tree shaking features?
 
 If you author your packages using a source format that works directly with Node, you can avoid additional processing. In this case it’s enough to point _package.json_ `main` field to the source as discussed in the previous chapter.
 
@@ -228,12 +228,12 @@ T> The _Typing_ chapter covers a few popular options including Flow and TypeScri
 
 To make sure your npm scripts work across different platforms, you cannot rely on environment specific tools. This can be solved by using a task runner to hide the differences. Alternately, you can use a collection of npm packages which expose small CLI interface. The list below contains several of them:
 
-* [cpy-cli](https://www.npmjs.com/package/cpy-cli) - Copy files and folders.
-* [cross-env](https://www.npmjs.com/package/cross-env) - Set environment variables.
-* [mkdirp](https://www.npmjs.com/package/mkdirp) - _mkdirp_ equals to Unix `mkdir -p <path>` which creates all directories given to it. A normal `mkdir <path>` would fail if any of the parents are missing. `-p` stands for `--parents`.
-* [npm-run-all](https://www.npmjs.com/package/npm-run-all) - Running npm scripts in series and parallel is problematic as there’s no native support for that and you have to rely on OS level semantics. _npm-run-all_ solves this problem by hiding it behind a small CLI interface. Example: `npm-run-all clean build:*`.
-* [rimraf](https://www.npmjs.com/package/rimraf) - _rimraf_ equals to `rm -rf <path>` which in Unix terms removes the given path and its contents without any confirmation. The command is both powerful and dangerous.
-* [fs-extra](https://www.npmjs.com/package/fs-extra) - _fs-extra_ extends Node `fs` module with commonly needed utilities. It works as a drop-in replacement to it.
+- [cpy-cli](https://www.npmjs.com/package/cpy-cli) - Copy files and folders.
+- [cross-env](https://www.npmjs.com/package/cross-env) - Set environment variables.
+- [mkdirp](https://www.npmjs.com/package/mkdirp) - _mkdirp_ equals to Unix `mkdir -p <path>` which creates all directories given to it. A normal `mkdir <path>` would fail if any of the parents are missing. `-p` stands for `--parents`.
+- [npm-run-all](https://www.npmjs.com/package/npm-run-all) - Running npm scripts in series and parallel is problematic as there’s no native support for that and you have to rely on OS level semantics. _npm-run-all_ solves this problem by hiding it behind a small CLI interface. Example: `npm-run-all clean build:*`.
+- [rimraf](https://www.npmjs.com/package/rimraf) - _rimraf_ equals to `rm -rf <path>` which in Unix terms removes the given path and its contents without any confirmation. The command is both powerful and dangerous.
+- [fs-extra](https://www.npmjs.com/package/fs-extra) - _fs-extra_ extends Node `fs` module with commonly needed utilities. It works as a drop-in replacement to it.
 
 ## Conclusion
 

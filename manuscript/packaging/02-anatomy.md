@@ -75,8 +75,7 @@ npm can be used as a task runner through `npm run` command. Running the command 
 
     "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "babel --delete-dir-on-start -d esm/ src/",
-    "build:cjs":
-      "babel --delete-dir-on-start --env-name cjs -d lib/ src/",
+    "build:cjs": "babel --delete-dir-on-start --env-name cjs -d lib/ src/",
 
     "preversion": "npm run test",
     "prepublishOnly": "npm run build",
@@ -90,8 +89,8 @@ npm can be used as a task runner through `npm run` command. Running the command 
 
 Certain scripts, such as `start` and `test`, have shortcuts in npm. Examples:
 
-* `npm t` or `npm test` maps to `npm run test`.
-* `npm start` maps to `npm run start`.
+- `npm t` or `npm test` maps to `npm run test`.
+- `npm start` maps to `npm run start`.
 
 npm commands, such as `npm install`, `npm publish` or `npm version`, can have [hooks](https://docs.npmjs.com/misc/scripts) attached to them, like in the example above.
 
@@ -109,8 +108,8 @@ The entry points describe how the package should resolve to your code when used 
 
 If your code is using JavaScript features not supported by Node, or other language like TypeScript, you should compile the code in two ways:
 
-* To ES5, and use this files as the `main` entry point. It will be used by Node.
-* To ES5 except ECMAScript modules (ESM), and use it as the `module` entry point. It will be used by bundlers. This will allow them to do tree shaking.
+- To ES5, and use this files as the `main` entry point. It will be used by Node.
+- To ES5 except ECMAScript modules (ESM), and use it as the `module` entry point. It will be used by bundlers. This will allow them to do tree shaking.
 
 **package.json**
 
@@ -186,8 +185,7 @@ If you use GitHub, you can simplify like this:
 {
   /* GitHub issues URL will be inferred from the repository URL */
   "homepage": "https://<organization/user>.github.io/<project>/",
-  "repository":
-    "https://github.com/<organization/user>/<project>.git"
+  "repository": "https://github.com/<organization/user>/<project>.git"
 }
 ```
 
@@ -229,11 +227,11 @@ Even though a project can contain a lot of files, not all should be published. B
 
 Most of the available npm packages are small and include only a couple of files:
 
-* Entry point, like _index.js_.
-* _package.json_ - package metadata.
-* _README_ - it’s shown on the package page at _npmjs.com_ and is a good place for “selling” the project for a potential user. See the _README_ chapter for details.
-* _CHANGELOG_, _CHANGES_ or _HISTORY_ - describe changes for each package version. See _Change Logs_ chapter for details.
-* _LICENSE_ or _LICENCE_ - license of your package. You should point to the license by name from _package.json_.
+- Entry point, like _index.js_.
+- _package.json_ - package metadata.
+- _README_ - it’s shown on the package page at _npmjs.com_ and is a good place for “selling” the project for a potential user. See the _README_ chapter for details.
+- _CHANGELOG_, _CHANGES_ or _HISTORY_ - describe changes for each package version. See _Change Logs_ chapter for details.
+- _LICENSE_ or _LICENCE_ - license of your package. You should point to the license by name from _package.json_.
 
 These files will be included in your package regardless of the _package.json_ `files` field or `.npmignore` file. _README_, _CHANGELOG_ and _LICENSE_ can have any case and extension.
 
@@ -249,11 +247,11 @@ Same with the source code if you compile it before publishing. These files aren�
 
 In larger projects, you often find the following files that should be excluded from an npm distribution:
 
-* Tooling configuration, like _babel.config.json_, _.eslintrc.json_, _.travis.yml_ or _webpack.config.js_ — files like _babel.config.json_ may easily break your user’s build if they try to compile _node_modules_ folder and don’t have one of the plugins listed in your config.
-* Tooling or build artifacts like log files — usually anything you have in _.gitignore_ which npm will use by default unless you have _.npmignore_ file. In the latter case you’ll need to copy these patterns from _.gitignore_.
-* File that are required only for development: build scripts or _CONTRIBUTING.md_.
-* Any big files, like images.
-* Any sensitive data, like npm publishing keys.
+- Tooling configuration, like _babel.config.json_, _.eslintrc.json_, _.travis.yml_ or _webpack.config.js_ — files like _babel.config.json_ may easily break your user’s build if they try to compile _node_modules_ folder and don’t have one of the plugins listed in your config.
+- Tooling or build artifacts like log files — usually anything you have in _.gitignore_ which npm will use by default unless you have _.npmignore_ file. In the latter case you’ll need to copy these patterns from _.gitignore_.
+- File that are required only for development: build scripts or _CONTRIBUTING.md_.
+- Any big files, like images.
+- Any sensitive data, like npm publishing keys.
 
 T> To decrease the size of your dependencies, use [package-config-checker](https://www.npmjs.com/package/package-config-checker). It can pinpoint packages not using the `files` field correctly. Once you know which ones haven’t set it, consider making pull requests to those projects.
 
@@ -267,12 +265,12 @@ Only files or folders listed in the [files](https://docs.npmjs.com/files/package
 
 **Pros:**
 
-* You’ll never publish a big file or folder accidentally.
+- You’ll never publish a big file or folder accidentally.
 
 **Cons:**
 
-* You may forget to add a new file here and publish a broken package.
-* Doesn’t support negative patterns.
+- You may forget to add a new file here and publish a broken package.
+- Doesn’t support negative patterns.
 
 W> [npm doesn’t support](https://github.com/npm/npm/wiki/Files-and-Ignores#details) negative glob patterns, like `!src/*.test.js`, in the `files` field, Use _.npmignore_ file with a pattern like `src/*.test.js` instead.
 
@@ -282,13 +280,13 @@ Lists glob patterns of files and folders that shouldn’t be published, like _.g
 
 **Pros:**
 
-* Easier to maintain, because new files will be published by default.
-* You can have different rules for different subdirectories.
-* Supports negative patterns.
+- Easier to maintain, because new files will be published by default.
+- You can have different rules for different subdirectories.
+- Supports negative patterns.
 
 **Cons:**
 
-* You can accidentally make your package bigger than it could.
+- You can accidentally make your package bigger than it could.
 
 ## Conclusion
 

@@ -4,13 +4,13 @@ When developing a project, you should consider its goals and timespan. Some proj
 
 You have to consider at least the following aspects:
 
-* Who is going to develop the project?
-* Who is going to pay for the development?
-* Who is going to make sure the project stays on track?
-* What happens if developers disappear from the project?
-* How to attract new contributors and maintainers to the project?
-* How to keep track of everything that’s going on with the project?
-* How to maintain a popular project?
+- Who is going to develop the project?
+- Who is going to pay for the development?
+- Who is going to make sure the project stays on track?
+- What happens if developers disappear from the project?
+- How to attract new contributors and maintainers to the project?
+- How to keep track of everything that’s going on with the project?
+- How to maintain a popular project?
 
 ## Who Is Going to Develop the Project
 

@@ -30,13 +30,13 @@ There are several pros and cons to this approach:
 
 **Pros:**
 
-* You can avoid potentially a lot of work.
+- You can avoid potentially a lot of work.
 
 **Cons:**
 
-* Existing library may be hard to adapt if your needs are uncommon.
-* You have to keep up with the package updates to gain improvements and fixes.
-* You may have to fix bugs yourself or wait while maintainers will fix them.
+- Existing library may be hard to adapt if your needs are uncommon.
+- You have to keep up with the package updates to gain improvements and fixes.
+- You may have to fix bugs yourself or wait while maintainers will fix them.
 
 T> Services like [npm trends](http://www.npmtrends.com/) and [npm-stat](https://npm-stat.com/) can help you to evaluate packages popularity.
 
@@ -50,12 +50,12 @@ The pros and cons are similar as before but there are a few more:
 
 **Pros:**
 
-* The community benefits from your enhancements.
+- The community benefits from your enhancements.
 
 **Cons:**
 
-* You have to contribute the enhancements you need and take care to get them merged to the package.
-* You may still have to fix issues in your feature yourself by sending more pull requests.
+- You have to contribute the enhancements you need and take care to get them merged to the package.
+- You may still have to fix issues in your feature yourself by sending more pull requests.
 
 ## Take Over an Existing Package
 
@@ -69,12 +69,12 @@ This time pros and cons are more involved as you become more active.
 
 **Pros:**
 
-* You have control over the direction of the project.
-* The code stays maintained as long as you are willing to do it.
+- You have control over the direction of the project.
+- The code stays maintained as long as you are willing to do it.
 
 **Cons:**
 
-* You gain new responsibilities: a package may come with a user community that will report bugs and request new features.
+- You gain new responsibilities: a package may come with a user community that will report bugs and request new features.
 
 ## Fork an Existing Package
 
@@ -91,13 +91,13 @@ This time around you gain control but also split effort.
 
 **Pros:**
 
-* You have control over your fork and may take it to a direction you want.
-* You avoid politics related to project control.
+- You have control over your fork and may take it to a direction you want.
+- You avoid politics related to project control.
 
 **Cons:**
 
-* Potential duplication of work.
-* Potential confusion in the user community.
+- Potential duplication of work.
+- Potential confusion in the user community.
 
 T> Learn different licensing options by reading [The Legal Side of Open Source](https://opensource.guide/legal/), [Open-Source Licensing For Dummies](http://www.binpress.com/blog/2013/06/21/open-source-licensing-for-dummies/) and [Producing OSS: Legal Matters chapter](http://producingoss.com/en/legal.html).
 
@@ -117,29 +117,29 @@ The pros and cons are roughly opposite compared to using an existing package:
 
 **Pros:**
 
-* You get exactly what you are capable of developing.
-* You control package releases and can publish fixes and features as you prefer.
+- You get exactly what you are capable of developing.
+- You control package releases and can publish fixes and features as you prefer.
 
 **Cons:**
 
-* You may repeat someone else’s work.
-* Development cost is much higher than in other options.
-* You may have to deal with maintenance and possible community support if the package becomes popular.
+- You may repeat someone else’s work.
+- Development cost is much higher than in other options.
+- You may have to deal with maintenance and possible community support if the package becomes popular.
 
 ## Consumption Workflow
 
 Most of the time you’ll use these commands:
 
-* `npm install <package> --save` or `npm i <package> -S`.
-* `npm install <package> --save-dev` or `npm i <package> -D`
+- `npm install <package> --save` or `npm i <package> -S`.
+- `npm install <package> --save-dev` or `npm i <package> -D`
 
 `<package>@<version>` will install a specific version.
 
 Pointing to a package by its name and version is not the only way:
 
-* `<git repository>#<reference>` points to a Git repository and a Git reference.
-* `<github user>/<project>#<reference>` shortcut points to GitHub in a similar way.
-* `<github user>/<project>#pull/<id>/head` points to a specific GitHub pull request.
+- `<git repository>#<reference>` points to a Git repository and a Git reference.
+- `<github user>/<project>#<reference>` shortcut points to GitHub in a similar way.
+- `<github user>/<project>#pull/<id>/head` points to a specific GitHub pull request.
 
 `<reference>` can be either a commit hash, a tag, or a branch.
 

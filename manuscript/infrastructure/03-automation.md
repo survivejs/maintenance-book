@@ -22,10 +22,10 @@ T> Internally commitizen relies upon [commitlint](https://github.com/marionebl/c
 
 In AngularJS convention each commit message consists of:
 
-* Type: `feat` for a new feature, `fix` for a bug fix, `docs` for documentation, `chore` for maintenance, etc.
-* Subject: short change description.
-* Body (optional): long change description.
-* Footer (optional): breaking changes, GitHub issues references, etc.
+- Type: `feat` for a new feature, `fix` for a bug fix, `docs` for documentation, `chore` for maintenance, etc.
+- Subject: short change description.
+- Body (optional): long change description.
+- Footer (optional): breaking changes, GitHub issues references, etc.
 
 For example:
 
@@ -77,12 +77,12 @@ T> It’s a common convention to write commit titles in **imperative** tense. Th
 
 By default semantic-release makes everything automatically:
 
-* Runs on a CI server after each commit to the `master` branch.
-* After each successful build it analyzes new commits and see if there’s something to publish.
-* Determines a release type (PATCH, MINOR or MAJOR) by analyzing commit messages written using AngularJS conventions.
-* Generates a change log from important commits (skips documentation and maintenance commits).
-* Publishes a new package version to npm.
-* Publishes change log to GitHub Releases page.
+- Runs on a CI server after each commit to the `master` branch.
+- After each successful build it analyzes new commits and see if there’s something to publish.
+- Determines a release type (PATCH, MINOR or MAJOR) by analyzing commit messages written using AngularJS conventions.
+- Generates a change log from important commits (skips documentation and maintenance commits).
+- Publishes a new package version to npm.
+- Publishes change log to GitHub Releases page.
 
 To use semantic-release you need to install its command line tool:
 
@@ -193,16 +193,16 @@ https://www.npmjs.com/package/gh-lint
 
 For example:
 
-* Require to update the npm lockfile every time _package.json_ changes.
-* Require new tests when new code is added.
-* Require a change log entry.
-* Check for test shortcuts like `it.only` or `describe.only`.
-* Check for `TODO` and `FIXME` comments.
-* Check that the pull request was sent to a correct branch.
-* Check number of changed lines and suggest to split the pull request if it’s too big.
-* Check that new files have a proper copyright message.
-* Welcome first time contributors to your project.
-* Ping specific people on changes in specific files.
+- Require to update the npm lockfile every time _package.json_ changes.
+- Require new tests when new code is added.
+- Require a change log entry.
+- Check for test shortcuts like `it.only` or `describe.only`.
+- Check for `TODO` and `FIXME` comments.
+- Check that the pull request was sent to a correct branch.
+- Check number of changed lines and suggest to split the pull request if it’s too big.
+- Check that new files have a proper copyright message.
+- Welcome first time contributors to your project.
+- Ping specific people on changes in specific files.
 
 Danger has no default rules but it has a JavaScript API that allows you to inspect source code changes, pull request metadata, build log, post comments on the pull request and mark the build as failed.
 
@@ -259,9 +259,7 @@ Update your _.travis.yml_ to make it run on Travis CI:
 language: node_js
 node_js:
   - 8
-script:
-  npm run test
-  npx danger ci
+script: npm run test npx danger ci
 ```
 
 You also need to add API token to Travis settings, see [getting started guide](http://danger.systems/js/guides/getting_started.html) for details.
@@ -272,9 +270,9 @@ Now every time someone sends a pull request that changes _package.json_ but not 
 
 Danger has some plugins, like:
 
-* [fixme](https://www.npmjs.com/package/danger-plugin-fixme) — check for `TODO` and `FIXME` comments;
-* [no-test-shortcuts](https://www.npmjs.com/package/danger-plugin-no-test-shortcuts) — check for test shortcuts;
-* [spellcheck](https://www.npmjs.com/package/danger-plugin-spellcheck) — spell checks created or modified Markdown files.
+- [fixme](https://www.npmjs.com/package/danger-plugin-fixme) — check for `TODO` and `FIXME` comments;
+- [no-test-shortcuts](https://www.npmjs.com/package/danger-plugin-no-test-shortcuts) — check for test shortcuts;
+- [spellcheck](https://www.npmjs.com/package/danger-plugin-spellcheck) — spell checks created or modified Markdown files.
 
 ## Configuration Automation
 
@@ -303,7 +301,7 @@ mrm license --config:licenseFile README
 
 Optionally, create a config file at `~/.mrm/config.json` or `~/dotfiles/mrm/config.json` instead of passing values via command line:
 
-```json5
+```json
 {
   "github": "sapegin",
   "eslintPreset": "airbnb",
@@ -320,10 +318,10 @@ See more usage examples and options [in the docs](https://github.com/sapegin/mrm
 
 TODO
 
-* https://github.com/babel/babel-bot
-* https://github.com/open-bot/open-bot
-* https://github.com/probot/probot
-* What problems bots solve
+- https://github.com/babel/babel-bot
+- https://github.com/open-bot/open-bot
+- https://github.com/probot/probot
+- What problems bots solve
 
 ## Conclusion
 

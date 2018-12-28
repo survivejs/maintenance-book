@@ -6,13 +6,13 @@ Tests can be seen as a runnable documentation of your code. Automated testing gi
 
 Testing can be used to verify at least the following:
 
-* Do parts of the system work in isolation?
-* Do parts of the system work together?
-* Does the system works fast enough?
-* Does the old API of the system still work for the consumers?
-* Do the tests cover the system well?
-* What is the quality of the tests?
-* Does the system solve user problems?
+- Do parts of the system work in isolation?
+- Do parts of the system work together?
+- Does the system works fast enough?
+- Does the old API of the system still work for the consumers?
+- Do the tests cover the system well?
+- What is the quality of the tests?
+- Does the system solve user problems?
 
 You can test both quantitative and qualitative aspects. Qualitative testing is harder as it requires a comparison point, but without tracking quality, such as performance, it’s difficult to reach it. If you track how the system is being used and capture **analytics**, you can tell how the users experience the system.
 
@@ -122,10 +122,10 @@ function generateNumber() {
 
 If you run the test, it should pass given `add` is a commutative operation. The same idea can be applied to more complicated scenarios. There are a few improvements that could be made:
 
-* Instead of running a single test, run `testProperty` many times with different values. You could model this as `testProperties(<property>, timesToRun)`.
-* The test generates random values without allowing the user to set the seed value. This is a limitation of JavaScript API. To keep the tests reproducible, it’s a good idea to replace `Math.random` with an alternative that allows you to control the seed.
-* Replace `testProperty` and `generateNumber` with existing implementations from npm.
-* If the `add` function contained type information, it’s possible to extract that and then map the types to generators. Doing this would keep the test code slightly neater if you have multiple tests as then you would have to define the mapping between types and generators in one place while individual tests could skip the definition problem.
+- Instead of running a single test, run `testProperty` many times with different values. You could model this as `testProperties(<property>, timesToRun)`.
+- The test generates random values without allowing the user to set the seed value. This is a limitation of JavaScript API. To keep the tests reproducible, it’s a good idea to replace `Math.random` with an alternative that allows you to control the seed.
+- Replace `testProperty` and `generateNumber` with existing implementations from npm.
+- If the `add` function contained type information, it’s possible to extract that and then map the types to generators. Doing this would keep the test code slightly neater if you have multiple tests as then you would have to define the mapping between types and generators in one place while individual tests could skip the definition problem.
 
 Property testing tools like [JSVerify](https://jsverify.github.io/) or [testcheck-js](http://leebyron.com/testcheck-js/) are able to shrink a failure so you can fix it. The biggest benefit of the technique: it can help to discover boundary cases to repair.
 

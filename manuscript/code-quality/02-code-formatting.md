@@ -6,9 +6,9 @@ Usually linters can validate and fix code formatting but there are specialized t
 
 **Code consistency** helps when several people work on the same codebase:
 
-* code look similar everywhere;
-* programming patterns used consistently across the codebase;
-* naming is consistent.
+- code look similar everywhere;
+- programming patterns used consistently across the codebase;
+- naming is consistent.
 
 Code formatting tools solve the first problem. They also [solve another problem](https://medium.freecodecamp.org/why-robots-should-format-our-code-159fd06d17f7) — arguments on the right code style in a team.
 
@@ -85,11 +85,11 @@ T> Try Prettier in [an interactive playground](https://prettier.io/playground/).
 
 This approach has many benefits:
 
-* Minimal configuration.
-* Almost no decisions to make.
-* No arguing about particular rules if you’re working in a team.
-* No need to learn you project’s code style for contributors.
-* No need to fix style issues reported by ESLint.
+- Minimal configuration.
+- Almost no decisions to make.
+- No arguing about particular rules if you’re working in a team.
+- No need to learn you project’s code style for contributors.
+- No need to fix style issues reported by ESLint.
 
 Prettier has few [options](https://prettier.io/docs/en/options.html) to modify its behavior, like indentation, quotes and semicolons.
 

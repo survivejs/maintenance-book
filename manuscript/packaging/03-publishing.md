@@ -24,9 +24,9 @@ T> Not all version number systems are created equal. Sometimes people prefer to 
 
 To increase the version of your packages, you need to invoke one of these commands:
 
-* `npm version <x.y.z>` - Define version yourself.
-* `npm version <major|minor|patch>` - Let npm bump the version for you using SemVer.
-* `npm version <premajor|preminor|prepatch|prerelease>` - Same as previous expect this time it generates `-<prerelease number>` suffix. Example: `v2.1.2-2`.
+- `npm version <x.y.z>` - Define version yourself.
+- `npm version <major|minor|patch>` - Let npm bump the version for you using SemVer.
+- `npm version <premajor|preminor|prepatch|prerelease>` - Same as previous expect this time it generates `-<prerelease number>` suffix. Example: `v2.1.2-2`.
 
 Invoking any of these updates _package.json_ and creates a version commit to git automatically. If you execute `npm publish` after doing this, you should have a new version out there.
 
@@ -36,12 +36,12 @@ Invoking any of these updates _package.json_ and creates a version commit to git
 
 Sometimes, you want to publish something preliminary to test. Tag your release as below:
 
-* v0.5.0-alpha1
-* v0.5.0-beta1
-* v0.5.0-beta2
-* v0.5.0-rc1
-* v0.5.0-rc2
-* v0.5.0
+- v0.5.0-alpha1
+- v0.5.0-beta1
+- v0.5.0-beta2
+- v0.5.0-rc1
+- v0.5.0-rc2
+- v0.5.0
 
 The initial alpha release allows the users to try out the upcoming functionality and provide feedback. The beta releases can be considered more stable.
 

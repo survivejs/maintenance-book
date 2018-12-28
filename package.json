@@ -14,8 +14,7 @@
     "remarklint": "remark --quiet 'manuscript/**/*md'",
     "textlint": "textlint 'manuscript/**/*.md'",
     "textlint:fix": "textlint --fix 'manuscript/**/*.md'",
-    "prettier": "prettier --write 'manuscript/**/*.md'",
-    "prepush": "npm run test"
+    "prettier": "prettier --write 'manuscript/**/*.md'"
   },
   "repository": {
     "type": "git",
@@ -33,20 +32,25 @@
   "homepage": "https://github.com/survivejs/maintenance-book",
   "devDependencies": {
     "check-markdown-links": "^0.1.1",
-    "husky": "^0.14.3",
+    "husky": "^1.3.1",
     "leanpub-cli": "^0.2.0",
     "markdown-doctest": "^0.9.1",
-    "prettier": "^1.9.2",
+    "prettier": "^1.15.3",
     "proselint": "^0.1.7",
-    "remark-cli": "^4.0.0",
-    "remark-lint": "^6.0.1",
-    "textlint": "^10.0.1",
+    "remark-cli": "^6.0.1",
+    "remark-lint": "^6.0.4",
+    "textlint": "^11.0.2",
     "textlint-filter-rule-comments": "^1.2.2",
     "textlint-rule-apostrophe": "^1.0.0",
     "textlint-rule-common-misspellings": "^1.0.1",
-    "textlint-rule-stop-words": "1.0.1",
-    "textlint-rule-terminology": "^1.1.25",
+    "textlint-rule-stop-words": "1.0.7",
+    "textlint-rule-terminology": "^1.1.30",
     "textlint-rule-title-case": "^1.0.0",
     "textlint-rule-write-good": "^1.6.2"
+  },
+  "husky": {
+    "hooks": {
+      "prepush": "npm run test"
+    }
   }
 }

@@ -41,9 +41,9 @@ Webpack is a popular project bundler. Managing the project comes with its own ch
 
 Separating each package to a repository of its own makes them snowflakes in sense that each repository easily becomes different and it’s hard to keep them in sync if infrastructure evolves somehow. To solve the problem, [webpack-defaults](https://www.npmjs.com/package/webpack-defaults) was developed.
 
-The idea was to push project configuration (e.g. GitHub templates, linting, testing setup) to a single package that could be consumed across webpack-contrib repositories. When you install _webpack-defaults_ to your project, it writes an npm script that pulls project defaults from the package and migrates the project as well it can to follow the standard.
+The idea was to push project configuration, like GitHub templates, linting, testing setup, to a single package that could be consumed across webpack-contrib repositories. When you install _webpack-defaults_ to your project, it writes an npm script that pulls project defaults from the package and migrates the project as well it can to follow the standard.
 
-Sometimes this can mean replacing entire file (i.e. Travis CI configuration) but there are times when patching the existing configuration is enough (i.e. `.gitignore`). This allows you to maintain control and it avoids customization per project following specific needs.
+Sometimes this can mean replacing entire file, like Travis CI configuration, but there are times when patching the existing configuration is enough (for example, `.gitignore`). This allows you to maintain control and it avoids customization per project following specific needs.
 
 The biggest win of pushing shared configuration to a package like this is that it allows webpack to push project standards to a single place where they can be maintained. The changes can be consumed by running a single command at each project. This still requires inspection by programmers but it beats the alternative where it’s not possible to cascade changes across projects.
 

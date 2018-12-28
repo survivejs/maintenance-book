@@ -14,11 +14,11 @@ The book has been split into a few distinct parts, each of which discusses the t
 
 The parts of the book have been designed as follows:
 
-* **Packaging** shows how to package your npm projects. You will also learn how to manage your code effectively as you understand ideas like **release management** and **monorepos**.
-* **Code Quality** discusses how to maintain the quality of your project on a high level. You will learn what code quality consists of and how to manage it.
-* **Infrastructure** shows how to develop support structure around the project and keep it maintainable so that other people can contribute. You will also learn about scaling the project while buying yourself time to continue progressing.
-* **Documentation** is often overlooked, but it’s a vital aspect for projects that are meant to be consumed by a wider community. The part shows how to achieve this to support the growth of your project.
-* **Future** and project longevity is important as without thought it’s possible to end up with a failure. To succeed, you have to think about success first and plan carefully.
+- **Packaging** shows how to package your npm projects. You will also learn how to manage your code effectively as you understand ideas like **release management** and **monorepos**.
+- **Code Quality** discusses how to maintain the quality of your project on a high level. You will learn what code quality consists of and how to manage it.
+- **Infrastructure** shows how to develop support structure around the project and keep it maintainable so that other people can contribute. You will also learn about scaling the project while buying yourself time to continue progressing.
+- **Documentation** is often overlooked, but it’s a vital aspect for projects that are meant to be consumed by a wider community. The part shows how to achieve this to support the growth of your project.
+- **Future** and project longevity is important as without thought it’s possible to end up with a failure. To succeed, you have to think about success first and plan carefully.
 
 There’s a short conclusion chapter after the main content that recaps the main points of the book. This contains a checklist that allows you to go through compare your projects with the book’s recommendations.
 
@@ -48,10 +48,10 @@ The current version of the book is **0.9.14**.
 
 If you run into trouble or have questions related to the content, there are several options:
 
-* Contact me through [GitHub Issue Tracker](https://github.com/survivejs/maintenance-book/issues).
-* Join me at [Gitter Chat](https://gitter.im/survivejs/maintenance).
-* Send me email at [info@survivejs.com](mailto:info@survivejs.com).
-* Ask me anything at [SurviveJS AmA](https://github.com/survivejs/ama/issues).
+- Contact me through [GitHub Issue Tracker](https://github.com/survivejs/maintenance-book/issues).
+- Join me at [Gitter Chat](https://gitter.im/survivejs/maintenance).
+- Send me email at [info@survivejs.com](mailto:info@survivejs.com).
+- Ask me anything at [SurviveJS AmA](https://github.com/survivejs/ama/issues).
 
 If you post questions to Stack Overflow, tag them using **survivejs**. You can use the hashtag **#survivejs** on Twitter for the same result.
 
@@ -61,11 +61,11 @@ If you post questions to Stack Overflow, tag them using **survivejs**. You can u
 
 You can find more related material from the following sources:
 
-* Join the [mailing list](https://eepurl.com/bth1v5) for occasional updates.
-* Follow [@survivejs](https://twitter.com/survivejs) on Twitter.
-* Subscribe to the [blog RSS](https://survivejs.com/atom.xml) to get access interviews and more.
-* Subscribe to the [YouTube channel](https://www.youtube.com/channel/UCvUR-BJcbrhmRQZEEr4_bnw).
-* Check out [SurviveJS related presentation slides](https://presentations.survivejs.com/).
+- Join the [mailing list](https://eepurl.com/bth1v5) for occasional updates.
+- Follow [@survivejs](https://twitter.com/survivejs) on Twitter.
+- Subscribe to the [blog RSS](https://survivejs.com/atom.xml) to get access interviews and more.
+- Subscribe to the [YouTube channel](https://www.youtube.com/channel/UCvUR-BJcbrhmRQZEEr4_bnw).
+- Check out [SurviveJS related presentation slides](https://presentations.survivejs.com/).
 
 ## Acknowledgments
 

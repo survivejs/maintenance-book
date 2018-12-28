@@ -22,9 +22,9 @@ Only one commit out of seven is relevant for the package user: last but one that
 
 A good change log should answer these questions:
 
-* what’s new;
-* are there any breaking changes;
-* how to migrate to the new version.
+- what’s new;
+- are there any breaking changes;
+- how to migrate to the new version.
 
 It shouldn’t contain anything that doesn’t affect the public API, like refactoring or development dependencies updates.
 

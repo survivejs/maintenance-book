@@ -167,9 +167,9 @@ You can also check out the existing rules and plugins for inspiration to see how
 
 Besides the official documentation available at [eslint.org](http://eslint.org/), you should check out the following blog posts:
 
-* [Detect Problems in JavaScript Automatically with ESLint](http://davidwalsh.name/eslint) - A good tutorial on the topic.
-* [Understanding the Real Advantages of Using ESLint](http://rangle.io/blog/understanding-the-real-advantages-of-using-eslint/) - Evan Schultz’s post digs into details.
-* [eslint-plugin-smells](https://www.npmjs.com/package/eslint-plugin-smells) - This plugin by Elijah Manor allows you to lint against JavaScript smells. Recommended.
+- [Detect Problems in JavaScript Automatically with ESLint](http://davidwalsh.name/eslint) - A good tutorial on the topic.
+- [Understanding the Real Advantages of Using ESLint](http://rangle.io/blog/understanding-the-real-advantages-of-using-eslint/) - Evan Schultz’s post digs into details.
+- [eslint-plugin-smells](https://www.npmjs.com/package/eslint-plugin-smells) - This plugin by Elijah Manor allows you to lint against JavaScript smells. Recommended.
 
 If you want a starting point, you can pick one of [eslint-config- packages](https://www.npmjs.com/search?q=eslint-config) or go with the [standard](https://www.npmjs.com/package/standard) style.
 
@@ -179,6 +179,6 @@ You can customize ESLint to various purposes. Thanks to its vibrant ecosystem, i
 
 To recap:
 
-* ESLint allows rules to be skipped locally. Use this feature sparingly.
-* You can override ESLint environment per file. It’s good to consider other approaches if you notice a lot of overrides in your source, though.
-* ESLint can be extended through plugins. They allow you to adjust its behavior to your liking. Given the ecosystem is strong, check it first before going this way.
+- ESLint allows rules to be skipped locally. Use this feature sparingly.
+- You can override ESLint environment per file. It’s good to consider other approaches if you notice a lot of overrides in your source, though.
+- ESLint can be extended through plugins. They allow you to adjust its behavior to your liking. Given the ecosystem is strong, check it first before going this way.

@@ -4,10 +4,10 @@
 
 [Contribution guidelines](https://help.github.com/articles/setting-guidelines-for-repository-contributors/) explains how to contribute to a project:
 
-* how to setup the environment;
-* code style;
-* what kind of contributions you want;
-* links to all relevant documentation.
+- how to setup the environment;
+- code style;
+- what kind of contributions you want;
+- links to all relevant documentation.
 
 GitHub will show a link to contributing guidelines on the new pull request page.
 

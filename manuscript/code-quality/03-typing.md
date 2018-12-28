@@ -8,10 +8,10 @@ A loose typing system, such as the one included in JavaScript, doesn’t get in 
 
 Once you can communicate types on language level, you will get at least the following benefits:
 
-* If you know a type, you can communicate it using the language itself.
-* If the type information is available, then the editors can use it for features like auto-completion and refactoring functionality.
-* The available type information can be used for techniques such as **property based testing** and documentation.
-* In an interpreted language, the interpreter can use the information to speed up execution of code.
+- If you know a type, you can communicate it using the language itself.
+- If the type information is available, then the editors can use it for features like auto-completion and refactoring functionality.
+- The available type information can be used for techniques such as **property based testing** and documentation.
+- In an interpreted language, the interpreter can use the information to speed up execution of code.
 
 ## Flow
 

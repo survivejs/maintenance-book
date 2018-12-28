@@ -2,17 +2,23 @@
 
 The scenarios covered in the previous chapter are enough if you consume packages through npm. There may be users that prefer pre-built _standalone builds_ or _bundles_ instead. This comes with a several advantages:
 
-* Everything is packaged into a single file.
-* You can include the bundle using a `<script>` tag.
-* The build can be served through a Content Delivery Network (CDN), like [unpkg](https://unpkg.com/#/).
-* The build can be integrated easily to online code playgrounds, like [JS Bin](http://jsbin.com/).
+- Everything is packaged into a single file.
+- You can include the bundle using a `<script>` tag.
+- The build can be served through a Content Delivery Network (CDN), like [unpkg](https://unpkg.com/#/).
+- The build can be integrated easily to online code playgrounds, like [JS Bin](http://jsbin.com/).
 
 For example, you can add React to your page using its browser bundle:
 
 ```html
 <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script
+  src="https://unpkg.com/react@16/umd/react.development.js"
+  crossorigin
+></script>
+<script
+  src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+  crossorigin
+></script>
 ```
 
 You don’t need to setup any build process, and it’s a great option for quick prototyping.
