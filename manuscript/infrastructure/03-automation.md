@@ -312,17 +312,86 @@ Optionally, create a config file at `~/.mrm/config.json` or `~/dotfiles/mrm/conf
 }
 ```
 
-See more usage examples and options [in the docs](https://github.com/sapegin/mrm#usage).
+T> See more usage examples and options [in the docs](https://github.com/sapegin/mrm#usage).
 
 ## Bots
 
-TODO
+Bots help maintainers by automating some parts of issue and pull request management, like:
 
-- https://github.com/babel/babel-bot
-- https://github.com/open-bot/open-bot
-- https://github.com/probot/probot
-- What problems bots solve
+- closing stale issues,
+- adding comments to issues when a certain label added,
+- requiring a certain number of reviews for a pull request,
+- preventing merging of pull request with “Work in progress” in title.
+
+Bots usually deployed somewhere and get triggered via GitHub webhooks, meaning they can react to events like new issues, pull requests or comments. [GitHub Apps](https://developer.github.com/apps/) is a recommended way for that.
+
+### Probot
+
+[Probot](https://probot.github.io/) is a framework for building GitHub Apps in Node. For example, you can post a comment to every new issue in the repository:
+
+```js
+module.exports = app => {
+  app.on('issues.opened', async context => {
+    // `context` extracts information from the event, which can be passed to
+    // GitHub API calls.
+    const params = context.issue({ body: 'Hello World!' });
+    // -> {owner: 'yourname', repo: 'yourrepo', number: 123, body: 'Hello World!'}
+
+    // Post a comment on the issue
+    return context.github.issues.createComment(params);
+  });
+};
+```
+
+Probot already has [many bots](https://probot.github.io/apps/) that you can use in your app, like:
+
+- [Work In Progress](https://probot.github.io/apps/wip/) — prevents merging of pull requests with “WIP” in the title;
+- [Stale](https://probot.github.io/apps/stale/) — closes stale issues and pull requests;
+- [Lock Threads](https://probot.github.io/apps/lock/) — locks closed issues and pull requests after a period of inactivity;
+- [CI Reporter](https://probot.github.io/apps/ci-reporter/) — pastes the error output of a failing build into the pull request;
+- [Sentiment Bot](https://probot.github.io/apps/sentiment-bot/) — replies to toxic comments with a comment and a link to the project’s code of conduct;
+- [Reaction Comments](https://probot.github.io/apps/reaction/) — deletes +1 comments and suggests to use the GitHub reactions instead;
+- [Minimum Reviews](https://probot.github.io/apps/minimum-reviews/) — enforces a minimum number of reviews on pull requests.
+
+Installation of all the bots is similar, so we are going to describe only one bot in details below.
+
+#### Stale Bot
+
+Closing stale issues and pull requests, meaning they have no new comments, no new commits or changes to labels or milestones, is something that many popular open source projects do to minimize number of open issues. If an issue wasn’t fixed or a feature request wasn’t implemented in several months, maybe it’s not that important.
+
+[Stale](https://github.com/apps/stale) is a Probot based GitHub app, that closes GitHub issues and pull requests after a certain period of inactivity.
+
+#### Setting up Stale Bot
+
+First, add the [Stale](https://github.com/apps/stale) bot to your repository.
+
+Then create a config file, `.github/stale.yml`:
+
+```yaml
+# Number of days of inactivity before an issue becomes stale
+daysUntilStale: 60
+# Number of days of inactivity before a stale issue is closed
+daysUntilClose: 7
+# Issues with these labels will never be considered stale
+exemptLabels:
+  - pinned
+  - security
+# Label to use when marking an issue as stale
+staleLabel: wontfix
+# Comment to post when marking an issue as stale. Set to `false` to disable
+markComment: >
+  This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.
+
+# Comment to post when closing a stale issue. Set to `false` to disable
+closeComment: false
+```
+
+T> See [all configuration options](https://github.com/probot/stale#usage) in the Stale docs.
+
+And that’s all — Stale bot will scan your issues and pull request, add a comment to the ones without recent activity, and then close them.
+
+![](images/stalebot.png)
 
 ## Conclusion
 
-TODO
+Automation is the only way to keep sanity maintaining an open source project. No time in the world is enough to verify everything your user and contributors are doing in your project’s repository — issues, pull requests, comments — manually. Let robots to the boring work and keep the fun part of the open source for yourself!
