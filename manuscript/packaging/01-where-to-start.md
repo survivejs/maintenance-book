@@ -76,11 +76,13 @@ This time pros and cons are more involved as you become more active.
 
 - You gain new responsibilities: a package may come with a user community that will report bugs and request new features.
 
+{pagebreak}
+
 ## Fork an Existing Package
 
 You can also fork the project. This can be done in a few ways:
 
-1. Maintain a private fork that’s used only by your projects. In npm terms this could be achieved using **scoping** and you could end up with `@organization/some-package` that contains the modified version. The maintenance cost is lower than when taking over a package because you’ll be the only user of your package.
+1. Maintain a private fork that’s used only by your projects. In npm terms this could be achieved using **scoping** and you could end up with `@org/some-package` that contains the modified version. The maintenance cost is lower than when taking over a package because you’ll be the only user of your package.
 2. Rename the project while retaining references to the original project to follow common licensing clauses (esp. MIT) and then publish it publicly under a new name. Users of the original project may become yours eventually if it’s no longer maintained or if your fork has more features.
 
 Original licensing can become problematic. This applies to so called copyleft (or viral) licenses, like GPL and stricter AGPL, which put restrictions on the usage. If you fork a project like this, note that the license still applies!

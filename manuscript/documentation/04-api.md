@@ -77,6 +77,8 @@ Button.defaultProps = {
 
 [documentation.js](http://documentation.js.org/) generates HTML, Markdown or JSON using JSDoc or Flow annotations and can infer things like types of function parameters. It supports ES2017 syntax and JSX. It understands which functions you export and won’t generate documentation for your private APIs.
 
+{pagebreak}
+
 Markdown output looks like this:
 
 ```markdown
@@ -127,6 +129,8 @@ Then run:
 ```bash
 npm run docs
 ```
+
+{pagebreak}
 
 And in the _docs_ folder you’ll find an HTML file with documentation for your project:
 

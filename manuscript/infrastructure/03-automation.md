@@ -325,6 +325,8 @@ Bots help maintainers by automating some parts of issue and pull request managem
 
 Bots usually deployed somewhere and get triggered via GitHub webhooks, meaning they can react to events like new issues, pull requests or comments. [GitHub Apps](https://developer.github.com/apps/) is a recommended way for that.
 
+{pagebreak}
+
 ### Probot
 
 [Probot](https://probot.github.io/) is a framework for building GitHub Apps in Node. For example, you can post a comment to every new issue in the repository:
@@ -332,10 +334,15 @@ Bots usually deployed somewhere and get triggered via GitHub webhooks, meaning t
 ```js
 module.exports = app => {
   app.on('issues.opened', async context => {
-    // `context` extracts information from the event, which can be passed to
-    // GitHub API calls.
+    // `context` extracts information from the event,
+    // which can be passed to GitHub API calls.
     const params = context.issue({ body: 'Hello World!' });
-    // -> {owner: 'yourname', repo: 'yourrepo', number: 123, body: 'Hello World!'}
+    // {
+    //   owner: 'yourname',
+    //   repo: 'yourrepo',
+    //   number: 123,
+    //   body: 'Hello World!'
+    // }
 
     // Post a comment on the issue
     return context.github.issues.createComment(params);
@@ -378,9 +385,13 @@ exemptLabels:
   - security
 # Label to use when marking an issue as stale
 staleLabel: wontfix
-# Comment to post when marking an issue as stale. Set to `false` to disable
+# Comment to post when marking an issue as stale.
+# Set to `false` to disable
 markComment: >
   This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.
+  
+  
+  
 
 # Comment to post when closing a stale issue. Set to `false` to disable
 closeComment: false

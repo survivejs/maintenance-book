@@ -131,6 +131,8 @@ T> See _Building Packages_ chapter for more details on building your package for
 
 On small projects, it’s enough to have all code in `index.js` in the root folder. On larger ones, you likely want to start splitting it up and move into a directory. Having all code in a directory will make compilation easier.
 
+{pagebreak}
+
 ### Dependencies
 
 An npm package can have different types of dependencies. We discuss them in the _Types of Dependencies_ section.

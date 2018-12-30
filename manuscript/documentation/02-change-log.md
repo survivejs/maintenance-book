@@ -18,15 +18,19 @@ Many projects don’t have change logs and ask users to read the commit log. But
 
 Only one commit out of seven is relevant for the package user: last but one that fixes a bug, all the rest are documentation updates and code changes that don’t affect the public API.
 
+{pagebreak}
+
 ## What Is a Good Change Log
 
 A good change log should answer these questions:
 
-- what’s new;
-- are there any breaking changes;
-- how to migrate to the new version.
+- What’s new?
+- Are there any breaking changes?
+- How to migrate to the new version?
 
-It shouldn’t contain anything that doesn’t affect the public API, like refactoring or development dependencies updates.
+It shouldn’t contain anything that doesn’t affect the public API, like refactoring or development dependencies updates. Ideally there’s support for moving to newer versions to make migrations less painful.
+
+**Codemods**, code to modify code, can be one way to achieve this. Running a codemod will perform all the necessary changes for the user making migration less painful.
 
 For example, a change log for a group of commits above may look like this:
 
