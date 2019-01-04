@@ -113,10 +113,11 @@ Git hooks can be used in a JavaScript project with a package such as [husky](htt
 **package.json**
 
 ```json
-"scripts": {
-  ...
-  "prepush": "npm test"
-},
+"husky": {
+  "hooks": {
+    "pre-push": "npm test"
+  }
+}
 ```
 
 The package will do all the wiring required and run project tests before pushing to the repository.
@@ -145,8 +146,10 @@ Update your _package.json_ like this:
 
 ```json
 {
-  "scripts": {
-    "precommit": "lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-push": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.js": [
