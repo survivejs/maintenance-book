@@ -135,7 +135,13 @@ Static analysis tools, such as ESLint or Flow, can help to keep code consistent 
 
 ### Security Testing
 
-**Security testing** addresses vulnerabilities that allow a potential attacker to breach a system. [nsp](https://www.npmjs.com/package/nsp) is a tool that checks your project against known vulnerabilities. [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) identifies potential security hotspots that need to be checked by a human.
+**Security testing** addresses vulnerabilities that allow a potential attacker to breach a system.
+
+npm checks packages for known vulnerabilities on every install, [npm audit fix](https://docs.npmjs.com/cli/audit) upgrades ones that have no breaking changes. It’s a good way to keep your project secure without spending too much time upgrading dependencies.
+
+[eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) identifies potential security hotspots that need to be checked by a human.
+
+T> See _Keeping Dependencies Updated_ for more information on upgrading dependencies.
 
 ### Regression Testing
 
