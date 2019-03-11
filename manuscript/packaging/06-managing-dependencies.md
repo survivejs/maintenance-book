@@ -55,6 +55,7 @@ Running [npm update](https://docs.npmjs.com/cli/update) would update it to that 
 The other dependencies would require either a manual change to _package.json_ or using a specific tool such as one listed below:
 
 - `yarn upgrade-interactive` allows you to choose which dependencies you want to update.
+- [npm audit fix](https://docs.npmjs.com/cli/audit) upgrades packages with known vulnerabilities and without breaking changes.
 - [npm-upgrade](https://www.npmjs.com/package/npm-upgrade) also shows links to change logs.
 - [updtr](https://www.npmjs.com/package/updtr) will try to run your tests for the latest version of each dependency and update your _package.json_ only if they pass.
 - [Greenkeeper](https://greenkeeper.io/) will send a pull request for every dependency update so you’ll know when it’s safe to update by the CI results.
