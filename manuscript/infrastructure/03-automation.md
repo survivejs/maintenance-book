@@ -395,6 +395,7 @@ markComment: >
   
   
   
+  
 
 # Comment to post when closing a stale issue. Set to `false` to disable
 closeComment: false
