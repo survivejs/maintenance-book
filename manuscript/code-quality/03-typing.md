@@ -52,7 +52,7 @@ The Flow example above works even in TypeScript. Even though there are similarit
 
 T> See [TypeScript playground](https://www.typescriptlang.org/play/index.html) for more concrete examples.
 
-## The Benefits of Flow and TypeScriipt
+## The Benefits of Flow and TypeScript
 
 Both Flow and TypeScript compiler can detect a variety of type related problems. This doesn’t mean code won’t crash runtime but at least you’ll detect type related mismatches early. A large part of TypeScript’s value has to do with the way it has been integrated to popular editors. The same applies to Flow in a more limited extent.
 
