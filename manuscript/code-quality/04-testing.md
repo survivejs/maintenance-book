@@ -173,13 +173,11 @@ To make sure your npm package paths, like `main` or `module`, work, test your pa
 
 ### Code Coverage
 
-**Code coverage** tells you how much of the code is covered by tests. The technique can reveal parts of the code that aren’t being tested. Those parts have unspecified behavior and as a result may contain issues. Code coverage doesn’t tell anything about the quality of the tests, but it can be used to discover places to test.
+**Code coverage** tells you how much of the code is covered by tests. This can reveal parts of the code that aren’t being tested. Those parts have unspecified behavior and as a result may contain issues. Code coverage doesn’t tell anything about the quality of the tests: _covered_ code only means that the code gets executed during test run, but it doesn't mean the tests are actually verifying anything in that code. Code coverage report can prove that you're not testing some code, but even 100% code coverage doesn’t prove that you’re testing everything.
 
-You can measure code coverage with [Istanbul](https://www.npmjs.com/package/istanbul), and Jest includes it by default. [babel-plugin-istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) comes in handy if you are using Babel.
+[Istanbul](https://www.npmjs.com/package/istanbul) is a tool to measure JavaScript code coverage, and Jest includes it by default.
 
-[Codecov](https://codecov.io/) and [Coveralls](https://coveralls.io/) collect coverage for every pull request and post a comment explaining how a pull request would affect project coverage as you should maintain the current coverage and ideally improve it.
-
-T> [Codecov extension](https://chrome.google.com/webstore/detail/codecov-extension/keefkhehidemnokodkdkejapdgfjmijf) for Chrome allows you to see code coverage on GitHub user interface.
+[Codecov](https://codecov.io/) and [Coveralls](https://coveralls.io/) collect coverage for every pull request and post a comment explaining how a pull request would affect project coverage. You can require that all, changed in the pull request, lines are covered with tests.
 
 ### Code Complexity
 
