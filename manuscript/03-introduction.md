@@ -73,4 +73,4 @@ This book wouldn’t have been possible without the earlier efforts. Anyone who 
 
 Special thanks to [Gavin Orland](https://github.com/gavinorland) for editing.
 
-Thanks to Simon Lydell, Ryan Stegmann, Oliver Isenrich, and many others who have contributed direct feedback for this book!
+Thanks to Simon Lydell, Ryan Stegmann, Oliver Isenrich, Karen Grigoryan, and many others who have contributed direct feedback for this book!
