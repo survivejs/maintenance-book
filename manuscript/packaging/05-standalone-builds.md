@@ -97,7 +97,7 @@ undefined
 The `dist/index.m.js` is build for bundlers, like webpack, that you can import in another ECMAScript module:
 
 ```js
-import demo from './dist/index.umd.js';
+import demo from './dist/index.m.js';
 demo();
 ```
 
