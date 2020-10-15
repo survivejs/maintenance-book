@@ -30,6 +30,7 @@ module.exports = {
     },
     './add': (a, b) => a + b,
     'bundling-demo': () => {},
+    './dist/index.m.js': () => {},
     './dist/index.umd.js': () => {},
   },
 };
