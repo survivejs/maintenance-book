@@ -155,7 +155,7 @@ To avoid sharing all your packages in public, npm allows you to maintain private
 
 npm’s lookup algorithm is another aspect that’s good to understand. Sometimes this can explain certain errors, and it also leads to good practices, such as preferring local dependencies over global ones. The basic algorithm goes as below:
 
-1. If there is _node_modules_ directory, crawl through that.
+1. If there is _node\_modules_ directory, crawl through that.
 1. Check parent directories until the project root is reached. You can check that using `npm root`.
 1. If the lookup fails, it fails hard. You should get an error now.
 
